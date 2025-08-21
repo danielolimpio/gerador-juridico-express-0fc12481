@@ -12,8 +12,10 @@ import { ContractType, FormField as ContractFormField } from '@/lib/contractType
 import { validateCPF, validateCNPJ, formatCPF, formatCNPJ, formatCurrency } from '@/lib/validation';
 import { generateContractText } from '@/lib/contractTemplates';
 import { generatePDF } from '@/lib/pdfGenerator';
+import { generateWord } from '@/lib/wordGenerator';
+import { generateTxt } from '@/lib/txtGenerator';
 import { useToast } from '@/hooks/use-toast';
-import { Download, FileText, ArrowLeft } from 'lucide-react';
+import { Download, FileText, ArrowLeft, Share2, FileType } from 'lucide-react';
 
 interface ContractFormProps {
   contractType: ContractType;
@@ -118,6 +120,60 @@ const ContractForm: React.FC<ContractFormProps> = ({ contractType, onBack }) => 
     }
   };
 
+  const handleDownloadWord = async () => {
+    if (generatedContract) {
+      try {
+        await generateWord(generatedContract, contractType.title);
+        toast({
+          title: "Download iniciado!",
+          description: "O arquivo Word está sendo baixado.",
+        });
+      } catch (error) {
+        toast({
+          title: "Erro ao gerar Word",
+          description: "Ocorreu um erro. Tente novamente.",
+          variant: "destructive",
+        });
+      }
+    }
+  };
+
+  const handleDownloadTxt = () => {
+    if (generatedContract) {
+      generateTxt(generatedContract, contractType.title);
+      toast({
+        title: "Download iniciado!",
+        description: "O arquivo TXT está sendo baixado.",
+      });
+    }
+  };
+
+  const handleShare = (platform: string) => {
+    const text = `Acabo de gerar meu ${contractType.title} em segundos! Confira esta ferramenta incrível:`;
+    const url = window.location.origin;
+    
+    let shareUrl = '';
+    
+    switch (platform) {
+      case 'whatsapp':
+        shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        break;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   const formatInputValue = (field: ContractFormField, value: string) => {
     switch (field.type) {
       case 'cpf':
@@ -182,15 +238,42 @@ const ContractForm: React.FC<ContractFormProps> = ({ contractType, onBack }) => 
   if (generatedContract) {
     return (
       <div className="container mx-auto max-w-4xl p-4">
-        <div className="mb-6 flex items-center gap-4">
+        <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <Button variant="outline" onClick={() => setGeneratedContract('')}>
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar ao Formulário
           </Button>
-          <Button onClick={handleDownloadPDF} className="bg-google-blue hover:bg-google-blue-dark">
-            <Download className="mr-2 h-4 w-4" />
-            Baixar PDF
-          </Button>
+          
+          <div className="flex flex-wrap gap-2">
+            <Button onClick={handleDownloadPDF} className="bg-primary hover:bg-primary-hover">
+              <Download className="mr-2 h-4 w-4" />
+              PDF
+            </Button>
+            <Button onClick={handleDownloadWord} variant="outline">
+              <FileType className="mr-2 h-4 w-4" />
+              Word
+            </Button>
+            <Button onClick={handleDownloadTxt} variant="outline">
+              <FileText className="mr-2 h-4 w-4" />
+              TXT
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-muted-foreground">Compartilhar:</span>
+            <Button size="sm" variant="ghost" onClick={() => handleShare('whatsapp')} className="p-2">
+              <Share2 className="h-4 w-4" />
+            </Button>
+            <Button size="sm" variant="ghost" onClick={() => handleShare('facebook')} className="p-2">
+              <Share2 className="h-4 w-4" />
+            </Button>
+            <Button size="sm" variant="ghost" onClick={() => handleShare('twitter')} className="p-2">
+              <Share2 className="h-4 w-4" />
+            </Button>
+            <Button size="sm" variant="ghost" onClick={() => handleShare('linkedin')} className="p-2">
+              <Share2 className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
         
         <Card>
@@ -233,7 +316,7 @@ const ContractForm: React.FC<ContractFormProps> = ({ contractType, onBack }) => 
               
               <Button 
                 type="submit" 
-                className="w-full bg-google-blue hover:bg-google-blue-dark"
+                className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
                 disabled={isGenerating || !form.formState.isValid}
               >
                 {isGenerating ? (
