@@ -234,7 +234,7 @@ const ContractForm: React.FC<ContractFormProps> = ({ contractType, onBack }) => 
               <Button 
                 type="submit" 
                 className="w-full bg-google-blue hover:bg-google-blue-dark"
-                disabled={isGenerating}
+                disabled={isGenerating || !form.formState.isValid}
               >
                 {isGenerating ? (
                   <>
