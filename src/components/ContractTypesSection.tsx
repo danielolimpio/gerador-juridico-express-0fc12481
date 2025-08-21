@@ -10,50 +10,53 @@ import {
   Users, 
   Gavel 
 } from "lucide-react";
+import { contractTypes } from "@/lib/contractTypes";
 
-const contractTypes = [
+const contractTypesDisplay = [
   {
+    id: 'compra-venda',
     icon: Home,
     title: "Compra e Venda",
     description: "Imóveis, veículos, bens móveis",
     popular: true
   },
   {
+    id: 'locacao-residencial',
     icon: Building,
-    title: "Locação",
-    description: "Residencial e comercial",
+    title: "Locação Residencial",
+    description: "Casas e apartamentos",
     popular: true
   },
   {
+    id: 'prestacao-servicos',
     icon: Briefcase,
     title: "Prestação de Serviços",
     description: "Autônomos e empresas",
     popular: true
   },
   {
+    id: 'doacao',
     icon: Heart,
     title: "Doação",
     description: "Bens móveis e imóveis"
   },
   {
+    id: 'comodato',
     icon: Car,
     title: "Comodato",
     description: "Empréstimo de bens"
   },
   {
+    id: 'locacao-comercial',
     icon: Users,
-    title: "Sociedade",
-    description: "Parcerias comerciais"
+    title: "Locação Comercial",
+    description: "Imóveis comerciais"
   },
   {
+    id: 'emprestimo',
     icon: FileText,
-    title: "Procuração",
-    description: "Representação legal"
-  },
-  {
-    icon: Gavel,
-    title: "Acordo",
-    description: "Resolução de conflitos"
+    title: "Empréstimo",
+    description: "Entre pessoas físicas"
   }
 ];
 
@@ -71,7 +74,7 @@ const ContractTypesSection = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {contractTypes.map((contract, index) => {
+          {contractTypesDisplay.map((contract, index) => {
             const Icon = contract.icon;
             return (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer border-0 shadow-sm">
@@ -91,6 +94,7 @@ const ContractTypesSection = () => {
                       variant="outline" 
                       size="sm" 
                       className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all"
+                      onClick={() => window.location.href = `/contrato/${contract.id}`}
                     >
                       Gerar Contrato
                     </Button>
