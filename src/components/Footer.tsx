@@ -14,7 +14,7 @@ const Footer = () => {
                 <FileText className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                Gerador Jurídico
+                Modelos de Contratos
               </span>
             </div>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
@@ -30,22 +30,22 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/como-funciona" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Como Funciona
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/tipos-de-contratos" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Tipos de Contratos
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/exemplos-de-contratos" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Exemplos de Contratos
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   FAQ
                 </a>
               </li>
@@ -57,22 +57,22 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/politica-privacidade" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Política de Privacidade
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/termos-de-uso" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Termos de Uso
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/aviso-legal" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Aviso Legal
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="/cookies" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Cookies
                 </a>
               </li>
@@ -86,19 +86,19 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
-                  contato@geradorjuridico.com
+                  contato@modelosdecontratos.com.br
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
-                  (11) 9999-9999
+                  (12) 98251-9116
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
-                  São Paulo, Brasil
+                  João Pessoa, Brasil
                 </span>
               </div>
             </div>
@@ -109,13 +109,16 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Gerador Jurídico Express. Todos os direitos reservados.
+            Copyright © 2025 | Modelos de Contratos | Todos os direitos reservados | Desenvolvido por{" "}
+            <a 
+              href="https://danielolimpio.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors"
+            >
+              DanielOlimpio
+            </a>
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-xs text-muted-foreground">
-              Feito com ❤️ no Brasil
-            </span>
-          </div>
         </div>
       </div>
     </footer>

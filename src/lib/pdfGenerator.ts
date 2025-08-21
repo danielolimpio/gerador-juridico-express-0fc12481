@@ -25,7 +25,7 @@ export const generatePDF = (contractText: string, contractTitle: string): void =
     doc.setPage(i);
     doc.setFontSize(10);
     doc.text(`Página ${i} de ${pageCount}`, 20, 285);
-    doc.text('Documento gerado automaticamente - Confira todos os dados antes de assinar', 20, 290);
+    doc.text('Documento gerado automaticamente por modelosdecontratos.com.br - Confira todos os dados antes de assinar', 20, 290);
   }
   
   // Generate filename with current date
