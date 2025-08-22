@@ -108,7 +108,17 @@ const ExemplosDeContratos = () => {
             Use nosso gerador para criar contratos personalizados com seus dados. 
             É rápido, fácil e totalmente gratuito.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => navigate('/gerador')}>
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90" 
+            onClick={() => {
+              window.location.href = '/';
+              setTimeout(() => {
+                const contractTypesSection = document.querySelector('#contract-types-section');
+                contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}
+          >
             <FileText className="mr-2 h-5 w-5" />
             Gerar Meu Contrato
           </Button>

@@ -132,15 +132,25 @@ const TiposDeContratos = () => {
             Entre em contato conosco e solicite novos tipos de contratos. 
             Estamos sempre expandindo nossa biblioteca de modelos.
           </p>
-          <Link to="/gerador">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 mr-4">
-              <FileText className="mr-2 h-5 w-5" />
-              Começar Agora
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 mr-4"
+            onClick={() => {
+              window.location.href = '/';
+              setTimeout(() => {
+                const contractTypesSection = document.querySelector('#contract-types-section');
+                contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}
+          >
+            <FileText className="mr-2 h-5 w-5" />
+            Começar Agora
+          </Button>
+          <Link to="/contato">
+            <Button variant="outline" size="lg">
+              Entre em Contato
             </Button>
           </Link>
-          <Button variant="outline" size="lg">
-            Entre em Contato
-          </Button>
         </div>
       </div>
     </div>

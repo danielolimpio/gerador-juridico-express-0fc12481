@@ -99,7 +99,7 @@ const FAQ = () => {
           <p className="text-muted-foreground mb-6">
             Entre em contato conosco e teremos prazer em ajudar você.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
+          <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => navigate('/contato')}>
             Entrar em Contato
           </Button>
         </div>
