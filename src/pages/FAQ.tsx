@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const FAQ = () => {
   const navigate = useNavigate();
@@ -57,54 +58,76 @@ const FAQ = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto max-w-4xl px-4 py-8">
-        <div className="mb-6">
-          <Button variant="outline" onClick={() => navigate(-1)}>
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar
-          </Button>
-        </div>
+    <>
+      <SEO 
+        title="FAQ - Perguntas Frequentes sobre Contratos Jurídicos"
+        description="Tire suas dúvidas sobre contratos jurídicos, validade legal, tipos de contratos, formatos de download e muito mais. Respostas completas e atualizadas."
+        keywords="faq contratos, dúvidas contratos jurídicos, contratos válidos, perguntas frequentes modelos contratos"
+        canonical="https://modelosdecontratos.com.br/faq"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto max-w-4xl px-4 py-8">
+          <nav className="mb-6">
+            <Button variant="outline" onClick={() => navigate(-1)}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Voltar
+            </Button>
+          </nav>
 
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Perguntas Frequentes
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Encontre respostas para as dúvidas mais comuns sobre nosso gerador de contratos.
-          </p>
-        </div>
+          <header className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
+              Perguntas Frequentes
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Encontre respostas para as dúvidas mais comuns sobre nosso gerador de contratos.
+            </p>
+          </header>
 
-        <div className="mb-12">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+          <section className="mb-12">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
 
-        <div className="bg-primary/10 rounded-lg p-8 text-center">
-          <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Não Encontrou sua Dúvida?
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Entre em contato conosco e teremos prazer em ajudar você.
-          </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => navigate('/contato')}>
-            Entrar em Contato
-          </Button>
+          <section className="bg-primary/10 rounded-lg p-8 text-center">
+            <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-foreground mb-4">
+              Não Encontrou sua Dúvida?
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Entre em contato conosco e teremos prazer em ajudar você.
+            </p>
+            <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => navigate('/contato')}>
+              Entrar em Contato
+            </Button>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

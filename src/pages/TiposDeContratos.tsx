@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Building, Users, Gift, Car, Handshake, CreditCard, Key, Scale, GraduationCap, Briefcase, FileX, Truck, Store } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const TiposDeContratos = () => {
   const navigate = useNavigate();
@@ -84,76 +85,97 @@ const TiposDeContratos = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Tipos de Contratos Jurídicos",
+    "description": "Mais de 15 tipos de contratos jurídicos válidos para download gratuito",
+    "hasPart": contractTypes.map(contract => ({
+      "@type": "WebPage",
+      "name": contract.title,
+      "description": contract.description
+    }))
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto max-w-6xl px-4 py-8">
-        <div className="mb-6">
-          <Button variant="outline" onClick={() => navigate(-1)}>
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar
-          </Button>
-        </div>
-
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Tipos de Contratos
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos mais de 15 tipos de contratos para atender todas as suas necessidades jurídicas. 
-            Todos seguem as normas legais brasileiras e são atualizados regularmente.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {contractTypes.map((contract, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    {contract.icon}
-                  </div>
-                  <span className="text-lg">{contract.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  {contract.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="bg-primary/10 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Não Encontrou o Contrato que Precisa?
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Entre em contato conosco e solicite novos tipos de contratos. 
-            Estamos sempre expandindo nossa biblioteca de modelos.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 mr-4"
-            onClick={() => {
-              window.location.href = '/';
-              setTimeout(() => {
-                const contractTypesSection = document.querySelector('#contract-types-section');
-                contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-          >
-            <FileText className="mr-2 h-5 w-5" />
-            Começar Agora
-          </Button>
-          <Link to="/contato">
-            <Button variant="outline" size="lg">
-              Entre em Contato
+    <>
+      <SEO 
+        title="Tipos de Contratos Jurídicos - Mais de 15 Modelos Gratuitos"
+        description="Explore todos os tipos de contratos disponíveis: compra e venda, locação, prestação de serviços, doação, empréstimo e mais. Modelos juridicamente válidos e gratuitos."
+        keywords="tipos de contratos, modelos de contratos, contrato compra venda, contrato locação, contrato prestação serviços, contratos jurídicos gratuitos"
+        canonical="https://modelosdecontratos.com.br/tipos-de-contratos"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto max-w-6xl px-4 py-8">
+          <nav className="mb-6">
+            <Button variant="outline" onClick={() => navigate(-1)}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Voltar
             </Button>
-          </Link>
+          </nav>
+
+          <header className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
+              Tipos de Contratos
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Oferecemos mais de 15 tipos de contratos para atender todas as suas necessidades jurídicas. 
+              Todos seguem as normas legais brasileiras e são atualizados regularmente.
+            </p>
+          </header>
+
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {contractTypes.map((contract, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                      {contract.icon}
+                    </div>
+                    <span className="text-lg">{contract.title}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    {contract.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </section>
+
+          <section className="bg-primary/10 rounded-lg p-8 text-center">
+            <h2 className="text-2xl font-bold text-foreground mb-4">
+              Não Encontrou o Contrato que Precisa?
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Entre em contato conosco e solicite novos tipos de contratos. 
+              Estamos sempre expandindo nossa biblioteca de modelos.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 mr-4"
+              onClick={() => {
+                window.location.href = '/';
+                setTimeout(() => {
+                  const contractTypesSection = document.querySelector('#contract-types-section');
+                  contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+            >
+              <FileText className="mr-2 h-5 w-5" />
+              Começar Agora
+            </Button>
+            <Link to="/contato">
+              <Button variant="outline" size="lg">
+                Entre em Contato
+              </Button>
+            </Link>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

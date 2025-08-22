@@ -295,6 +295,20 @@ const ContractForm: React.FC<ContractFormProps> = ({ contractType, onBack }) => 
             <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed bg-muted p-4 rounded-lg">
               {generatedContract}
             </pre>
+            <div className="mt-4 pt-4 border-t border-border">
+              <p className="text-xs text-muted-foreground text-center">
+                Documento gerado automaticamente por{' '}
+                <a 
+                  href="https://modelosdecontratos.com.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 underline transition-colors"
+                >
+                  https://modelosdecontratos.com.br
+                </a>
+                {' '}- Confira todos os dados antes de assinar
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
