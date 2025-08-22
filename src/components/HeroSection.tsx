@@ -20,6 +20,10 @@ const HeroSection = () => {
                 variant="google" 
                 size="xl" 
                 className="group"
+                onClick={() => {
+                  const contractTypesSection = document.querySelector('#contract-types-section');
+                  contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Começar Agora
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -28,6 +32,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="xl"
                 className="font-medium"
+                onClick={() => window.location.href = '/tipos-de-contratos'}
               >
                 Ver Modelos
               </Button>

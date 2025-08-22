@@ -62,7 +62,7 @@ const contractTypesDisplay = [
 
 const ContractTypesSection = () => {
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section id="contract-types-section" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -94,7 +94,7 @@ const ContractTypesSection = () => {
                       variant="outline" 
                       size="sm" 
                       className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all"
-                      onClick={() => window.location.href = `/contrato/${contract.id}`}
+                      onClick={() => window.location.href = `/gerador?type=${contract.id}`}
                     >
                       Gerar Contrato
                     </Button>
@@ -106,7 +106,11 @@ const ContractTypesSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="google" size="lg">
+          <Button 
+            variant="google" 
+            size="lg"
+            onClick={() => window.location.href = '/exemplos-de-contratos'}
+          >
             Ver Todos os Modelos
           </Button>
         </div>

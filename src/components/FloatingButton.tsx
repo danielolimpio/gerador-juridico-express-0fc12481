@@ -9,7 +9,8 @@ const FloatingButton = () => {
         size="lg"
         className="rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse hover:animate-none group"
         onClick={() => {
-          window.location.href = '/contrato/compra-venda';
+          window.location.href = '/';
+          window.scrollTo(0, 0);
         }}
       >
         <span className="hidden sm:inline">Gerar Contrato Agora</span>

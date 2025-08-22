@@ -20,7 +20,11 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
               Crie contratos jurídicos válidos em segundos. Simples, rápido e 100% legal.
             </p>
-            <Button variant="google" size="sm">
+            <Button 
+              variant="google" 
+              size="sm"
+              onClick={() => window.location.href = '/'}
+            >
               Gerar Contrato Grátis
             </Button>
           </div>

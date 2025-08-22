@@ -73,7 +73,7 @@ const ComoFunciona = () => {
           <p className="text-muted-foreground mb-6">
             Crie seu primeiro contrato agora mesmo. É rápido, fácil e gratuito.
           </p>
-          <Link to="/gerador">
+          <Link to="/">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               <FileText className="mr-2 h-5 w-5" />
               Gerar Meu Contrato
