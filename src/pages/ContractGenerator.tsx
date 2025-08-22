@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { contractTypes } from '@/lib/contractTypes';
 import ContractForm from '@/components/ContractForm';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,9 +8,12 @@ import { ArrowLeft, FileText } from 'lucide-react';
 
 const ContractGenerator: React.FC = () => {
   const { contractId } = useParams<{ contractId: string }>();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   
-  const contractType = contractTypes.find(ct => ct.id === contractId);
+  // Pega o tipo do contrato pelos query parameters ou pela URL
+  const contractTypeId = contractId || searchParams.get('type');
+  const contractType = contractTypes.find(ct => ct.id === contractTypeId);
   
   if (!contractType) {
     return (
