@@ -8,12 +8,12 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Crie seu contrato em{" "}
-              <span className="text-primary">30 segundos</span> – sem advogado
+              Gerador de Contratos Online{" "}
+              <span className="text-primary">Grátis</span> – Crie Contratos em 30 Segundos
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              Modelos juridicamente válidos, personalizados com seus dados. 
-              Basta preencher e baixar em PDF.
+              Modelos de contratos juridicamente válidos para baixar em PDF e Word. 
+              Gere contratos de aluguel, compra e venda, prestação de serviços e mais. 100% grátis e sem cadastro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 

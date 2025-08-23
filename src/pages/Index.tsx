@@ -11,19 +11,32 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Modelos de Contratos",
+    "name": "Gerador de Contratos Online Grátis",
     "url": "https://modelosdecontratos.com.br",
-    "description": "Gerador online de contratos jurídicos válidos. Crie modelos de contratos personalizados em PDF e Word gratuitamente.",
+    "description": "Gerador gratuito de contratos online. Crie modelos de contratos de aluguel, compra e venda, prestação de serviços. Baixe em PDF e Word sem cadastro.",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Any"
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL"
+    },
+    "featureList": [
+      "Contrato de aluguel residencial",
+      "Contrato de compra e venda de imóvel", 
+      "Contrato de prestação de serviços",
+      "Contrato de trabalho autônomo",
+      "Download em PDF e Word",
+      "Modelos editáveis grátis"
+    ]
   };
 
   return (
     <>
       <SEO 
-        title="Modelos de Contratos Online - Gere Contratos Jurídicos Válidos em Minutos"
-        description="Crie contratos jurídicos válidos online: compra e venda, locação, prestação de serviços, comodato e mais. Modelos profissionais, download em PDF/Word. 100% grátis!"
-        keywords="modelos de contratos, contratos online, gerador de contratos, contrato compra e venda, contrato locação, contrato prestação serviços, modelos jurídicos"
+        title="Gerador de Contratos Online Grátis - Modelos de Contratos para Baixar em PDF"
+        description="Crie contratos online grátis: aluguel residencial, compra e venda de imóvel, prestação de serviços MEI, trabalho autônomo. Modelos editáveis em PDF e Word. Sem cadastro!"
+        keywords="gerador de contratos, modelos de contratos grátis, contrato de aluguel, contrato online grátis, criar contrato, baixar modelo de contrato, contrato de prestação de serviços, contrato de compra e venda, gerar contrato de aluguel"
         canonical="https://modelosdecontratos.com.br/"
         structuredData={structuredData}
       />

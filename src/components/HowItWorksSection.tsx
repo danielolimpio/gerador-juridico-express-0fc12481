@@ -5,20 +5,20 @@ const steps = [
   {
     icon: Search,
     step: "1",
-    title: "Escolha o contrato",
-    description: "Selecione o tipo de contrato que você precisa entre nossos modelos juridicamente válidos."
+    title: "Escolha o Modelo de Contrato",
+    description: "Selecione entre contratos de aluguel, compra e venda, prestação de serviços e outros modelos prontos."
   },
   {
     icon: Edit,
     step: "2", 
-    title: "Preencha seus dados",
-    description: "Complete o formulário simples com suas informações específicas em poucos cliques."
+    title: "Preencha e Edite Online",
+    description: "Complete o formulário com seus dados. Nosso gerador cria automaticamente seu contrato personalizado."
   },
   {
     icon: Download,
     step: "3",
-    title: "Baixe em PDF",
-    description: "Seu contrato personalizado está pronto! Baixe em PDF e utilize imediatamente."
+    title: "Baixe Grátis em PDF/Word",
+    description: "Seu contrato editável está pronto! Baixe em PDF ou Word e assine digitalmente."
   }
 ];
 
@@ -28,10 +28,10 @@ const HowItWorksSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Como Funciona
+            Como Criar seu Contrato Online
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Processo simples e rápido em apenas 3 passos
+            Gere contratos válidos em 3 passos simples. Totalmente grátis e sem cadastro.
           </p>
         </div>
         

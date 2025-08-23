@@ -11,8 +11,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Sem necessidade de advogado",
-    description: "Economize tempo e dinheiro. Crie contratos válidos sem precisar contratar um profissional.",
+    title: "Contratos em Minutos",
+    description: "Crie e edite contratos online rapidamente. Preencha, personalize e baixe seu contrato pronto em PDF.",
     color: "text-blue-600", 
     bgColor: "bg-blue-100"
   },
@@ -38,10 +38,10 @@ const FeaturesSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Por que escolher nosso gerador?
+            Por que usar nosso Gerador de Contratos Gratuito?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Segurança jurídica com a simplicidade que você precisa
+            Crie contratos digitais válidos sem advogado. Modelos editáveis e prontos para usar.
           </p>
         </div>
         

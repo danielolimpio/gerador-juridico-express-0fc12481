@@ -16,47 +16,53 @@ const contractTypesDisplay = [
   {
     id: 'compra-venda',
     icon: Home,
-    title: "Compra e Venda",
-    description: "Imóveis, veículos, bens móveis",
+    title: "Contrato de Compra e Venda",
+    description: "Imóveis, veículos, terrenos e bens móveis",
     popular: true
   },
   {
     id: 'locacao-residencial',
     icon: Building,
-    title: "Locação Residencial",
-    description: "Casas e apartamentos",
+    title: "Contrato de Aluguel Residencial",
+    description: "Casas, apartamentos e locação simples",
     popular: true
   },
   {
     id: 'prestacao-servicos',
     icon: Briefcase,
-    title: "Prestação de Serviços",
-    description: "Autônomos e empresas",
+    title: "Contrato de Prestação de Serviços",
+    description: "MEI, autônomos e empresas",
     popular: true
-  },
-  {
-    id: 'doacao',
-    icon: Heart,
-    title: "Doação",
-    description: "Bens móveis e imóveis"
-  },
-  {
-    id: 'comodato',
-    icon: Car,
-    title: "Comodato",
-    description: "Empréstimo de bens"
   },
   {
     id: 'locacao-comercial',
     icon: Users,
-    title: "Locação Comercial",
-    description: "Imóveis comerciais"
+    title: "Contrato de Locação Comercial",
+    description: "Pontos comerciais e escritórios"
+  },
+  {
+    id: 'trabalho-autonomo',
+    icon: Gavel,
+    title: "Contrato de Trabalho Autônomo",
+    description: "Freelancers e prestadores independentes"
+  },
+  {
+    id: 'parceria-comercial',
+    icon: Users,
+    title: "Contrato de Parceria Comercial",
+    description: "Sociedades e joint ventures"
+  },
+  {
+    id: 'comodato',
+    icon: Car,
+    title: "Contrato de Comodato",
+    description: "Empréstimo gratuito de bens"
   },
   {
     id: 'emprestimo',
     icon: FileText,
-    title: "Empréstimo",
-    description: "Entre pessoas físicas"
+    title: "Contrato de Empréstimo",
+    description: "Entre pessoas físicas e jurídicas"
   }
 ];
 
@@ -66,10 +72,10 @@ const ContractTypesSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Tipos de Contratos Disponíveis
+            Modelos de Contratos Grátis para Baixar
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Escolha entre nossos modelos juridicamente válidos e personalize com seus dados
+            Gerador de contratos online com modelos prontos e editáveis. Baixe em PDF ou Word gratuitamente.
           </p>
         </div>
         
