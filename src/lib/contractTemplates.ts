@@ -2,19 +2,34 @@ export interface ContractData {
   [key: string]: string | number | boolean;
 }
 
+// Função utilitária para formatar data no formato brasileiro
+const formatDateToBrazilian = (dateString: string): string => {
+  if (!dateString) return '___/___/____';
+  
+  // Se já está no formato brasileiro, retorna como está
+  if (dateString.includes('/')) return dateString;
+  
+  // Se está no formato YYYY-MM-DD, converte para DD/MM/YYYY
+  const dateParts = dateString.split('-');
+  if (dateParts.length === 3) {
+    return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+  }
+  
+  return dateString;
+};
+
 export const generateContractText = (contractId: string, data: ContractData): string => {
   const templates: { [key: string]: (data: ContractData) => string } = {
     'compra-venda': (data) => `
 CONTRATO PARTICULAR DE COMPRA E VENDA
 
-PREÂMBULO
 Pelo presente instrumento particular de contrato de compra e venda, de um lado, como VENDEDOR(A), e de outro lado, como COMPRADOR(A), as partes a seguir qualificadas, têm entre si justo e acordado celebrar o presente contrato, que se regerá pelas cláusulas e condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
 
-VENDEDOR(A): ${data.vendedor_nome}, ${data.vendedor_nacionalidade || 'brasileiro(a)'}, ${data.vendedor_estado_civil}, ${data.vendedor_profissao || 'profissional'}, portador(a) do CPF nº ${data.vendedor_cpf} e RG nº ${data.vendedor_rg || '_____________'}, residente e domiciliado(a) na ${data.vendedor_endereco}, CEP ${data.vendedor_cep || '_____________'}, ${data.vendedor_cidade || '_____________'}, ${data.vendedor_estado || '_____________'}.
+VENDEDOR(A): ${data.vendedor_nome}, ${data.vendedor_nacionalidade || 'brasileiro(a)'}, ${data.vendedor_estado_civil}, ${data.vendedor_profissao || 'profissional'}, portador(a) do CPF nº ${data.vendedor_cpf} e RG nº ${data.vendedor_rg || '_____________'}, residente e domiciliado(a) na ${data.vendedor_endereco}, nº ${data.vendedor_numero}, Bairro: ${data.vendedor_bairro}, ${data.vendedor_cidade}, ${data.vendedor_estado}, CEP ${data.vendedor_cep}, e-mail: ${data.vendedor_email}, WhatsApp: ${data.vendedor_whatsapp}.
 
-COMPRADOR(A): ${data.comprador_nome}, ${data.comprador_nacionalidade || 'brasileiro(a)'}, ${data.comprador_estado_civil}, ${data.comprador_profissao || 'profissional'}, portador(a) do CPF nº ${data.comprador_cpf} e RG nº ${data.comprador_rg || '_____________'}, residente e domiciliado(a) na ${data.comprador_endereco}, CEP ${data.comprador_cep || '_____________'}, ${data.comprador_cidade || '_____________'}, ${data.comprador_estado || '_____________'}.
+COMPRADOR(A): ${data.comprador_nome}, ${data.comprador_nacionalidade || 'brasileiro(a)'}, ${data.comprador_estado_civil}, ${data.comprador_profissao || 'profissional'}, portador(a) do CPF nº ${data.comprador_cpf} e RG nº ${data.comprador_rg || '_____________'}, residente e domiciliado(a) na ${data.comprador_endereco}, nº ${data.comprador_numero}, Bairro: ${data.comprador_bairro}, ${data.comprador_cidade}, ${data.comprador_estado}, CEP ${data.comprador_cep}, e-mail: ${data.comprador_email}, WhatsApp: ${data.comprador_whatsapp}.
 
 CLÁUSULA PRIMEIRA - DO OBJETO
 1.1. O VENDEDOR vende ao COMPRADOR, de forma irrevogável e irretratável, com todos os direitos e responsabilidades que lhe são inerentes, o seguinte bem: ${data.bem_descricao}.
@@ -31,7 +46,7 @@ CLÁUSULA SEGUNDA - DO PREÇO E FORMA DE PAGAMENTO
 2.3. Caso haja parcelas a vencer, estas deverão ser pagas nas datas estipuladas, incidindo sobre o valor em atraso correção monetária pelo IPCA, juros de mora de 1% ao mês e multa moratória de 2%.
 
 CLÁUSULA TERCEIRA - DA ENTREGA E TRADIÇÃO
-3.1. O bem objeto deste contrato será entregue ao COMPRADOR na data de ${data.data_entrega}, no estado em que se encontra.
+3.1. O bem objeto deste contrato será entregue ao COMPRADOR na data de ${formatDateToBrazilian(String(data.data_entrega))}, no estado em que se encontra.
 
 3.2. A posse e propriedade do bem transferem-se ao COMPRADOR no ato da assinatura deste contrato e mediante o pagamento integral do preço, conforme estipulado na cláusula segunda.
 
@@ -81,12 +96,17 @@ CLÁUSULA DÉCIMA - DO FORO
 
 E por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor e forma, na presença de duas testemunhas.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________          _____________________________
-${data.vendedor_nome}                  ${data.comprador_nome}
-VENDEDOR(A)                            COMPRADOR(A)
-CPF: ${data.vendedor_cpf}              CPF: ${data.comprador_cpf}
+_____________________________
+${data.vendedor_nome}
+VENDEDOR(A)
+CPF: ${data.vendedor_cpf}
+
+_____________________________
+${data.comprador_nome}
+COMPRADOR(A)
+CPF: ${data.comprador_cpf}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
@@ -99,20 +119,19 @@ TESTEMUNHAS:
     'locacao-residencial': (data) => `
 CONTRATO DE LOCAÇÃO RESIDENCIAL
 
-PREÂMBULO
 Pelo presente instrumento particular de locação residencial, de um lado como LOCADOR(A), e de outro como LOCATÁRIO(A), as partes a seguir qualificadas celebram o presente contrato, que se regerá pela Lei nº 8.245/91 (Lei do Inquilinato) e pelas cláusulas e condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
 
-LOCADOR(A): ${data.locador_nome}, ${data.locador_nacionalidade || 'brasileiro(a)'}, ${data.locador_estado_civil}, ${data.locador_profissao || 'profissional'}, portador(a) do CPF nº ${data.locador_cpf} e RG nº ${data.locador_rg || '_____________'}, residente e domiciliado(a) na ${data.locador_endereco}, CEP ${data.locador_cep || '_____________'}, ${data.locador_cidade || '_____________'}, ${data.locador_estado || '_____________'}.
+LOCADOR(A): ${data.locador_nome}, ${data.locador_nacionalidade || 'brasileiro(a)'}, ${data.locador_estado_civil}, ${data.locador_profissao || 'profissional'}, portador(a) do CPF nº ${data.locador_cpf} e RG nº ${data.locador_rg || '_____________'}, residente e domiciliado(a) na ${data.locador_endereco}, nº ${data.locador_numero}, Bairro: ${data.locador_bairro}, ${data.locador_cidade}, ${data.locador_estado}, CEP ${data.locador_cep}, e-mail: ${data.locador_email}, WhatsApp: ${data.locador_whatsapp}.
 
-LOCATÁRIO(A): ${data.locatario_nome}, ${data.locatario_nacionalidade || 'brasileiro(a)'}, ${data.locatario_estado_civil}, ${data.locatario_profissao || 'profissional'}, portador(a) do CPF nº ${data.locatario_cpf} e RG nº ${data.locatario_rg || '_____________'}, residente e domiciliado(a) na ${data.locatario_endereco}, CEP ${data.locatario_cep || '_____________'}, ${data.locatario_cidade || '_____________'}, ${data.locatario_estado || '_____________'}.
+LOCATÁRIO(A): ${data.locatario_nome}, ${data.locatario_nacionalidade || 'brasileiro(a)'}, ${data.locatario_estado_civil}, ${data.locatario_profissao || 'profissional'}, portador(a) do CPF nº ${data.locatario_cpf} e RG nº ${data.locatario_rg || '_____________'}, residente e domiciliado(a) na ${data.locatario_endereco}, nº ${data.locatario_numero}, Bairro: ${data.locatario_bairro}, ${data.locatario_cidade}, ${data.locatario_estado}, CEP ${data.locatario_cep}, e-mail: ${data.locatario_email}, WhatsApp: ${data.locatario_whatsapp}.
 
 ${data.fiador_nome ? `
 FIADOR(A): ${data.fiador_nome}, ${data.fiador_nacionalidade || 'brasileiro(a)'}, ${data.fiador_estado_civil}, ${data.fiador_profissao || 'profissional'}, portador(a) do CPF nº ${data.fiador_cpf} e RG nº ${data.fiador_rg || '_____________'}, residente e domiciliado(a) na ${data.fiador_endereco}, CEP ${data.fiador_cep || '_____________'}, proprietário(a) do imóvel situado na ${data.fiador_imovel || '_____________'}.` : ''}
 
 CLÁUSULA PRIMEIRA - DO OBJETO
-1.1. O LOCADOR dá em locação ao LOCATÁRIO, que aceita, o imóvel residencial situado na ${data.imovel_endereco}, CEP ${data.imovel_cep || '_____________'}, ${data.imovel_cidade || '_____________'}, ${data.imovel_estado || '_____________'}.
+1.1. O LOCADOR dá em locação ao LOCATÁRIO, que aceita, o imóvel residencial situado na ${data.imovel_endereco}, nº ${data.imovel_numero}, Bairro: ${data.imovel_bairro}, ${data.imovel_cidade}, ${data.imovel_estado}, CEP ${data.imovel_cep}.
 
 1.2. O imóvel é composto por: ${data.imovel_composicao || 'composição detalhada do imóvel'}.
 
@@ -121,7 +140,7 @@ CLÁUSULA PRIMEIRA - DO OBJETO
 1.4. O imóvel destina-se exclusivamente para fins residenciais, sendo vedado o uso comercial ou qualquer atividade que possa perturbar a vizinhança.
 
 CLÁUSULA SEGUNDA - DO PRAZO
-2.1. O prazo da locação é de ${data.prazo_contrato} (${data.prazo_extenso || 'prazo por extenso'}) meses, com início em ${data.data_inicio || '___/___/____'} e término em ${data.data_fim || '___/___/____'}.
+2.1. O prazo da locação é de ${data.prazo_contrato} (${data.prazo_extenso || 'prazo por extenso'}) meses, com início em ${formatDateToBrazilian(String(data.data_inicio || ''))} e término em ${formatDateToBrazilian(String(data.data_fim || ''))}.
 
 2.2. Findo o prazo estipulado, se o LOCATÁRIO permanecer no imóvel sem oposição do LOCADOR, a locação será prorrogada por prazo indeterminado.
 
@@ -197,14 +216,22 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem de acordo, firmam o presente contrato em três vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.locador_nome}              ${data.locatario_nome}
-LOCADOR(A)                        LOCATÁRIO(A)
-CPF: ${data.locador_cpf}          CPF: ${data.locatario_cpf}
+_____________________________
+${data.locador_nome}
+LOCADOR(A)
+CPF: ${data.locador_cpf}
 
-${data.fiador_nome ? `_____________________________\n${data.fiador_nome}\nFIADOR(A)\nCPF: ${data.fiador_cpf}` : ''}
+_____________________________
+${data.locatario_nome}
+LOCATÁRIO(A)
+CPF: ${data.locatario_cpf}
+
+${data.fiador_nome ? `_____________________________
+${data.fiador_nome}
+FIADOR(A)
+CPF: ${data.fiador_cpf}` : ''}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
@@ -214,7 +241,6 @@ TESTEMUNHAS:
     'prestacao-servicos': (data) => `
 CONTRATO DE PRESTAÇÃO DE SERVIÇOS PROFISSIONAIS
 
-PREÂMBULO
 Pelo presente instrumento particular de contrato de prestação de serviços, de um lado como CONTRATANTE, e de outro como PRESTADOR, as partes qualificadas celebram o presente contrato, que se regerá pelas cláusulas e condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
@@ -315,12 +341,17 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem acordes, firmam o presente contrato em duas vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.contratante_nome}          ${data.prestador_nome}
-CONTRATANTE                       PRESTADOR
-${data.contratante_documento_tipo || 'CPF'}: ${data.contratante_documento}     CPF: ${data.prestador_cpf}
+_____________________________
+${data.contratante_nome}
+CONTRATANTE
+${data.contratante_documento_tipo || 'CPF'}: ${data.contratante_documento}
+
+_____________________________
+${data.prestador_nome}
+PRESTADOR
+CPF: ${data.prestador_cpf}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
@@ -330,7 +361,6 @@ TESTEMUNHAS:
     'locacao-comercial': (data) => `
 CONTRATO DE LOCAÇÃO NÃO RESIDENCIAL (COMERCIAL)
 
-PREÂMBULO
 Pelo presente instrumento particular de locação não residencial, de um lado como LOCADOR(A), e de outro como LOCATÁRIO(A), as partes qualificadas celebram o presente contrato, que se regerá pela Lei nº 8.245/91 e pelas cláusulas seguintes:
 
 QUALIFICAÇÃO DAS PARTES
@@ -372,17 +402,20 @@ CLÁUSULA SEXTA - DAS OBRIGAÇÕES
 CLÁUSULA SÉTIMA - DO FORO
 7.1. Fica eleito o foro da situação do imóvel.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.locador_nome}              ${data.locatario_nome}
-LOCADOR(A)                        LOCATÁRIO(A)
+_____________________________
+${data.locador_nome}
+LOCADOR(A)
+
+_____________________________
+${data.locatario_nome}
+LOCATÁRIO(A)
     `,
 
     'trabalho-autonomo': (data) => `
 CONTRATO DE TRABALHO AUTÔNOMO
 
-PREÂMBULO
 Pelo presente contrato de trabalho autônomo, as partes abaixo qualificadas estabelecem as condições para prestação de serviços profissionais especializados:
 
 QUALIFICAÇÃO DAS PARTES
@@ -417,17 +450,20 @@ CLÁUSULA QUINTA - DAS OBRIGAÇÕES
 CLÁUSULA SEXTA - DO FORO
 6.1. Foro da comarca de ${data.foro || 'domicílio do CONTRATANTE'}.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.contratante_nome}          ${data.autonomo_nome}
-CONTRATANTE                       PROFISSIONAL AUTÔNOMO
+_____________________________
+${data.contratante_nome}
+CONTRATANTE
+
+_____________________________
+${data.autonomo_nome}
+PROFISSIONAL AUTÔNOMO
     `,
 
     'parceria-comercial': (data) => `
 CONTRATO DE PARCERIA COMERCIAL
 
-PREÂMBULO
 Pelo presente instrumento, as partes estabelecem parceria comercial para desenvolvimento conjunto de atividades empresariais:
 
 QUALIFICAÇÃO DOS PARCEIROS
@@ -478,17 +514,20 @@ c) Por impossibilidade de continuação dos negócios.
 CLÁUSULA NONA - DO FORO
 9.1. Foro da comarca de ${data.foro || 'sede do PARCEIRO 1'}.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.parceiro1_nome}            ${data.parceiro2_nome}
-PARCEIRO 1                        PARCEIRO 2
+_____________________________
+${data.parceiro1_nome}
+PARCEIRO 1
+
+_____________________________
+${data.parceiro2_nome}
+PARCEIRO 2
     `,
 
     'comodato': (data) => `
 CONTRATO DE COMODATO (EMPRÉSTIMO GRATUITO)
 
-PREÂMBULO
 Pelo presente instrumento particular de comodato, as partes abaixo qualificadas estabelecem as condições para empréstimo gratuito de bem:
 
 QUALIFICAÇÃO DAS PARTES
@@ -582,12 +621,17 @@ CLÁUSULA DÉCIMA PRIMEIRA - DO FORO
 
 E por estarem de acordo, firmam o presente contrato em duas vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.comodante_nome}            ${data.comodatario_nome}
-COMODANTE                         COMODATÁRIO
-CPF: ${data.comodante_cpf}        CPF: ${data.comodatario_cpf}
+_____________________________
+${data.comodante_nome}
+COMODANTE
+CPF: ${data.comodante_cpf}
+
+_____________________________
+${data.comodatario_nome}
+COMODATÁRIO
+CPF: ${data.comodatario_cpf}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
@@ -597,7 +641,6 @@ TESTEMUNHAS:
     'emprestimo': (data) => `
 CONTRATO PARTICULAR DE EMPRÉSTIMO
 
-PREÂMBULO
 Pelo presente instrumento particular de contrato de empréstimo, de um lado como CREDOR, e de outro como DEVEDOR, as partes qualificadas estabelecem as condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
@@ -700,14 +743,22 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor, na presença de duas testemunhas.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.credor_nome}               ${data.devedor_nome}
-CREDOR                            DEVEDOR
-CPF: ${data.credor_cpf}           CPF: ${data.devedor_cpf}
+_____________________________
+${data.credor_nome}
+CREDOR
+CPF: ${data.credor_cpf}
 
-${data.avalista_nome ? `_____________________________\n${data.avalista_nome}\nAVALISTA\nCPF: ${data.avalista_cpf}` : ''}
+_____________________________
+${data.devedor_nome}
+DEVEDOR
+CPF: ${data.devedor_cpf}
+
+${data.avalista_nome ? `_____________________________
+${data.avalista_nome}
+AVALISTA
+CPF: ${data.avalista_cpf}` : ''}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
@@ -720,7 +771,6 @@ TESTEMUNHAS:
     'doacao': (data) => `
 CONTRATO PÚBLICO DE DOAÇÃO
 
-PREÂMBULO
 Pelo presente instrumento particular de doação, de um lado como DOADOR, e de outro como DONATÁRIO, as partes qualificadas estabelecem as condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
@@ -771,12 +821,17 @@ c) Superveniência de filhos ao doador, se este não os tinha quando fez a doaç
 CLÁUSULA SÉTIMA - DO FORO
 7.1. Fica eleito o foro da comarca de ${data.foro || 'domicílio do DOADOR'}.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura || '____ de _____________ de 2025'}.
+${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
 
-_____________________________     _____________________________
-${data.doador_nome}               ${data.donatario_nome}
-DOADOR                            DONATÁRIO
-CPF: ${data.doador_cpf}           CPF: ${data.donatario_cpf}
+_____________________________
+${data.doador_nome}
+DOADOR
+CPF: ${data.doador_cpf}
+
+_____________________________
+${data.donatario_nome}
+DONATÁRIO
+CPF: ${data.donatario_cpf}
 
 TESTEMUNHAS:
 1. _____________________________       CPF: _____________________
