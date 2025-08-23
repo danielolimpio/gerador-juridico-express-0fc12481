@@ -1,46 +1,124 @@
-import { Document, Packer, Paragraph, TextRun } from 'docx';
+import { Document, Packer, Paragraph, TextRun, PageBreak } from 'docx';
 
 export const generateWord = async (contractText: string, contractTitle: string): Promise<void> => {
-  const doc = new Document({
-    sections: [{
-      properties: {},
+  const paragraphs: Paragraph[] = [];
+  
+  // Title
+  paragraphs.push(
+    new Paragraph({
       children: [
+        new TextRun({
+          text: contractTitle.toUpperCase(),
+          bold: true,
+          size: 32,
+        }),
+      ],
+      spacing: {
+        after: 400,
+      },
+    })
+  );
+  
+  // Process contract text line by line
+  const lines = contractText.split('\n');
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    if (line === '') {
+      // Empty line - add space
+      paragraphs.push(
+        new Paragraph({
+          children: [new TextRun({ text: '' })],
+          spacing: { after: 200 },
+        })
+      );
+      continue;
+    }
+    
+    // Check if line is a title or subtitle
+    const isTitle = line === line.toUpperCase() && line.length > 3 && !line.includes('€') && !line.includes('R$');
+    const isSubtitle = line.endsWith(':') && line.length < 100;
+    
+    if (isTitle) {
+      paragraphs.push(
         new Paragraph({
           children: [
             new TextRun({
-              text: contractTitle.toUpperCase(),
+              text: line,
               bold: true,
-              size: 32,
+              size: 28,
             }),
           ],
           spacing: {
-            after: 400,
+            before: 400,
+            after: 300,
           },
-        }),
+        })
+      );
+    } else if (isSubtitle) {
+      paragraphs.push(
         new Paragraph({
           children: [
             new TextRun({
-              text: contractText,
+              text: line,
+              bold: true,
+              size: 26,
+            }),
+          ],
+          spacing: {
+            before: 300,
+            after: 200,
+          },
+        })
+      );
+    } else {
+      // Regular paragraph
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: line,
               size: 24,
             }),
           ],
           spacing: {
             line: 360,
+            after: 120,
           },
-        }),
-        new Paragraph({
-          children: [
-            new TextRun({
-              text: "Documento gerado automaticamente por https://modelosdecontratos.com.br - Confira todos os dados antes de assinar",
-              italics: true,
-              size: 20,
-            }),
-          ],
-          spacing: {
-            before: 400,
-          },
+        })
+      );
+    }
+  }
+  
+  // Add spacing before footer
+  paragraphs.push(
+    new Paragraph({
+      children: [new TextRun({ text: '' })],
+      spacing: { before: 600, after: 200 },
+    })
+  );
+  
+  // Footer signature
+  paragraphs.push(
+    new Paragraph({
+      children: [
+        new TextRun({
+          text: "Documento gerado automaticamente por https://modelosdecontratos.com.br - Confira todos os dados antes de assinar",
+          italics: true,
+          size: 20,
         }),
       ],
+      spacing: {
+        before: 400,
+      },
+    })
+  );
+  
+  const doc = new Document({
+    sections: [{
+      properties: {},
+      children: paragraphs,
     }],
   });
 
