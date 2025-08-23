@@ -4,6 +4,7 @@ import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import AdBanner from "@/components/AdBanner";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const FAQ = () => {
   const navigate = useNavigate();
@@ -11,51 +12,83 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Os contratos gerados são válidos juridicamente?",
-      answer: "Sim, todos os nossos modelos seguem a legislação brasileira atual e são elaborados por profissionais do direito. No entanto, recomendamos sempre a revisão por um advogado antes da assinatura, especialmente em casos mais complexos."
+      answer: "Sim, todos os nossos modelos seguem a legislação brasileira atual (Código Civil, Lei do Inquilinato, CLT) e são elaborados por profissionais do direito. Recomendamos revisão por advogado em casos complexos."
     },
     {
-      question: "Preciso pagar para usar o gerador?",
-      answer: "Não, nosso gerador de contratos é completamente gratuito. Você pode criar quantos contratos precisar sem nenhum custo."
+      question: "Preciso pagar para usar o gerador de contratos?",
+      answer: "Não, nosso gerador de contratos é 100% gratuito. Crie quantos contratos precisar sem custo, sem cadastro e sem limitações."
     },
     {
-      question: "Quais tipos de contratos posso gerar?",
-      answer: "Oferecemos mais de 15 tipos de contratos, incluindo compra e venda, locação residencial e comercial, prestação de serviços, doação, empréstimo, comodato e muitos outros."
+      question: "Quais tipos de contratos posso gerar gratuitamente?",
+      answer: "Oferecemos mais de 15 tipos: contrato de aluguel residencial, compra e venda de imóvel, prestação de serviços MEI, trabalho autônomo, locação comercial, doação, empréstimo, comodato e muitos outros."
     },
     {
-      question: "Como funciona a validação de CPF e CNPJ?",
-      answer: "Nosso sistema valida automaticamente os números de CPF e CNPJ digitados, verificando se seguem o formato correto e se os dígitos verificadores estão corretos."
+      question: "Como funciona a validação automática de CPF e CNPJ?",
+      answer: "Nosso sistema valida automaticamente CPF e CNPJ em tempo real, verificando formato correto e dígitos verificadores, garantindo dados válidos no seu contrato."
     },
     {
-      question: "Posso baixar o contrato em quais formatos?",
-      answer: "Você pode baixar seu contrato em três formatos: PDF (recomendado para impressão), Word (para edição) e TXT (texto simples)."
+      question: "Em quais formatos posso baixar o modelo de contrato?",
+      answer: "Baixe seu contrato em 3 formatos: PDF (ideal para impressão e assinatura), Word/DOCX (editável) e TXT (texto simples). Todos gratuitos e sem marca d'água."
     },
     {
-      question: "Preciso de testemunhas para os contratos?",
-      answer: "Depende do tipo de contrato. Alguns contratos como empréstimo entre pessoas físicas são recomendadas testemunhas. Para contratos de imóveis, o registro em cartório é obrigatório."
+      question: "Contrato de aluguel precisa de testemunhas?",
+      answer: "Para contratos de aluguel residencial simples, testemunhas não são obrigatórias, mas recomendadas. Para locação comercial e valores altos, testemunhas são importantes para validade jurídica."
     },
     {
-      question: "Os contratos precisam ser registrados em cartório?",
-      answer: "Alguns contratos sim, especialmente aqueles envolvendo imóveis (compra/venda, doação de imóveis). Contratos simples entre pessoas físicas geralmente não precisam de registro."
+      question: "Quando o contrato precisa ser registrado em cartório?",
+      answer: "Contratos de compra/venda e doação de imóveis devem ser registrados em cartório. Contratos de aluguel e prestação de serviços entre pessoas físicas não precisam de registro."
     },
     {
-      question: "Posso editar o contrato depois de gerado?",
-      answer: "Sim, se você baixar em formato Word (.docx), poderá editar o contrato. No entanto, seja cuidadoso para não alterar cláusulas importantes que garantem a validade jurídica."
+      question: "Posso editar o modelo de contrato depois de baixar?",
+      answer: "Sim! Baixando em Word (.docx) você pode editar livremente. Cuidado para não alterar cláusulas essenciais que garantem a validade jurídica do documento."
     },
     {
-      question: "Vocês guardam meus dados pessoais?",
-      answer: "Não armazenamos nenhum dado pessoal inserido nos formulários. Todas as informações são processadas localmente no seu navegador e descartadas após a geração do contrato."
+      question: "Vocês armazenam meus dados pessoais?",
+      answer: "Não armazenamos nenhum dado pessoal. Todas as informações são processadas localmente no seu navegador e excluídas após gerar o contrato, garantindo total privacidade."
     },
     {
-      question: "Como posso ter certeza da qualidade dos contratos?",
-      answer: "Nossos modelos são baseados na jurisprudência brasileira e são constantemente atualizados. Além disso, incluímos avisos sobre quando é recomendada a consulta a um advogado."
+      question: "Como garantir a qualidade jurídica dos contratos?",
+      answer: "Nossos modelos são baseados na legislação brasileira vigente, jurisprudência dos tribunais e são atualizados constantemente. Incluímos avisos quando consulta jurídica é recomendada."
     },
     {
-      question: "Posso usar os contratos para fins comerciais?",
-      answer: "Sim, todos os contratos gerados podem ser usados tanto para fins pessoais quanto comerciais, sempre respeitando a legislação aplicável."
+      question: "Posso usar os contratos para atividade comercial MEI?",
+      answer: "Sim! Todos os contratos podem ser usados para fins pessoais e comerciais. Temos modelos específicos para MEI, prestação de serviços autônomo e atividades empresariais."
     },
     {
-      question: "E se eu precisar de um tipo de contrato que não está disponível?",
-      answer: "Entre em contato conosco através do e-mail contato@modelosdecontratos.com.br. Estamos sempre expandindo nossa biblioteca de modelos baseados na demanda dos usuários."
+      question: "Que fazer se não encontrar o tipo de contrato que preciso?",
+      answer: "Entre em contato pelo e-mail contato@modelosdecontratos.com.br solicitando novos tipos. Priorizamos modelos mais solicitados pelos usuários."
+    },
+    {
+      question: "Contratos gerados valem para todo o Brasil?",
+      answer: "Sim, nossos modelos seguem a legislação federal brasileira e são válidos em todos os estados. Algumas especificidades estaduais podem exigir adaptações menores."
+    },
+    {
+      question: "Como fazer um contrato de aluguel simples?",
+      answer: "Use nosso gerador: selecione 'Locação Residencial', preencha dados do locador e locatário, endereço do imóvel, valor e prazo. Em 30 segundos seu contrato estará pronto para baixar."
+    },
+    {
+      question: "Posso gerar contrato de prestação de serviços para MEI?",
+      answer: "Sim! Temos modelo específico para MEI que inclui cláusulas adequadas para microempreendedores individuais, forma de pagamento, prazo e descrição detalhada dos serviços."
+    },
+    {
+      question: "Como criar contrato de compra e venda de imóvel?",
+      answer: "Selecione 'Compra e Venda', informe dados do vendedor e comprador, descrição completa do imóvel, valor, forma de pagamento e data de entrega. Lembre-se de registrar em cartório."
+    },
+    {
+      question: "Preciso de advogado para usar os contratos?",
+      answer: "Para contratos simples não é obrigatório, mas recomendamos consulta jurídica em casos complexos, valores altos ou quando há dúvidas sobre cláusulas específicas."
+    },
+    {
+      question: "Os modelos são atualizados com mudanças na lei?",
+      answer: "Sim, monitoramos constantemente mudanças na legislação brasileira (Lei do Inquilinato, Código Civil, normas do MEI) e atualizamos os modelos regularmente."
+    },
+    {
+      question: "Posso imprimir e assinar o contrato normalmente?",
+      answer: "Sim! Após baixar em PDF, você pode imprimir e coletar assinaturas normalmente. O documento tem validade jurídica completa quando assinado pelas partes."
+    },
+    {
+      question: "Como funciona o gerador para iniciantes?",
+      answer: "É muito simples: 1) Escolha o tipo de contrato, 2) Preencha o formulário com seus dados, 3) Baixe em PDF/Word. Interface intuitiva, sem complicações técnicas."
     }
   ];
 
@@ -75,14 +108,16 @@ const FAQ = () => {
   return (
     <>
       <SEO 
-        title="FAQ - Perguntas Frequentes sobre Contratos Jurídicos"
-        description="Tire suas dúvidas sobre contratos jurídicos, validade legal, tipos de contratos, formatos de download e muito mais. Respostas completas e atualizadas."
-        keywords="faq contratos, dúvidas contratos jurídicos, contratos válidos, perguntas frequentes modelos contratos"
+        title="FAQ - Perguntas Frequentes sobre Gerador de Contratos Online"
+        description="Tire dúvidas sobre contratos jurídicos online: validade legal, tipos disponíveis, formatos PDF/Word, gerador gratuito. +20 perguntas e respostas completas."
+        keywords="faq contratos online, dúvidas gerador contratos, contratos válidos juridicamente, perguntas modelo contrato aluguel, como criar contrato mei"
         canonical="https://modelosdecontratos.com.br/faq"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
+          <Breadcrumbs />
+          
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
               <ArrowLeft className="mr-2 h-4 w-4" />

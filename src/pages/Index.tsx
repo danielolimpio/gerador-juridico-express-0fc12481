@@ -8,35 +8,86 @@ import SEO from "@/components/SEO";
 import AdBanner from "@/components/AdBanner";
 
 const Index = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Gerador de Contratos Online Grátis",
-    "url": "https://modelosdecontratos.com.br",
-    "description": "Gerador gratuito de contratos online. Crie modelos de contratos de aluguel, compra e venda, prestação de serviços. Baixe em PDF e Word sem cadastro.",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "BRL"
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Modelos de Contratos",
+      "url": "https://modelosdecontratos.com.br",
+      "logo": "https://modelosdecontratos.com.br/logo.png",
+      "description": "Plataforma líder em geração de contratos jurídicos online no Brasil",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR",
+        "addressLocality": "Brasil"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://www.facebook.com/modelosdecontratos",
+        "https://www.linkedin.com/company/modelosdecontratos"
+      ]
     },
-    "featureList": [
-      "Contrato de aluguel residencial",
-      "Contrato de compra e venda de imóvel", 
-      "Contrato de prestação de serviços",
-      "Contrato de trabalho autônomo",
-      "Download em PDF e Word",
-      "Modelos editáveis grátis"
-    ]
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Modelos de Contratos",
+      "url": "https://modelosdecontratos.com.br",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://modelosdecontratos.com.br/buscar?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org", 
+      "@type": "Service",
+      "name": "Geração de Contratos Jurídicos Online",
+      "description": "Serviço gratuito de geração de contratos jurídicos válidos online",
+      "provider": {
+        "@type": "Organization",
+        "name": "Modelos de Contratos"
+      },
+      "areaServed": "BR",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tipos de Contratos Disponíveis",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Contrato de Aluguel Residencial"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Contrato de Compra e Venda"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Contrato de Prestação de Serviços MEI"
+            }
+          }
+        ]
+      }
+    }
+  ];
 
   return (
     <>
       <SEO 
-        title="Gerador de Contratos Online Grátis - Modelos de Contratos para Baixar em PDF"
-        description="Crie contratos online grátis: aluguel residencial, compra e venda de imóvel, prestação de serviços MEI, trabalho autônomo. Modelos editáveis em PDF e Word. Sem cadastro!"
-        keywords="gerador de contratos, modelos de contratos grátis, contrato de aluguel, contrato online grátis, criar contrato, baixar modelo de contrato, contrato de prestação de serviços, contrato de compra e venda, gerar contrato de aluguel"
+        title="Gerador de Contratos Online Grátis - Crie em 30 Segundos | 2025"
+        description="✅ Gerador de contratos grátis: aluguel, compra e venda, prestação de serviços MEI. Modelos juridicamente válidos em PDF/Word. Sem cadastro! Crie agora em 30 segundos."
+        keywords="gerador de contratos grátis, criar contrato online, modelo contrato aluguel, contrato prestação serviços mei, gerar contrato digital, baixar modelo contrato pdf word, contrato online gratuito"
         canonical="https://modelosdecontratos.com.br/"
         structuredData={structuredData}
       />

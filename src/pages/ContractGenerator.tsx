@@ -6,6 +6,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, FileText } from 'lucide-react';
 import AdBanner from '@/components/AdBanner';
+import SEO from '@/components/SEO';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const ContractGenerator: React.FC = () => {
   const { contractId } = useParams<{ contractId: string }>();
@@ -36,15 +38,70 @@ const ContractGenerator: React.FC = () => {
     );
   }
 
+  const contractSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `Como Criar ${contractType.title}`,
+    "description": `Guia passo a passo para criar ${contractType.title.toLowerCase()} online gratuitamente`,
+    "totalTime": "PT2M",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Dados pessoais das partes"
+      },
+      {
+        "@type": "HowToSupply", 
+        "name": "Informações específicas do contrato"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Gerador de Contratos Online Grátis"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Preencher dados das partes",
+        "text": "Insira os dados pessoais de todas as partes envolvidas no contrato"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2, 
+        "name": "Definir detalhes específicos",
+        "text": "Complete as informações específicas do tipo de contrato escolhido"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Gerar e baixar",
+        "text": "Clique em gerar contrato e baixe em PDF ou Word gratuitamente"
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <AdBanner />
-      <ContractForm 
-        contractType={contractType} 
-        onBack={() => navigate('/')} 
+    <>
+      <SEO 
+        title={`${contractType.title} Online Grátis - Modelo para Download PDF/Word`}
+        description={`Crie seu ${contractType.title.toLowerCase()} online grátis em 30 segundos. Modelo juridicamente válido para download em PDF e Word. ${contractType.description}`}
+        keywords={`${contractType.title.toLowerCase()}, modelo ${contractType.title.toLowerCase()}, gerar ${contractType.title.toLowerCase()}, criar ${contractType.title.toLowerCase()} online`}
+        structuredData={contractSchema}
       />
-      <AdBanner />
-    </div>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto max-w-6xl px-4 py-8">
+          <Breadcrumbs />
+        </div>
+        <AdBanner />
+        <ContractForm 
+          contractType={contractType} 
+          onBack={() => navigate('/')} 
+        />
+        <AdBanner />
+      </div>
+    </>
   );
 };
 

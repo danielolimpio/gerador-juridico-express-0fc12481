@@ -9,11 +9,11 @@ const HeroSection = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Gerador de Contratos Online{" "}
-              <span className="text-primary">Grátis</span> – Crie Contratos em 30 Segundos
+              <span className="text-primary">Grátis</span> – Crie Contratos Válidos em 30 Segundos
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              Modelos de contratos juridicamente válidos para baixar em PDF e Word. 
-              Gere contratos de aluguel, compra e venda, prestação de serviços e mais. 100% grátis e sem cadastro.
+              Crie contratos de aluguel, compra e venda, prestação de serviços MEI e trabalho autônomo. 
+              Modelos juridicamente válidos em PDF e Word. 100% grátis, sem cadastro e pronto em 30 segundos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
@@ -25,7 +25,7 @@ const HeroSection = () => {
                   contractTypesSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Começar Agora
+                Criar Contrato Grátis
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 className="font-medium"
                 onClick={() => window.location.href = '/tipos-de-contratos'}
               >
-                Ver Modelos
+                Ver Todos os Modelos
               </Button>
             </div>
             <div className="flex items-center justify-center lg:justify-start mt-8 text-sm text-muted-foreground">

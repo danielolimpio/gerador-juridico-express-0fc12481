@@ -4,6 +4,7 @@ import { ArrowLeft, FileText, Building, Users, Gift, Car, Handshake, CreditCard,
 import { Link, useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import AdBanner from "@/components/AdBanner";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const TiposDeContratos = () => {
   const navigate = useNavigate();
@@ -101,14 +102,16 @@ const TiposDeContratos = () => {
   return (
     <>
       <SEO 
-        title="Tipos de Contratos Jurídicos - Mais de 15 Modelos Gratuitos"
-        description="Explore todos os tipos de contratos disponíveis: compra e venda, locação, prestação de serviços, doação, empréstimo e mais. Modelos juridicamente válidos e gratuitos."
-        keywords="tipos de contratos, modelos de contratos, contrato compra venda, contrato locação, contrato prestação serviços, contratos jurídicos gratuitos"
+        title="Tipos de Contratos Online - +15 Modelos Grátis para Download PDF/Word"
+        description="Explore todos os tipos de contratos grátis: aluguel residencial/comercial, compra e venda, prestação de serviços MEI, trabalho autônomo. Modelos juridicamente válidos 2025."
+        keywords="tipos de contratos online, modelos contratos grátis download, contrato aluguel residencial, prestação serviços mei, compra venda imovel, trabalho autonomo"
         canonical="https://modelosdecontratos.com.br/tipos-de-contratos"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-6xl px-4 py-8">
+          <Breadcrumbs />
+          
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -118,11 +121,11 @@ const TiposDeContratos = () => {
 
           <header className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Tipos de Contratos
+              +15 Tipos de Contratos Online Grátis
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Oferecemos mais de 15 tipos de contratos para atender todas as suas necessidades jurídicas. 
-              Todos seguem as normas legais brasileiras e são atualizados regularmente.
+              Modelos de contratos juridicamente válidos para download em PDF e Word. 
+              Todos seguem as normas legais brasileiras atualizadas para 2025.
             </p>
           </header>
 
