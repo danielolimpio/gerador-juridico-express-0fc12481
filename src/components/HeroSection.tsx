@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, ShieldCheck, UserX, Gift } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -40,15 +40,15 @@ const HeroSection = () => {
             <div className="flex items-center justify-center lg:justify-start mt-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <ShieldCheck className="w-4 h-4 text-green-500" />
                   100% Legal
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <UserX className="w-4 h-4 text-blue-500" />
                   Sem Cadastro
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <Gift className="w-4 h-4 text-purple-500" />
                   Gratuito
                 </div>
               </div>
