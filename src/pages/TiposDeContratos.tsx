@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Building, Users, Gift, Car, Handshake, CreditCard, Key, Scale, GraduationCap, Briefcase, FileX, Truck, Store } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import AdBanner from "@/components/AdBanner";
 
 const TiposDeContratos = () => {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ const TiposDeContratos = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
+        <AdBanner />
         <div className="container mx-auto max-w-6xl px-4 py-8">
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
@@ -124,6 +126,8 @@ const TiposDeContratos = () => {
               Todos seguem as normas legais brasileiras e são atualizados regularmente.
             </p>
           </header>
+
+          <AdBanner />
 
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {contractTypes.map((contract, index) => (
@@ -144,6 +148,8 @@ const TiposDeContratos = () => {
               </Card>
             ))}
           </section>
+
+          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">

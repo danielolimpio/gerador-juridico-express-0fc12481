@@ -5,6 +5,7 @@ import ContractForm from '@/components/ContractForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, FileText } from 'lucide-react';
+import AdBanner from '@/components/AdBanner';
 
 const ContractGenerator: React.FC = () => {
   const { contractId } = useParams<{ contractId: string }>();
@@ -37,10 +38,12 @@ const ContractGenerator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <AdBanner />
       <ContractForm 
         contractType={contractType} 
         onBack={() => navigate('/')} 
       />
+      <AdBanner />
     </div>
   );
 };

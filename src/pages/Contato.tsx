@@ -5,12 +5,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import AdBanner from "@/components/AdBanner";
 
 const Contato = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
+      <AdBanner />
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <div className="mb-6">
           <Button variant="outline" onClick={() => navigate(-1)}>
@@ -28,6 +30,8 @@ const Contato = () => {
             Estamos aqui para ajudar você com seus contratos jurídicos.
           </p>
         </div>
+
+        <AdBanner />
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Formulário de Contato */}
@@ -134,6 +138,8 @@ const Contato = () => {
             </Card>
           </div>
         </div>
+
+        <AdBanner />
       </div>
     </div>
   );

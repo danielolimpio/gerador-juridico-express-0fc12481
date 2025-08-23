@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
 import SEO from "@/components/SEO";
+import AdBanner from "@/components/AdBanner";
 
 const Index = () => {
   const structuredData = {
@@ -28,9 +29,12 @@ const Index = () => {
       />
       <main className="min-h-screen">
         <HeroSection />
+        <AdBanner />
         <ContractTypesSection />
+        <AdBanner />
         <HowItWorksSection />
         <FeaturesSection />
+        <AdBanner />
         <Footer />
         <FloatingButton />
       </main>

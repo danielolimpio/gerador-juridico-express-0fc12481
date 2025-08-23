@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Download, Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import AdBanner from "@/components/AdBanner";
 
 const ExemplosDeContratos = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const ExemplosDeContratos = () => {
     "name": "Exemplos de Contratos Jurídicos",
     "description": "Exemplos práticos de contratos jurídicos para download gratuito",
     "hasPart": examples.map(example => ({
-      "@type": "CreativeWork",
+      "@type": "WebPage",
       "name": example.title,
       "description": example.description
     }))
@@ -68,6 +69,7 @@ const ExemplosDeContratos = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
+        <AdBanner />
         <div className="container mx-auto max-w-6xl px-4 py-8">
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
@@ -85,6 +87,8 @@ const ExemplosDeContratos = () => {
               Todos os modelos seguem a legislação brasileira atual.
             </p>
           </header>
+
+          <AdBanner />
 
           <section className="grid gap-8">
             {examples.map((example, index) => (
@@ -120,6 +124,8 @@ const ExemplosDeContratos = () => {
               </Card>
             ))}
           </section>
+
+          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center mt-12">
             <h2 className="text-2xl font-bold text-foreground mb-4">
