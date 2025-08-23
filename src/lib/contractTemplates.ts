@@ -18,6 +18,20 @@ const formatDateToBrazilian = (dateString: string): string => {
   return dateString;
 };
 
+// Função para obter a data atual no formato brasileiro
+const getCurrentDateBrazilian = (): string => {
+  const today = new Date();
+  const day = today.getDate().toString().padStart(2, '0');
+  const month = (today.getMonth() + 1).toString().padStart(2, '0');
+  const year = today.getFullYear().toString();
+  return `${day}/${month}/${year}`;
+};
+
+// Função para obter o ano atual
+const getCurrentYear = (): string => {
+  return new Date().getFullYear().toString();
+};
+
 export const generateContractText = (contractId: string, data: ContractData): string => {
   const templates: { [key: string]: (data: ContractData) => string } = {
     'compra-venda': (data) => `
@@ -96,7 +110,7 @@ CLÁUSULA DÉCIMA - DO FORO
 
 E por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor e forma, na presença de duas testemunhas.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.vendedor_nome}
@@ -216,7 +230,7 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem de acordo, firmam o presente contrato em três vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.locador_nome}
@@ -341,7 +355,7 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem acordes, firmam o presente contrato em duas vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.contratante_nome}
@@ -402,7 +416,7 @@ CLÁUSULA SEXTA - DAS OBRIGAÇÕES
 CLÁUSULA SÉTIMA - DO FORO
 7.1. Fica eleito o foro da situação do imóvel.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.locador_nome}
@@ -450,7 +464,7 @@ CLÁUSULA QUINTA - DAS OBRIGAÇÕES
 CLÁUSULA SEXTA - DO FORO
 6.1. Foro da comarca de ${data.foro || 'domicílio do CONTRATANTE'}.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.contratante_nome}
@@ -514,7 +528,7 @@ c) Por impossibilidade de continuação dos negócios.
 CLÁUSULA NONA - DO FORO
 9.1. Foro da comarca de ${data.foro || 'sede do PARCEIRO 1'}.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.parceiro1_nome}
@@ -621,7 +635,7 @@ CLÁUSULA DÉCIMA PRIMEIRA - DO FORO
 
 E por estarem de acordo, firmam o presente contrato em duas vias de igual teor.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.comodante_nome}
@@ -743,7 +757,7 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 
 E por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor, na presença de duas testemunhas.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.credor_nome}
@@ -821,7 +835,7 @@ c) Superveniência de filhos ao doador, se este não os tinha quando fez a doaç
 CLÁUSULA SÉTIMA - DO FORO
 7.1. Fica eleito o foro da comarca de ${data.foro || 'domicílio do DOADOR'}.
 
-${data.local_assinatura || '_________________'}, ${formatDateToBrazilian(String(data.data_assinatura || new Date().toISOString().split('T')[0]))}.
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
 
 _____________________________
 ${data.doador_nome}
