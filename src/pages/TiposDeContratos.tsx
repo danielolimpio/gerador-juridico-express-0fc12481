@@ -108,7 +108,6 @@ const TiposDeContratos = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
-        <AdBanner />
         <div className="container mx-auto max-w-6xl px-4 py-8">
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
