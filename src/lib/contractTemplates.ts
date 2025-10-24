@@ -1526,6 +1526,293 @@ TESTEMUNHAS:
    Nome: ________________________________________
    CPF: __________________________________________
    RG: ___________________________________________
+    `,
+
+    'mandato': (data) => `
+CONTRATO DE MANDATO
+
+Pelo presente instrumento particular de CONTRATO DE MANDATO, as partes abaixo qualificadas têm entre si justo e contratado o que segue, de acordo com as cláusulas e condições adiante estipuladas:
+
+QUALIFICAÇÃO DAS PARTES
+
+OUTORGANTE (MANDANTE): ${data.outorgante_nome}, ${data.outorgante_nacionalidade || 'brasileiro(a)'}, ${data.outorgante_estado_civil}, ${data.outorgante_profissao}, portador(a) do CPF nº ${data.outorgante_cpf} e RG nº ${data.outorgante_rg}, residente e domiciliado(a) na ${data.outorgante_endereco}, nº ${data.outorgante_numero}, Bairro: ${data.outorgante_bairro}, ${data.outorgante_cidade}, ${data.outorgante_estado}, CEP ${data.outorgante_cep}, e-mail: ${data.outorgante_email}, WhatsApp: ${data.outorgante_whatsapp}.
+
+OUTORGADO (MANDATÁRIO): ${data.outorgado_nome}, ${data.outorgado_nacionalidade || 'brasileiro(a)'}, ${data.outorgado_estado_civil}, ${data.outorgado_profissao}, portador(a) do CPF nº ${data.outorgado_cpf} e RG nº ${data.outorgado_rg}, residente e domiciliado(a) na ${data.outorgado_endereco}, nº ${data.outorgado_numero}, Bairro: ${data.outorgado_bairro}, ${data.outorgado_cidade}, ${data.outorgado_estado}, CEP ${data.outorgado_cep}, e-mail: ${data.outorgado_email}, WhatsApp: ${data.outorgado_whatsapp}.
+
+CLÁUSULA PRIMEIRA - DO OBJETO
+1.1. O OUTORGANTE, por meio do presente instrumento, constitui o OUTORGADO como seu bastante procurador e mandatário, conferindo-lhe poderes para que, em seu nome e por sua conta, possa ${data.tipo_mandato === 'Geral' ? 'praticar todos os atos necessários à administração de seus interesses' : 'praticar os atos específicos abaixo descritos'}.
+
+1.2. Finalidade específica: ${data.finalidade_especifica || 'Conforme poderes descritos na cláusula segunda.'}.
+
+CLÁUSULA SEGUNDA - DOS PODERES OUTORGADOS
+2.1. O OUTORGANTE confere ao OUTORGADO os seguintes poderes:
+${data.poderes_descricao}
+
+2.2. Os poderes aqui outorgados são ${data.tipo_mandato === 'Geral' ? 'amplos e gerais' : 'específicos e limitados às finalidades descritas'}, devendo o MANDATÁRIO exercê-los com toda diligência e boa-fé, respeitando os limites estabelecidos neste contrato e na legislação vigente.
+
+CLÁUSULA TERCEIRA - DO PRAZO
+3.1. O presente mandato terá prazo de validade de ${data.prazo_mandato}, contado a partir da data de assinatura deste instrumento.
+
+3.2. O prazo poderá ser prorrogado mediante acordo expresso e por escrito entre as partes, antes do seu vencimento.
+
+CLÁUSULA QUARTA - DA REMUNERAÇÃO
+4.1. O presente mandato é ${data.remuneracao === 'Não (Gratuito)' ? 'GRATUITO, não havendo qualquer pagamento ao MANDATÁRIO pelos serviços prestados' : `ONEROSO, sendo devido ao MANDATÁRIO o valor de R$ ${data.valor_remuneracao || '_____________'} pela execução dos serviços`}.
+
+${data.remuneracao === 'Sim (Oneroso)' ? `4.2. O pagamento da remuneração será realizado conforme acordado entre as partes, sendo devido independentemente do resultado obtido na execução do mandato.
+
+4.3. As despesas necessárias à execução do mandato (custas, taxas, emolumentos, etc.) serão de responsabilidade do MANDANTE, devendo ser ressarcidas ao MANDATÁRIO mediante comprovação.` : ''}
+
+CLÁUSULA QUINTA - DO SUBSTABELECIMENTO
+5.1. ${data.substabelecimento === 'Sim' ? 'O MANDATÁRIO poderá substabelecer os poderes ora conferidos, total ou parcialmente, com ou sem reservas, devendo comunicar previamente o MANDANTE sobre tal substabelecimento.' : 'O MANDATÁRIO NÃO poderá substabelecer os poderes ora conferidos, devendo exercê-los pessoalmente.'}
+
+5.2. Em caso de substabelecimento autorizado, o MANDATÁRIO permanece responsável pelos atos do substabelecido.
+
+CLÁUSULA SEXTA - DA PRESTAÇÃO DE CONTAS
+6.1. ${data.prestacao_contas === 'Sim' ? 'O MANDATÁRIO obriga-se a prestar contas detalhadas de sua gestão ao MANDANTE, sempre que solicitado e, obrigatoriamente, ao término do mandato.' : 'O MANDATÁRIO fica dispensado da obrigação de prestar contas detalhadas, devendo apenas informar sobre os atos praticados quando solicitado.'}
+
+6.2. A prestação de contas deverá conter todos os documentos comprobatórios dos atos praticados e das despesas realizadas.
+
+CLÁUSULA SÉTIMA - DAS OBRIGAÇÕES DO MANDATÁRIO
+7.1. Agir com diligência, probidade e boa-fé na execução do mandato;
+7.2. Seguir rigorosamente as instruções do MANDANTE;
+7.3. Prestar todas as informações solicitadas sobre o andamento dos atos;
+7.4. Não exceder os poderes conferidos;
+7.5. Comunicar imediatamente ao MANDANTE qualquer fato relevante;
+7.6. Devolver todos os documentos ao término do mandato;
+7.7. Manter sigilo absoluto sobre todas as informações e documentos a que tiver acesso.
+
+CLÁUSULA OITAVA - DAS OBRIGAÇÕES DO MANDANTE
+8.1. Fornecer ao MANDATÁRIO todos os documentos e informações necessários;
+8.2. Ressarcir as despesas realizadas pelo MANDATÁRIO;
+8.3. Pagar a remuneração acordada, se houver;
+8.4. Ratificar os atos praticados dentro dos limites do mandato;
+8.5. Cooperar com o MANDATÁRIO na execução das tarefas.
+
+CLÁUSULA NONA - DA REVOGAÇÃO E RENÚNCIA
+9.1. ${data.revogacao === 'Pode revogar a qualquer momento' ? 'O MANDANTE poderá revogar o presente mandato a qualquer tempo, mediante notificação prévia ao MANDATÁRIO, com antecedência mínima de 15 (quinze) dias.' : 'O presente mandato é IRREVOGÁVEL durante todo o prazo estabelecido, salvo por justa causa devidamente comprovada.'}
+
+9.2. O MANDATÁRIO poderá renunciar ao mandato, devendo comunicar o MANDANTE com antecedência mínima de 30 (trinta) dias, sob pena de responder por perdas e danos.
+
+9.3. A revogação ou renúncia não exime as partes das obrigações já assumidas perante terceiros.
+
+CLÁUSULA DÉCIMA - DA RESPONSABILIDADE
+10.1. O MANDATÁRIO responde por dolo ou culpa na execução do mandato.
+
+10.2. O MANDANTE responde pelos atos praticados pelo MANDATÁRIO dentro dos limites dos poderes conferidos.
+
+10.3. O MANDATÁRIO não responde por caso fortuito ou força maior que impossibilitem a execução do mandato.
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA CONFIDENCIALIDADE
+11.1. O MANDATÁRIO obriga-se a manter sigilo absoluto sobre todas as informações, documentos e dados a que tiver acesso em razão deste mandato.
+
+11.2. A obrigação de confidencialidade permanece mesmo após o término do mandato, por prazo indeterminado.
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS DISPOSIÇÕES GERAIS
+12.1. O presente mandato é regido pelas disposições do Código Civil Brasileiro (artigos 653 a 692) e demais legislações aplicáveis.
+
+12.2. Qualquer alteração deste contrato deverá ser feita por escrito e assinada por ambas as partes.
+
+12.3. O presente instrumento é celebrado em caráter irrevogável e irretratável, obrigando as partes e seus sucessores.
+
+CLÁUSULA DÉCIMA TERCEIRA - DO FORO
+13.1. As partes elegem o foro da comarca de ${data.outorgante_cidade}, Estado de ${data.outorgante_estado}, para dirimir quaisquer questões oriundas deste contrato, renunciando a qualquer outro, por mais privilegiado que seja.
+
+E por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas.
+
+${data.local_assinatura || data.outorgante_cidade || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.outorgante_nome}
+OUTORGANTE (MANDANTE)
+CPF: ${data.outorgante_cpf}
+RG: ${data.outorgante_rg}
+
+
+_____________________________________________
+${data.outorgado_nome}
+OUTORGADO (MANDATÁRIO)
+CPF: ${data.outorgado_cpf}
+RG: ${data.outorgado_rg}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+    `,
+
+    'alienacao-fiduciaria': (data) => `
+CONTRATO DE ALIENAÇÃO FIDUCIÁRIA EM GARANTIA
+
+Pelo presente instrumento particular de CONTRATO DE ALIENAÇÃO FIDUCIÁRIA EM GARANTIA, as partes abaixo qualificadas têm entre si justo e contratado o que segue:
+
+QUALIFICAÇÃO DAS PARTES
+
+CREDOR FIDUCIÁRIO: ${data.credor_fiduciario_nome}, ${data.credor_fiduciario_nacionalidade || 'brasileiro(a)'}, inscrito(a) no ${String(data.credor_fiduciario_documento).length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.credor_fiduciario_documento}${data.credor_fiduciario_rg ? `, RG nº ${data.credor_fiduciario_rg}` : ''}, com sede/residência na ${data.credor_fiduciario_endereco}, nº ${data.credor_fiduciario_numero}, Bairro: ${data.credor_fiduciario_bairro}, ${data.credor_fiduciario_cidade}, ${data.credor_fiduciario_estado}, CEP ${data.credor_fiduciario_cep}, e-mail: ${data.credor_fiduciario_email}, WhatsApp: ${data.credor_fiduciario_whatsapp}.
+
+DEVEDOR FIDUCIANTE: ${data.devedor_fiduciante_nome}, ${data.devedor_fiduciante_nacionalidade || 'brasileiro(a)'}, ${data.devedor_fiduciante_estado_civil}, ${data.devedor_fiduciante_profissao}, inscrito(a) no ${String(data.devedor_fiduciante_documento).length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.devedor_fiduciante_documento}${data.devedor_fiduciante_rg ? `, RG nº ${data.devedor_fiduciante_rg}` : ''}, residente e domiciliado(a) na ${data.devedor_fiduciante_endereco}, nº ${data.devedor_fiduciante_numero}, Bairro: ${data.devedor_fiduciante_bairro}, ${data.devedor_fiduciante_cidade}, ${data.devedor_fiduciante_estado}, CEP ${data.devedor_fiduciante_cep}, e-mail: ${data.devedor_fiduciante_email}, WhatsApp: ${data.devedor_fiduciante_whatsapp}.
+
+CLÁUSULA PRIMEIRA - DO OBJETO E FINALIDADE
+1.1. O presente contrato tem por objeto a alienação fiduciária em garantia do seguinte bem:
+
+TIPO DO BEM: ${data.tipo_bem}
+DESCRIÇÃO: ${data.bem_descricao}
+${data.veiculo_placa ? `PLACA: ${data.veiculo_placa}` : ''}
+${data.veiculo_chassi ? `CHASSI: ${data.veiculo_chassi}` : ''}
+${data.veiculo_renavam ? `RENAVAM: ${data.veiculo_renavam}` : ''}
+${data.imovel_matricula ? `MATRÍCULA: ${data.imovel_matricula}` : ''}
+${data.imovel_cartorio ? `CARTÓRIO: ${data.imovel_cartorio}` : ''}
+VALOR DO BEM: R$ ${data.valor_bem}
+
+1.2. A alienação fiduciária é constituída em garantia do financiamento concedido pelo CREDOR FIDUCIÁRIO ao DEVEDOR FIDUCIANTE, conforme condições estabelecidas neste contrato.
+
+1.3. Durante a vigência deste contrato, a propriedade resolúvel e a posse indireta do bem pertencem ao CREDOR FIDUCIÁRIO, permanecendo o DEVEDOR FIDUCIANTE com a posse direta do bem para uso conforme sua destinação.
+
+CLÁUSULA SEGUNDA - DO FINANCIAMENTO
+2.1. O CREDOR FIDUCIÁRIO financia ao DEVEDOR FIDUCIANTE o valor de R$ ${data.valor_financiado}.
+
+2.2. ${data.valor_entrada ? `O DEVEDOR FIDUCIANTE deu como entrada o valor de R$ ${data.valor_entrada}, restando financiar o saldo de R$ ${data.valor_financiado}.` : 'O financiamento corresponde ao valor total do bem.'}
+
+2.3. O valor financiado será pago em ${data.numero_parcelas} parcelas mensais, iguais e consecutivas de R$ ${data.valor_parcela}.
+
+2.4. A primeira parcela vencerá em ${formatDateToBrazilian(String(data.vencimento_primeira_parcela))}, e as demais no mesmo dia dos meses subsequentes.
+
+CLÁUSULA TERCEIRA - DOS ENCARGOS FINANCEIROS
+3.1. Sobre o valor financiado incidirão os seguintes encargos:
+a) Taxa de juros: ${data.taxa_juros}% ao mês;
+b) Custo Efetivo Total (CET): ${data.cet}% ao ano;
+c) IOF e demais tributos conforme legislação vigente.
+
+3.2. Todos os encargos financeiros estão claramente discriminados e foram previamente informados e aceitos pelo DEVEDOR FIDUCIANTE.
+
+3.3. O valor das parcelas já inclui os juros e demais encargos contratados.
+
+CLÁUSULA QUARTA - DO PAGAMENTO
+4.1. Os pagamentos deverão ser efetuados conforme a seguinte forma: ${data.local_pagamento}.
+
+4.2. O pagamento realizado após a data de vencimento sujeitará o DEVEDOR FIDUCIANTE aos encargos moratórios previstos na cláusula quinta.
+
+4.3. O pagamento antecipado de parcelas ou a liquidação antecipada do saldo devedor implicará redução proporcional dos juros contratados.
+
+CLÁUSULA QUINTA - DA MORA E INADIMPLÊNCIA
+5.1. O não pagamento de qualquer parcela na data do vencimento sujeitará o DEVEDOR FIDUCIANTE aos seguintes encargos moratórios:
+a) Multa de ${data.multa_inadimplencia}% sobre o valor da parcela em atraso;
+b) Juros de mora de ${data.mora_diaria}% ao dia;
+c) Correção monetária pelo IPCA;
+d) Honorários advocatícios de 20% sobre o valor total da dívida, em caso de cobrança judicial.
+
+5.2. A mora superior a 30 (trinta) dias autoriza o CREDOR FIDUCIÁRIO a considerar vencidas todas as parcelas vincendas.
+
+CLÁUSULA SEXTA - DAS OBRIGAÇÕES DO DEVEDOR FIDUCIANTE
+6.1. Pagar as parcelas nas datas estipuladas;
+6.2. Manter o bem em perfeito estado de conservação;
+6.3. Não alienar, emprestar, alugar, dar em garantia ou onerar o bem de qualquer forma;
+6.4. ${data.seguro_obrigatorio === 'Sim' ? 'Manter o bem devidamente segurado contra roubo, furto, colisão e outros riscos, indicando o CREDOR FIDUCIÁRIO como beneficiário;' : 'Zelar pela integridade do bem;'}
+6.5. Pagar todos os tributos, taxas, multas e encargos incidentes sobre o bem;
+6.6. Permitir a vistoria do bem sempre que solicitado pelo CREDOR;
+6.7. Comunicar imediatamente ao CREDOR qualquer sinistro ou dano ao bem;
+6.8. Não modificar as características originais do bem sem autorização prévia.
+
+CLÁUSULA SÉTIMA - DAS OBRIGAÇÕES DO CREDOR FIDUCIÁRIO
+7.1. Providenciar o registro da alienação fiduciária junto ao órgão competente;
+7.2. Consolidar a propriedade do bem no momento oportuno, caso haja inadimplemento;
+7.3. Fornecer comprovante de quitação ao final do pagamento integral;
+7.4. Proceder à baixa do gravame após a quitação.
+
+CLÁUSULA OITAVA - DO VENCIMENTO ANTECIPADO
+8.1. ${data.vencimento_antecipado === 'Sim' ? `Constituem causas de vencimento antecipado da dívida:
+a) Inadimplemento de 3 (três) ou mais parcelas consecutivas;
+b) Alienação ou oneração do bem sem autorização do CREDOR;
+c) Deterioração do bem por culpa do DEVEDOR;
+d) Não pagamento de tributos e seguros obrigatórios;
+e) Falência, recuperação judicial ou insolvência do DEVEDOR;
+f) Mudança de endereço sem comunicação ao CREDOR;
+g) Uso do bem para fins ilícitos.
+
+8.2. Ocorrendo qualquer das hipóteses acima, o saldo devedor torna-se imediatamente exigível.` : 'Não há previsão de vencimento antecipado da dívida, salvo nas hipóteses legais.'}
+
+CLÁUSULA NONA - DA CONSOLIDAÇÃO DA PROPRIEDADE
+9.1. Na hipótese de inadimplemento, o CREDOR FIDUCIÁRIO poderá consolidar a propriedade do bem em seu nome conforme ${data.consolidacao_propriedade === 'Conforme Código Civil' ? 'procedimento previsto no Código Civil' : 'procedimento de Busca e Apreensão estabelecido no Decreto-Lei nº 911/69'}.
+
+9.2. ${data.consolidacao_propriedade === 'Busca e Apreensão (DL 911/69)' ? `Comprovada a mora, o CREDOR FIDUCIÁRIO poderá requerer a busca e apreensão do bem, nos termos do Decreto-Lei nº 911/69.
+
+9.3. Apreendido o bem, o DEVEDOR FIDUCIANTE poderá purgá-la mora no prazo de 5 (cinco) dias, pagando a integralidade da dívida pendente, acrescida dos encargos e despesas.
+
+9.4. Não purgada a mora, será consolidada a propriedade do bem em nome do CREDOR FIDUCIÁRIO.` : `Após regular notificação e decorrido o prazo legal, a propriedade do bem será consolidada em nome do CREDOR FIDUCIÁRIO.
+
+9.3. O DEVEDOR FIDUCIANTE será notificado por meio do endereço indicado neste contrato.`}
+
+9.5. Consolidada a propriedade, o CREDOR promoverá a venda do bem, aplicando o produto da venda da seguinte forma:
+a) Pagamento das despesas com busca, apreensão, depósito e venda;
+b) Pagamento do saldo devedor, acrescido de todos os encargos;
+c) Eventual saldo remanescente será devolvido ao DEVEDOR FIDUCIANTE.
+
+CLÁUSULA DÉCIMA - DO SEGURO
+10.1. ${data.seguro_obrigatorio === 'Sim' ? `O DEVEDOR FIDUCIANTE obriga-se a contratar e manter, durante toda a vigência deste contrato, seguro do bem contra roubo, furto, colisão, incêndio e outros riscos.
+
+10.2. O CREDOR FIDUCIÁRIO deverá ser indicado como beneficiário do seguro no limite do saldo devedor.
+
+10.3. Em caso de sinistro, a indenização securitária será utilizada para quitação do saldo devedor.
+
+10.4. O não pagamento do seguro autoriza o CREDOR a contratar o seguro e debitar o valor nas parcelas vincendas.` : 'O DEVEDOR FIDUCIANTE fica responsável por eventuais danos ou perdas do bem, independentemente de contratação de seguro.'}
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA QUITAÇÃO
+11.1. Quitado integralmente o débito, o CREDOR FIDUCIÁRIO fornecerá ao DEVEDOR FIDUCIANTE, no prazo de 30 (trinta) dias:
+a) Carta de quitação do financiamento;
+b) Autorização para baixa do gravame junto ao órgão competente;
+c) Documentos necessários à transferência da propriedade plena.
+
+11.2. Todas as despesas com transferência e baixa do gravame serão de responsabilidade do DEVEDOR FIDUCIANTE.
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS DISPOSIÇÕES GERAIS
+12.1. O presente contrato é regido pelas disposições do Código Civil (artigos 1.361 a 1.368-F), Lei nº 9.514/97, Lei nº 10.931/2004, Decreto-Lei nº 911/69 e demais legislações aplicáveis.
+
+12.2. O DEVEDOR FIDUCIANTE declara ter recebido cópia deste contrato, com todos os termos e condições claramente especificados.
+
+12.3. O DEVEDOR FIDUCIANTE foi informado sobre o Custo Efetivo Total (CET) da operação e teve acesso a todas as informações sobre encargos financeiros.
+
+12.4. Qualquer tolerância não importará em novação ou renúncia de direitos.
+
+CLÁUSULA DÉCIMA TERCEIRA - DO FORO
+13.1. As partes elegem o foro da comarca de ${data.credor_fiduciario_cidade}, Estado de ${data.credor_fiduciario_estado}, para dirimir quaisquer questões oriundas deste contrato, renunciando a qualquer outro, por mais privilegiado que seja.
+
+E por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas.
+
+${data.local_assinatura || data.credor_fiduciario_cidade || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.credor_fiduciario_nome}
+CREDOR FIDUCIÁRIO
+${String(data.credor_fiduciario_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.credor_fiduciario_documento}
+
+
+_____________________________________________
+${data.devedor_fiduciante_nome}
+DEVEDOR FIDUCIANTE
+${String(data.devedor_fiduciante_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.devedor_fiduciante_documento}
+${data.devedor_fiduciante_rg ? `RG: ${data.devedor_fiduciante_rg}` : ''}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
     `
   };
 

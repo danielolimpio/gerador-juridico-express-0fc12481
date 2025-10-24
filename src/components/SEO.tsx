@@ -14,7 +14,7 @@ const SEO: React.FC<SEOProps> = ({
   description, 
   keywords, 
   canonical, 
-  ogImage = "https://modelosdecontratos.com.br/og-image.jpg",
+  ogImage = "/og-image.jpg",
   structuredData 
 }) => {
   const fullTitle = title.includes('Modelos de Contratos') ? title : `${title} | Modelos de Contratos`;
