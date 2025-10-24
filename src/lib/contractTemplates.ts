@@ -1182,74 +1182,350 @@ TESTEMUNHAS:
    Nome: _______________________
     `,
 
-    'doacao': (data) => `
-CONTRATO PÚBLICO DE DOAÇÃO
+    'compra-venda-veiculo': (data) => `
+CONTRATO PARTICULAR DE COMPRA E VENDA DE VEÍCULO AUTOMOTOR
 
-Pelo presente instrumento particular de doação, de um lado como DOADOR, e de outro como DONATÁRIO, as partes qualificadas estabelecem as condições seguintes:
+Pelo presente instrumento particular de contrato de compra e venda de veículo automotor, de um lado como VENDEDOR, e de outro como COMPRADOR, as partes a seguir qualificadas têm entre si justo e acordado celebrar o presente contrato, que se regerá pelas cláusulas e condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
 
-DOADOR: ${data.doador_nome}, ${data.doador_nacionalidade || 'brasileiro(a)'}, ${data.doador_estado_civil}, ${data.doador_profissao || 'profissional'}, portador(a) do CPF nº ${data.doador_cpf} e RG nº ${data.doador_rg || '_____________'}, residente na ${data.doador_endereco}.
+VENDEDOR: ${data.vendedor_nome}, ${data.vendedor_nacionalidade || 'brasileiro(a)'}, ${data.vendedor_estado_civil}, ${data.vendedor_profissao || 'profissional'}, portador(a) do CPF nº ${data.vendedor_cpf} e RG nº ${data.vendedor_rg}, residente e domiciliado(a) na ${data.vendedor_endereco}, nº ${data.vendedor_numero}, Bairro: ${data.vendedor_bairro}, ${data.vendedor_cidade}/${data.vendedor_estado}, CEP: ${data.vendedor_cep}, e-mail: ${data.vendedor_email}, WhatsApp: ${data.vendedor_whatsapp}.
 
-DONATÁRIO: ${data.donatario_nome}, ${data.donatario_nacionalidade || 'brasileiro(a)'}, ${data.donatario_estado_civil}, ${data.donatario_profissao || 'profissional'}, portador(a) do CPF nº ${data.donatario_cpf} e RG nº ${data.donatario_rg || '_____________'}, residente na ${data.donatario_endereco}.
+COMPRADOR: ${data.comprador_nome}, ${data.comprador_nacionalidade || 'brasileiro(a)'}, ${data.comprador_estado_civil}, ${data.comprador_profissao || 'profissional'}, portador(a) do CPF nº ${data.comprador_cpf} e RG nº ${data.comprador_rg}, residente e domiciliado(a) na ${data.comprador_endereco}, nº ${data.comprador_numero}, Bairro: ${data.comprador_bairro}, ${data.comprador_cidade}/${data.comprador_estado}, CEP: ${data.comprador_cep}, e-mail: ${data.comprador_email}, WhatsApp: ${data.comprador_whatsapp}.
 
-CLÁUSULA PRIMEIRA - DA DOAÇÃO
-1.1. O DOADOR, por mera liberalidade e sem qualquer constrangimento, doa ao DONATÁRIO, que aceita, o seguinte bem: ${data.bem_descricao}.
+CLÁUSULA PRIMEIRA - DO OBJETO
+1.1. O VENDEDOR vende ao COMPRADOR, de forma irrevogável e irretratável, com todos os direitos e responsabilidades que lhe são inerentes, o veículo automotor abaixo especificado:
 
-1.2. O bem doado encontra-se livre e desembaraçado de quaisquer ônus, gravames ou impedimentos legais.
+ESPECIFICAÇÕES DO VEÍCULO:
+• Tipo: ${data.veiculo_tipo}
+• Marca/Modelo: ${data.veiculo_marca} ${data.veiculo_modelo}
+• Ano de Fabricação: ${data.veiculo_ano_fabricacao}
+• Ano do Modelo: ${data.veiculo_ano_modelo}
+• Cor: ${data.veiculo_cor}
+• Placa: ${data.veiculo_placa}
+• Chassi: ${data.veiculo_chassi}
+• RENAVAM: ${data.veiculo_renavam}
+• Combustível: ${data.veiculo_combustivel}
+• Quilometragem: ${String(data.veiculo_km).length > 0 ? data.veiculo_km : '0'} km
 
-1.3. Valor estimado do bem doado: R$ ${data.valor_estimado || 'valor a definir'}.
+1.2. O veículo objeto deste contrato encontra-se em perfeitas condições de uso e funcionamento, no estado em que se encontra (no estado), livre e desembaraçado de quaisquer ônus, gravames, penhoras, alienações fiduciárias, restrições judiciais ou administrativas, ou outros direitos de terceiros.
 
-CLÁUSULA SEGUNDA - DA ACEITAÇÃO
-2.1. O DONATÁRIO aceita expressamente a presente doação em todos os seus termos e condições.
+1.3. ${data.observacoes && String(data.observacoes).length > 0 ? `Observações adicionais: ${data.observacoes}` : 'Não há observações adicionais sobre o veículo.'}
 
-2.2. A aceitação é pura e simples, sem quaisquer restrições ou condições.
+CLÁUSULA SEGUNDA - DO PREÇO E FORMA DE PAGAMENTO
+2.1. O preço total e definitivo da venda é de R$ ${data.valor_venda} (${data.valor_extenso || 'valor por extenso'}), que será pago pelo COMPRADOR da seguinte forma: ${data.forma_pagamento}.
 
-${data.tipo_doacao === 'Condicional' ? `
-CLÁUSULA TERCEIRA - DAS CONDIÇÕES
-3.1. A presente doação está sujeita às seguintes condições: ${data.condicoes_doacao}.
+2.2. O preço foi livremente estipulado e aceito pelas partes, considerando as condições atuais do veículo, do mercado e as características específicas do bem.
 
-3.2. O descumprimento das condições ensejará a revogação da doação por ingratidão.` : ''}
+2.3. Caso haja parcelas a vencer, estas deverão ser pagas nas datas estipuladas, incidindo sobre o valor em atraso correção monetária pelo IPCA, juros de mora de 1% (um por cento) ao mês e multa moratória de 2% (dois por cento).
+
+CLÁUSULA TERCEIRA - DA SITUAÇÃO FISCAL E DOCUMENTAL DO VEÍCULO
+3.1. O VENDEDOR declara que o veículo possui a seguinte situação fiscal:
+a) IPVA: ${data.ipva_quitado === 'Sim' ? 'QUITADO até o exercício corrente' : 'PENDENTE - O VENDEDOR se responsabiliza pela quitação'};
+b) Multas de Trânsito: ${data.multas_pendentes === 'Não' ? 'NÃO HÁ multas pendentes' : 'EXISTEM multas pendentes que serão quitadas pelo VENDEDOR'};
+c) Licenciamento: Em dia e regular perante o DETRAN.
+
+3.2. O VENDEDOR se compromete a quitar todas as dívidas, multas e encargos incidentes sobre o veículo até a data da transferência, inclusive IPVA, multas de trânsito, taxas de licenciamento e seguro obrigatório (DPVAT).
+
+3.3. Todas as despesas com a transferência de propriedade junto ao DETRAN, incluindo taxas, emolumentos e reconhecimento de firmas, serão de responsabilidade do ${data.responsavel_transferencia || 'COMPRADOR'}.
+
+CLÁUSULA QUARTA - DA TRADIÇÃO E TRANSFERÊNCIA DE PROPRIEDADE
+4.1. A posse e a propriedade do veículo transferem-se ao COMPRADOR no ato da assinatura deste contrato e mediante o pagamento integral ou da primeira parcela, conforme estipulado na cláusula segunda.
+
+4.2. O VENDEDOR se compromete a entregar ao COMPRADOR, no ato da assinatura deste contrato, os seguintes documentos:
+a) Certificado de Registro e Licenciamento do Veículo (CRLV) original e atualizado;
+b) Documento Único de Transferência (DUT) devidamente preenchido e com firma reconhecida;
+c) Comprovante de quitação do IPVA do exercício corrente;
+d) Certificado de Registro de Veículo (CRV) original;
+e) Nota fiscal de compra (se disponível);
+f) Manual e chave reserva do veículo (se disponíveis);
+g) Comprovante de quitação de eventuais multas.
+
+4.3. O COMPRADOR terá o prazo de 30 (trinta) dias, contados da data da assinatura deste contrato, para realizar a transferência da propriedade do veículo junto ao DETRAN, sob pena de responder pelos danos decorrentes da omissão.
+
+CLÁUSULA QUINTA - DAS GARANTIAS E DECLARAÇÕES DO VENDEDOR
+5.1. O VENDEDOR declara e garante que:
+a) É legítimo proprietário do veículo vendido, conforme consta no Certificado de Registro de Veículo;
+b) Tem plenos poderes para realizar esta venda;
+c) O veículo está livre de qualquer ônus, gravame, alienação fiduciária, arrendamento mercantil, reserva de domínio ou impedimento legal;
+d) Não há ações judiciais, procedimentos administrativos ou investigações policiais pendentes que possam afetar o veículo;
+e) O veículo não foi objeto de roubo, furto, sinistro com perda total, adulteração de chassi ou qualquer outra irregularidade;
+f) Todos os dados e informações prestadas sobre o veículo são verdadeiros e completos;
+g) O hodômetro do veículo não foi adulterado e a quilometragem informada corresponde à realidade.
+
+5.2. O VENDEDOR responsabiliza-se pela evicção e responde pelos vícios ocultos nos termos dos artigos 441 a 457 do Código Civil Brasileiro (Lei nº 10.406/2002).
+
+CLÁUSULA SEXTA - DAS OBRIGAÇÕES DO VENDEDOR
+6.1. São obrigações do VENDEDOR:
+a) Entregar o veículo livre, desembaraçado e em perfeito estado de funcionamento;
+b) Transferir todos os documentos necessários para a regularização da propriedade;
+c) Quitar todos os débitos incidentes sobre o veículo até a data da venda;
+d) Prestar todas as informações verdadeiras sobre o histórico e condições do veículo;
+e) Garantir a posse mansa e pacífica ao COMPRADOR;
+f) Assinar o DUT com firma reconhecida e entregar o CRV original;
+g) Comunicar a venda ao DETRAN através do formulário próprio, nos termos do art. 134 do Código de Trânsito Brasileiro.
+
+CLÁUSULA SÉTIMA - DAS OBRIGAÇÕES DO COMPRADOR
+7.1. São obrigações do COMPRADOR:
+a) Pagar o preço nas condições estabelecidas neste contrato;
+b) Receber o veículo no estado em que se encontra;
+c) Realizar a transferência de propriedade junto ao DETRAN no prazo de 30 dias;
+d) Arcar com todas as despesas, tributos e encargos posteriores à data da venda;
+e) Assumir a responsabilidade civil e criminal por infrações de trânsito cometidas após a posse do veículo;
+f) Manter o veículo devidamente licenciado e segurado.
+
+CLÁUSULA OITAVA - DA RESPONSABILIDADE POR INFRAÇÕES DE TRÂNSITO
+8.1. O COMPRADOR assume total responsabilidade por todas as infrações de trânsito, multas, pontuações na CNH e demais penalidades cometidas a partir da data de assinatura deste contrato.
+
+8.2. O VENDEDOR não será responsabilizado por quaisquer infrações, multas ou pontuações decorrentes do uso do veículo pelo COMPRADOR após a assinatura deste instrumento.
+
+8.3. O VENDEDOR se compromete a realizar a Comunicação de Venda ao DETRAN, nos termos do artigo 134 do Código de Trânsito Brasileiro, no prazo máximo de 10 (dez) dias úteis.
+
+CLÁUSULA NONA - DA GARANTIA LEGAL
+9.1. O veículo é vendido no estado em que se encontra, tendo o COMPRADOR pleno conhecimento de suas condições gerais, mecânicas e estéticas.
+
+9.2. Não obstante a venda no estado, o VENDEDOR responde pelos vícios redibitórios ocultos nos termos dos artigos 441 a 446 do Código Civil, pelo prazo decadencial de 30 (trinta) dias para bens móveis.
+
+9.3. Considera-se vício redibitório aquele que torna o veículo impróprio ao uso a que se destina ou lhe diminui consideravelmente o valor, e que não era perceptível no momento da venda.
+
+CLÁUSULA DÉCIMA - DO INADIMPLEMENTO E PENALIDADES
+10.1. O não cumprimento de qualquer obrigação contratual ensejará a aplicação de multa de 10% (dez por cento) sobre o valor do contrato, sem prejuízo das perdas e danos e da possibilidade de rescisão contratual.
+
+10.2. Em caso de mora no pagamento de qualquer parcela, será aplicada multa de 2% (dois por cento) sobre o valor em atraso, juros moratórios de 1% (um por cento) ao mês e correção monetária pelo IPCA.
+
+10.3. O atraso superior a 30 (trinta) dias no pagamento de qualquer parcela facultará ao VENDEDOR considerar rescindido o contrato, com a reintegração imediata da posse do veículo, sem prejuízo da retenção de 20% do valor pago a título de perdas e danos e multa contratual.
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA RESCISÃO
+11.1. O presente contrato poderá ser rescindido nas seguintes hipóteses:
+a) Inadimplemento de qualquer das partes;
+b) Descumprimento de cláusula contratual;
+c) Descoberta de vício oculto insanável;
+d) Falsa declaração ou omissão de informação relevante sobre o veículo;
+e) Existência de ônus, gravame ou restrição não informada pelo VENDEDOR.
+
+11.2. A parte inadimplente ou que der causa à rescisão responderá por perdas e danos causados à parte inocente, incluindo lucros cessantes e danos morais, se houver.
+
+CLÁUSULA DÉCIMA SEGUNDA - DA EVICÇÃO
+12.1. O VENDEDOR garante ao COMPRADOR a legitimidade da venda e a plena propriedade do veículo.
+
+12.2. Na hipótese de evicção, o VENDEDOR responderá pela restituição integral do preço pago, perdas e danos e honorários advocatícios, nos termos dos artigos 447 a 457 do Código Civil.
+
+CLÁUSULA DÉCIMA TERCEIRA - DAS DISPOSIÇÕES GERAIS
+13.1. Este contrato é celebrado em caráter irrevogável e irretratável, obrigando as partes e seus sucessores.
+
+13.2. As partes declaram que não houve erro, dolo, coação, simulação ou fraude na celebração deste contrato.
+
+13.3. Qualquer alteração ou aditamento a este contrato deverá ser feito por escrito e assinado por ambas as partes.
+
+13.4. A tolerância de uma parte quanto ao descumprimento de cláusula contratual pela outra não constituirá novação nem renúncia de direitos.
+
+13.5. Este contrato é regido pelas leis da República Federativa do Brasil, especialmente pelo Código Civil (Lei nº 10.406/2002) e pelo Código de Trânsito Brasileiro (Lei nº 9.503/1997).
+
+CLÁUSULA DÉCIMA QUARTA - DO FORO
+14.1. Fica eleito o foro da comarca de ${data.foro || data.vendedor_cidade || 'domicílio do VENDEDOR'} para dirimir quaisquer controvérsias oriundas deste contrato, com expressa renúncia a qualquer outro, por mais privilegiado que seja.
+
+E por estarem assim justos e contratados, firmam o presente instrumento em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+${data.local_assinatura || data.vendedor_cidade || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.vendedor_nome}
+VENDEDOR
+CPF: ${data.vendedor_cpf}
+RG: ${data.vendedor_rg}
+
+
+_____________________________________________
+${data.comprador_nome}
+COMPRADOR
+CPF: ${data.comprador_cpf}
+RG: ${data.comprador_rg}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+    `,
+
+    'doacao': (data) => `
+CONTRATO PARTICULAR DE DOAÇÃO
+
+Pelo presente instrumento particular de doação, de um lado como DOADOR, e de outro como DONATÁRIO, as partes a seguir qualificadas têm entre si justo e acordado celebrar o presente contrato de doação, que se regerá pelas cláusulas e condições seguintes:
+
+QUALIFICAÇÃO DAS PARTES
+
+DOADOR: ${data.doador_nome}, ${data.doador_nacionalidade || 'brasileiro(a)'}, ${data.doador_estado_civil}, ${data.doador_profissao || 'profissional'}, portador(a) do CPF nº ${data.doador_cpf} e RG nº ${data.doador_rg}, residente e domiciliado(a) na ${data.doador_endereco}, nº ${data.doador_numero}, Bairro: ${data.doador_bairro}, ${data.doador_cidade}/${data.doador_estado}, CEP: ${data.doador_cep}, e-mail: ${data.doador_email}, WhatsApp: ${data.doador_whatsapp}.
+
+DONATÁRIO: ${data.donatario_nome}, ${data.donatario_nacionalidade || 'brasileiro(a)'}, ${data.donatario_estado_civil}, ${data.donatario_profissao || 'profissional'}, portador(a) do CPF nº ${data.donatario_cpf} e RG nº ${data.donatario_rg}, residente e domiciliado(a) na ${data.donatario_endereco}, nº ${data.donatario_numero}, Bairro: ${data.donatario_bairro}, ${data.donatario_cidade}/${data.donatario_estado}, CEP: ${data.donatario_cep}, e-mail: ${data.donatario_email}, WhatsApp: ${data.donatario_whatsapp}.
+
+CLÁUSULA PRIMEIRA - DO OBJETO DA DOAÇÃO
+1.1. O DOADOR, por mera liberalidade e sem qualquer constrangimento, em pleno gozo de suas faculdades mentais e no livre exercício de sua vontade, DOA ao DONATÁRIO, que aceita expressamente, o seguinte bem:
+
+DESCRIÇÃO DO BEM:
+• Tipo: ${data.bem_tipo}
+• Descrição completa: ${data.bem_descricao}
+• Valor estimado: R$ ${data.valor_estimado}
+
+1.2. O bem doado encontra-se livre e desembaraçado de quaisquer ônus, gravames, penhoras, hipotecas, alienações, usufrutos ou impedimentos legais, sendo o DOADOR seu legítimo proprietário.
+
+1.3. Fazem parte integrante da doação todos os acessórios, benfeitorias, frutos e melhoramentos incorporados ao bem principal.
+
+CLÁUSULA SEGUNDA - DA NATUREZA E MODALIDADE DA DOAÇÃO
+2.1. A presente doação é feita de forma ${data.tipo_doacao || 'pura e simples'}, nos termos dos artigos 538 a 564 do Código Civil Brasileiro (Lei nº 10.406/2002).
+
+${data.tipo_doacao === 'Com Encargo' && data.encargos && String(data.encargos).length > 0 ? `
+2.2. A doação está sujeita aos seguintes ENCARGOS que o DONATÁRIO se obriga a cumprir:
+${data.encargos}
+
+2.3. O descumprimento dos encargos estabelecidos ensejará a revogação da doação, nos termos do artigo 555 do Código Civil, devendo o DONATÁRIO restituir o bem doado ou seu valor, sem direito a indenização pelas benfeitorias realizadas.` : ''}
+
+${data.tipo_doacao === 'Condicional' && data.condicoes && String(data.condicoes).length > 0 ? `
+2.4. A presente doação está subordinada às seguintes CONDIÇÕES:
+${data.condicoes}
+
+2.5. O implemento das condições é essencial para a eficácia e validade da doação, sendo que seu descumprimento implicará na automática revogação do ato de liberalidade.` : ''}
+
+CLÁUSULA TERCEIRA - DA ACEITAÇÃO
+3.1. O DONATÁRIO, por este instrumento, aceita expressa, pura e simplesmente a presente doação em todos os seus termos e condições.
+
+3.2. A aceitação pode ser feita pessoalmente pelo DONATÁRIO ou por meio de procurador com poderes especiais.
+
+3.3. Declara o DONATÁRIO estar ciente de todas as cláusulas, condições e encargos estabelecidos neste contrato.
 
 ${data.reserva_usufruto === 'Sim' ? `
 CLÁUSULA QUARTA - DA RESERVA DE USUFRUTO
-4.1. O DOADOR reserva para si e seu cônjuge, se houver, o usufruto vitalício do bem doado.
+4.1. O DOADOR RESERVA para si o USUFRUTO VITALÍCIO do bem doado, nos termos dos artigos 1.390 a 1.411 do Código Civil.
 
-4.2. O usufruto compreende o direito de usar, gozar e perceber os frutos do bem.
+4.2. O usufruto vitalício compreende o direito do DOADOR de usar, gozar, administrar e perceber todos os frutos e rendimentos do bem doado, sem prejuízo de sua substância.
 
-4.3. Com a morte do usufrutuário, consolida-se a propriedade plena em favor do DONATÁRIO.` : ''}
+4.3. O DONATÁRIO, na condição de nu-proprietário, não poderá alienar, onerar ou dispor do bem sem expressa anuência do DOADOR usufrutuário.
 
-CLÁUSULA QUINTA - DAS DISPOSIÇÕES GERAIS
-5.1. Esta doação é feita de forma ${data.tipo_doacao || 'pura e simples'}, ${data.encargos ? `com os seguintes encargos: ${data.encargos}` : 'sem encargos'}.
+4.4. As despesas ordinárias de conservação e os tributos incidentes sobre o bem serão de responsabilidade do DOADOR usufrutuário, nos termos do artigo 1.403 do Código Civil.
 
-5.2. A propriedade e posse do bem transferem-se ao DONATÁRIO na data da assinatura deste contrato.
+4.5. Com o falecimento do DOADOR usufrutuário, consolida-se automaticamente a propriedade plena em favor do DONATÁRIO, extinguindo-se o usufruto.
 
-5.3. Todas as despesas com a transferência correm por conta do ${data.responsavel_despesas || 'DONATÁRIO'}.
+4.6. O usufruto é intransmissível e inalienável, extinguindo-se com a morte do usufrutuário.` : ''}
 
-CLÁUSULA SEXTA - DA REVOGAÇÃO
-6.1. A doação poderá ser revogada por:
-a) Ingratidão do donatário;
-b) Inexecução dos encargos, se houver;
-c) Superveniência de filhos ao doador, se este não os tinha quando fez a doação.
+${data.clausula_reversao === 'Sim' ? `
+CLÁUSULA QUINTA - DA CLÁUSULA DE REVERSÃO
+5.1. Fica estipulada CLÁUSULA DE REVERSÃO, nos termos do artigo 547 do Código Civil, pela qual o bem doado reverterá ao patrimônio do DOADOR caso o DONATÁRIO faleça antes dele.
 
-CLÁUSULA SÉTIMA - DO FORO
-7.1. Fica eleito o foro da comarca de ${data.foro || 'domicílio do DOADOR'}.
+5.2. A reversão opera-se de pleno direito, independentemente de qualquer formalidade ou manifestação de vontade dos herdeiros do DONATÁRIO.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+5.3. Esta cláusula não se estende aos herdeiros ou sucessores do DOADOR, extinguindo-se com sua morte.` : ''}
 
-_____________________________
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'SEXTA' : 'QUARTA'} - DA TRADIÇÃO E TRANSFERÊNCIA
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '6' : '4'}.1. A propriedade ${data.reserva_usufruto === 'Sim' ? '(nua-propriedade)' : ''} do bem transfere-se ao DONATÁRIO na data da assinatura deste contrato, operando-se a tradição de forma ${data.bem_tipo === 'Imóvel' ? 'solene' : 'simbólica'}.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '6' : '4'}.2. ${data.reserva_usufruto === 'Sim' ? 'A posse direta permanece com o DOADOR usufrutuário, transferindo-se ao DONATÁRIO somente a nua-propriedade.' : 'A posse plena e definitiva do bem é transferida ao DONATÁRIO neste ato.'}
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '6' : '4'}.3. Todas as despesas com a transferência de propriedade, registros, emolumentos cartorários e tributos incidentes sobre a doação serão de responsabilidade do ${data.responsavel_despesas || 'DONATÁRIO'}.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'SÉTIMA' : 'QUINTA'} - DAS DECLARAÇÕES E GARANTIAS DO DOADOR
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '7' : '5'}.1. O DOADOR declara e garante que:
+a) É legítimo proprietário e possuidor do bem doado;
+b) Tem plenos poderes para realizar esta doação;
+c) O bem está livre de qualquer ônus, gravame, penhora, hipoteca, alienação fiduciária ou impedimento legal;
+d) Não há ações judiciais, procedimentos administrativos ou disputas pendentes que possam afetar o bem;
+e) Todos os tributos e encargos incidentes sobre o bem estão quitados até a presente data;
+f) Não está em processo de falência, recuperação judicial ou insolvência civil;
+g) A doação não prejudica suas obrigações alimentares ou a legítima de herdeiros necessários.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '7' : '5'}.2. O DOADOR responsabiliza-se pela evicção, nos termos dos artigos 447 a 457 do Código Civil, garantindo ao DONATÁRIO a legitimidade da doação.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'OITAVA' : 'SEXTA'} - DAS OBRIGAÇÕES DO DONATÁRIO
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '8' : '6'}.1. São obrigações do DONATÁRIO:
+a) Aceitar o bem no estado em que se encontra;
+b) Cumprir rigorosamente os encargos e condições estabelecidos neste contrato, se houver;
+c) Arcar com todas as despesas de transferência, registros e tributos incidentes sobre a doação;
+d) ${data.reserva_usufruto === 'Sim' ? 'Respeitar o direito de usufruto do DOADOR;' : 'Zelar pela conservação e boa utilização do bem doado;'}
+e) Promover as transferências e registros necessários junto aos órgãos competentes;
+f) Não alienar, onerar ou dispor do bem em desacordo com as cláusulas deste contrato.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'NONA' : 'SÉTIMA'} - DA REVOGAÇÃO DA DOAÇÃO
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '9' : '7'}.1. A presente doação poderá ser REVOGADA nas seguintes hipóteses previstas nos artigos 555 a 564 do Código Civil:
+a) Por INGRATIDÃO do DONATÁRIO, caso este:
+   - Atente contra a vida do DOADOR ou cometa crime de homicídio doloso contra ele;
+   - Cometa contra o DOADOR ofensa física;
+   - Injurie gravemente ou calunie o DOADOR;
+   - Recuse prestar alimentos ao DOADOR quando este necessitar.
+b) Por INEXECUÇÃO DOS ENCARGOS, caso o DONATÁRIO deixe de cumprir os encargos estabelecidos neste contrato;
+c) Por SUPERVENIÊNCIA DE FILHOS, caso o DOADOR não tivesse filhos ou descendentes quando fez a doação e posteriormente venha a tê-los.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '9' : '7'}.2. A revogação por ingratidão deve ser pleiteada pelo DOADOR no prazo decadencial de 01 (um) ano, contado da data em que o DOADOR teve conhecimento do fato.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '9' : '7'}.3. Revogada a doação, o DONATÁRIO deverá restituir o bem doado ou seu equivalente em dinheiro, descontadas as benfeitorias necessárias, nos termos do artigo 563 do Código Civil.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'DÉCIMA' : 'OITAVA'} - DA IRREVOGABILIDADE POR CONSENSO
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '10' : '8'}.1. Ressalvadas as hipóteses legais de revogação previstas na cláusula anterior, a presente doação é IRREVOGÁVEL e IRRETRATÁVEL, não podendo ser desfeita por arrependimento ou mudança de vontade do DOADOR.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '10' : '8'}.2. O DOADOR declara que pratica este ato de liberalidade de forma livre, consciente e espontânea, sem coação, erro, dolo ou qualquer vício de consentimento.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'DÉCIMA PRIMEIRA' : 'NONA'} - DA COLAÇÃO E LEGÍTIMA DOS HERDEIROS
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '11' : '9'}.1. Caso o DONATÁRIO seja herdeiro necessário do DOADOR (descendente, ascendente ou cônjuge), a presente doação será considerada como ADIANTAMENTO DA LEGÍTIMA, nos termos do artigo 544 do Código Civil.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '11' : '9'}.2. O valor do bem doado deverá ser COLACIONADO ao monte-mor por ocasião da abertura da sucessão do DOADOR, para fins de igualdade entre os herdeiros.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '11' : '9'}.3. O DOADOR declara que a presente doação não excede a parte disponível de seu patrimônio, respeitando a legítima dos herdeiros necessários (artigo 549 do Código Civil).
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'DÉCIMA SEGUNDA' : 'DÉCIMA'} - DOS TRIBUTOS
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '12' : '10'}.1. O DONATÁRIO é responsável pelo recolhimento do Imposto sobre Transmissão Causa Mortis e Doação (ITCMD) incidente sobre a doação, de acordo com a legislação estadual aplicável.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '12' : '10'}.2. Todas as demais despesas, taxas, emolumentos e tributos decorrentes da transferência e registro do bem são de responsabilidade do DONATÁRIO.
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'DÉCIMA TERCEIRA' : 'DÉCIMA PRIMEIRA'} - DAS DISPOSIÇÕES GERAIS
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '13' : '11'}.1. Este contrato é celebrado em caráter irrevogável e irretratável, obrigando as partes, seus herdeiros e sucessores.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '13' : '11'}.2. As partes declaram que não houve erro, dolo, coação, simulação, fraude ou qualquer vício de consentimento na celebração deste contrato.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '13' : '11'}.3. Qualquer alteração, aditamento ou distrato deste contrato deverá ser feito por escrito e assinado por ambas as partes.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '13' : '11'}.4. A tolerância de uma parte quanto ao descumprimento de cláusula contratual pela outra não constituirá novação nem renúncia de direitos.
+
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '13' : '11'}.5. Este contrato é regido pelas leis da República Federativa do Brasil, especialmente pelo Código Civil (Lei nº 10.406/2002).
+
+CLÁUSULA ${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? 'DÉCIMA QUARTA' : 'DÉCIMA SEGUNDA'} - DO FORO
+${data.reserva_usufruto === 'Sim' || data.clausula_reversao === 'Sim' ? '14' : '12'}.1. Fica eleito o foro da comarca de ${data.foro || data.doador_cidade || 'domicílio do DOADOR'} para dirimir quaisquer controvérsias oriundas deste contrato, com expressa renúncia a qualquer outro, por mais privilegiado que seja.
+
+E por estarem assim justos e contratados, firmam o presente instrumento em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+${data.local_assinatura || data.doador_cidade || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
+
+_____________________________________________
 ${data.doador_nome}
 DOADOR
 CPF: ${data.doador_cpf}
+RG: ${data.doador_rg}
 
-_____________________________
+
+_____________________________________________
 ${data.donatario_nome}
 DONATÁRIO
 CPF: ${data.donatario_cpf}
+RG: ${data.donatario_rg}
+
 
 TESTEMUNHAS:
-1. _____________________________       CPF: _____________________
-2. _____________________________       CPF: _____________________
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
     `
   };
 
