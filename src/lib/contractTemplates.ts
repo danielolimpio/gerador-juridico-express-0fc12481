@@ -430,114 +430,427 @@ LOCATÁRIO(A)
     'trabalho-autonomo': (data) => `
 CONTRATO DE TRABALHO AUTÔNOMO
 
-Pelo presente contrato de trabalho autônomo, as partes abaixo qualificadas estabelecem as condições para prestação de serviços profissionais especializados:
+Pelo presente instrumento particular de contrato de trabalho autônomo, as partes abaixo qualificadas, em conformidade com a legislação civil e trabalhista vigente, especialmente os artigos 593 a 609 do Código Civil de 2002, celebram o presente contrato, que se regerá pelas cláusulas e condições seguintes:
 
 QUALIFICAÇÃO DAS PARTES
 
-CONTRATANTE: ${data.contratante_nome}, ${data.contratante_documento_tipo || 'CPF'} nº ${data.contratante_documento}, com endereço na ${data.contratante_endereco}.
+CONTRATANTE: ${data.contratante_nome}, inscrito(a) no ${data.contratante_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.contratante_documento}${data.contratante_rg ? `, RG nº ${data.contratante_rg}` : ''}, com endereço na ${data.contratante_endereco}, nº ${data.contratante_numero}, Bairro: ${data.contratante_bairro}, ${data.contratante_cidade}, ${data.contratante_estado}, CEP ${data.contratante_cep}, e-mail: ${data.contratante_email}, WhatsApp: ${data.contratante_whatsapp}.
 
-PROFISSIONAL AUTÔNOMO: ${data.autonomo_nome}, CPF nº ${data.autonomo_cpf}, ${data.autonomo_profissao}, residente na ${data.autonomo_endereco}.
+PROFISSIONAL AUTÔNOMO: ${data.autonomo_nome}, ${data.autonomo_nacionalidade || 'brasileiro(a)'}, ${data.autonomo_estado_civil || 'estado civil'}, ${data.autonomo_profissao}, portador(a) do CPF nº ${data.autonomo_cpf} e RG nº ${data.autonomo_rg}, residente e domiciliado(a) na ${data.autonomo_endereco}, nº ${data.autonomo_numero}, Bairro: ${data.autonomo_bairro}, ${data.autonomo_cidade}, ${data.autonomo_estado}, CEP ${data.autonomo_cep}, e-mail: ${data.autonomo_email}, WhatsApp: ${data.autonomo_whatsapp}.
 
-CLÁUSULA PRIMEIRA - DOS SERVIÇOS
-1.1. O PROFISSIONAL AUTÔNOMO prestará os seguintes serviços: ${data.servicos_descricao}.
+CLÁUSULA PRIMEIRA - DO OBJETO
+1.1. O PROFISSIONAL AUTÔNOMO se obriga a prestar ao CONTRATANTE, de forma autônoma e sem subordinação hierárquica, os seguintes serviços profissionais: ${data.servicos_descricao}.
 
-1.2. Os serviços serão executados com total autonomia técnica e profissional.
+1.2. Os serviços serão executados com total autonomia técnica, profissional e operacional, cabendo ao PROFISSIONAL AUTÔNOMO determinar os métodos, processos e técnicas de trabalho.
 
-CLÁUSULA SEGUNDA - DO PRAZO
-2.1. Prazo de execução: ${data.prazo_execucao}.
-2.2. Início dos trabalhos: ${data.data_inicio || '___/___/____'}.
+1.3. O PROFISSIONAL AUTÔNOMO declara possuir plena capacidade técnica, conhecimento especializado e experiência profissional necessária para a execução dos serviços contratados.
 
-CLÁUSULA TERCEIRA - DA REMUNERAÇÃO
-3.1. Valor total: R$ ${data.valor_servico} (${data.valor_extenso || 'valor por extenso'}).
-3.2. Forma de pagamento: ${data.forma_pagamento}.
+1.4. Os serviços deverão ser executados com observância das normas técnicas aplicáveis, legislação vigente e melhores práticas profissionais.
 
-CLÁUSULA QUARTA - DA AUTONOMIA
-4.1. Não existe vínculo empregatício entre as partes.
-4.2. O PROFISSIONAL AUTÔNOMO tem liberdade de horário e método de trabalho.
-4.3. Responsabilidade por tributos e encargos é do PROFISSIONAL AUTÔNOMO.
+CLÁUSULA SEGUNDA - DA NATUREZA JURÍDICA DA RELAÇÃO
+2.1. O presente contrato constitui relação jurídica de natureza civil, não gerando qualquer vínculo empregatício entre as partes, nos termos dos artigos 2º e 3º da CLT.
 
-CLÁUSULA QUINTA - DAS OBRIGAÇÕES
-5.1. Executar os serviços com qualidade e pontualidade.
-5.2. Manter sigilo profissional.
-5.3. Utilizar equipamentos próprios ou fornecidos pelo CONTRATANTE.
+2.2. O PROFISSIONAL AUTÔNOMO atuará com total independência e autonomia, inexistindo:
+a) Subordinação hierárquica ou disciplinar;
+b) Habitualidade ou pessoalidade obrigatória;
+c) Horário fixo de trabalho ou controle de jornada;
+d) Exclusividade na prestação de serviços;
+e) Direito a férias, 13º salário ou aviso prévio.
 
-CLÁUSULA SEXTA - DO FORO
-6.1. Foro da comarca de ${data.foro || 'domicílio do CONTRATANTE'}.
+2.3. O PROFISSIONAL AUTÔNOMO poderá prestar serviços a outros contratantes, salvo se houver disposição expressa em contrário neste instrumento.
+
+2.4. O PROFISSIONAL AUTÔNOMO é responsável por todos os encargos tributários, previdenciários, fiscais e trabalhistas decorrentes da execução dos serviços, incluindo INSS, IRPF, ISS e demais tributos aplicáveis.
+
+CLÁUSULA TERCEIRA - DO PRAZO E LOCAL DE EXECUÇÃO
+3.1. Os serviços deverão ser iniciados em ${data.data_inicio ? formatDateToBrazilian(String(data.data_inicio)) : getCurrentDateBrazilian()} e concluídos no prazo de ${data.prazo_execucao}.
+
+3.2. O local de execução dos serviços será: ${data.local_execucao}.
+
+3.3. O PROFISSIONAL AUTÔNOMO poderá executar os serviços remotamente ou presencialmente, conforme a natureza das atividades e acordo entre as partes.
+
+3.4. O prazo poderá ser prorrogado mediante acordo entre as partes, formalizado por escrito através de termo aditivo.
+
+3.5. Prorrogações não alteram a natureza autônoma da relação contratual.
+
+CLÁUSULA QUARTA - DA REMUNERAÇÃO E FORMA DE PAGAMENTO
+4.1. Pela execução dos serviços descritos na Cláusula Primeira, o CONTRATANTE pagará ao PROFISSIONAL AUTÔNOMO o valor total de R$ ${data.valor_servico} (${data.valor_extenso || 'valor por extenso'}).
+
+4.2. A forma de pagamento será: ${data.forma_pagamento}.
+
+4.3. ${data.periodicidade_pagamento ? `Os pagamentos serão realizados ${data.periodicidade_pagamento}.` : 'Os pagamentos serão realizados conforme cronograma acordado entre as partes.'}
+
+4.4. O pagamento será efetuado mediante:
+a) Apresentação de Recibo de Pagamento de Autônomo (RPA) ou Nota Fiscal;
+b) Transferência bancária ou PIX para conta indicada pelo PROFISSIONAL AUTÔNOMO;
+c) Comprovação da execução dos serviços, quando aplicável.
+
+4.5. Do valor dos pagamentos serão retidos na fonte os tributos exigidos pela legislação vigente, especialmente INSS e IRRF.
+
+4.6. O atraso no pagamento superior a 30 (trinta) dias suspende automaticamente a obrigação do PROFISSIONAL AUTÔNOMO de executar os serviços.
+
+4.7. Os valores em atraso serão corrigidos monetariamente pelo IPCA, acrescidos de juros de mora de 1% ao mês e multa moratória de 2%.
+
+${data.reajuste && data.reajuste !== 'Sem reajuste' ? `
+4.8. Os valores serão reajustados anualmente pela variação do ${data.reajuste}, ou índice que vier a substituí-lo, a partir de 12 (doze) meses da data de assinatura deste contrato.` : ''}
+
+CLÁUSULA QUINTA - DOS MATERIAIS E EQUIPAMENTOS
+5.1. ${data.materiais === 'Pelo Autônomo' ? 'O PROFISSIONAL AUTÔNOMO será responsável pelo fornecimento de todos os materiais, ferramentas, equipamentos e insumos necessários à execução dos serviços.' : ''}${data.materiais === 'Pelo Contratante' ? 'O CONTRATANTE fornecerá todos os materiais, ferramentas, equipamentos e insumos necessários à execução dos serviços.' : ''}${data.materiais === 'Compartilhado' ? 'Os materiais, ferramentas, equipamentos e insumos serão fornecidos de forma compartilhada, conforme especificação acordada entre as partes.' : ''}
+
+5.2. Os equipamentos e materiais fornecidos pelo CONTRATANTE permanecerão sob sua propriedade, devendo ser devolvidos ao término do contrato.
+
+5.3. O PROFISSIONAL AUTÔNOMO responsabiliza-se pela guarda e conservação dos materiais que lhe forem confiados.
+
+CLÁUSULA SEXTA - DAS OBRIGAÇÕES DO PROFISSIONAL AUTÔNOMO
+6.1. Executar os serviços com qualidade técnica, profissionalismo, diligência e pontualidade;
+
+6.2. Observar as especificações técnicas, prazos e padrões de qualidade estabelecidos;
+
+6.3. Manter o CONTRATANTE informado sobre o andamento dos trabalhos;
+
+6.4. Comunicar imediatamente qualquer problema, impedimento ou necessidade de alteração no escopo;
+
+6.5. Responder pela qualidade e correção dos serviços executados;
+
+6.6. Manter regularidade fiscal, tributária e previdenciária;
+
+6.7. Fornecer RPA (Recibo de Pagamento de Autônomo) ou Nota Fiscal dos serviços prestados;
+
+6.8. Responsabilizar-se por danos causados ao CONTRATANTE ou a terceiros por negligência, imperícia ou imprudência;
+
+6.9. Observar normas de segurança, higiene e medicina do trabalho aplicáveis;
+
+6.10. Zelar pela imagem, reputação e interesses do CONTRATANTE;
+
+6.11. Não divulgar informações confidenciais obtidas durante a execução dos serviços.
+
+CLÁUSULA SÉTIMA - DAS OBRIGAÇÕES DO CONTRATANTE
+7.1. Pagar a remuneração nas condições estabelecidas;
+
+7.2. Fornecer todas as informações, documentos e dados necessários à execução dos serviços;
+
+7.3. Disponibilizar acesso às instalações, sistemas e recursos necessários, quando aplicável;
+
+7.4. Prestar esclarecimentos e apoio técnico quando solicitado;
+
+7.5. Comunicar eventuais alterações de escopo ou especificações;
+
+7.6. Respeitar a autonomia técnica e profissional do PROFISSIONAL AUTÔNOMO;
+
+7.7. Proporcionar condições adequadas e seguras para execução dos serviços.
+
+${data.confidencialidade === 'Sim' ? `
+CLÁUSULA OITAVA - DA CONFIDENCIALIDADE E SIGILO
+8.1. O PROFISSIONAL AUTÔNOMO se compromete a manter absoluto e total sigilo sobre todas as informações confidenciais, dados, documentos, processos, know-how, segredos industriais ou comerciais do CONTRATANTE aos quais tenha acesso em razão da execução dos serviços.
+
+8.2. Consideram-se informações confidenciais:
+a) Dados financeiros, contábeis e comerciais;
+b) Estratégias de negócio, planos e projetos;
+c) Listas de clientes, fornecedores e parceiros;
+d) Tecnologias, métodos e processos proprietários;
+e) Informações sobre produtos, serviços e precificação;
+f) Qualquer informação não pública relacionada ao CONTRATANTE.
+
+8.3. A obrigação de confidencialidade:
+a) Permanece em vigor durante toda a vigência do contrato;
+b) Perdura por 5 (cinco) anos após o término do contrato;
+c) Sobrevive à rescisão ou término do contrato por qualquer motivo.
+
+8.4. O PROFISSIONAL AUTÔNOMO não poderá:
+a) Divulgar, revelar, comunicar ou transferir informações confidenciais a terceiros;
+b) Utilizar informações confidenciais para benefício próprio ou de terceiros;
+c) Reproduzir, copiar ou reter documentos ou dados confidenciais após o término do contrato.
+
+8.5. Excetuam-se da obrigação de sigilo:
+a) Informações já públicas ou de domínio público;
+b) Informações cuja divulgação seja legalmente exigida;
+c) Informações autorizadas por escrito pelo CONTRATANTE.
+
+8.6. O descumprimento desta cláusula ensejará:
+a) Multa de R$ ${data.multa_confidencialidade || '10.000,00'} (dez mil reais);
+b) Rescisão imediata do contrato;
+c) Indenização por perdas e danos causados;
+d) Responsabilização civil e criminal, nos termos da legislação vigente.` : ''}
+
+CLÁUSULA NONA - DA PROPRIEDADE INTELECTUAL
+9.1. Todos os direitos de propriedade intelectual sobre os resultados, produtos, criações, desenvolvimentos, invenções, obras e trabalhos decorrentes da execução dos serviços pertencem exclusivamente ao CONTRATANTE.
+
+9.2. O PROFISSIONAL AUTÔNOMO cede, de forma definitiva, total, irrevogável e irretratável, todos os direitos autorais, patrimoniais e conexos, em caráter universal, ao CONTRATANTE.
+
+9.3. A cessão abrange:
+a) Direitos de reprodução, distribuição e divulgação;
+b) Direitos de adaptação, modificação e transformação;
+c) Direitos de exploração comercial;
+d) Direitos de uso em qualquer meio ou formato.
+
+9.4. A cessão é válida para todo o território nacional e internacional, pelo prazo máximo previsto na legislação de direitos autorais.
+
+9.5. A remuneração prevista na Cláusula Quarta já contempla a cessão de direitos autorais, não sendo devida qualquer remuneração adicional.
+
+CLÁUSULA DÉCIMA - DAS PENALIDADES
+10.1. O descumprimento de qualquer obrigação contratual ensejará a aplicação de multa compensatória de 20% (vinte por cento) sobre o valor total dos serviços, sem prejuízo do direito à indenização por perdas e danos.
+
+10.2. O atraso injustificado na execução dos serviços implicará multa de 1% (um por cento) sobre o valor total por dia de atraso, limitada a 10% (dez por cento) do valor do contrato.
+
+10.3. A reincidência no atraso ou descumprimento autoriza a rescisão imediata do contrato.
+
+10.4. As multas são independentes e cumulativas com o direito à indenização por perdas e danos efetivamente comprovados.
+
+10.5. A parte que der causa à rescisão contratual responderá pelas multas e perdas e danos causados à parte inocente.
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA RESCISÃO
+11.1. O presente contrato poderá ser rescindido:
+
+a) Por mútuo acordo entre as partes, mediante distrato;
+b) Por inadimplemento de qualquer das partes;
+c) Por impossibilidade superveniente de execução dos serviços;
+d) Por caso fortuito ou força maior;
+e) Por falência, recuperação judicial ou insolvência civil;
+f) Unilateralmente, mediante aviso prévio de 30 (trinta) dias.
+
+11.2. A rescisão por inadimplemento independe de notificação ou interpelação judicial ou extrajudicial, operando-se de pleno direito.
+
+11.3. Em caso de rescisão sem justa causa:
+a) Pelo CONTRATANTE: pagamento integral dos serviços executados até a data da rescisão;
+b) Pelo PROFISSIONAL AUTÔNOMO: devolução de valores recebidos antecipadamente, se houver.
+
+11.4. A rescisão por justa causa, por culpa de qualquer das partes, enseja o pagamento de multa de 30% sobre o valor total dos serviços, além de indenização por perdas e danos.
+
+11.5. Em qualquer hipótese de rescisão:
+a) O PROFISSIONAL AUTÔNOMO deverá entregar todos os trabalhos realizados;
+b) Devolver materiais, equipamentos, documentos e dados do CONTRATANTE;
+c) As obrigações de confidencialidade permanecem em vigor.
+
+CLÁUSULA DÉCIMA SEGUNDA - DA FORÇA MAIOR E CASO FORTUITO
+12.1. Nenhuma das partes será responsabilizada pelo inadimplemento de suas obrigações decorrente de caso fortuito ou força maior, nos termos do artigo 393 do Código Civil.
+
+12.2. Consideram-se eventos de força maior: catástrofes naturais, guerras, revoluções, epidemias, pandemias, atos governamentais que impossibilitem a execução contratual.
+
+12.3. A parte afetada deverá:
+a) Comunicar imediatamente a ocorrência à outra parte;
+b) Comprovar a impossibilidade de execução;
+c) Tomar todas as medidas para minimizar os efeitos.
+
+12.4. Durante o período de força maior, as obrigações ficam suspensas, sem qualquer ônus para as partes.
+
+12.5. Cessada a causa de força maior, os prazos serão automaticamente prorrogados pelo período correspondente à suspensão.
+
+CLÁUSULA DÉCIMA TERCEIRA - DA INEXISTÊNCIA DE VÍNCULO EMPREGATÍCIO
+13.1. Fica expressamente estabelecido que o PROFISSIONAL AUTÔNOMO não mantém qualquer vínculo empregatício com o CONTRATANTE, inexistindo subordinação jurídica, pessoalidade, habitualidade ou onerosidade características da relação de emprego.
+
+13.2. O PROFISSIONAL AUTÔNOMO:
+a) Executa os serviços com autonomia e independência;
+b) Possui liberdade de horário e local de trabalho;
+c) Define seus próprios métodos e processos;
+d) Pode prestar serviços a outros contratantes;
+e) Não está sujeito a controle de jornada ou disciplina empresarial;
+f) É responsável por seus próprios encargos trabalhistas e previdenciários.
+
+13.3. O PROFISSIONAL AUTÔNOMO assume inteira responsabilidade por:
+a) Recolhimento de contribuições previdenciárias (INSS);
+b) Pagamento de tributos (IRPF, ISS, PIS, COFINS);
+c) Seguro de acidentes pessoais, se aplicável;
+d) Quaisquer outros encargos fiscais e tributários.
+
+13.4. O PROFISSIONAL AUTÔNOMO deverá comprovar, quando solicitado, a regularidade de suas contribuições previdenciárias.
+
+13.5. Em caso de eventual reclamação trabalhista movida pelo PROFISSIONAL AUTÔNOMO contra o CONTRATANTE:
+a) Se reconhecido vínculo empregatício, todos os valores pagos a título de serviços autônomos serão compensados;
+b) O PROFISSIONAL AUTÔNOMO indenizará o CONTRATANTE por todas as despesas, custos, honorários e condenações.
+
+CLÁUSULA DÉCIMA QUARTA - DAS DISPOSIÇÕES GERAIS
+14.1. Este contrato representa o acordo integral entre as partes, substituindo todas as negociações, entendimentos e acordos anteriores, escritos ou verbais.
+
+14.2. Qualquer alteração, aditamento ou modificação deste contrato deverá ser formalizada por escrito e assinada por ambas as partes.
+
+14.3. A tolerância ou não exercício, por qualquer das partes, de direitos a ela assegurados neste contrato não implicará em novação, renúncia ou alteração das condições pactuadas.
+
+14.4. Se qualquer disposição deste contrato for considerada inválida, ilegal ou inexequível, as demais cláusulas permanecerão em pleno vigor e efeito.
+
+14.5. Este contrato obriga as partes, seus herdeiros e sucessores a qualquer título.
+
+14.6. As partes declaram que:
+a) Possuem plena capacidade jurídica para celebrar este contrato;
+b) Leram e compreenderam todas as cláusulas;
+c) Aceitam integralmente todos os termos e condições.
+
+14.7. Todas as comunicações entre as partes deverão ser feitas por escrito, preferencialmente por e-mail com confirmação de recebimento, para os endereços constantes na qualificação.
+
+14.8. As partes comprometem-se a comunicar eventuais alterações de endereço, telefone ou e-mail, sob pena de se considerarem válidas as comunicações enviadas aos endereços constantes neste contrato.
+
+CLÁUSULA DÉCIMA QUINTA - DO FORO
+15.1. Fica eleito o foro da comarca de ${data.foro || 'domicílio do CONTRATANTE'} para dirimir quaisquer controvérsias oriundas deste contrato, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+
+E, por estarem assim justos e contratados, firmam o presente instrumento em 2 (duas) vias de igual teor e forma, na presença de 2 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
 
 ${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
 
 _____________________________
 ${data.contratante_nome}
 CONTRATANTE
+${data.contratante_documento.length > 14 ? 'CNPJ' : 'CPF'}: ${data.contratante_documento}
+
 
 _____________________________
 ${data.autonomo_nome}
 PROFISSIONAL AUTÔNOMO
+CPF: ${data.autonomo_cpf}
+
+
+TESTEMUNHAS:
+1. _____________________________       CPF: _____________________
+   Nome: _______________________
+
+2. _____________________________       CPF: _____________________
+   Nome: _______________________
     `,
 
     'parceria-comercial': (data) => `
 CONTRATO DE PARCERIA COMERCIAL
 
-Pelo presente instrumento, as partes estabelecem parceria comercial para desenvolvimento conjunto de atividades empresariais:
+Pelo presente instrumento particular de contrato de parceria comercial, as partes abaixo qualificadas, em conformidade com os princípios da liberdade contratual, boa-fé objetiva e função social do contrato, estabelecem os termos e condições para cooperação empresarial, que se regerá pelas cláusulas seguintes:
 
 QUALIFICAÇÃO DOS PARCEIROS
 
-PARCEIRO 1: ${data.parceiro1_nome}, ${data.parceiro1_documento_tipo || 'CNPJ'} nº ${data.parceiro1_documento}, com sede na ${data.parceiro1_endereco}.
+PARCEIRO 1: ${data.parceiro1_nome}, inscrito(a) no ${data.parceiro1_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro1_documento}${data.parceiro1_rg ? `, RG nº ${data.parceiro1_rg}` : ''}, com sede/endereço na ${data.parceiro1_endereco}, nº ${data.parceiro1_numero}, Bairro: ${data.parceiro1_bairro}, ${data.parceiro1_cidade}, ${data.parceiro1_estado}, CEP ${data.parceiro1_cep}, e-mail: ${data.parceiro1_email}, WhatsApp: ${data.parceiro1_whatsapp}.
 
-PARCEIRO 2: ${data.parceiro2_nome}, ${data.parceiro2_documento_tipo || 'CNPJ'} nº ${data.parceiro2_documento}, com sede na ${data.parceiro2_endereco}.
+PARCEIRO 2: ${data.parceiro2_nome}, inscrito(a) no ${data.parceiro2_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro2_documento}${data.parceiro2_rg ? `, RG nº ${data.parceiro2_rg}` : ''}, com sede/endereço na ${data.parceiro2_endereco}, nº ${data.parceiro2_numero}, Bairro: ${data.parceiro2_bairro}, ${data.parceiro2_cidade}, ${data.parceiro2_estado}, CEP ${data.parceiro2_cep}, e-mail: ${data.parceiro2_email}, WhatsApp: ${data.parceiro2_whatsapp}.
 
-CLÁUSULA PRIMEIRA - DO OBJETO
-1.1. As partes estabelecem parceria para: ${data.objeto_parceria}.
+CLÁUSULA PRIMEIRA - DO OBJETO E FINALIDADE DA PARCERIA
+1.1. As partes estabelecem parceria comercial com o seguinte objeto: ${data.objeto_parceria}.
 
 1.2. A parceria tem por finalidade: ${data.finalidade_parceria}.
 
-CLÁUSULA SEGUNDA - DAS CONTRIBUIÇÕES
+1.3. O objeto da parceria inclui, de forma não exaustiva:
+a) Desenvolvimento conjunto de negócios e oportunidades comerciais;
+b) Compartilhamento de recursos, conhecimentos e expertise;
+c) Criação de sinergias para maximização de resultados;
+d) Cooperação técnica, comercial e operacional;
+e) Prospecção e atendimento conjunto de clientes.
+
+1.4. A parceria não constitui pessoa jurídica distinta, mantendo cada parceiro sua autonomia e independência jurídica.
+
+1.5. ${data.territorio ? `A parceria atuará no seguinte território: ${data.territorio}.` : 'A parceria poderá atuar em todo território nacional.'}
+
+CLÁUSULA SEGUNDA - DAS CONTRIBUIÇÕES DOS PARCEIROS
 2.1. PARCEIRO 1 contribuirá com: ${data.contribuicao_parceiro1}.
+
 2.2. PARCEIRO 2 contribuirá com: ${data.contribuicao_parceiro2}.
 
-CLÁUSULA TERCEIRA - DA DIVISÃO DE RESULTADOS
-3.1. Os resultados serão divididos na proporção de:
-- PARCEIRO 1: ${data.percentual_parceiro1 || '50'}%
-- PARCEIRO 2: ${data.percentual_parceiro2 || '50'}%
+2.3. As contribuições acima especificadas são essenciais e indispensáveis para o sucesso da parceria.
 
-CLÁUSULA QUARTA - DA GESTÃO
-4.1. A gestão da parceria será: ${data.tipo_gestao || 'compartilhada entre os parceiros'}.
+2.4. Cada parceiro se compromete a disponibilizar suas contribuições de forma tempestiva e adequada.
 
-4.2. Decisões estratégicas requerem consenso entre os parceiros.
+${data.investimento_inicial ? `
+2.5. O investimento inicial total estimado para implementação da parceria é de R$ ${data.investimento_inicial}, que será dividido conforme os percentuais de participação estabelecidos neste contrato.` : ''}
 
-CLÁUSULA QUINTA - DO PRAZO
-5.1. Prazo da parceria: ${data.prazo_parceria}.
-5.2. Renovação: ${data.renovacao || 'mediante acordo entre as partes'}.
+2.6. Contribuições adicionais não previstas neste contrato dependerão de aprovação expressa de ambos os parceiros.
 
-CLÁUSULA SEXTA - DA CONFIDENCIALIDADE
-6.1. As partes se comprometem a manter sigilo sobre informações confidenciais.
+2.7. O não cumprimento das obrigações de contribuição constitui inadimplemento contratual passível de rescisão.
 
-6.2. A quebra de confidencialidade ensejará indenização por perdas e danos.
+CLÁUSULA TERCEIRA - DA PARTICIPAÇÃO E DIVISÃO DE RESULTADOS
+3.1. A participação de cada parceiro nos resultados da parceria será:
+- PARCEIRO 1: ${data.percentual_parceiro1}% (${data.percentual_parceiro1_extenso || 'percentual por extenso'})
+- PARCEIRO 2: ${data.percentual_parceiro2}% (${data.percentual_parceiro2_extenso || 'percentual por extenso'})
 
-CLÁUSULA SÉTIMA - DA EXCLUSIVIDADE
-7.1. ${data.exclusividade === 'Sim' ? 'A parceria é exclusiva na área de atuação definida.' : 'A parceria é não exclusiva.'}
+3.2. Consideram-se resultados da parceria:
+a) Lucros, receitas e ganhos de capital;
+b) Propriedade intelectual desenvolvida;
+c) Carteira de clientes conquistados;
+d) Ativos e recursos adquiridos.
 
-CLÁUSULA OITAVA - DA RESCISÃO
-8.1. A parceria poderá ser rescindida:
-a) Por mútuo acordo;
-b) Por inadimplemento de qualquer parceiro;
-c) Por impossibilidade de continuação dos negócios.
+3.3. A divisão de resultados ocorrerá ${data.periodicidade_distribuicao || 'conforme acordo entre os parceiros'}.
 
-8.2. A rescisão imotivada requer aviso prévio de ${data.aviso_previo || '30'} dias.
+3.4. Os resultados apurados serão distribuídos após dedução de:
+a) Custos operacionais da parceria;
+b) Investimentos necessários ao negócio;
+c) Reserva para contingências (mínimo 10%);
+d) Tributos e encargos aplicáveis.
 
-CLÁUSULA NONA - DO FORO
-9.1. Foro da comarca de ${data.foro || 'sede do PARCEIRO 1'}.
+3.5. A distribuição de resultados não poderá comprometer a capacidade operacional da parceria.
 
-${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+3.6. Havendo prejuízos, estes serão divididos na mesma proporção da participação nos resultados.
 
-_____________________________
-${data.parceiro1_nome}
-PARCEIRO 1
+CLÁUSULA QUARTA - DA GESTÃO E ADMINISTRAÇÃO
+4.1. A gestão da parceria será: ${data.tipo_gestao}.
 
-_____________________________
-${data.parceiro2_nome}
-PARCEIRO 2
-    `,
+4.2. Decisões estratégicas que afetam substancialmente a parceria requerem aprovação unânime dos parceiros, incluindo:
+a) Alteração do objeto ou finalidade da parceria;
+b) Admissão de novos parceiros;
+c) Investimentos superiores a R$ ${data.limite_investimento || '10.000,00'};
+d) Contratação de financiamentos ou assunção de dívidas;
+e) Alienação de ativos relevantes;
+f) Alteração dos percentuais de participação;
+g) Rescisão ou suspensão da parceria.
+
+4.3. Decisões operacionais do dia a dia podem ser tomadas individualmente, dentro dos limites estabelecidos.
+
+4.4. Os parceiros se reunirão ${data.periodicidade_reunioes || 'mensalmente'} para:
+a) Avaliar o desempenho da parceria;
+b) Planejar ações futuras;
+c) Deliberar sobre questões pendentes;
+d) Aprovar investimentos e despesas.
+
+4.5. Das reuniões serão lavradas atas, assinadas por todos os presentes.
+
+4.6. Cada parceiro tem direito a voto proporcional à sua participação nos resultados.
+
+4.7. Em caso de empate nas deliberações, prevalecerá a decisão que mantém o status quo, salvo acordo posterior.
+
+CLÁUSULA QUINTA - DOS CUSTOS E DESPESAS OPERACIONAIS
+5.1. Os custos operacionais da parceria serão divididos: ${data.divisao_custos}.
+
+5.2. Consideram-se custos operacionais:
+a) Despesas administrativas e operacionais;
+b) Investimentos em infraestrutura e equipamentos;
+c) Custos com pessoal, quando aplicável;
+d) Despesas com marketing e publicidade;
+e) Tributos, taxas e contribuições;
+f) Seguros e garantias necessárias;
+g) Honorários profissionais (contábeis, jurídicos, técnicos).
+
+5.3. Cada parceiro deverá arcar com suas próprias despesas estruturais (sede, pessoal próprio, etc.), salvo acordo expresso.
+
+5.4. Despesas extraordinárias ou não previstas dependerão de aprovação prévia de ambos os parceiros.
+
+5.5. Os parceiros manterão controles financeiros e contábeis transparentes da parceria.
+
+5.6. Trimestralmente, os parceiros apresentarão relatório de custos e investimentos realizados.
+
+CLÁUSULA SEXTA - DO PRAZO E RENOVAÇÃO
+6.1. O prazo de duração da parceria é de ${data.prazo_parceria}, com início em ${data.data_inicio ? formatDateToBrazilian(String(data.data_inicio)) : getCurrentDateBrazilian()}.
+
+6.2. ${data.renovacao_automatica === 'Sim' ? 'A parceria será automaticamente renovada por iguais períodos, salvo manifestação contrária de qualquer parceiro com antecedência mínima de 90 (noventa) dias.' : 'Ao término do prazo, a parceria será extinta, salvo renovação expressa mediante aditivo contratual.'}
+
+6.3. A renovação da parceria poderá incluir revisão de termos, percentuais e condições.
+
+6.4. Durante o prazo da parceria, nenhum parceiro poderá retirar-se unilateralmente, salvo nas hipóteses de rescisão previstas neste contrato.
+
+CLÁUSULA SÉTIMA - DA EXCLUSIVIDADE${data.exclusividade === 'Sim' ? `
+7.1. A presente parceria é EXCLUSIVA na área de atuação, objeto e território definidos neste contrato.
+
+7.2. Durante a vigência desta parceria, os parceiros se comprometem a:
+a) Não estabelecer parcerias ou negócios similares com terceiros no mesmo ramo;
+b) Não atuar individualmente em atividades que concorram com a parceria;
+c) Encaminhar à parceria todas as oportunidades de negócio relacionadas ao objeto;
+d) Não desviar clientes ou oportunidades da parceria.
+
+7.3. A violação da exclusividade constitui inadimplemento grave, ensejando rescisão e indenização.
+
+7.4. ${data.prazo_exclusividade_pos ? `A obrigação de exclusividade permanecerá por ${data.prazo_exclusividade_pos} após o término do contrato.` : 'A exclusividade cessa automaticamente com o término do contrato.'}` : `
+7.1. A presente parceria é NÃO EXCLUSIVA.
+
+7.2. Os parceiros mantêm liberdade para:
+a) Estabelecer outras parcerias comerciais;
+b) Desenvolver negócios próprios, mesmo em áreas similares;
+c) Atender clientes individualmente.
+
+7.3. Não obstante a não exclusividade:
+a) Os parceiros devem respeitar os compromissos assumidos nesta parceria;
+b) Informações e recursos compartilhados não podem ser usados em outras parcerias sem autorização;
+c) Clientes prospecta...
+
+[Content truncated. Use `lov-view` to read the complete file with different line ranges if needed.]
 
     'comodato': (data) => `
 CONTRATO DE COMODATO (EMPRÉSTIMO GRATUITO)
