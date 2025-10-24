@@ -434,7 +434,7 @@ Pelo presente instrumento particular de contrato de trabalho autônomo, as parte
 
 QUALIFICAÇÃO DAS PARTES
 
-CONTRATANTE: ${data.contratante_nome}, inscrito(a) no ${data.contratante_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.contratante_documento}${data.contratante_rg ? `, RG nº ${data.contratante_rg}` : ''}, com endereço na ${data.contratante_endereco}, nº ${data.contratante_numero}, Bairro: ${data.contratante_bairro}, ${data.contratante_cidade}, ${data.contratante_estado}, CEP ${data.contratante_cep}, e-mail: ${data.contratante_email}, WhatsApp: ${data.contratante_whatsapp}.
+CONTRATANTE: ${data.contratante_nome}, inscrito(a) no ${String(data.contratante_documento).length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.contratante_documento}${data.contratante_rg ? `, RG nº ${data.contratante_rg}` : ''}, com endereço na ${data.contratante_endereco}, nº ${data.contratante_numero}, Bairro: ${data.contratante_bairro}, ${data.contratante_cidade}, ${data.contratante_estado}, CEP ${data.contratante_cep}, e-mail: ${data.contratante_email}, WhatsApp: ${data.contratante_whatsapp}.
 
 PROFISSIONAL AUTÔNOMO: ${data.autonomo_nome}, ${data.autonomo_nacionalidade || 'brasileiro(a)'}, ${data.autonomo_estado_civil || 'estado civil'}, ${data.autonomo_profissao}, portador(a) do CPF nº ${data.autonomo_cpf} e RG nº ${data.autonomo_rg}, residente e domiciliado(a) na ${data.autonomo_endereco}, nº ${data.autonomo_numero}, Bairro: ${data.autonomo_bairro}, ${data.autonomo_cidade}, ${data.autonomo_estado}, CEP ${data.autonomo_cep}, e-mail: ${data.autonomo_email}, WhatsApp: ${data.autonomo_whatsapp}.
 
@@ -688,7 +688,7 @@ ${data.local_assinatura || '_________________'}, ${data.data_assinatura ? format
 _____________________________
 ${data.contratante_nome}
 CONTRATANTE
-${data.contratante_documento.length > 14 ? 'CNPJ' : 'CPF'}: ${data.contratante_documento}
+${String(data.contratante_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.contratante_documento}
 
 
 _____________________________
@@ -712,9 +712,9 @@ Pelo presente instrumento particular de contrato de parceria comercial, as parte
 
 QUALIFICAÇÃO DOS PARCEIROS
 
-PARCEIRO 1: ${data.parceiro1_nome}, inscrito(a) no ${data.parceiro1_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro1_documento}${data.parceiro1_rg ? `, RG nº ${data.parceiro1_rg}` : ''}, com sede/endereço na ${data.parceiro1_endereco}, nº ${data.parceiro1_numero}, Bairro: ${data.parceiro1_bairro}, ${data.parceiro1_cidade}, ${data.parceiro1_estado}, CEP ${data.parceiro1_cep}, e-mail: ${data.parceiro1_email}, WhatsApp: ${data.parceiro1_whatsapp}.
+PARCEIRO 1: ${data.parceiro1_nome}, inscrito(a) no ${String(data.parceiro1_documento).length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro1_documento}${data.parceiro1_rg ? `, RG nº ${data.parceiro1_rg}` : ''}, com sede/endereço na ${data.parceiro1_endereco}, nº ${data.parceiro1_numero}, Bairro: ${data.parceiro1_bairro}, ${data.parceiro1_cidade}, ${data.parceiro1_estado}, CEP ${data.parceiro1_cep}, e-mail: ${data.parceiro1_email}, WhatsApp: ${data.parceiro1_whatsapp}.
 
-PARCEIRO 2: ${data.parceiro2_nome}, inscrito(a) no ${data.parceiro2_documento.length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro2_documento}${data.parceiro2_rg ? `, RG nº ${data.parceiro2_rg}` : ''}, com sede/endereço na ${data.parceiro2_endereco}, nº ${data.parceiro2_numero}, Bairro: ${data.parceiro2_bairro}, ${data.parceiro2_cidade}, ${data.parceiro2_estado}, CEP ${data.parceiro2_cep}, e-mail: ${data.parceiro2_email}, WhatsApp: ${data.parceiro2_whatsapp}.
+PARCEIRO 2: ${data.parceiro2_nome}, inscrito(a) no ${String(data.parceiro2_documento).length > 14 ? 'CNPJ' : 'CPF'} sob o nº ${data.parceiro2_documento}${data.parceiro2_rg ? `, RG nº ${data.parceiro2_rg}` : ''}, com sede/endereço na ${data.parceiro2_endereco}, nº ${data.parceiro2_numero}, Bairro: ${data.parceiro2_bairro}, ${data.parceiro2_cidade}, ${data.parceiro2_estado}, CEP ${data.parceiro2_cep}, e-mail: ${data.parceiro2_email}, WhatsApp: ${data.parceiro2_whatsapp}.
 
 CLÁUSULA PRIMEIRA - DO OBJETO E FINALIDADE DA PARCERIA
 1.1. As partes estabelecem parceria comercial com o seguinte objeto: ${data.objeto_parceria}.
@@ -848,9 +848,96 @@ c) Atender clientes individualmente.
 7.3. Não obstante a não exclusividade:
 a) Os parceiros devem respeitar os compromissos assumidos nesta parceria;
 b) Informações e recursos compartilhados não podem ser usados em outras parcerias sem autorização;
-c) Clientes prospecta...
+c) Clientes prospectados conjuntamente pertencem à parceria.`}
 
-[Content truncated. Use `lov-view` to read the complete file with different line ranges if needed.]
+${data.confidencialidade === 'Sim' ? `
+CLÁUSULA OITAVA - DA CONFIDENCIALIDADE
+8.1. As partes se comprometem a manter absoluto sigilo sobre todas as informações confidenciais trocadas durante a parceria.
+
+8.2. Consideram-se confidenciais: dados comerciais, estratégias, clientes, fornecedores, processos, tecnologias e qualquer informação não pública.
+
+8.3. A obrigação de confidencialidade permanece por 5 (cinco) anos após o término da parceria.
+
+8.4. A violação da confidencialidade ensejará multa de R$ ${data.multa_confidencialidade || '50.000,00'} e indenização por perdas e danos.` : ''}
+
+${data.nao_concorrencia === 'Sim' ? `
+CLÁUSULA NONA - DA NÃO CONCORRÊNCIA
+9.1. Durante a vigência da parceria e por ${data.prazo_nao_concorrencia || '12 meses'} após seu término, os parceiros se obrigam a não:
+a) Atuar direta ou indiretamente em atividades concorrentes;
+b) Solicitar ou aliciar clientes da parceria;
+c) Contratar funcionários ou colaboradores da outra parte;
+d) Divulgar ou usar informações obtidas na parceria.
+
+9.2. A violação desta cláusula ensejará multa de R$ ${data.multa_nao_concorrencia || '100.000,00'}.` : ''}
+
+CLÁUSULA DÉCIMA - DA RESCISÃO
+10.1. A parceria poderá ser rescindida nas seguintes hipóteses:
+a) Por mútuo acordo entre os parceiros;
+b) Por inadimplemento de qualquer obrigação contratual;
+c) Por impossibilidade superveniente de continuação dos negócios;
+d) Por falência, recuperação judicial ou insolvência de qualquer parceiro;
+e) Unilateralmente, mediante aviso prévio de ${data.aviso_previo || '90'} dias.
+
+10.2. A rescisão por inadimplemento independe de notificação, operando-se de pleno direito.
+
+10.3. A parte que der causa à rescisão pagará multa de ${data.multa_rescisao || '30'}% sobre o valor médio mensal movimentado pela parceria nos últimos 6 (seis) meses.
+
+10.4. Em caso de rescisão:
+a) Os resultados até a data da rescisão serão apurados e divididos proporcionalmente;
+b) Cada parceiro manterá direitos sobre clientes por ele originalmente trazidos;
+c) Propriedade intelectual desenvolvida será compartilhada ou dividida conforme contribuição;
+d) Equipamentos e recursos serão devolvidos aos respectivos proprietários.
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA RESOLUÇÃO DE CONFLITOS
+11.1. As controvérsias serão preferencialmente resolvidas por negociação direta entre os parceiros.
+
+11.2. Não sendo possível acordo, as partes poderão submeter a questão à:
+a) Mediação ou conciliação extrajudicial;
+b) Arbitragem, conforme Lei nº 9.307/96;
+c) Poder Judiciário.
+
+11.3. Durante a resolução de conflitos, as partes manterão as operações normais da parceria, salvo impossibilidade manifesta.
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS DISPOSIÇÕES GERAIS
+12.1. Este contrato representa o acordo integral entre as partes sobre a parceria.
+
+12.2. Alterações devem ser formalizadas por escrito e assinadas por ambos os parceiros.
+
+12.3. A invalidade de qualquer cláusula não afeta as demais disposições.
+
+12.4. Este contrato obriga as partes, seus herdeiros e sucessores.
+
+12.5. Todas as comunicações serão feitas por escrito para os endereços constantes na qualificação.
+
+12.6. As partes declaram ter plena capacidade jurídica para celebrar este contrato.
+
+CLÁUSULA DÉCIMA TERCEIRA - DO FORO
+13.1. Fica eleito o foro da comarca de ${data.foro || 'sede do PARCEIRO 1'} para dirimir questões oriundas deste contrato, com renúncia a qualquer outro.
+
+E, por estarem justos e acordados, firmam o presente contrato em 2 (duas) vias de igual teor, na presença de testemunhas.
+
+${data.local_assinatura || '_________________'}, ${data.data_assinatura ? formatDateToBrazilian(String(data.data_assinatura)) : getCurrentDateBrazilian()}.
+
+
+_____________________________
+${data.parceiro1_nome}
+PARCEIRO 1
+${String(data.parceiro1_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.parceiro1_documento}
+
+
+_____________________________
+${data.parceiro2_nome}
+PARCEIRO 2
+${String(data.parceiro2_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.parceiro2_documento}
+
+
+TESTEMUNHAS:
+1. _____________________________       CPF: _____________________
+   Nome: _______________________
+
+2. _____________________________       CPF: _____________________
+   Nome: _______________________
+    `,
 
     'comodato': (data) => `
 CONTRATO DE COMODATO (EMPRÉSTIMO GRATUITO)
