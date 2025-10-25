@@ -115,7 +115,7 @@ const ContractTypesSection = () => {
           <Button 
             variant="google" 
             size="lg"
-            onClick={() => window.location.href = '/exemplos-de-contratos'}
+            onClick={() => window.location.href = '/tipos-de-contratos'}
           >
             Ver Todos os Modelos
           </Button>

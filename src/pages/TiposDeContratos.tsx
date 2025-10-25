@@ -11,76 +11,91 @@ const TiposDeContratos = () => {
 
   const contractTypes = [
     {
+      id: 'compra-venda',
       icon: <Handshake className="w-6 h-6" />,
       title: "Compra e Venda",
       description: "Para transferência de bens como imóveis, veículos e móveis."
     },
     {
+      id: 'locacao-residencial',
       icon: <Building className="w-6 h-6" />,
       title: "Locação Residencial",
       description: "Aluguel de casas, apartamentos e kitinetes."
     },
     {
+      id: 'locacao-comercial',
       icon: <Store className="w-6 h-6" />,
       title: "Locação Comercial",
       description: "Aluguel de imóveis para atividade empresarial."
     },
     {
+      id: 'prestacao-servicos',
       icon: <Briefcase className="w-6 h-6" />,
       title: "Prestação de Serviços",
       description: "Contratação de profissionais autônomos e consultores."
     },
     {
+      id: 'parceria-comercial',
       icon: <Users className="w-6 h-6" />,
       title: "Parceria Empresarial",
       description: "Acordo entre sócios ou empresas para atuação conjunta."
     },
     {
+      id: 'doacao',
       icon: <Gift className="w-6 h-6" />,
       title: "Doação",
       description: "Transferência gratuita de bens entre pessoas."
     },
     {
+      id: 'emprestimo',
       icon: <CreditCard className="w-6 h-6" />,
       title: "Empréstimo",
       description: "Empréstimo de dinheiro entre pessoas físicas."
     },
     {
+      id: 'comodato',
       icon: <Key className="w-6 h-6" />,
       title: "Comodato",
       description: "Empréstimo gratuito de bens como carros e ferramentas."
     },
     {
+      id: 'mandato',
       icon: <Scale className="w-6 h-6" />,
       title: "Mandato",
       description: "Autorização para alguém agir em nome de outra pessoa."
     },
     {
+      id: 'alienacao-fiduciaria',
       icon: <FileText className="w-6 h-6" />,
       title: "Alienação Fiduciária",
       description: "Garantia de pagamento com transferência de propriedade."
     },
     {
+      id: 'estagio',
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Estágio",
       description: "Contrato para estagiários não obrigatórios."
     },
     {
+      id: 'trabalho-autonomo',
       icon: <Briefcase className="w-6 h-6" />,
       title: "Trabalho Autônomo",
       description: "Contratação sem vínculo empregatício."
     },
     {
+      id: 'rescisao',
       icon: <FileX className="w-6 h-6" />,
       title: "Rescisão de Contrato",
       description: "Encerramento mútuo de contratos existentes."
     },
     {
+      id: 'locacao-veiculo',
       icon: <Car className="w-6 h-6" />,
       title: "Locação de Veículo",
       description: "Aluguel de carros, motos e equipamentos."
     },
     {
+      id: 'franquia',
       icon: <Store className="w-6 h-6" />,
       title: "Franquia",
       description: "Modelo básico de contrato de franquia."
@@ -141,9 +156,15 @@ const TiposDeContratos = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-4">
                     {contract.description}
                   </p>
+                  <Button 
+                    className="w-full"
+                    onClick={() => navigate(`/gerador?type=${contract.id}`)}
+                  >
+                    Gerar Contrato
+                  </Button>
                 </CardContent>
               </Card>
             ))}
