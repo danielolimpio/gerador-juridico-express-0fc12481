@@ -1813,6 +1813,614 @@ TESTEMUNHAS:
    Nome: ________________________________________
    CPF: __________________________________________
    RG: ___________________________________________
+    `,
+
+    'estagio': (data) => `
+TERMO DE COMPROMISSO DE ESTÁGIO
+
+Nos termos da Lei nº 11.788, de 25 de setembro de 2008, e demais legislações aplicáveis, celebram o presente TERMO DE COMPROMISSO DE ESTÁGIO:
+
+PARTE CONCEDENTE (EMPRESA):
+${data.empresa_nome}, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº ${data.empresa_cnpj}, com sede na ${data.empresa_endereco}, nº ${data.empresa_numero}, Bairro: ${data.empresa_bairro}, ${data.empresa_cidade}, ${data.empresa_estado}, CEP ${data.empresa_cep}, telefone: ${data.empresa_telefone}, e-mail: ${data.empresa_email}, neste ato representada por seu(sua) ${data.empresa_representante_cargo}, Sr(a). ${data.empresa_representante}, portador(a) do CPF nº ${data.empresa_representante_cpf}, doravante denominada CONCEDENTE.
+
+ESTAGIÁRIO(A):
+${data.estagiario_nome}, ${data.estagiario_nacionalidade}, ${data.estagiario_estado_civil}, nascido(a) em ${formatDateToBrazilian(String(data.estagiario_nascimento))}, portador(a) do CPF nº ${data.estagiario_cpf} e RG nº ${data.estagiario_rg}, residente e domiciliado(a) na ${data.estagiario_endereco}, nº ${data.estagiario_numero}, Bairro: ${data.estagiario_bairro}, ${data.estagiario_cidade}, ${data.estagiario_estado}, CEP ${data.estagiario_cep}, telefone: ${data.estagiario_telefone}, e-mail: ${data.estagiario_email}, regularmente matriculado(a) no curso de ${data.curso_nome}, nível ${data.curso_nivel}, ${data.curso_semestre}, sob matrícula nº ${data.matricula_numero}, doravante denominado(a) ESTAGIÁRIO(A).
+
+INSTITUIÇÃO DE ENSINO:
+${data.instituicao_ensino}${data.instituicao_cnpj ? `, inscrita no CNPJ sob o nº ${data.instituicao_cnpj}` : ''}, estabelecida na ${data.instituicao_endereco}, ${data.instituicao_cidade}, ${data.instituicao_estado}, telefone: ${data.instituicao_telefone}, doravante denominada INSTITUIÇÃO DE ENSINO.
+
+CLÁUSULA PRIMEIRA - DO OBJETO E DA NATUREZA JURÍDICA
+1.1. O presente Termo de Compromisso tem por objeto estabelecer as condições para a realização de estágio ${data.tipo_estagio} do(a) ESTAGIÁRIO(A), em conformidade com a Lei nº 11.788/2008.
+
+1.2. O estágio não cria vínculo empregatício de qualquer natureza, desde que observados todos os requisitos previstos na legislação vigente, especialmente os artigos 3º e 15 da Lei nº 11.788/2008.
+
+1.3. O estágio, como ato educativo escolar supervisionado, visa ao aprendizado de competências próprias da atividade profissional e à contextualização curricular, objetivando o desenvolvimento do educando para a vida cidadã e para o trabalho.
+
+1.4. O estágio integra o itinerário formativo do educando e faz parte do projeto pedagógico do curso.
+
+CLÁUSULA SEGUNDA - DA ÁREA DE ATUAÇÃO E DAS ATIVIDADES
+2.1. O(A) ESTAGIÁRIO(A) desenvolverá suas atividades na área de ${data.area_atuacao}, sob supervisão e orientação.
+
+2.2. As atividades a serem desenvolvidas pelo(a) ESTAGIÁRIO(A) são:
+${data.atividades_descricao}
+
+2.3. Competências e habilidades a serem desenvolvidas durante o estágio:
+${data.competencias_desenvolver}
+
+2.4. As atividades do estágio deverão correlacionar-se com a área de formação do(a) ESTAGIÁRIO(A) e com o conteúdo programático do curso.
+
+2.5. É vedada a realização de atividades que não se correlacionem com a formação acadêmica do(a) ESTAGIÁRIO(A), configurando desvio de função.
+
+2.6. O(A) ESTAGIÁRIO(A) não poderá substituir trabalhadores regulares ou ocupar cargo de direção, gerência ou assessoramento na CONCEDENTE.
+
+CLÁUSULA TERCEIRA - DA SUPERVISÃO E ORIENTAÇÃO
+3.1. Supervisor de Estágio na CONCEDENTE:
+Nome: ${data.supervisor_nome}
+Cargo: ${data.supervisor_cargo}
+Formação: ${data.supervisor_formacao}
+${data.supervisor_crea_crm ? `Registro Profissional: ${data.supervisor_crea_crm}` : ''}
+
+3.2. Orientador de Estágio da INSTITUIÇÃO DE ENSINO:
+Nome: ${data.orientador_nome}
+Formação: ${data.orientador_formacao}
+
+3.3. São atribuições do Supervisor:
+a) Orientar, supervisionar e avaliar o desempenho do(a) ESTAGIÁRIO(A);
+b) Estabelecer cronograma de atividades compatível com o curso;
+c) Transmitir conhecimentos práticos relacionados à área de formação;
+d) Zelar pelo cumprimento deste Termo de Compromisso;
+e) Elaborar relatórios periódicos de avaliação;
+f) Comunicar à INSTITUIÇÃO qualquer irregularidade.
+
+3.4. A CONCEDENTE indicará funcionário de seu quadro de pessoal, com formação ou experiência profissional na área de conhecimento desenvolvida no curso do estagiário, para orientar e supervisionar até 10 (dez) estagiários simultaneamente.
+
+3.5. O Orientador da INSTITUIÇÃO acompanhará o desenvolvimento do estágio e manterá contato periódico com o Supervisor.
+
+CLÁUSULA QUARTA - DA JORNADA DE ATIVIDADES E DO HORÁRIO
+4.1. A jornada de atividades do(a) ESTAGIÁRIO(A) será de:
+• Carga horária diária: ${data.carga_horaria_diaria} horas
+• Carga horária semanal: ${data.carga_horaria_semanal} horas
+• Dias da semana: ${data.dias_semana}
+• Horário: ${data.horario_entrada} às ${data.horario_saida}
+• Intervalo para refeição: ${data.intervalo_almoco} minutos
+
+4.2. A jornada de atividades do estagiário, em qualquer hipótese, não poderá ultrapassar:
+a) 4 (quatro) horas diárias e 20 (vinte) horas semanais, no caso de estudantes de educação especial e dos anos finais do ensino fundamental na modalidade profissional de educação de jovens e adultos;
+b) 6 (seis) horas diárias e 30 (trinta) horas semanais, no caso de estudantes do ensino superior, da educação profissional de nível médio e do ensino médio regular;
+c) 8 (oito) horas diárias e 40 (quarenta) horas semanais, no caso de cursos que alternam teoria e prática, em períodos em que não estejam programadas aulas presenciais, desde que previsto no projeto pedagógico do curso e da instituição de ensino.
+
+4.3. Durante o período de avaliações, a carga horária do estágio será reduzida pelo menos à metade, segundo estipulado no calendário acadêmico, para garantir o bom desempenho do estudante.
+
+4.4. É proibida a realização de horas extras, trabalho noturno (entre 22h e 5h) e em feriados, exceto se expressamente autorizado pela INSTITUIÇÃO DE ENSINO e em conformidade com a natureza do curso.
+
+CLÁUSULA QUINTA - DA VIGÊNCIA E DO PRAZO
+5.1. O presente Termo de Compromisso terá vigência de ${data.duracao_meses} meses, iniciando-se em ${formatDateToBrazilian(String(data.data_inicio))}.
+
+5.2. O prazo máximo de duração do estágio na mesma CONCEDENTE é de 2 (dois) anos, exceto quando se tratar de estagiário portador de deficiência.
+
+5.3. Findo o prazo, o estágio será automaticamente encerrado, salvo se houver prorrogação mediante termo aditivo assinado pelas três partes.
+
+5.4. A prorrogação do estágio dependerá da aprovação do(a) ESTAGIÁRIO(A) no período letivo.
+
+CLÁUSULA SEXTA - DA BOLSA-AUXÍLIO E OUTROS BENEFÍCIOS
+6.1. O(A) ESTAGIÁRIO(A) receberá, a título de bolsa-auxílio, o valor mensal de R$ ${data.valor_bolsa}, ${data.tipo_estagio === 'Não Obrigatório' ? 'conforme determina a Lei nº 11.788/2008, art. 12, § 1º' : 'facultativamente'}.
+
+6.2. O pagamento será realizado até o 5º (quinto) dia útil do mês subsequente ao das atividades, mediante depósito em conta bancária indicada pelo(a) ESTAGIÁRIO(A).
+
+6.3. Além da bolsa-auxílio, a CONCEDENTE concederá:
+a) Auxílio-transporte no valor de R$ ${data.auxilio_transporte} por mês;
+${data.outros_beneficios ? `b) Outros benefícios: ${data.outros_beneficios}` : ''}
+
+6.4. A concessão de benefícios não caracteriza contraprestação trabalhista, mantendo-se a natureza educacional do estágio.
+
+6.5. No caso de estágio obrigatório, a concessão de bolsa-auxílio e auxílio-transporte é facultativa, mas sua ausência deve ser compensada por outros mecanismos de apoio ao estudante.
+
+CLÁUSULA SÉTIMA - DO RECESSO REMUNERADO
+7.1. O(A) ESTAGIÁRIO(A) terá direito a recesso remunerado de ${data.recesso_remunerado} dias, preferencialmente durante suas férias escolares, quando o estágio tiver duração igual ou superior a 1 (um) ano.
+
+7.2. Caso o estágio tenha duração inferior a 1 (um) ano, o recesso será concedido de maneira proporcional, na proporção de 1 (um) dia de descanso para cada mês de duração do estágio.
+
+7.3. O recesso deverá ser gozado preferencialmente durante as férias escolares e será remunerado quando o estagiário receber bolsa-auxílio.
+
+7.4. Os dias de recesso serão previamente acordados entre o(a) ESTAGIÁRIO(A) e o Supervisor, respeitando-se o calendário acadêmico.
+
+7.5. Durante o recesso, a bolsa-auxílio e o auxílio-transporte continuarão sendo pagos normalmente.
+
+CLÁUSULA OITAVA - DO SEGURO CONTRA ACIDENTES PESSOAIS
+8.1. A CONCEDENTE contratará, em favor do(a) ESTAGIÁRIO(A), seguro contra acidentes pessoais, cuja apólice cubra acidentes ocorridos no local do estágio, no trajeto e durante toda a vigência do presente Termo.
+
+8.2. Dados da apólice:
+${data.apolice_numero ? `Número da Apólice: ${data.apolice_numero}` : 'A ser informado posteriormente'}
+${data.seguradora_nome ? `Seguradora: ${data.seguradora_nome}` : 'A ser informado posteriormente'}
+
+8.3. A cobertura mínima do seguro deverá observar os valores de mercado e ser compatível com os riscos inerentes às atividades desenvolvidas.
+
+8.4. Cópia da apólice de seguro será entregue ao(à) ESTAGIÁRIO(A) no início das atividades.
+
+CLÁUSULA NONA - DAS AVALIAÇÕES E RELATÓRIOS
+9.1. O(A) ESTAGIÁRIO(A) será avaliado ${String(data.periodo_avaliacao).toLowerCase()}mente pelo Supervisor, mediante relatório circunstanciado de suas atividades.
+
+9.2. A avaliação abrangerá:
+a) Desempenho técnico nas atividades;
+b) Assiduidade e pontualidade;
+c) Relacionamento interpessoal;
+d) Iniciativa e proatividade;
+e) Comprometimento e responsabilidade;
+f) Desenvolvimento das competências previstas.
+
+9.3. O(A) ESTAGIÁRIO(A) deverá elaborar relatório de atividades ao final do estágio ou nos períodos estabelecidos pela INSTITUIÇÃO DE ENSINO.
+
+9.4. Os relatórios de avaliação serão encaminhados à INSTITUIÇÃO DE ENSINO para análise e acompanhamento.
+
+9.5. A INSTITUIÇÃO DE ENSINO realizará visitas periódicas ao local do estágio ou manterá contato a distância para monitoramento.
+
+CLÁUSULA DÉCIMA - DAS OBRIGAÇÕES DA CONCEDENTE
+10.1. A CONCEDENTE obriga-se a:
+a) Ofertar instalações com condições adequadas de segurança, higiene e salubridade;
+b) Indicar funcionário qualificado para supervisionar e orientar o(a) ESTAGIÁRIO(A);
+c) Fornecer os equipamentos, materiais e recursos necessários para as atividades;
+d) Contratar seguro contra acidentes pessoais em favor do(a) ESTAGIÁRIO(A);
+e) Enviar à INSTITUIÇÃO relatórios periódicos de avaliação;
+f) Pagar a bolsa-auxílio e o auxílio-transporte nos prazos estabelecidos;
+g) Conceder recesso remunerado conforme previsto na legislação;
+h) Manter à disposição da fiscalização documentos que comprovem a relação de estágio;
+i) Por ocasião do desligamento, entregar termo de realização do estágio com indicação resumida das atividades desenvolvidas, dos períodos e da avaliação de desempenho;
+j) Respeitar os direitos do(a) ESTAGIÁRIO(A) previstos na Lei nº 11.788/2008;
+k) Reduzir a carga horária do estágio em pelo menos 50% durante os períodos de avaliação acadêmica.
+
+10.2. A CONCEDENTE não poderá cobrar qualquer valor do(a) ESTAGIÁRIO(A) relacionado ao estágio.
+
+10.3. Fica assegurado ao(à) ESTAGIÁRIO(A) o direito de participar de treinamentos e capacitações oferecidos pela CONCEDENTE.
+
+CLÁUSULA DÉCIMA PRIMEIRA - DAS OBRIGAÇÕES DO(A) ESTAGIÁRIO(A)
+11.1. O(A) ESTAGIÁRIO(A) obriga-se a:
+a) Cumprir a jornada de atividades estabelecida neste Termo;
+b) Executar as atividades com zelo, responsabilidade e comprometimento;
+c) Observar as normas internas da CONCEDENTE;
+d) Manter sigilo sobre informações confidenciais;
+e) Zelar pelos equipamentos e materiais confiados;
+f) Apresentar-se com vestimenta adequada ao ambiente de trabalho;
+g) Respeitar a hierarquia e os colegas de trabalho;
+h) Elaborar relatórios quando solicitado pela INSTITUIÇÃO;
+i) Comunicar imediatamente qualquer afastamento ou impossibilidade de comparecer;
+j) Manter regularidade acadêmica e frequência escolar;
+k) Aplicar no estágio os conhecimentos adquiridos em sala de aula.
+
+11.2. O descumprimento das obrigações poderá ensejar a rescisão do presente Termo.
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS OBRIGAÇÕES DA INSTITUIÇÃO DE ENSINO
+12.1. A INSTITUIÇÃO DE ENSINO obriga-se a:
+a) Avaliar as instalações da CONCEDENTE e sua adequação à formação cultural e profissional do educando;
+b) Indicar professor orientador da área a ser desenvolvida no estágio;
+c) Exigir do educando a apresentação periódica de relatório das atividades;
+d) Zelar pelo cumprimento do Termo de Compromisso;
+e) Elaborar normas complementares e instrumentos de avaliação dos estágios;
+f) Comunicar à CONCEDENTE, no início do período letivo, as datas de realização de avaliações escolares;
+g) Manter um banco de dados com cadastro atualizado de seus estagiários;
+h) Realizar visitas periódicas ou manter contato para acompanhamento do estágio.
+
+12.2. A INSTITUIÇÃO poderá, a qualquer tempo, avaliar a adequação do estágio ao projeto pedagógico do curso.
+
+CLÁUSULA DÉCIMA TERCEIRA - DA CONFIDENCIALIDADE E DO SIGILO
+13.1. O(A) ESTAGIÁRIO(A) compromete-se a manter absoluto sigilo sobre todas as informações, dados, documentos, processos, métodos e demais conhecimentos relacionados às atividades da CONCEDENTE aos quais tiver acesso durante o estágio.
+
+13.2. A obrigação de sigilo prevalece mesmo após o término do estágio, sob pena de responsabilização civil e criminal.
+
+13.3. Configuram informações confidenciais: dados financeiros, estratégias comerciais, informações de clientes, projetos em desenvolvimento, processos internos e quaisquer outras informações não públicas.
+
+13.4. O descumprimento da obrigação de sigilo ensejará a rescisão imediata do estágio, sem prejuízo das medidas legais cabíveis.
+
+CLÁUSULA DÉCIMA QUARTA - DA PROPRIEDADE INTELECTUAL
+14.1. Os direitos patrimoniais de autor relativos a trabalhos, invenções, aperfeiçoamentos ou inovações desenvolvidos pelo(a) ESTAGIÁRIO(A) no âmbito do estágio pertencem à CONCEDENTE, conforme disposto no artigo 88 da Lei nº 9.279/1996 e artigo 4º da Lei nº 10.973/2004.
+
+14.2. Caso haja desenvolvimento de projeto acadêmico que envolva informações da CONCEDENTE, sua divulgação dependerá de prévia e expressa autorização.
+
+14.3. A CONCEDENTE compromete-se a reconhecer a autoria do(a) ESTAGIÁRIO(A) nos trabalhos desenvolvidos.
+
+CLÁUSULA DÉCIMA QUINTA - DA RESCISÃO E DO DESLIGAMENTO
+15.1. O presente Termo poderá ser rescindido a qualquer tempo, por qualquer das partes, mediante comunicação escrita com antecedência mínima de 10 (dez) dias, nas seguintes hipóteses:
+a) Automaticamente, ao término do prazo estabelecido;
+b) Por conclusão ou abandono do curso pelo(a) ESTAGIÁRIO(A);
+c) Por descumprimento de qualquer cláusula deste Termo;
+d) Por solicitação do(a) ESTAGIÁRIO(A), justificada;
+e) Por iniciativa da CONCEDENTE, mediante justificativa;
+f) Por determinação da INSTITUIÇÃO DE ENSINO;
+g) Por não comprovação da regularidade da matrícula;
+h) Por reprovação do(a) ESTAGIÁRIO(A) no período letivo;
+i) Por falta de adequação do estágio ao projeto pedagógico do curso;
+j) Por infração disciplinar grave.
+
+15.2. A rescisão por qualquer das partes não gera direito a indenização ou multa.
+
+15.3. Em caso de desligamento, a CONCEDENTE fornecerá ao(à) ESTAGIÁRIO(A) termo de realização do estágio, indicando:
+a) Dados do estagiário e da CONCEDENTE;
+b) Área e atividades desenvolvidas;
+c) Período de duração do estágio;
+d) Carga horária cumprida;
+e) Avaliação de desempenho.
+
+15.4. A rescisão motivada por falta grave do(a) ESTAGIÁRIO(A) será imediata, sem aviso prévio.
+
+15.5. Os valores proporcionais de bolsa-auxílio, auxílio-transporte e recesso serão pagos até a data do desligamento.
+
+CLÁUSULA DÉCIMA SEXTA - DAS VEDAÇÕES E PENALIDADES
+16.1. É vedado à CONCEDENTE:
+a) Utilizar estagiários para substituir funcionários regulares;
+b) Exigir do estagiário atividades não previstas neste Termo;
+c) Contratar estagiários em número superior a:
+   • 10% dos trabalhadores do estabelecimento (de 5 a 25 empregados);
+   • 20% dos trabalhadores do estabelecimento (acima de 25 empregados);
+d) Receber estagiários sem celebração de termo de compromisso;
+e) Manter estagiários por prazo superior a 2 anos, exceto PCD;
+f) Contratar como estagiário ex-empregado da empresa com menos de 2 anos de desligamento.
+
+16.2. O descumprimento das normas da Lei nº 11.788/2008 pode caracterizar vínculo empregatício.
+
+16.3. A fiscalização do cumprimento da Lei de Estágio é de competência do Ministério do Trabalho.
+
+CLÁUSULA DÉCIMA SÉTIMA - DAS DISPOSIÇÕES GERAIS
+17.1. O presente Termo de Compromisso obedece às disposições da Lei Federal nº 11.788/2008, do Código Civil Brasileiro e demais legislações aplicáveis.
+
+17.2. Qualquer alteração nas condições deste Termo deverá ser formalizada por termo aditivo, assinado pelas três partes.
+
+17.3. As partes declaram que todas as informações prestadas são verdadeiras, sob pena de responsabilização civil e criminal.
+
+17.4. Este Termo é celebrado em caráter irrevogável e irretratável, ressalvadas as hipóteses de rescisão previstas.
+
+17.5. O(A) ESTAGIÁRIO(A) declara estar ciente de todas as cláusulas e condições do presente Termo e manifesta sua concordância livre e espontânea.
+
+17.6. O(A) ESTAGIÁRIO(A) autoriza a CONCEDENTE a utilizar seu nome e imagem em materiais institucionais relacionados ao programa de estágio.
+
+CLÁUSULA DÉCIMA OITAVA - DA PROTEÇÃO DE DADOS PESSOAIS
+18.1. As partes comprometem-se a tratar os dados pessoais em conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados - LGPD).
+
+18.2. Os dados pessoais coletados serão utilizados exclusivamente para fins relacionados ao estágio e à relação estabelecida neste Termo.
+
+18.3. O(A) ESTAGIÁRIO(A) tem direito de acessar, corrigir, excluir ou solicitar a portabilidade de seus dados pessoais.
+
+CLÁUSULA DÉCIMA NONA - DO FORO
+19.1. Fica eleito o foro da comarca de ${data.empresa_cidade}, Estado de ${data.empresa_estado}, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir questões oriundas do presente Termo de Compromisso.
+
+E por estarem assim justas e contratadas, as partes assinam o presente Termo de Compromisso de Estágio em 03 (três) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+${data.empresa_cidade}, ${getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.empresa_nome}
+PARTE CONCEDENTE
+CNPJ: ${data.empresa_cnpj}
+Representante Legal: ${data.empresa_representante}
+
+
+_____________________________________________
+${data.estagiario_nome}
+ESTAGIÁRIO(A)
+CPF: ${data.estagiario_cpf}
+RG: ${data.estagiario_rg}
+
+
+_____________________________________________
+${data.instituicao_ensino}
+INSTITUIÇÃO DE ENSINO
+${data.instituicao_cnpj ? `CNPJ: ${data.instituicao_cnpj}` : ''}
+
+
+_____________________________________________
+${data.supervisor_nome}
+SUPERVISOR DE ESTÁGIO
+${data.supervisor_cargo}
+
+
+_____________________________________________
+${data.orientador_nome}
+ORIENTADOR DE ESTÁGIO
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+    `,
+
+    'rescisao': (data) => `
+TERMO DE RESCISÃO CONTRATUAL (DISTRATO)
+
+Pelo presente instrumento particular de rescisão contratual, também denominado DISTRATO, que entre si celebram, de um lado e de outro lado, as partes a seguir qualificadas:
+
+PARTE 1:
+${data.parte1_nome}, ${data.parte1_nacionalidade || 'brasileiro(a)'}, ${data.parte1_estado_civil || '___________'}, ${data.parte1_profissao || 'profissional'}, portador(a) do ${String(data.parte1_documento || '').length > 14 ? 'CNPJ' : 'CPF'} nº ${data.parte1_documento}${data.parte1_rg ? `, RG nº ${data.parte1_rg}` : ''}, residente e domiciliado(a) na ${data.parte1_endereco}, nº ${data.parte1_numero}, Bairro: ${data.parte1_bairro}, ${data.parte1_cidade}, ${data.parte1_estado}, CEP ${data.parte1_cep}, e-mail: ${data.parte1_email}, telefone: ${data.parte1_telefone}, doravante denominada PARTE 1.
+
+PARTE 2:
+${data.parte2_nome}, ${data.parte2_nacionalidade || 'brasileiro(a)'}, ${data.parte2_estado_civil || '___________'}, ${data.parte2_profissao || 'profissional'}, portador(a) do ${String(data.parte2_documento || '').length > 14 ? 'CNPJ' : 'CPF'} nº ${data.parte2_documento}${data.parte2_rg ? `, RG nº ${data.parte2_rg}` : ''}, residente e domiciliado(a) na ${data.parte2_endereco}, nº ${data.parte2_numero}, Bairro: ${data.parte2_bairro}, ${data.parte2_cidade}, ${data.parte2_estado}, CEP ${data.parte2_cep}, e-mail: ${data.parte2_email}, telefone: ${data.parte2_telefone}, doravante denominada PARTE 2.
+
+CONSIDERANDO QUE:
+
+a) As partes celebraram em ${formatDateToBrazilian(String(data.contrato_data_assinatura))}${data.contrato_local_assinatura ? `, na cidade de ${data.contrato_local_assinatura},` : ''} um Contrato de ${data.contrato_original_tipo}, tendo por objeto: ${data.contrato_original_objeto};
+
+b) ${data.contrato_valor_original ? `O contrato original foi celebrado pelo valor de R$ ${data.contrato_valor_original}` : 'O contrato original estabeleceu direitos e obrigações recíprocas entre as partes'}${data.contrato_prazo_original ? `, com prazo de ${data.contrato_prazo_original}` : ''};
+
+c) As partes, por ${String(data.motivo_rescisao).toLowerCase()}, desejam por termo ao referido contrato, encerrando definitivamente a relação jurídica estabelecida;
+
+d) ${data.motivo_detalhado ? `${data.motivo_detalhado};` : 'As circunstâncias atuais justificam e recomendam o encerramento do vínculo contratual;'}
+
+e) Ambas as partes manifestam sua livre e espontânea vontade de rescindir o contrato, sem coação, dolo ou qualquer vício de consentimento;
+
+Resolvem, de comum acordo, celebrar o presente TERMO DE RESCISÃO CONTRATUAL (DISTRATO), mediante as cláusulas e condições a seguir estabelecidas:
+
+CLÁUSULA PRIMEIRA - DO OBJETO E DA RESCISÃO
+1.1. O presente instrumento tem por objeto a rescisão, de forma consensual, irrevogável e irretratável${data.irrevogabilidade === 'Não' ? ' (ressalvadas as condições estabelecidas neste termo)' : ''}, do Contrato de ${data.contrato_original_tipo} celebrado entre as partes em ${formatDateToBrazilian(String(data.contrato_data_assinatura))}.
+
+1.2. A rescisão opera-se por mútuo consentimento, em conformidade com o artigo 472 do Código Civil Brasileiro, que permite às partes, por mútuo dissenso, desfazer o contrato.
+
+1.3. A data de efeito da presente rescisão é ${formatDateToBrazilian(String(data.data_rescisao))}, a partir da qual cessam todos os efeitos do contrato original, ressalvadas as obrigações previstas neste distrato.
+
+1.4. Todos os direitos e obrigações estabelecidos no contrato original ficam extintos a partir da data de efeito da rescisão, exceto aqueles expressamente mantidos neste instrumento.
+
+CLÁUSULA SEGUNDA - DO MOTIVO DA RESCISÃO
+2.1. A rescisão fundamenta-se em: ${data.motivo_rescisao}.
+
+${data.motivo_detalhado ? `2.2. Especificamente, as partes concordam que: ${data.motivo_detalhado}
+
+` : ''}2.${data.motivo_detalhado ? '3' : '2'}. As partes declaram que a decisão de rescindir o contrato foi tomada de forma madura, consciente e voluntária, sem qualquer pressão ou constrangimento.
+
+2.${data.motivo_detalhado ? '4' : '3'}. Ambas as partes reconhecem que a rescisão é a melhor solução para os interesses mútuos e para o encerramento pacífico da relação contratual.
+
+CLÁUSULA TERCEIRA - DAS OBRIGAÇÕES PENDENTES
+${data.obrigacoes_pendentes === 'Sim' ? `3.1. As partes reconhecem que existem as seguintes obrigações pendentes a serem cumpridas:
+${data.obrigacoes_descricao}
+
+3.2. As obrigações acima descritas deverão ser integralmente cumpridas${data.prazo_pagamento ? ` até ${data.prazo_pagamento}` : ' nos prazos acordados entre as partes'}.
+
+3.3. O descumprimento das obrigações pendentes ensejará a aplicação das penalidades previstas na Cláusula Oitava deste instrumento.
+
+3.4. Uma vez cumpridas todas as obrigações pendentes, as partes outorgar-se-ão recíproca e irrevogável quitação.` : `3.1. As partes declaram que não existem obrigações pendentes relacionadas ao contrato original.
+
+3.2. Todas as obrigações contratuais foram integralmente cumpridas até a data da presente rescisão.
+
+3.3. Nada mais há a ser exigido, reclamado ou questionado entre as partes relativamente ao contrato rescindido.`}
+
+CLÁUSULA QUARTA - DO ACERTO FINANCEIRO
+${data.valores_acertar === 'Sim' ? `4.1. Para fins de acerto final, as partes estabelecem os seguintes termos financeiros:
+Valor total do acerto: R$ ${data.valor_acerto}
+Responsável pelo pagamento: ${data.responsavel_pagamento}
+Forma de pagamento: ${data.forma_pagamento}
+Prazo para pagamento: ${data.prazo_pagamento}
+
+4.2. O pagamento será efetuado mediante ${data.forma_pagamento === 'À vista' ? 'pagamento único' : 'parcelas conforme estabelecido'}, ${data.prazo_pagamento ? `até ${data.prazo_pagamento}` : 'nos prazos acordados'}.
+
+4.3. O comprovante de pagamento deverá ser enviado à outra parte no prazo de 5 (cinco) dias úteis após cada quitação.
+
+4.4. Sobre os valores em atraso incidirão:
+a) Correção monetária pelo IPCA;
+b) Juros de mora de 1% ao mês;
+c) Multa de 2% sobre o valor devido.
+
+4.5. O pagamento de todos os valores devidos é condição essencial para a plena eficácia desta rescisão.
+
+4.6. Após o pagamento integral, a parte credora fornecerá recibo de quitação plena e total.` : `4.1. As partes declaram que não há valores a serem acertados entre elas.
+
+4.2. Todos os pagamentos devidos pelo contrato original foram integralmente quitados até a presente data.
+
+4.3. Não há saldo devedor ou credor entre as partes relativamente ao contrato rescindido.
+
+4.4. As partes outorgam-se, neste ato, recíproca e plena quitação quanto aos aspectos financeiros do contrato.`}
+
+CLÁUSULA QUINTA - DA DEVOLUÇÃO DE BENS
+${data.devolucao_bens === 'Sim' ? `5.1. Como parte integrante desta rescisão, deverão ser devolvidos os seguintes bens:
+${data.bens_devolvidos}
+
+5.2. A devolução deverá ocorrer no prazo de ${data.prazo_devolucao || '15 (quinze) dias'} contados da data de assinatura deste instrumento.
+
+5.3. Os bens deverão ser devolvidos no mesmo estado em que foram recebidos, considerando-se o desgaste natural decorrente do uso regular.
+
+5.4. Caso os bens apresentem danos além do desgaste natural, a parte responsável indenizará a outra pelo valor correspondente ao prejuízo.
+
+5.5. A devolução será formalizada mediante termo de devolução assinado pelas partes, que atestará a quantidade, qualidade e estado dos bens.
+
+5.6. As despesas com transporte e movimentação dos bens correrão por conta de ${data.custas_despesas === 'Cada parte com as suas' ? 'cada parte quanto aos bens sob sua responsabilidade' : data.custas_despesas === 'Rateio igualitário' ? 'ambas as partes em proporções iguais' : `${data.custas_despesas}`}.
+
+5.7. O não cumprimento da obrigação de devolução no prazo estipulado sujeitará a parte inadimplente às penalidades previstas na Cláusula Oitava.` : `5.1. As partes declaram que não há bens a serem devolvidos em decorrência desta rescisão.
+
+5.2. Todos os bens eventualmente cedidos ou emprestados em razão do contrato original já foram devolvidos anteriormente.
+
+5.3. Nada há a ser restituído entre as partes quanto a bens móveis ou imóveis.`}
+
+CLÁUSULA SEXTA - DA MULTA RESCISÓRIA
+${data.multa_rescisao === 'Sim' ? `6.1. Em razão da rescisão antecipada do contrato original, ${data.responsavel_multa === 'Parte 1' ? 'a PARTE 1' : data.responsavel_multa === 'Parte 2' ? 'a PARTE 2' : data.responsavel_multa === 'Divisão Proporcional' ? 'ambas as partes, em proporções iguais,' : 'as partes,'} ${data.responsavel_multa === 'Dispensada por acordo' ? 'concordam em dispensar o pagamento de qualquer multa rescisória, como forma de facilitar o encerramento amigável da relação contratual' : `pagará${data.responsavel_multa === 'Divisão Proporcional' ? 'ão' : ''} multa no valor de R$ ${data.valor_multa}`}.
+
+${data.responsavel_multa !== 'Dispensada por acordo' ? `6.2. A multa rescisória deverá ser paga ${data.prazo_pagamento ? `até ${data.prazo_pagamento}` : 'juntamente com os demais valores devidos'}.
+
+6.3. O pagamento da multa não exime a parte de cumprir as demais obrigações previstas neste distrato.
+
+6.4. A multa rescisória tem natureza compensatória e não indenizatória, visando compensar a parte pelos transtornos decorrentes do término antecipado.` : ''}` : `6.1. As partes concordam expressamente que não haverá cobrança de multa rescisória.
+
+6.2. A dispensa da multa é concedida mutuamente como forma de viabilizar o encerramento amigável e cordial do contrato.
+
+6.3. Nenhuma das partes poderá, futuramente, pleitear o pagamento de multa relacionada a esta rescisão.`}
+
+CLÁUSULA SÉTIMA - DA CONFIDENCIALIDADE E NÃO CONCORRÊNCIA
+${data.confidencialidade === 'Sim' ? `7.1. A cláusula de confidencialidade estabelecida no contrato original permanece em pleno vigor, mesmo após a presente rescisão.
+
+7.2. As partes continuam obrigadas a manter sigilo absoluto sobre informações confidenciais, dados, processos, métodos e conhecimentos obtidos durante a vigência do contrato.
+
+7.3. A obrigação de confidencialidade perdurará por prazo indeterminado ou pelo prazo estabelecido no contrato original, o que for maior.
+
+7.4. A violação do dever de confidencialidade sujeitará a parte infratora às penalidades contratuais e legais cabíveis, inclusive indenização por perdas e danos.` : data.confidencialidade === 'Não aplicável' ? `7.1. Não havia cláusula de confidencialidade no contrato original, não havendo obrigações neste sentido.` : `7.1. As partes acordam que a cláusula de confidencialidade do contrato original fica automaticamente extinta com esta rescisão.
+
+7.2. A partir desta data, as partes ficam liberadas da obrigação de sigilo, ressalvadas as informações protegidas por lei.`}
+
+${data.nao_concorrencia === 'Sim' ? `7.${data.confidencialidade === 'Não aplicável' ? '2' : '5'}. A cláusula de não concorrência estabelecida no contrato original permanece válida e eficaz pelo prazo nele estabelecido.
+
+7.${data.confidencialidade === 'Não aplicável' ? '3' : '6'}. As partes continuam impedidas de exercer atividades concorrentes nos termos, limites e condições do contrato original.
+
+7.${data.confidencialidade === 'Não aplicável' ? '4' : '7'}. O descumprimento da obrigação de não concorrência ensejará a aplicação das penalidades previstas no contrato original.` : data.nao_concorrencia === 'Não aplicável' ? `7.${data.confidencialidade === 'Não aplicável' ? '2' : '5'}. Não havia cláusula de não concorrência no contrato original.` : `7.${data.confidencialidade === 'Não aplicável' ? '2' : '5'}. As partes acordam que a cláusula de não concorrência fica automaticamente extinta com esta rescisão.
+
+7.${data.confidencialidade === 'Não aplicável' ? '3' : '6'}. A partir desta data, as partes estão livres para exercer quaisquer atividades, sem restrições relacionadas ao contrato rescindido.`}
+
+CLÁUSULA OITAVA - DAS PENALIDADES
+8.1. O descumprimento de qualquer obrigação estabelecida neste Termo de Rescisão sujeitará a parte inadimplente às seguintes penalidades:
+a) Multa de 10% sobre o valor total do contrato original ou R$ 5.000,00 (cinco mil reais), o que for maior;
+b) Juros de mora de 1% ao mês sobre os valores devidos;
+c) Correção monetária pelo IPCA;
+d) Indenização por perdas e danos comprovados;
+e) Honorários advocatícios de 20% sobre o valor da causa, em caso de ação judicial.
+
+8.2. A aplicação das penalidades não exime a parte inadimplente de cumprir a obrigação descumprida.
+
+8.3. As penalidades são cumulativas com as perdas e danos efetivamente comprovados.
+
+8.4. A parte inocente poderá optar por exigir o cumprimento específico da obrigação ou a indenização equivalente, sem prejuízo das penalidades.
+
+CLÁUSULA NONA - DA QUITAÇÃO E LIBERAÇÃO
+${data.quitacao_mutua === 'Sim, quitação plena e total' ? `9.1. As partes, pelo presente instrumento, dão-se recíproca, plena, geral, total e irrevogável quitação quanto a todos os direitos e obrigações decorrentes do contrato ora rescindido, nada mais tendo a reclamar uma da outra, seja a que título for.
+
+9.2. Ficam extintas todas as obrigações, direitos, deveres e responsabilidades oriundas do contrato original, exceto aquelas expressamente mantidas neste distrato.
+
+9.3. As partes renunciam expressamente a quaisquer direitos ou pretensões futuras relacionadas ao contrato rescindido.
+
+9.4. A quitação aqui outorgada abrange todos os eventos ocorridos desde a data de celebração do contrato original até a data desta rescisão.
+
+9.5. As partes declaram que não têm conhecimento de qualquer fato que possa ensejar futuras reclamações relativas ao contrato rescindido.` : `9.1. As partes outorgam-se quitação, ressalvadas as seguintes condições:
+${data.ressalvas_quitacao || 'Conforme especificado nas demais cláusulas deste instrumento.'}
+
+9.2. A quitação plena e total somente será considerada após o integral cumprimento das obrigações previstas neste distrato.
+
+9.3. Enquanto houver obrigações pendentes, as partes mantêm o direito de exigir seu cumprimento.
+
+9.4. As partes poderão retomar discussões sobre o contrato original caso se verifique descumprimento deste termo de rescisão.`}
+
+CLÁUSULA DÉCIMA - DA IRREVOGABILIDADE E IRRETRATABILIDADE
+${data.irrevogabilidade === 'Sim' ? `10.1. O presente Termo de Rescisão é celebrado em caráter irrevogável e irretratável, não podendo ser alterado ou desfeito por vontade unilateral de qualquer das partes.
+
+10.2. Qualquer modificação a este instrumento somente será válida se formalizada por escrito e assinada por ambas as partes.
+
+10.3. A rescisão do contrato original é definitiva, não podendo as partes pretender sua revalidação ou continuidade.
+
+10.4. Este distrato vincula as partes e seus sucessores, a qualquer título.` : `10.1. O presente Termo de Rescisão poderá ser revisto mediante acordo entre as partes, se houver interesse mútuo.
+
+10.2. As partes reservam-se o direito de renegociar os termos desta rescisão, caso circunstâncias supervenientes assim justifiquem.
+
+10.3. A eventual revisão deste instrumento dependerá de acordo escrito assinado por ambas as partes.`}
+
+CLÁUSULA DÉCIMA PRIMEIRA - DAS CUSTAS E DESPESAS
+11.1. As custas, despesas, emolumentos e honorários relacionados a esta rescisão serão suportados da seguinte forma: ${data.custas_despesas}.
+
+11.2. ${data.custas_despesas === 'Cada parte com as suas' ? 'Cada parte arcará com suas próprias despesas, incluindo honorários advocatícios, taxas e emolumentos.' : data.custas_despesas === 'Rateio igualitário' ? 'As despesas serão divididas em partes iguais entre as partes.' : `${data.custas_despesas} será responsável pelo pagamento de todas as custas e despesas.`}
+
+11.3. Eventuais tributos incidentes sobre esta rescisão serão suportados na mesma proporção das custas e despesas.
+
+11.4. Caso seja necessário registrar ou averbar este distrato em cartório, as despesas seguirão a mesma regra de rateio.
+
+CLÁUSULA DÉCIMA SEGUNDA - DA BOA-FÉ E DO COMPORTAMENTO ÉTICO
+12.1. As partes comprometem-se a agir com boa-fé, lealdade, probidade e transparência durante todo o processo de rescisão.
+
+12.2. É vedado às partes praticar atos que possam prejudicar a reputação, imagem ou honra uma da outra.
+
+12.3. Eventuais divergências serão resolvidas de forma dialogada, privilegiando-se a solução amigável.
+
+12.4. As partes comprometem-se a não divulgar informações depreciativas ou caluniosas sobre a outra, sob pena de responsabilização civil.
+
+CLÁUSULA DÉCIMA TERCEIRA - DA SUCESSÃO E CESSÃO
+13.1. Este Termo de Rescisão obriga as partes, seus herdeiros e sucessores, a qualquer título.
+
+13.2. Os direitos e obrigações decorrentes deste distrato não poderão ser cedidos ou transferidos sem anuência prévia e escrita da outra parte.
+
+13.3. A eventual cessão não autorizada será considerada nula de pleno direito.
+
+CLÁUSULA DÉCIMA QUARTA - DA PRESERVAÇÃO DE CLÁUSULAS ESPECÍFICAS
+14.1. Independentemente da rescisão do contrato original, permanecem válidas e eficazes as seguintes cláusulas:
+${data.confidencialidade === 'Sim' ? 'a) Cláusula de Confidencialidade;\n' : ''}${data.nao_concorrencia === 'Sim' ? 'b) Cláusula de Não Concorrência;\n' : ''}c) Cláusula de Resolução de Conflitos;
+d) Cláusula de Eleição de Foro;
+e) Demais cláusulas cuja natureza implique sobrevivência à rescisão.
+
+14.2. As cláusulas preservadas perduram pelos prazos nelas estabelecidos ou por prazo indeterminado, conforme sua natureza.
+
+CLÁUSULA DÉCIMA QUINTA - DAS DECLARAÇÕES FINAIS
+15.1. As partes declaram que:
+a) Têm plena capacidade para celebrar este instrumento;
+b) Não sofrem qualquer coação, dolo ou vício de consentimento;
+c) Compreendem perfeitamente os termos e consequências deste distrato;
+d) Todas as informações prestadas são verdadeiras;
+e) Não há outras obrigações ou condições além das expressamente previstas;
+f) Renunciam a quaisquer discussões judiciais ou extrajudiciais sobre o contrato rescindido${data.quitacao_mutua === 'Sim, quitação plena e total' ? ', dando-se plena quitação' : ', ressalvadas as exceções previstas neste instrumento'}.
+
+15.2. Este distrato representa o acordo integral entre as partes relativamente à rescisão do contrato, substituindo todas as negociações, entendimentos e acordos anteriores.
+
+CLÁUSULA DÉCIMA SEXTA - DA LEGISLAÇÃO APLICÁVEL
+16.1. O presente Termo de Rescisão rege-se pelas disposições do Código Civil Brasileiro (Lei nº 10.406/2002), especialmente pelos artigos 472 a 480, e demais legislações aplicáveis.
+
+16.2. Na interpretação deste instrumento, serão observados os princípios da boa-fé objetiva, da função social dos contratos e do equilíbrio contratual.
+
+CLÁUSULA DÉCIMA SÉTIMA - DA VALIDADE E EFICÁCIA
+17.1. O presente Termo de Rescisão entra em vigor na data de sua assinatura, produzindo efeitos a partir de ${formatDateToBrazilian(String(data.data_rescisao))}.
+
+17.2. A invalidade de qualquer cláusula não prejudicará a validade das demais.
+
+17.3. Este distrato constitui título executivo extrajudicial, nos termos do artigo 784, III, do Código de Processo Civil.
+
+17.4. As partes reconhecem a eficácia plena deste instrumento para todos os fins de direito.
+
+CLÁUSULA DÉCIMA OITAVA - DAS DISPOSIÇÕES GERAIS
+18.1. Qualquer tolerância ou concessão mútua não importará em novação, renúncia de direitos ou alteração das condições estabelecidas.
+
+18.2. Todas as comunicações entre as partes deverão ser feitas por escrito e enviadas para os endereços constantes na qualificação.
+
+18.3. As partes comprometem-se a manter atualizados seus dados cadastrais, comunicando qualquer alteração.
+
+18.4. Este instrumento poderá ser assinado em várias vias ou por meio eletrônico, valendo cada via como original.
+
+18.5. ${data.observacoes_adicionais ? `Observações adicionais: ${data.observacoes_adicionais}` : 'Não há observações adicionais a serem registradas.'}
+
+CLÁUSULA DÉCIMA NONA - DA MEDIAÇÃO E ARBITRAGEM
+19.1. Caso surjam divergências na interpretação ou execução deste Termo de Rescisão, as partes comprometem-se a buscar, primeiramente, solução por meio de mediação ou conciliação.
+
+19.2. Somente após frustradas as tentativas de solução amigável, poderão as partes recorrer ao Poder Judiciário.
+
+19.3. As partes poderão, de comum acordo, submeter eventuais conflitos à arbitragem, nos termos da Lei nº 9.307/1996.
+
+CLÁUSULA VIGÉSIMA - DO FORO
+20.1. As partes elegem o foro da comarca de ${data.parte1_cidade}, Estado de ${data.parte1_estado}, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer questões oriundas do presente Termo de Rescisão.
+
+20.2. A eleição de foro não impede as partes de buscarem solução por meios alternativos de resolução de conflitos.
+
+E por estarem assim justas e contratadas, as partes assinam o presente TERMO DE RESCISÃO CONTRATUAL (DISTRATO) em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+${data.parte1_cidade}, ${getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.parte1_nome}
+PARTE 1
+${String(data.parte1_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.parte1_documento}
+${data.parte1_rg ? `RG: ${data.parte1_rg}` : ''}
+
+
+_____________________________________________
+${data.parte2_nome}
+PARTE 2
+${String(data.parte2_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.parte2_documento}
+${data.parte2_rg ? `RG: ${data.parte2_rg}` : ''}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
     `
   };
 
