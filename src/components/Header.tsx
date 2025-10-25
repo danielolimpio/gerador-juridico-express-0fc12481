@@ -49,7 +49,7 @@ const Header = () => {
             className="flex items-center gap-2 cursor-pointer flex-shrink-0"
             onClick={() => navigate("/")}
           >
-            <img src="/logo.png" alt="Modelos de Contratos" className="h-10 w-auto" />
+            <img src="/logo.png" alt="Modelos de Contratos" className="h-14 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
