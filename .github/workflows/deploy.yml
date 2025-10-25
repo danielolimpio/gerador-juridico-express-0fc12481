@@ -1,19 +1,18 @@
-name: Deploy Lovable/SPA via FTP na Hostinger
+name: Deploy Lovable via FTP na Hostinger
 
 on:
   push:
     branches:
-      - main  # ou 'master' se for o nome da sua branch principal
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Clonar o repositório
         uses: actions/checkout@v3
 
-      - name: Configurar Node.js
+      - name: Configurar Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -24,19 +23,18 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Criar redirecionamento de rotas (SPA)
-        run: |
-          mkdir -p dist
-          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; URL=/"></head><body></body></html>' > dist/404.html
-          # Copia o index.html para servir rotas inexistentes
-          cp dist/index.html dist/404.html || true
+      - name: Mostrar arquivos gerados
+        run: ls -al dist/
 
-      - name: Fazer deploy via FTP
+      - name: Deploy FTP para Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}
-          local-dir: ./dist/
-          dangerous-clean-slate: false
+          server: ${{ secrets.FTP_HOST }}
+          port: 21
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: dist/
+          server-dir: /
+          dangerous-clean-slate: true
+          dry-run: false
+          log-level: verbose
