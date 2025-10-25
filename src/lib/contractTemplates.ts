@@ -2421,6 +2421,899 @@ TESTEMUNHAS:
    Nome: ________________________________________
    CPF: __________________________________________
    RG: ___________________________________________
+    `,
+
+    'franquia': (data) => `
+CONTRATO DE FRANQUIA EMPRESARIAL
+
+Pelo presente instrumento particular de CONTRATO DE FRANQUIA EMPRESARIAL, de um lado, como FRANQUEADOR, e de outro, como FRANQUEADO, as partes a seguir qualificadas celebram o presente contrato, que se regerá pela Lei nº 13.966/2019 (Lei de Franquias), Lei nº 8.955/1994, Lei nº 9.279/1996 (Lei de Propriedade Industrial), Código Civil Brasileiro e demais normas aplicáveis, mediante as cláusulas e condições seguintes:
+
+QUALIFICAÇÃO DAS PARTES
+
+FRANQUEADOR: ${data.franqueador_razao_social}, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº ${data.franqueador_cnpj}, com sede na ${data.franqueador_endereco}, nº ${data.franqueador_numero}, Bairro: ${data.franqueador_bairro}, ${data.franqueador_cidade}, ${data.franqueador_estado}, CEP ${data.franqueador_cep}, neste ato representada por seu ${data.franqueador_representante_cargo}, ${data.franqueador_representante}, portador do CPF nº ${data.franqueador_representante_cpf}, e-mail: ${data.franqueador_email}, telefone: ${data.franqueador_telefone}.
+
+FRANQUEADO: ${data.franqueado_razao_social}, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº ${data.franqueado_cnpj}, com sede na ${data.franqueado_endereco}, nº ${data.franqueado_numero}, Bairro: ${data.franqueado_bairro}, ${data.franqueado_cidade}, ${data.franqueado_estado}, CEP ${data.franqueado_cep}, neste ato representada por seu ${data.franqueado_representante_cargo}, ${data.franqueado_representante}, portador do CPF nº ${data.franqueado_representante_cpf}, e-mail: ${data.franqueado_email}, telefone: ${data.franqueado_telefone}.
+
+
+CONSIDERANDO QUE:
+
+A) O FRANQUEADOR é titular da marca "${data.marca_franquia}"${data.numero_registro_inpi ? `, devidamente registrada no INPI sob o nº ${data.numero_registro_inpi}` : ''}, e desenvolveu um sistema de negócios no ramo de ${String(data.tipo_negocio).toLowerCase()}, com conhecimentos técnicos, operacionais, comerciais e de gestão comprovados;
+
+B) O FRANQUEADOR possui experiência comprovada e capacidade técnica para implementar e operar o sistema de franquia, conforme previsto na legislação vigente;
+
+C) O FRANQUEADO demonstrou interesse em operar uma unidade franqueada, utilizando a marca, o sistema operacional e o know-how do FRANQUEADOR;
+
+D) ${data.cof_entregue === 'Sim' ? `A Circular de Oferta de Franquia (COF) foi devidamente entregue ao FRANQUEADO em ${formatDateToBrazilian(String(data.data_entrega_cof || ''))}, com antecedência mínima de 10 (dez) dias da assinatura deste contrato ou do pagamento de qualquer valor ao FRANQUEADOR, conforme exigido pelo artigo 3º da Lei nº 13.966/2019` : 'O FRANQUEADOR declara que fornecerá a Circular de Oferta de Franquia (COF) nos termos legais'};
+
+E) As partes declararam conhecer e aceitar integralmente os termos e condições deste contrato;
+
+Resolvem as partes celebrar o presente CONTRATO DE FRANQUIA EMPRESARIAL, mediante as seguintes cláusulas e condições:
+
+
+CLÁUSULA PRIMEIRA - DO OBJETO E CONCESSÃO
+
+1.1. O FRANQUEADOR concede ao FRANQUEADO, que aceita, o direito de uso da marca "${data.marca_franquia}", do sistema operacional, dos métodos, processos, know-how, padrões de qualidade, layout, identidade visual e demais elementos que compõem o sistema de franquia, para a operação de uma unidade franqueada no ramo de ${String(data.tipo_negocio).toLowerCase()}.
+
+1.2. A concessão é realizada em caráter não exclusivo quanto à marca e ao sistema, mas com exclusividade territorial, conforme definido na Cláusula Quarta deste contrato.
+
+1.3. O FRANQUEADO atuará de forma totalmente independente, não havendo qualquer vínculo empregatício, societário ou de subordinação entre as partes ou seus empregados.
+
+1.4. O FRANQUEADO operará em seu próprio nome, por sua conta e risco, assumindo integral responsabilidade civil, trabalhista, previdenciária, tributária e de qualquer outra natureza decorrente de suas atividades.
+
+1.5. O sistema de franquia inclui, mas não se limita a:
+   a) Uso da marca, logotipos, slogans e demais sinais distintivos;
+   b) Manual de operações e procedimentos;
+   c) Padrões arquitetônicos e de identidade visual;
+   d) Métodos de gestão, operação e controle;
+   e) Treinamento inicial e contínuo;
+   f) Suporte técnico e operacional;
+   g) Campanhas de marketing e publicidade;
+   h) Sistema de gestão informatizado${data.sistema_gestao === 'Sim' ? ' (fornecido pelo FRANQUEADOR)' : ''};
+   i) Know-how e tecnologia proprietária.
+
+
+CLÁUSULA SEGUNDA - DO INVESTIMENTO INICIAL E TAXAS
+
+2.1. TAXA DE FRANQUIA: O FRANQUEADO pagará ao FRANQUEADOR, a título de taxa inicial de franquia, o valor de R$ ${data.taxa_franquia} (${data.taxa_franquia_extenso || 'valor por extenso'}), da seguinte forma: ${String(data.forma_pagamento_taxa).toLowerCase()}.
+
+2.2. A taxa de franquia é única e não reembolsável, destinando-se a remunerar o FRANQUEADOR pela concessão do direito de uso da marca e do sistema, pelo treinamento inicial, pela assistência na implantação e demais serviços pré-operacionais.
+
+2.3. O pagamento da taxa de franquia não garante, por si só, a recuperação do investimento ou o sucesso do negócio, que dependerá de múltiplos fatores, incluindo a gestão do FRANQUEADO.
+
+2.4. INVESTIMENTO TOTAL ESTIMADO: O investimento total estimado para implantação e operação da unidade franqueada é de R$ ${data.investimento_estimado} (${data.investimento_extenso || 'valor por extenso'}), conforme detalhado na Circular de Oferta de Franquia.
+
+2.5. ${data.capital_giro ? `CAPITAL DE GIRO: O FRANQUEADO deverá dispor de capital de giro mínimo de R$ ${data.capital_giro} para manutenção das operações nos primeiros meses.` : 'O FRANQUEADO deverá dispor de capital de giro adequado conforme especificado na COF.'}
+
+
+CLÁUSULA TERCEIRA - DOS ROYALTIES E FUNDO DE MARKETING
+
+3.1. ROYALTIES: O FRANQUEADO pagará ao FRANQUEADOR, mensalmente, royalties correspondentes a ${data.royalties_percentual}% (${data.royalties_extenso || 'percentual por extenso'}) calculados sobre o ${String(data.royalties_base_calculo).toLowerCase()} do mês anterior.
+
+3.2. Os royalties destinam-se a remunerar o FRANQUEADOR pelos serviços contínuos de assistência técnica, suporte operacional, treinamentos, atualizações do sistema, uso da marca e manutenção da rede de franquias.
+
+3.3. O pagamento dos royalties deverá ser efetuado até o dia 10 (dez) do mês subsequente ao da apuração, mediante depósito bancário na conta indicada pelo FRANQUEADOR.
+
+3.4. FUNDO DE MARKETING: O FRANQUEADO contribuirá mensalmente com ${data.fundo_marketing_percentual}% (${data.fundo_marketing_extenso || 'percentual por extenso'}) do ${String(data.royalties_base_calculo).toLowerCase()} para o Fundo de Marketing da rede.
+
+3.5. Os recursos do Fundo de Marketing serão aplicados exclusivamente em:
+   a) Campanhas publicitárias nacionais e regionais;
+   b) Marketing digital e presença online;
+   c) Desenvolvimento de materiais promocionais;
+   d) Participação em feiras e eventos;
+   e) Pesquisas de mercado e desenvolvimento de novos produtos/serviços.
+
+3.6. O FRANQUEADOR prestará contas semestralmente sobre a aplicação dos recursos do Fundo de Marketing.
+
+3.7. O atraso no pagamento de royalties ou contribuição de marketing implicará:
+   a) Multa de 2% sobre o valor devido;
+   b) Juros de mora de 1% ao mês;
+   c) Correção monetária pelo IPCA;
+   d) Suspensão temporária do suporte técnico e do direito de uso da marca, após 15 dias de atraso;
+   e) Possibilidade de rescisão contratual, após 30 dias de atraso.
+
+
+CLÁUSULA QUARTA - DO TERRITÓRIO E EXCLUSIVIDADE
+
+4.1. TERRITÓRIO: O FRANQUEADO terá direito de operar no seguinte território: ${data.territorio_exclusivo}${data.raio_exclusividade ? `, com raio de exclusividade de ${data.raio_exclusividade} km a partir da unidade franqueada` : ''}.
+
+4.2. EXCLUSIVIDADE TERRITORIAL: Durante a vigência deste contrato, o FRANQUEADOR se compromete a não:
+   a) Instalar outras unidades franqueadas da mesma marca no território definido;
+   b) Operar unidades próprias no território definido;
+   c) Autorizar vendas diretas no território, ressalvados os canais de e-commerce e vendas online da rede.
+
+4.3. A exclusividade territorial não impede:
+   a) Vendas realizadas através de canais online da rede;
+   b) Entregas originadas de unidades fora do território;
+   c) Atendimento a clientes corporativos por meio de contratos nacionais;
+   d) Vendas em locais de tráfego diferenciado (aeroportos, shoppings específicos).
+
+4.4. ${data.meta_faturamento ? `O FRANQUEADO deverá atingir faturamento mínimo mensal de R$ ${data.meta_faturamento}. O não atingimento dessa meta por 3 (três) meses consecutivos poderá resultar na revisão ou perda da exclusividade territorial.` : 'O FRANQUEADOR poderá estabelecer metas de desempenho que, se não atingidas, poderão resultar na revisão da exclusividade territorial.'}
+
+4.5. O FRANQUEADO não poderá realizar vendas ou prospecção ativa fora de seu território sem autorização prévia e expressa do FRANQUEADOR.
+
+
+CLÁUSULA QUINTA - DA LOCALIZAÇÃO DA UNIDADE
+
+5.1. A unidade franqueada será instalada no seguinte endereço: ${data.localizacao_unidade}.
+
+5.2. A escolha do ponto comercial foi aprovada pelo FRANQUEADOR após análise de viabilidade, considerando fatores como localização, área, fluxo de pessoas, concorrência e características da região.
+
+5.3. ${data.area_minima ? `A área mínima da unidade é de ${data.area_minima} m², conforme especificações técnicas do sistema de franquia.` : 'A área da unidade deve atender aos requisitos mínimos especificados na COF.'}
+
+5.4. ${data.padrao_arquitetonico === 'Sim' ? 'O FRANQUEADO deverá seguir rigorosamente o padrão arquitetônico, layout, identidade visual e projeto fornecidos pelo FRANQUEADOR, incluindo fachada, sinalização interna e externa, disposição de mobiliário e ambientação.' : 'O FRANQUEADO deverá observar as diretrizes de identidade visual fornecidas pelo FRANQUEADOR.'}
+
+5.5. Qualquer alteração de endereço da unidade franqueada dependerá de aprovação prévia e expressa do FRANQUEADOR, mediante nova análise de viabilidade.
+
+5.6. Os custos de locação, reforma, adequação, licenças e alvarás do ponto comercial são de exclusiva responsabilidade do FRANQUEADO.
+
+
+CLÁUSULA SEXTA - DO TREINAMENTO E CAPACITAÇÃO
+
+6.1. TREINAMENTO INICIAL: O FRANQUEADOR fornecerá ao FRANQUEADO e a ${data.funcionarios_treinamento || 'até 3 (três) funcionários'} treinamento inicial com duração de ${data.treinamento_inicial_horas} horas, abrangendo:
+   a) Operação do sistema de negócios;
+   b) Gestão administrativa e financeira;
+   c) Atendimento ao cliente e padrões de qualidade;
+   d) Utilização do sistema de gestão${data.sistema_gestao === 'Sim' ? ' informatizado' : ''};
+   e) Marketing local e divulgação;
+   f) Procedimentos operacionais padrão;
+   g) Gestão de pessoas e equipe;
+   h) Conhecimento dos produtos/serviços.
+
+6.2. O treinamento inicial será realizado em ${data.treinamento_local} e é ${String(data.treinamento_custo).toLowerCase()}.
+
+6.3. ${data.treinamento_custo === 'Incluído na taxa de franquia' ? 'As despesas com hospedagem, alimentação, transporte e material didático dos treinandos são de responsabilidade do FRANQUEADO.' : String(data.treinamento_custo).includes('viagem') ? 'As despesas de deslocamento, hospedagem e alimentação são de responsabilidade do FRANQUEADO.' : 'As condições de pagamento do treinamento serão definidas separadamente.'}
+
+6.4. TREINAMENTO CONTINUADO: Durante a vigência do contrato, o FRANQUEADOR oferecerá:
+   a) Reciclagens e atualizações periódicas;
+   b) Treinamentos para novos produtos e serviços;
+   c) Capacitações gerenciais e operacionais;
+   d) Workshops e convenções da rede.
+
+6.5. A participação nos treinamentos continuados é obrigatória, podendo o FRANQUEADOR cobrar taxa pelos custos diretos de realização.
+
+6.6. O FRANQUEADO deverá garantir que seus funcionários-chave participem dos treinamentos e mantenham os padrões de qualidade estabelecidos.
+
+
+CLÁUSULA SÉTIMA - DO SUPORTE E ASSISTÊNCIA TÉCNICA
+
+7.1. O FRANQUEADOR prestará ao FRANQUEADO suporte técnico e operacional contínuo do tipo: ${String(data.suporte_operacional).toLowerCase()}.
+
+7.2. O suporte técnico inclui:
+   a) Assistência na implantação e inauguração da unidade;
+   b) Orientação sobre operação e gestão do negócio;
+   c) Análise de indicadores de desempenho;
+   d) Apoio na resolução de problemas operacionais;
+   e) Atualização de procedimentos e melhores práticas;
+   f) Canal de atendimento para dúvidas e suporte;
+   g) ${data.sistema_gestao === 'Sim' ? 'Suporte técnico ao sistema de gestão informatizado;' : 'Orientações sobre gestão e controles;'}
+   h) Visitas de supervisão e auditoria de padrões.
+
+7.3. ${data.sistema_gestao === 'Sim' ? 'O FRANQUEADOR fornecerá licença de uso do sistema de gestão, com suporte técnico, atualizações e manutenções incluídas nos royalties.' : 'O FRANQUEADO deverá adotar sistema de gestão compatível com as necessidades de controle e reporte ao FRANQUEADOR.'}
+
+7.4. O FRANQUEADO deverá fornecer ao FRANQUEADOR, mensalmente:
+   a) Relatórios de vendas e faturamento;
+   b) Demonstrativos financeiros simplificados;
+   c) Indicadores de desempenho estabelecidos;
+   d) Informações sobre satisfação de clientes;
+   e) Dados operacionais relevantes.
+
+7.5. O suporte técnico não garante resultados específicos, sendo o sucesso do negócio dependente da gestão, dedicação e investimento do FRANQUEADO.
+
+
+CLÁUSULA OITAVA - DOS PRODUTOS, SERVIÇOS E FORNECEDORES
+
+8.1. ${data.produtos_obrigatorios === 'Sim' ? 'O FRANQUEADO deverá adquirir exclusivamente do FRANQUEADOR ou de fornecedores por ele indicados todos os produtos, matérias-primas, insumos e equipamentos essenciais ao sistema de franquia.' : data.produtos_obrigatorios === 'Alguns produtos' ? 'O FRANQUEADO deverá adquirir do FRANQUEADOR ou de fornecedores por ele indicados determinados produtos essenciais, conforme especificado no Manual de Operações.' : 'O FRANQUEADO poderá adquirir produtos de fornecedores de sua escolha, desde que atendam aos padrões de qualidade estabelecidos pelo FRANQUEADOR.'}
+
+8.2. ${data.fornecedores_obrigatorios === 'Sim' ? 'É obrigatória a aquisição de produtos e serviços dos fornecedores homologados pelo FRANQUEADOR, que garantem a qualidade, padronização e características específicas do sistema.' : data.fornecedores_obrigatorios === 'Parcialmente' ? 'Alguns produtos e serviços deverão ser adquiridos de fornecedores homologados, enquanto outros poderão ser de livre escolha, conforme Manual de Operações.' : 'O FRANQUEADO tem liberdade para escolher fornecedores, desde que os produtos atendam aos padrões de qualidade.'}
+
+8.3. O FRANQUEADOR poderá receber comissões, bonificações ou outros benefícios comerciais dos fornecedores homologados, em conformidade com práticas comerciais legítimas.
+
+8.4. O FRANQUEADO deverá oferecer todos os produtos e serviços que compõem o mix padrão da franquia, mantendo estoque adequado e qualidade uniforme.
+
+8.5. Novos produtos ou serviços desenvolvidos pelo FRANQUEADOR deverão ser incorporados pelo FRANQUEADO no prazo estabelecido, mediante treinamento e suporte adequados.
+
+8.6. É vedado ao FRANQUEADO:
+   a) Comercializar produtos ou serviços não aprovados pelo FRANQUEADOR;
+   b) Alterar receitas, fórmulas ou especificações técnicas;
+   c) Modificar embalagens, apresentação ou identidade visual dos produtos;
+   d) Oferecer produtos ou serviços que conflitem com a imagem da marca.
+
+
+CLÁUSULA NONA - DO PRAZO, RENOVAÇÃO E EXTINÇÃO
+
+9.1. PRAZO: O presente contrato tem prazo de vigência de ${data.prazo_contrato_anos} (${data.prazo_extenso || 'prazo por extenso'}) anos, contados a partir da data de sua assinatura, encerrando-se automaticamente ao final desse período.
+
+9.2. ${data.renovacao_automatica === 'Sim' ? `RENOVAÇÃO AUTOMÁTICA: Este contrato será renovado automaticamente por períodos sucessivos de ${data.prazo_renovacao || data.prazo_contrato_anos} anos, salvo manifestação contrária de qualquer das partes, comunicada por escrito com antecedência mínima de 180 (cento e oitenta) dias do término do prazo.` : 'RENOVAÇÃO: A renovação deste contrato não é automática, dependendo de negociação entre as partes e celebração de novo instrumento, que deverá ocorrer com antecedência mínima de 180 dias do término.'}
+
+9.3. CONDIÇÕES PARA RENOVAÇÃO: A renovação está condicionada a:
+   a) Cumprimento satisfatório de todas as obrigações contratuais;
+   b) Ausência de inadimplemento ou violações graves;
+   c) Desempenho operacional e financeiro adequado;
+   d) Modernização e adequação da unidade aos padrões vigentes;
+   e) Concordância com eventuais atualizações do sistema de franquia;
+   f) Regularidade fiscal, tributária e trabalhista do FRANQUEADO.
+
+9.4. O FRANQUEADOR poderá condicionar a renovação à reforma e modernização da unidade franqueada, conforme novos padrões do sistema.
+
+9.5. Por ocasião da renovação, poderão ser ajustados valores, percentuais, condições comerciais e cláusulas contratuais, conforme as práticas de mercado e evolução do sistema de franquia.
+
+
+CLÁUSULA DÉCIMA - DA RESCISÃO E MULTA
+
+10.1. RESCISÃO IMOTIVADA: Após o período inicial de ${data.periodo_fidelidade || '24 (vinte e quatro)'} meses, qualquer das partes poderá rescindir este contrato imotivadamente, mediante:
+   a) Notificação prévia à outra parte com 180 (cento e oitenta) dias de antecedência;
+   b) Pagamento de multa rescisória de R$ ${data.multa_rescisao} (${data.multa_extenso || 'valor por extenso'});
+   c) Cumprimento de todas as obrigações financeiras pendentes;
+   d) Devolução de materiais, manuais e elementos confidenciais.
+
+10.2. RESCISÃO MOTIVADA PELO FRANQUEADOR: O FRANQUEADOR poderá rescindir este contrato, independentemente de notificação ou interpelação judicial, nas seguintes hipóteses:
+   a) Inadimplência de royalties ou contribuições por período superior a 30 (trinta) dias;
+   b) Uso indevido da marca ou violação dos padrões de qualidade;
+   c) Violação de cláusula de confidencialidade ou propriedade intelectual;
+   d) Descumprimento reiterado de obrigações contratuais;
+   e) Falência, recuperação judicial ou insolvência do FRANQUEADO;
+   f) Prática de atos que prejudiquem a imagem da marca ou da rede;
+   g) Cessão ou transferência não autorizada dos direitos de franquia;
+   h) Abandono ou fechamento da unidade sem justificativa;
+   i) Fraude, má-fé ou conduta criminal relacionada ao negócio.
+
+10.3. RESCISÃO MOTIVADA PELO FRANQUEADO: O FRANQUEADO poderá rescindir este contrato, independentemente de multa, nas seguintes hipóteses:
+   a) Descumprimento pelo FRANQUEADOR de obrigações essenciais;
+   b) Inviabilização do sistema de franquia;
+   c) Alteração unilateral e substancial das condições contratuais;
+   d) Falta de suporte técnico essencial por período prolongado.
+
+10.4. Na rescisão motivada por culpa do FRANQUEADO, além da multa rescisória, este responderá por perdas e danos causados ao FRANQUEADOR e à rede.
+
+10.5. A rescisão não exime as partes das obrigações financeiras vencidas e das cláusulas que, por sua natureza, devam subsistir após o término do contrato.
+
+
+CLÁUSULA DÉCIMA PRIMEIRA - DAS OBRIGAÇÕES DO FRANQUEADOR
+
+11.1. São obrigações do FRANQUEADOR:
+   a) Ceder ao FRANQUEADO o direito de uso da marca e do sistema de franquia;
+   b) Fornecer treinamento inicial completo e adequado;
+   c) Prestar suporte técnico e operacional contínuo conforme estabelecido;
+   d) Manter e desenvolver o sistema de franquia;
+   e) Realizar campanhas de marketing da rede;
+   f) Fornecer manuais de operação atualizados;
+   g) Desenvolver novos produtos e serviços;
+   h) Defender a marca e os direitos de propriedade intelectual;
+   i) Homologar e negociar com fornecedores;
+   j) Realizar pesquisas e inovações no sistema;
+   k) Promover eventos, convenções e encontros da rede;
+   l) ${data.sistema_gestao === 'Sim' ? 'Fornecer e manter o sistema de gestão informatizado;' : 'Orientar sobre sistemas de gestão adequados;'}
+   m) Respeitar a exclusividade territorial estabelecida;
+   n) Prestar contas sobre o Fundo de Marketing;
+   o) Cumprir todas as obrigações legais da Lei de Franquias.
+
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS OBRIGAÇÕES DO FRANQUEADO
+
+12.1. São obrigações do FRANQUEADO:
+   a) Pagar pontualmente a taxa de franquia, royalties e contribuições;
+   b) Operar a unidade conforme padrões e procedimentos estabelecidos;
+   c) Participar de treinamentos obrigatórios;
+   d) Manter a qualidade dos produtos e serviços;
+   e) Preservar a imagem da marca e da rede;
+   f) Seguir as orientações do Manual de Operações;
+   g) Manter a unidade em perfeito estado de conservação e funcionamento;
+   h) Contratar e treinar adequadamente os funcionários;
+   i) Cumprir horários de funcionamento estabelecidos;
+   j) Adquirir produtos conforme estabelecido no contrato;
+   k) Fornecer relatórios e informações ao FRANQUEADOR;
+   l) Manter regularidade fiscal, tributária e trabalhista;
+   m) Contratar seguros obrigatórios${data.seguro_obrigatorio === 'Sim' ? ` (${data.tipos_seguro || 'conforme especificado'})` : ''};
+   n) Não revelar informações confidenciais;
+   o) Não atuar em concorrência com o sistema de franquia;
+   p) Divulgar e promover a marca localmente;
+   q) Atender clientes com excelência e cortesia;
+   r) Zelar pela reputação da marca em todas as suas ações;
+   s) Solicitar autorização prévia para quaisquer alterações no padrão estabelecido;
+   t) Não utilizar a marca ou o sistema fora do território autorizado.
+
+
+CLÁUSULA DÉCIMA TERCEIRA - DA CONFIDENCIALIDADE E PROPRIEDADE INTELECTUAL
+
+${data.confidencialidade === 'Sim' ? `13.1. CONFIDENCIALIDADE: O FRANQUEADO reconhece que terá acesso a informações confidenciais, segredos comerciais, know-how, métodos, processos, técnicas, fórmulas, receitas, fornecedores, custos, estratégias e demais informações proprietárias do FRANQUEADOR.
+
+13.2. O FRANQUEADO compromete-se a:
+   a) Manter absoluto sigilo sobre todas as informações confidenciais;
+   b) Não revelar, divulgar ou disponibilizar a terceiros;
+   c) Não utilizar as informações para qualquer fim diverso da operação da franquia;
+   d) Implementar medidas de segurança para proteção das informações;
+   e) Orientar seus funcionários, consultores e prestadores de serviços sobre o dever de confidencialidade;
+   f) Devolver ou destruir todos os materiais confidenciais ao término do contrato.
+
+13.3. A obrigação de confidencialidade permanecerá em vigor mesmo após o término deste contrato, por prazo indeterminado.` : '13.1. O FRANQUEADO deverá manter confidencialidade sobre informações sensíveis do negócio, conforme práticas comerciais usuais.'}
+
+13.4. PROPRIEDADE INTELECTUAL: O FRANQUEADO reconhece que:
+   a) A marca "${data.marca_franquia}", logotipos, slogans, trade dress, identidade visual e todos os sinais distintivos são de propriedade exclusiva do FRANQUEADOR;
+   b) O sistema de franquia, métodos, processos, know-how e tecnologias são proprietários do FRANQUEADOR;
+   c) Não adquire qualquer direito de propriedade sobre a marca ou sobre os elementos do sistema;
+   d) O uso é temporário, limitado ao território e período de vigência do contrato;
+   e) Não poderá registrar marcas, nomes empresariais ou domínios que contenham ou se assemelhem à marca;
+   f) Não poderá contestar a validade ou a propriedade da marca.
+
+13.5. Qualquer desenvolvimento, melhoria ou inovação criada pelo FRANQUEADO no contexto do sistema de franquia será de propriedade do FRANQUEADOR, devendo ser imediatamente comunicada.
+
+13.6. O FRANQUEADO deverá notificar o FRANQUEADOR sobre qualquer uso indevido da marca por terceiros ou violação de direitos de propriedade intelectual.
+
+
+CLÁUSULA DÉCIMA QUARTA - DA NÃO CONCORRÊNCIA
+
+14.1. Durante a vigência deste contrato, o FRANQUEADO não poderá, direta ou indiretamente:
+   a) Explorar negócio idêntico ou similar ao sistema de franquia;
+   b) Participar de sociedade concorrente como sócio, administrador ou consultor;
+   c) Prestar serviços ou consultoria a concorrentes;
+   d) Desenvolver ou operar sistema de negócios concorrente.
+
+14.2. APÓS O TÉRMINO DO CONTRATO: Pelo prazo de ${data.nao_concorrencia_prazo} (${data.nao_concorrencia_extenso || 'prazo por extenso'}) anos${data.nao_concorrencia_raio ? `, no raio de ${data.nao_concorrencia_raio} km do local onde operava a unidade franqueada` : ''}, o FRANQUEADO não poderá:
+   a) Explorar atividade idêntica ou similar ao sistema de franquia;
+   b) Utilizar conhecimentos adquiridos para concorrer com o FRANQUEADOR;
+   c) Captar ou aliciar clientes, fornecedores ou funcionários da rede;
+   d) Utilizar marca, identidade visual ou elementos similares.
+
+14.3. A violação da cláusula de não concorrência sujeitará o FRANQUEADO a:
+   a) Pagamento de multa equivalente a ${data.multa_nao_concorrencia || '20 (vinte)'} vezes o valor mensal dos royalties;
+   b) Obrigação de não fazer;
+   c) Reparação integral de perdas e danos;
+   d) Demais sanções legais cabíveis.
+
+14.4. A cláusula de não concorrência não impede o FRANQUEADO de exercer outras atividades empresariais que não conflitem com o sistema de franquia.
+
+
+CLÁUSULA DÉCIMA QUINTA - DA TRANSFERÊNCIA E CESSÃO
+
+${data.aprovacao_transferencia === 'Sim' ? `15.1. A cessão ou transferência total ou parcial dos direitos e obrigações deste contrato depende de prévia e expressa autorização do FRANQUEADOR.
+
+15.2. O FRANQUEADO que pretenda vender ou transferir sua franquia deverá:
+   a) Notificar o FRANQUEADOR com antecedência mínima de 90 (noventa) dias;
+   b) Fornecer informações completas sobre o candidato a adquirente;
+   c) Garantir que o adquirente atenda aos requisitos de qualificação da rede;
+   d) ${data.taxa_transferencia ? `Pagar taxa de transferência de R$ ${data.taxa_transferencia};` : 'Arcar com os custos do processo de transferência;'}
+   e) Estar em dia com todas as obrigações contratuais;
+   f) Garantir que o adquirente participe de treinamento completo.
+
+${data.direito_preferencia === 'Sim' ? `15.3. DIREITO DE PREFERÊNCIA: O FRANQUEADOR terá direito de preferência na aquisição da franquia, em igualdade de condições com terceiros. O FRANQUEADO deverá apresentar proposta por escrito, e o FRANQUEADOR terá 30 (trinta) dias para manifestar seu interesse.` : '15.3. Não há direito de preferência do FRANQUEADOR na aquisição da franquia.'}` : '15.1. A transferência dos direitos de franquia poderá ser realizada mediante negociação direta entre as partes e observância dos procedimentos estabelecidos.'}
+
+15.4. A aprovação do adquirente é de exclusivo critério do FRANQUEADOR, que avaliará capacidade financeira, experiência, idoneidade e adequação ao perfil da rede.
+
+15.5. Em caso de falecimento ou incapacidade do FRANQUEADO (pessoa física) ou do principal sócio (pessoa jurídica), os herdeiros ou sucessores terão até 180 (cento e oitenta) dias para:
+   a) Indicar representante qualificado para dar continuidade à operação;
+   b) Transferir a franquia a terceiro aprovado pelo FRANQUEADOR;
+   c) Devolver a franquia ao FRANQUEADOR mediante acerto financeiro.
+
+15.6. É vedada a cessão ou transferência sem autorização, sob pena de rescisão imediata do contrato e aplicação das penalidades cabíveis.
+
+
+CLÁUSULA DÉCIMA SEXTA - DAS RESPONSABILIDADES E SEGUROS
+
+16.1. O FRANQUEADO assume total e exclusiva responsabilidade por:
+   a) Todos os atos praticados por seus empregados, prepostos e representantes;
+   b) Obrigações trabalhistas, previdenciárias e fiscais;
+   c) Qualidade dos produtos e serviços oferecidos em sua unidade;
+   d) Relações com clientes, fornecedores e terceiros;
+   e) Danos causados a consumidores, empregados ou terceiros;
+   f) Cumprimento de normas sanitárias, ambientais e de segurança;
+   g) Obtenção e manutenção de alvarás e licenças;
+   h) Acidentes de trabalho e questões de segurança.
+
+16.2. O FRANQUEADO deverá manter o FRANQUEADOR indene de qualquer reclamação, ação judicial, condenação ou responsabilidade decorrente de atos praticados pelo FRANQUEADO.
+
+${data.seguro_obrigatorio === 'Sim' ? `16.3. SEGUROS OBRIGATÓRIOS: O FRANQUEADO deverá manter, durante toda a vigência do contrato, seguros contra: ${data.tipos_seguro || 'incêndio, responsabilidade civil, danos a terceiros e demais riscos inerentes à atividade'}.
+
+16.4. As apólices deverão ter cobertura mínima adequada e estar sempre vigentes, devendo o FRANQUEADO apresentar ao FRANQUEADOR comprovantes de pagamento e renovação.
+
+16.5. O FRANQUEADOR poderá ser incluído como beneficiário ou segurado adicional nas apólices.` : '16.3. Recomenda-se fortemente a contratação de seguros adequados para proteção do negócio e cobertura de riscos operacionais.'}
+
+16.6. A ausência ou insuficiência de seguros não isenta o FRANQUEADO de suas responsabilidades contratuais e legais.
+
+
+CLÁUSULA DÉCIMA SÉTIMA - DAS OBRIGAÇÕES PÓS-CONTRATUAIS
+
+17.1. Ao término deste contrato, por qualquer motivo, o FRANQUEADO deverá:
+   a) Cessar imediatamente o uso da marca, logotipos e sinais distintivos;
+   b) Remover toda sinalização externa e interna da marca;
+   c) Descontinuar o uso do sistema operacional e métodos;
+   d) Devolver todos os manuais, materiais confidenciais e documentação;
+   e) ${data.sistema_gestao === 'Sim' ? 'Descontinuar o uso do sistema de gestão informatizado;' : 'Cessar o uso de qualquer sistema ou método proprietário;'}
+   f) Destruir materiais promocionais e de marketing da marca;
+   g) Descaracterizar completamente a unidade franqueada;
+   h) Cancelar domínios, redes sociais e perfis online relacionados à marca;
+   i) Comunicar clientes sobre o término da franquia;
+   j) Liquidar todas as obrigações financeiras pendentes.
+
+17.2. O prazo máximo para descaracterização completa é de 30 (trinta) dias após o término do contrato.
+
+17.3. O descumprimento das obrigações de descaracterização sujeita o FRANQUEADO a multa diária de R$ ${data.multa_diaria || '1.000,00'}, sem prejuízo de outras sanções legais.
+
+17.4. Subsistirão após o término do contrato:
+   a) Obrigações de confidencialidade;
+   b) Cláusula de não concorrência;
+   c) Obrigações financeiras vencidas e não pagas;
+   d) Responsabilidade por atos praticados durante a vigência;
+   e) Obrigações de natureza legal ou regulatória.
+
+17.5. O FRANQUEADO não terá direito a indenização, reembolso ou compensação pela descaracterização da unidade ou pela perda do direito de uso da marca.
+
+
+CLÁUSULA DÉCIMA OITAVA - DAS ALTERAÇÕES E ATUALIZAÇÕES DO SISTEMA
+
+18.1. O FRANQUEADOR reserva-se o direito de modificar, aprimorar e atualizar o sistema de franquia, incluindo:
+   a) Padrões operacionais e procedimentos;
+   b) Identidade visual e layout das unidades;
+   c) Mix de produtos e serviços;
+   d) Política de preços e promoções;
+   e) Sistemas de gestão e tecnologia;
+   f) Fornecedores homologados;
+   g) Manual de Operações.
+
+18.2. O FRANQUEADO deverá implementar as alterações e atualizações no prazo estabelecido pelo FRANQUEADOR, que não poderá ser inferior a 30 (trinta) dias.
+
+18.3. Alterações que demandem investimentos significativos serão objeto de negociação entre as partes, respeitando-se prazos razoáveis para adequação.
+
+18.4. O custo de implementação de alterações e modernizações será de responsabilidade do FRANQUEADO, exceto quando expressamente acordado de forma diversa.
+
+18.5. A recusa injustificada em implementar alterações essenciais ao sistema poderá ser considerada descumprimento contratual.
+
+
+CLÁUSULA DÉCIMA NONA - DA COMUNICAÇÃO E PROPAGANDA
+
+19.1. Toda comunicação e propaganda local deverá:
+   a) Seguir o manual de identidade visual da marca;
+   b) Ser previamente aprovada pelo FRANQUEADOR;
+   c) Manter os padrões de qualidade e imagem da rede;
+   d) Respeitar as diretrizes de marketing estabelecidas.
+
+19.2. É vedado ao FRANQUEADO:
+   a) Realizar campanhas que conflitem com as campanhas nacionais;
+   b) Fazer promessas ou garantias não autorizadas;
+   c) Utilizar conteúdos que possam prejudicar a imagem da marca;
+   d) Divulgar informações confidenciais ou não aprovadas.
+
+19.3. O FRANQUEADO deverá manter presença online conforme diretrizes da rede, incluindo:
+   a) Utilização de redes sociais nos padrões estabelecidos;
+   b) Integração com plataformas digitais da marca;
+   c) Participação em programas de marketing digital da rede.
+
+19.4. O FRANQUEADOR poderá realizar campanhas promocionais nacionais ou regionais, cabendo ao FRANQUEADO participar e honrar as condições estabelecidas.
+
+
+CLÁUSULA VIGÉSIMA - DAS DISPOSIÇÕES GERAIS
+
+20.1. Este contrato representa o acordo integral entre as partes, substituindo todos os entendimentos, negociações e acordos anteriores, escritos ou verbais.
+
+20.2. Qualquer alteração ou aditamento a este contrato deverá ser feito por escrito e assinado por ambas as partes.
+
+20.3. A tolerância ou concessão de prazos por qualquer das partes não constituirá novação, renúncia de direitos ou alteração das condições contratuais.
+
+20.4. Se qualquer cláusula for considerada nula ou inexequível, as demais permanecerão em pleno vigor.
+
+20.5. Este contrato obriga as partes e seus sucessores a qualquer título.
+
+20.6. ${data.observacoes ? `Observações especiais: ${data.observacoes}` : 'Não há observações adicionais a serem registradas.'}
+
+20.7. As partes declaram ter lido, compreendido e aceito integralmente os termos deste contrato.
+
+
+CLÁUSULA VIGÉSIMA PRIMEIRA - DA RESOLUÇÃO DE CONFLITOS
+
+${data.arbitragem === 'Sim' ? `21.1. ARBITRAGEM: As partes comprometem-se a resolver quaisquer controvérsias oriundas deste contrato por meio de arbitragem, nos termos da Lei nº 9.307/1996.
+
+21.2. A arbitragem será realizada por árbitro único ou tribunal arbitral composto por 3 (três) árbitros, conforme o valor da controvérsia.
+
+21.3. A arbitragem será administrada pela Câmara de Mediação e Arbitragem escolhida de comum acordo ou, na falta de acordo, pela câmara indicada pelo FRANQUEADOR.
+
+21.4. A sede da arbitragem será a cidade de ${data.franqueador_cidade}, aplicando-se a legislação brasileira.
+
+21.5. A decisão arbitral será final e vinculante, não cabendo recurso ao Poder Judiciário, salvo nas hipóteses legais.` : `21.1. As partes procurarão resolver amigavelmente, por meio de negociação direta, quaisquer controvérsias oriundas deste contrato.
+
+21.2. Não sendo possível a solução amigável, as partes poderão recorrer à mediação antes de acionar o Poder Judiciário.`}
+
+
+CLÁUSULA VIGÉSIMA SEGUNDA - DO FORO
+
+22.1. Fica eleito o foro da comarca de ${data.franqueador_cidade}, Estado de ${data.franqueador_estado}, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer questões oriundas deste contrato${data.arbitragem === 'Sim' ? ', ressalvadas as hipóteses de arbitragem previstas na cláusula anterior' : ''}.
+
+
+E por estarem assim justas e contratadas, as partes assinam o presente CONTRATO DE FRANQUIA EMPRESARIAL em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+
+${data.franqueador_cidade}, ${getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.franqueador_razao_social}
+FRANQUEADOR
+CNPJ: ${data.franqueador_cnpj}
+Representante Legal: ${data.franqueador_representante}
+CPF: ${data.franqueador_representante_cpf}
+
+
+_____________________________________________
+${data.franqueado_razao_social}
+FRANQUEADO
+CNPJ: ${data.franqueado_cnpj}
+Representante Legal: ${data.franqueado_representante}
+CPF: ${data.franqueado_representante_cpf}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+    `,
+
+    'locacao-veiculo': (data) => `
+CONTRATO DE LOCAÇÃO DE VEÍCULO
+
+Pelo presente instrumento particular de CONTRATO DE LOCAÇÃO DE VEÍCULO, de um lado, como LOCADOR, e de outro, como LOCATÁRIO, as partes a seguir qualificadas celebram o presente contrato, que se regerá pelas disposições do Código Civil Brasileiro (Lei nº 10.406/2002), Código de Defesa do Consumidor (Lei nº 8.078/1990), Código de Trânsito Brasileiro (Lei nº 9.503/1997) e demais normas aplicáveis, mediante as cláusulas e condições seguintes:
+
+QUALIFICAÇÃO DAS PARTES
+
+LOCADOR: ${data.locador_nome}, ${String(data.locador_documento).length > 14 ? 'pessoa jurídica inscrita no CNPJ' : 'pessoa física inscrita no CPF'} sob o nº ${data.locador_documento}${data.locador_rg ? `, RG nº ${data.locador_rg}` : ''}, com endereço na ${data.locador_endereco}, nº ${data.locador_numero}, Bairro: ${data.locador_bairro}, ${data.locador_cidade}, ${data.locador_estado}, CEP ${data.locador_cep}, e-mail: ${data.locador_email}, telefone: ${data.locador_telefone}.
+
+LOCATÁRIO: ${data.locatario_nome}, brasileiro(a), portador(a) do CPF nº ${data.locatario_cpf}, RG nº ${data.locatario_rg}, CNH nº ${data.locatario_cnh}, categoria ${data.locatario_categoria_cnh}, válida até ${formatDateToBrazilian(String(data.locatario_validade_cnh))}, residente e domiciliado(a) na ${data.locatario_endereco}, nº ${data.locatario_numero}, Bairro: ${data.locatario_bairro}, ${data.locatario_cidade}, ${data.locatario_estado}, CEP ${data.locatario_cep}, e-mail: ${data.locatario_email}, telefone: ${data.locatario_telefone}.
+
+${data.condutor_adicional === 'Sim' && data.condutor_adicional_nome ? `
+CONDUTOR ADICIONAL AUTORIZADO: ${data.condutor_adicional_nome}, CPF nº ${data.condutor_adicional_cpf}, CNH nº ${data.condutor_adicional_cnh}, categoria ${data.condutor_adicional_categoria || 'B'}, que está expressamente autorizado a conduzir o veículo objeto deste contrato e assume solidariamente todas as responsabilidades.` : ''}
+
+
+CLÁUSULA PRIMEIRA - DO OBJETO
+
+1.1. O LOCADOR dá em locação ao LOCATÁRIO, que aceita, o veículo a seguir especificado:
+   - Tipo: ${data.veiculo_tipo}
+   - Marca: ${data.veiculo_marca}
+   - Modelo: ${data.veiculo_modelo}
+   - Ano de Fabricação: ${data.veiculo_ano_fabricacao}
+   - Ano do Modelo: ${data.veiculo_ano_modelo}
+   - Cor: ${data.veiculo_cor}
+   - Placa: ${data.veiculo_placa}
+   - Chassi: ${data.veiculo_chassi}
+   - RENAVAM: ${data.veiculo_renavam}
+   - Combustível: ${data.veiculo_combustivel}
+   - Quilometragem inicial: ${data.veiculo_km_inicial} km
+
+1.2. ESTADO DE CONSERVAÇÃO: O veículo encontra-se em estado de conservação ${String(data.veiculo_estado_conservacao).toLowerCase()}, conforme vistoria realizada pelas partes.
+
+${data.acessorios ? `1.3. ACESSÓRIOS E EQUIPAMENTOS: O veículo está equipado com: ${data.acessorios}.` : '1.3. O veículo possui os equipamentos e acessórios padrão do modelo.'}
+
+${data.avarias_existentes ? `1.4. AVARIAS PREEXISTENTES: No momento da entrega, o veículo apresenta as seguintes avarias: ${data.avarias_existentes}. O LOCATÁRIO não será responsabilizado por estas avarias na devolução.` : '1.4. O veículo não apresenta avarias ou danos aparentes no momento da entrega.'}
+
+1.5. O veículo é entregue em perfeitas condições de funcionamento, com todos os documentos em ordem, licenciado e seguro vigente conforme legislação.
+
+
+CLÁUSULA SEGUNDA - DO PRAZO E PERÍODO DE LOCAÇÃO
+
+2.1. A locação terá início em ${formatDateToBrazilian(String(data.data_inicio_locacao))} e término em ${formatDateToBrazilian(String(data.data_fim_locacao))}, totalizando ${data.prazo_dias} (${data.prazo_extenso || 'prazo por extenso'}) dias.
+
+2.2. LOCAL E HORÁRIO DE RETIRADA: O veículo será retirado em: ${data.local_retirada}, no dia e horário acordados.
+
+2.3. LOCAL E HORÁRIO DE DEVOLUÇÃO: O veículo deverá ser devolvido em: ${data.local_devolucao}, impreterivelmente até o dia e horário estabelecidos.
+
+${data.local_retirada !== data.local_devolucao && data.taxa_devolucao_diferente ? `2.4. DEVOLUÇÃO EM LOCAL DIFERENTE: Por se tratar de devolução em local diverso da retirada, será cobrada taxa adicional de R$ ${data.taxa_devolucao_diferente}.` : ''}
+
+2.5. ATRASO NA DEVOLUÇÃO: O atraso na devolução do veículo implicará cobrança de R$ ${data.atraso_devolucao_valor} por hora de atraso, sem prejuízo de outras penalidades contratuais.
+
+2.6. A prorrogação da locação dependerá de acordo prévio entre as partes e disponibilidade do veículo.
+
+
+CLÁUSULA TERCEIRA - DO VALOR DA LOCAÇÃO E FORMA DE PAGAMENTO
+
+3.1. O valor da locação é de:
+   - Valor da diária: R$ ${data.valor_diaria}
+   - Número de diárias: ${data.prazo_dias}
+   - Valor total da locação: R$ ${data.valor_total} (${data.valor_total_extenso || 'valor por extenso'})
+
+3.2. O pagamento será efetuado da seguinte forma: ${String(data.forma_pagamento).toLowerCase()}.
+
+3.3. O valor da locação inclui:
+   a) Uso do veículo pelo período contratado;
+   b) ${data.seguro_incluso === 'Sim' ? `Seguro ${String(data.tipo_seguro || 'contra terceiros').toLowerCase()}` : 'Não inclui seguro'};
+   c) ${data.limite_km_dia ? `Limite de ${data.limite_km_dia} km por dia` : 'Quilometragem livre'};
+   d) Documentação do veículo regularizada;
+   e) Licenciamento anual vigente.
+
+3.4. ${data.limite_km_dia && data.valor_km_excedente ? `QUILOMETRAGEM EXCEDENTE: O limite de quilometragem é de ${data.limite_km_dia} km por dia (total de ${Number(data.limite_km_dia) * Number(data.prazo_dias)} km). Cada quilômetro rodado além deste limite será cobrado à razão de R$ ${data.valor_km_excedente} por km.` : 'A quilometragem é livre, sem cobrança adicional por km rodado.'}
+
+3.5. Taxas e custos não inclusos no valor da locação:
+   a) Combustível (conforme cláusula quarta);
+   b) Pedágios, estacionamentos e lavagem;
+   c) Multas de trânsito (conforme cláusula décima);
+   d) ${data.seguro_incluso === 'Não' ? 'Seguro (responsabilidade integral do LOCATÁRIO);' : `Franquia do seguro em caso de sinistro${data.franquia_seguro ? ` (R$ ${data.franquia_seguro})` : ''};`}
+   e) Danos não cobertos pelo seguro.
+
+
+CLÁUSULA QUARTA - DA CAUÇÃO E GARANTIAS
+
+4.1. CAUÇÃO: O LOCATÁRIO prestará caução no valor de R$ ${data.caucao} (${data.caucao_extenso || 'valor por extenso'}), da seguinte forma: ${String(data.forma_caucao).toLowerCase()}.
+
+4.2. A caução destina-se a garantir:
+   a) Devolução do veículo nas condições estabelecidas;
+   b) Pagamento de multas de trânsito e pedágios;
+   c) Reparação de danos não cobertos pelo seguro;
+   d) Atrasos na devolução;
+   e) Quilometragem excedente;
+   f) Qualquer débito oriundo da locação.
+
+4.3. A caução será devolvida em até ${data.prazo_devolucao_caucao || '15 (quinze)'} dias após a devolução do veículo, deduzidos eventuais débitos, multas ou danos.
+
+4.4. ${data.forma_caucao === 'Cartão de crédito (pré-autorização)' ? 'A pré-autorização no cartão de crédito será liberada após a quitação de todos os débitos. O prazo de liberação depende da operadora do cartão.' : 'Caso a caução seja insuficiente para cobrir os débitos, o LOCATÁRIO será notificado para complementação do valor.'}
+
+
+CLÁUSULA QUINTA - DO COMBUSTÍVEL
+
+5.1. COMBUSTÍVEL NA ENTREGA: O veículo será entregue com o tanque de combustível ${String(data.combustivel_entrega).toLowerCase()}.
+
+5.2. COMBUSTÍVEL NA DEVOLUÇÃO: O veículo deverá ser devolvido com o tanque de combustível ${String(data.combustivel_devolucao).toLowerCase()}.
+
+5.3. Caso o veículo seja devolvido com nível de combustível inferior ao estabelecido, o LOCADOR cobrará o valor correspondente ao combustível faltante, acrescido de taxa de serviço de ${data.taxa_abastecimento || '20%'}.
+
+5.4. Durante o período de locação, todo o abastecimento será de responsabilidade do LOCATÁRIO.
+
+
+CLÁUSULA SEXTA - DO SEGURO E COBERTURAS
+
+${data.seguro_incluso === 'Sim' ? `6.1. SEGURO INCLUSO: O veículo está segurado com cobertura de ${String(data.tipo_seguro || 'proteção contra terceiros').toLowerCase()}.
+
+6.2. FRANQUIA: Em caso de sinistro com acionamento do seguro, o LOCATÁRIO arcará com a franquia no valor de ${data.franquia_seguro ? `R$ ${data.franquia_seguro}` : 'conforme apólice'}.
+
+6.3. COBERTURAS: O seguro oferece as seguintes coberturas:
+${data.cobertura_adicional ? data.cobertura_adicional : '   - Danos materiais a terceiros\n   - Responsabilidade civil\n   - Conforme apólice contratada'}
+
+6.4. NÃO ESTÃO COBERTOS pelo seguro:
+   a) Danos causados sob efeito de álcool ou substâncias ilícitas;
+   b) Condução por pessoa não habilitada ou com CNH vencida;
+   c) Uso do veículo para finalidades ilícitas;
+   d) Danos ao estepe, para-choque e lanternas (salvo se contratada cobertura adicional);
+   e) Danos causados por negligência grave ou dolo;
+   f) Participação em competições ou uso comercial não autorizado.` : `6.1. AUSÊNCIA DE SEGURO: O veículo NÃO está segurado. O LOCATÁRIO assume TOTAL RESPONSABILIDADE por quaisquer danos, roubos, furtos ou sinistros.
+
+6.2. Em caso de danos, o LOCATÁRIO arcará integralmente com os custos de reparação, incluindo peças, mão de obra e lucros cessantes.
+
+6.3. Recomenda-se fortemente que o LOCATÁRIO contrate seguro próprio para cobertura durante o período de locação.`}
+
+6.5. Em caso de sinistro, o LOCATÁRIO deverá:
+   a) Comunicar imediatamente o LOCADOR;
+   b) Registrar Boletim de Ocorrência;
+   c) Não assumir responsabilidades ou fazer acordos sem autorização;
+   d) Fornecer toda documentação necessária para acionamento do seguro;
+   e) Pagar a franquia, se aplicável.
+
+
+CLÁUSULA SÉTIMA - DAS OBRIGAÇÕES DO LOCATÁRIO
+
+7.1. São obrigações do LOCATÁRIO:
+   a) Utilizar o veículo com cuidado e diligência de bom pai de família;
+   b) Conduzir o veículo somente se habilitado e com CNH válida;
+   c) Autorizar apenas condutores devidamente habilitados${data.condutor_adicional === 'Sim' ? ' e cadastrados neste contrato' : ''};
+   d) Respeitar integralmente o Código de Trânsito Brasileiro;
+   e) Realizar revisões diárias básicas (água, óleo, pneus);
+   f) Comunicar imediatamente ao LOCADOR qualquer problema mecânico ou sinistro;
+   g) Manter o veículo trancado e com as chaves em segurança;
+   h) Não fumar dentro do veículo (se estabelecido pelo LOCADOR);
+   i) Não transportar animais sem autorização prévia;
+   j) Não sublocar ou emprestar o veículo;
+   k) Devolver o veículo limpo e nas mesmas condições de recebimento;
+   l) Arcar com custos de guincho, em caso de necessidade;
+   m) Pagar multas de trânsito cometidas durante o período de locação;
+   n) ${data.restricoes_uso ? `Observar as seguintes restrições: ${data.restricoes_uso}` : 'Utilizar o veículo de forma responsável e dentro da legalidade'}.
+
+7.2. É VEDADO ao LOCATÁRIO:
+   a) Conduzir o veículo sob efeito de álcool, drogas ou medicamentos que afetem a capacidade;
+   b) Utilizar o veículo para transporte de cargas perigosas, ilícitas ou excessivas;
+   c) Participar de competições, rachas ou exibições;
+   d) Rebocar outros veículos ou trailers sem autorização;
+   e) Ultrapassar os limites de velocidade ou realizar manobras perigosas;
+   f) Modificar ou alterar características do veículo;
+   g) Realizar reparos sem autorização do LOCADOR;
+   h) ${data.restricoes_uso ? `Violar as restrições estabelecidas: ${data.restricoes_uso}` : 'Utilizar o veículo fora dos limites territoriais acordados'}.
+
+
+CLÁUSULA OITAVA - DAS OBRIGAÇÕES DO LOCADOR
+
+8.1. São obrigações do LOCADOR:
+   a) Entregar o veículo em perfeitas condições de uso e funcionamento;
+   b) Garantir que o veículo está devidamente licenciado e documentado;
+   c) ${data.seguro_incluso === 'Sim' ? 'Manter o seguro do veículo vigente durante o período de locação;' : 'Informar claramente sobre a ausência de seguro;'}
+   d) Prestar assistência em caso de problemas mecânicos cobertos pela garantia;
+   e) Fornecer documentação completa do veículo;
+   f) Respeitar a privacidade e os direitos do LOCATÁRIO;
+   g) Devolver a caução no prazo estabelecido, deduzidos débitos legítimos.
+
+8.2. O LOCADOR não se responsabiliza por:
+   a) Objetos deixados no veículo;
+   b) Danos ou prejuízos causados por problemas mecânicos não decorrentes de defeito oculto;
+   c) Atrasos ou compromissos perdidos pelo LOCATÁRIO;
+   d) Multas de trânsito cometidas pelo LOCATÁRIO.
+
+
+CLÁUSULA NONA - DA MANUTENÇÃO E REPAROS
+
+9.1. ${String(data.manutencao_responsavel).includes('Locador') ? 'Manutenções preventivas e revisões programadas são de responsabilidade do LOCADOR.' : 'Manutenções preventivas durante o período de locação são de responsabilidade do LOCATÁRIO.'}
+
+9.2. Em caso de defeito mecânico não causado por mau uso:
+   a) O LOCATÁRIO deverá comunicar imediatamente o LOCADOR;
+   b) O LOCADOR providenciará o reparo ou substituição do veículo;
+   c) Não haverá cobrança adicional, salvo se comprovado mau uso.
+
+9.3. Danos causados por negligência, imperícia ou uso inadequado serão integralmente de responsabilidade do LOCATÁRIO.
+
+9.4. Pequenos reparos emergenciais (até R$ ${data.limite_reparo_emergencial || '300,00'}) poderão ser realizados pelo LOCATÁRIO, mediante posterior reembolso pelo LOCADOR, desde que devidamente comprovados e justificados.
+
+
+CLÁUSULA DÉCIMA - DAS MULTAS E INFRAÇÕES DE TRÂNSITO
+
+10.1. ${String(data.multas_responsavel).includes('Locatário') ? 'Todas as multas de trânsito, infrações e penalidades cometidas durante o período de locação são de RESPONSABILIDADE INTEGRAL DO LOCATÁRIO.' : 'As multas serão de responsabilidade de quem efetivamente cometeu a infração.'}
+
+10.2. Caso o LOCADOR receba notificação de multa:
+   a) Informará ao LOCATÁRIO no prazo de 5 (cinco) dias;
+   b) O LOCATÁRIO terá 10 (dez) dias para apresentar defesa ou indicar o condutor;
+   c) Se não houver manifestação, o LOCADOR indicará o LOCATÁRIO como condutor;
+   d) O LOCATÁRIO ressarcirá o LOCADOR de qualquer valor pago, acrescido de taxa administrativa de ${data.taxa_administrativa_multa || '20%'}.
+
+10.3. A caução poderá ser utilizada para quitação de multas, devendo o LOCATÁRIO complementar o valor se necessário.
+
+10.4. Infrações gravíssimas ou que resultem em apreensão do veículo serão motivo de rescisão imediata do contrato, sem devolução de valores pagos.
+
+
+CLÁUSULA DÉCIMA PRIMEIRA - DA DEVOLUÇÃO DO VEÍCULO
+
+11.1. O veículo deverá ser devolvido:
+   a) No local, data e horário estabelecidos;
+   b) Com o mesmo nível de combustível da retirada (ou conforme acordado);
+   c) Limpo externamente e internamente;
+   d) Com todos os acessórios e documentos;
+   e) Nas mesmas condições de conservação da entrega (salvo desgaste natural).
+
+11.2. Será realizada vistoria completa na devolução, na presença do LOCATÁRIO.
+
+11.3. Danos constatados na devolução que não constavam da vistoria inicial serão de responsabilidade do LOCATÁRIO.
+
+11.4. Se o LOCATÁRIO não puder comparecer para vistoria, poderá nomear representante ou aceitar os termos da vistoria realizada unilateralmente pelo LOCADOR.
+
+11.5. O veículo somente será considerado devolvido após:
+   a) Vistoria completa;
+   b) Entrega das chaves e documentos;
+   c) Acerto financeiro de valores pendentes;
+   d) Assinatura do termo de devolução por ambas as partes.
+
+
+CLÁUSULA DÉCIMA SEGUNDA - DAS PENALIDADES E RESCISÃO
+
+12.1. O descumprimento de qualquer cláusula contratual ensejará multa de 20% sobre o valor total da locação, sem prejuízo de perdas e danos.
+
+12.2. RESCISÃO POR PARTE DO LOCATÁRIO: O LOCATÁRIO poderá rescindir antecipadamente o contrato, mas não terá direito à devolução proporcional de valores já pagos, salvo se negociado diferentemente.
+
+12.3. RESCISÃO POR PARTE DO LOCADOR: O LOCADOR poderá rescindir imediatamente o contrato, sem devolução de valores, nas seguintes hipóteses:
+   a) Uso do veículo por condutor não habilitado ou com CNH vencida;
+   b) Uso do veículo para atividades ilícitas;
+   c) Condução sob efeito de álcool ou drogas;
+   d) Atraso no pagamento por mais de 48 horas;
+   e) Danos graves causados por negligência ou dolo;
+   f) Descumprimento de cláusulas essenciais do contrato;
+   g) Fornecimento de informações falsas.
+
+12.4. Em caso de rescisão por culpa do LOCATÁRIO, este responderá por:
+   a) Multa contratual;
+   b) Lucros cessantes (dias não utilizados que poderiam ter sido locados);
+   c) Custos de recuperação do veículo;
+   d) Perdas e danos.
+
+
+CLÁUSULA DÉCIMA TERCEIRA - DA RESPONSABILIDADE CIVIL
+
+13.1. O LOCATÁRIO assume total responsabilidade por:
+   a) Danos causados a terceiros;
+   b) Acidentes de trânsito;
+   c) Lesões corporais ou morte de terceiros;
+   d) Danos materiais a propriedades;
+   e) Danos causados a passageiros.
+
+13.2. O LOCADOR será mantido indene de qualquer reclamação, ação judicial ou responsabilização decorrente do uso do veículo pelo LOCATÁRIO.
+
+13.3. Em caso de acidente com vítimas, o LOCATÁRIO deverá:
+   a) Prestar socorro imediato;
+   b) Acionar o SAMU e autoridades competentes;
+   c) Registrar Boletim de Ocorrência completo;
+   d) Comunicar imediatamente o LOCADOR;
+   e) ${data.seguro_incluso === 'Sim' ? 'Acionar o seguro conforme procedimentos estabelecidos.' : 'Assumir todas as responsabilidades legais decorrentes.'}
+
+
+CLÁUSULA DÉCIMA QUARTA - DO ROUBO, FURTO OU PERDA TOTAL
+
+14.1. Em caso de roubo ou furto do veículo, o LOCATÁRIO deverá:
+   a) Comunicar imediatamente a Polícia e registrar Boletim de Ocorrência;
+   b) Notificar o LOCADOR em até 6 (seis) horas;
+   c) ${data.seguro_incluso === 'Sim' ? 'Fornecer toda documentação para acionamento do seguro;' : 'Assumir responsabilidade pelo valor integral do veículo;'}
+   d) Entregar as chaves (se não forem roubadas) e todos os documentos;
+   e) Prestar esclarecimentos e colaborar com investigações.
+
+14.2. ${data.seguro_incluso === 'Sim' ? `Havendo cobertura de seguro contra roubo/furto, o LOCATÁRIO pagará a franquia de ${data.franquia_seguro ? `R$ ${data.franquia_seguro}` : 'conforme apólice'}.` : 'O LOCATÁRIO responderá pelo valor de mercado do veículo (tabela FIPE), acrescido de lucros cessantes até a efetiva reposição.'}
+
+14.3. Em caso de perda total por acidente:
+   a) ${data.seguro_incluso === 'Sim' ? `O seguro cobrirá o valor do veículo, e o LOCATÁRIO pagará a franquia de ${data.franquia_seguro ? `R$ ${data.franquia_seguro}` : 'conforme apólice'}.` : 'O LOCATÁRIO responderá pelo valor de mercado do veículo conforme tabela FIPE.'}
+   b) O contrato será automaticamente rescindido.
+
+
+CLÁUSULA DÉCIMA QUINTA - DO TRATAMENTO DE DADOS PESSOAIS
+
+15.1. As partes declaram conhecer e respeitar a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+
+15.2. Os dados pessoais coletados serão utilizados exclusivamente para:
+   a) Execução deste contrato;
+   b) Comunicações relacionadas à locação;
+   c) Cumprimento de obrigações legais;
+   d) Defesa de direitos em processos judiciais ou administrativos.
+
+15.3. As partes comprometem-se a manter sigilo e segurança dos dados pessoais, não os divulgando a terceiros sem autorização, exceto quando exigido por lei.
+
+
+CLÁUSULA DÉCIMA SEXTA - DAS DISPOSIÇÕES GERAIS
+
+16.1. Este contrato representa o acordo integral entre as partes, substituindo qualquer entendimento anterior.
+
+16.2. Qualquer alteração deve ser feita por escrito e assinada por ambas as partes.
+
+16.3. A tolerância no cumprimento de qualquer cláusula não constituirá novação ou renúncia de direitos.
+
+16.4. Se qualquer cláusula for considerada nula, as demais permanecerão válidas.
+
+16.5. ${data.observacoes ? `Observações: ${data.observacoes}` : 'Não há observações adicionais.'}
+
+16.6. As partes elegem testemunhas para os atos deste contrato e declaram ter lido, compreendido e aceito integralmente seus termos.
+
+
+CLÁUSULA DÉCIMA SÉTIMA - DO FORO
+
+17.1. As partes elegem o foro da comarca de ${data.locador_cidade}, Estado de ${data.locador_estado}, para dirimir quaisquer questões oriundas deste contrato, renunciando a qualquer outro, por mais privilegiado que seja.
+
+
+E por estarem assim justas e contratadas, as partes assinam o presente CONTRATO DE LOCAÇÃO DE VEÍCULO em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+
+
+${data.locador_cidade}, ${getCurrentDateBrazilian()}.
+
+
+_____________________________________________
+${data.locador_nome}
+LOCADOR
+${String(data.locador_documento).length > 14 ? 'CNPJ' : 'CPF'}: ${data.locador_documento}
+
+
+_____________________________________________
+${data.locatario_nome}
+LOCATÁRIO
+CPF: ${data.locatario_cpf}
+CNH: ${data.locatario_cnh}
+
+${data.condutor_adicional === 'Sim' && data.condutor_adicional_nome ? `
+_____________________________________________
+${data.condutor_adicional_nome}
+CONDUTOR ADICIONAL
+CPF: ${data.condutor_adicional_cpf}
+CNH: ${data.condutor_adicional_cnh}` : ''}
+
+
+TESTEMUNHAS:
+
+1. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
+
+2. _____________________________________________
+   Nome: ________________________________________
+   CPF: __________________________________________
+   RG: ___________________________________________
     `
   };
 
