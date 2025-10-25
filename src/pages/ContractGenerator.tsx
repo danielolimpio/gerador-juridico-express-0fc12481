@@ -5,7 +5,7 @@ import ContractForm from '@/components/ContractForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, FileText } from 'lucide-react';
-import AdBanner from '@/components/AdBanner';
+
 import SEO from '@/components/SEO';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -94,12 +94,10 @@ const ContractGenerator: React.FC = () => {
         <div className="container mx-auto max-w-6xl px-4 py-8">
           <Breadcrumbs />
         </div>
-        <AdBanner />
         <ContractForm 
           contractType={contractType} 
           onBack={() => navigate('/')} 
         />
-        <AdBanner />
       </div>
     </>
   );

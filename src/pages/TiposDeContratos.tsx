@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Building, Users, Gift, Car, Handshake, CreditCard, Key, Scale, GraduationCap, Briefcase, FileX, Truck, Store } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import AdBanner from "@/components/AdBanner";
+
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const TiposDeContratos = () => {
@@ -129,8 +129,6 @@ const TiposDeContratos = () => {
             </p>
           </header>
 
-          <AdBanner />
-
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {contractTypes.map((contract, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -150,8 +148,6 @@ const TiposDeContratos = () => {
               </Card>
             ))}
           </section>
-
-          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">

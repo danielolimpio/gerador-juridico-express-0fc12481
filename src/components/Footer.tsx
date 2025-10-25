@@ -10,12 +10,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <FileText className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-foreground">
-                Modelos de Contratos
-              </span>
+              <img src="/logo.png" alt="Modelos de Contratos" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
               Crie contratos jurídicos válidos em segundos. Simples, rápido e 100% legal.

@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import AdBanner from "@/components/AdBanner";
+
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const FAQ = () => {
@@ -134,8 +134,6 @@ const FAQ = () => {
             </p>
           </header>
 
-          <AdBanner />
-
           <section className="mb-12">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
@@ -150,8 +148,6 @@ const FAQ = () => {
               ))}
             </Accordion>
           </section>
-
-          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center">
             <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />

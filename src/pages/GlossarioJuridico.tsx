@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import AdBanner from "@/components/AdBanner";
+
 
 const GlossarioJuridico = () => {
   const navigate = useNavigate();
@@ -133,8 +133,6 @@ const GlossarioJuridico = () => {
             </p>
           </header>
 
-          <AdBanner />
-
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {termosJuridicos.map((item, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -151,8 +149,6 @@ const GlossarioJuridico = () => {
               </Card>
             ))}
           </section>
-
-          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">

@@ -49,10 +49,7 @@ const Header = () => {
             className="flex items-center gap-2 cursor-pointer flex-shrink-0"
             onClick={() => navigate("/")}
           >
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <FileText className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-lg hidden sm:block">Contratos</span>
+            <img src="/logo.png" alt="Modelos de Contratos" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

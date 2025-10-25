@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle, FileText, Download, Share2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import AdBanner from "@/components/AdBanner";
+
 
 const ComoFunciona = () => {
   const navigate = useNavigate();
@@ -71,8 +71,6 @@ const ComoFunciona = () => {
             </p>
           </header>
 
-          <AdBanner />
-
           <section className="grid gap-8 mb-12">
             {steps.map((step, index) => (
               <Card key={index} className="border-l-4 border-l-primary">
@@ -90,8 +88,6 @@ const ComoFunciona = () => {
               </Card>
             ))}
           </section>
-
-          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">

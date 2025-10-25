@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Download, Eye, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import AdBanner from "@/components/AdBanner";
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { generateContractText } from "@/lib/contractTemplates";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -537,8 +537,6 @@ const ExemplosDeContratos = () => {
             </p>
           </header>
 
-          <AdBanner />
-
           <section className="grid gap-8">
             {examples.map((example, index) => (
               <Card key={index} className="overflow-hidden">
@@ -573,8 +571,6 @@ const ExemplosDeContratos = () => {
               </Card>
             ))}
           </section>
-
-          <AdBanner />
 
           <section className="bg-primary/10 rounded-lg p-8 text-center mt-12">
             <h2 className="text-2xl font-bold text-foreground mb-4">

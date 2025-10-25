@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import AdBanner from "@/components/AdBanner";
+
 
 const Contato = () => {
   const navigate = useNavigate();
@@ -29,8 +29,6 @@ const Contato = () => {
             Estamos aqui para ajudar você com seus contratos jurídicos.
           </p>
         </div>
-
-        <AdBanner />
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Formulário de Contato */}
@@ -137,8 +135,6 @@ const Contato = () => {
             </Card>
           </div>
         </div>
-
-        <AdBanner />
       </div>
     </div>
   );
