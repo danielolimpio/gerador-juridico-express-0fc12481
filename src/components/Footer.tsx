@@ -26,8 +26,13 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Links Rápidos</h3>
+          <h3 className="font-semibold text-foreground mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
+              <li>
+                <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Home
+                </a>
+              </li>
               <li>
                 <a href="/como-funciona" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Como Funciona
@@ -78,6 +83,11 @@ const Footer = () => {
               <li>
                 <a href="/cookies" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Cookies
+                </a>
+              </li>
+              <li>
+                <a href="/glossario-juridico" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Glossário Jurídico
                 </a>
               </li>
             </ul>
