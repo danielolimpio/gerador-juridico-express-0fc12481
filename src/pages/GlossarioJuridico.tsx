@@ -110,7 +110,7 @@ const GlossarioJuridico = () => {
         title="Glossário Jurídico de Contratos - Termos e Definições Legais"
         description="Glossário completo com principais termos jurídicos relacionados a contratos: fiador, caução, comodato, rescisão, novação e muito mais. Definições claras e objetivas."
         keywords="glossário jurídico, termos jurídicos contratos, definições legais, vocabulário direito civil, termos contratuais"
-        canonical="https://modelosdecontratos.com.br/glossario-juridico"
+        canonical="https://modelodecontrato.org/glossario-juridico"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

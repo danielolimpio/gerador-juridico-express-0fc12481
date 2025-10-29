@@ -11,9 +11,9 @@ const Index = () => {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Modelos de Contratos",
-      "url": "https://modelosdecontratos.com.br",
-      "logo": "https://modelosdecontratos.com.br/logo.png",
+      "name": "Modelo de Contrato",
+      "url": "https://modelodecontrato.org",
+      "logo": "https://modelodecontrato.org/logo.png",
       "description": "Plataforma líder em geração de contratos jurídicos online no Brasil",
       "address": {
         "@type": "PostalAddress",
@@ -26,18 +26,18 @@ const Index = () => {
         "availableLanguage": "Portuguese"
       },
       "sameAs": [
-        "https://www.facebook.com/modelosdecontratos",
-        "https://www.linkedin.com/company/modelosdecontratos"
+        "https://www.facebook.com/modelodecontrato",
+        "https://www.linkedin.com/company/modelodecontrato"
       ]
     },
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Modelos de Contratos",
-      "url": "https://modelosdecontratos.com.br",
+      "name": "Modelo de Contrato",
+      "url": "https://modelodecontrato.org",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://modelosdecontratos.com.br/buscar?q={search_term_string}",
+        "target": "https://modelodecontrato.org/buscar?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
@@ -48,7 +48,7 @@ const Index = () => {
       "description": "Serviço gratuito de geração de contratos jurídicos válidos online",
       "provider": {
         "@type": "Organization",
-        "name": "Modelos de Contratos"
+        "name": "Modelo de Contrato"
       },
       "areaServed": "BR",
       "hasOfferCatalog": {
@@ -87,7 +87,7 @@ const Index = () => {
         title="Gerador de Contratos Online Grátis - Crie em 30 Segundos | 2025"
         description="✅ Gerador de contratos grátis: aluguel, compra e venda, prestação de serviços MEI. Modelos juridicamente válidos em PDF/Word. Sem cadastro! Crie agora em 30 segundos."
         keywords="gerador de contratos grátis, criar contrato online, modelo contrato aluguel, contrato prestação serviços mei, gerar contrato digital, baixar modelo contrato pdf word, contrato online gratuito"
-        canonical="https://modelosdecontratos.com.br/"
+        canonical="https://modelodecontrato.org/"
         structuredData={structuredData}
       />
       <main className="min-h-screen">

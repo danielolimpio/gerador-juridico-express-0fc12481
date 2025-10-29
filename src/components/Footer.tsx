@@ -90,7 +90,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
-                  contato@modelosdecontratos.com.br
+                  contato@modelodecontrato.org
                 </span>
               </div>
               <div className="flex items-center gap-2">

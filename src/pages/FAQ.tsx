@@ -56,7 +56,7 @@ const FAQ = () => {
     },
     {
       question: "Que fazer se não encontrar o tipo de contrato que preciso?",
-      answer: "Entre em contato pelo e-mail contato@modelosdecontratos.com.br solicitando novos tipos. Priorizamos modelos mais solicitados pelos usuários."
+      answer: "Entre em contato pelo e-mail contato@modelodecontrato.org solicitando novos tipos. Priorizamos modelos mais solicitados pelos usuários."
     },
     {
       question: "Contratos gerados valem para todo o Brasil?",
@@ -111,7 +111,7 @@ const FAQ = () => {
         title="FAQ - Perguntas Frequentes sobre Gerador de Contratos Online"
         description="Tire dúvidas sobre contratos jurídicos online: validade legal, tipos disponíveis, formatos PDF/Word, gerador gratuito. +20 perguntas e respostas completas."
         keywords="faq contratos online, dúvidas gerador contratos, contratos válidos juridicamente, perguntas modelo contrato aluguel, como criar contrato mei"
-        canonical="https://modelosdecontratos.com.br/faq"
+        canonical="https://modelodecontrato.org/faq"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

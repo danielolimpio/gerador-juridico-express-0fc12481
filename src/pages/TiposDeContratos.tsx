@@ -9,6 +9,25 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const TiposDeContratos = () => {
   const navigate = useNavigate();
 
+  // Mapeamento de IDs para URLs SEO-friendly
+  const contractUrlMap: { [key: string]: string } = {
+    'compra-venda': '/contrato-de-compra-e-venda',
+    'locacao-residencial': '/modelos-de-contrato-de-aluguel',
+    'locacao-comercial': '/contrato-de-locacao-comercial',
+    'prestacao-servicos': '/contrato-de-prestacao-de-servicos',
+    'parceria-comercial': '/contrato-de-parceria-empresarial',
+    'doacao': '/contrato-de-doacao',
+    'emprestimo': '/contrato-de-emprestimo',
+    'comodato': '/contrato-de-comodato',
+    'mandato': '/contrato-de-mandato',
+    'alienacao-fiduciaria': '/contrato-de-alienacao-fiduciaria',
+    'estagio': '/contrato-de-estagio',
+    'trabalho-autonomo': '/contrato-de-trabalho-autonomo',
+    'rescisao': '/contrato-de-rescisao-de-contrato',
+    'locacao-veiculo': '/contrato-de-locacao-de-veiculo',
+    'franquia': '/contrato-de-franquia',
+  };
+
   const contractTypes = [
     {
       id: 'compra-venda',
@@ -120,7 +139,7 @@ const TiposDeContratos = () => {
         title="Tipos de Contratos Online - +15 Modelos Grátis para Download PDF/Word"
         description="Explore todos os tipos de contratos grátis: aluguel residencial/comercial, compra e venda, prestação de serviços MEI, trabalho autônomo. Modelos juridicamente válidos 2025."
         keywords="tipos de contratos online, modelos contratos grátis download, contrato aluguel residencial, prestação serviços mei, compra venda imovel, trabalho autonomo"
-        canonical="https://modelosdecontratos.com.br/tipos-de-contratos"
+        canonical="https://modelodecontrato.org/tipos-de-contratos"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
@@ -161,7 +180,7 @@ const TiposDeContratos = () => {
                   </p>
                   <Button 
                     className="w-full"
-                    onClick={() => navigate(`/gerador?type=${contract.id}`)}
+                    onClick={() => navigate(contractUrlMap[contract.id] || `/gerador?type=${contract.id}`)}
                   >
                     Gerar Contrato
                   </Button>

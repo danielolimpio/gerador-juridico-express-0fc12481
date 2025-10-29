@@ -44,7 +44,7 @@ const Breadcrumbs = () => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://modelosdecontratos.com.br${item.path}`
+      "item": `https://modelodecontrato.org${item.path}`
     }))
   };
 

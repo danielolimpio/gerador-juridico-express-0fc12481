@@ -50,7 +50,7 @@ const ComoFunciona = () => {
         title="Como Funciona - Aprenda a Criar Contratos Jurídicos Online"
         description="Aprenda como criar contratos jurídicos válidos online em 4 passos simples. Tutorial completo para gerar seus documentos legais rapidamente."
         keywords="como criar contrato, tutorial contratos online, passo a passo contratos jurídicos, guia contratos legais"
-        canonical="https://modelosdecontratos.com.br/como-funciona"
+        canonical="https://modelodecontrato.org/como-funciona"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

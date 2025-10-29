@@ -181,7 +181,7 @@ const Cookies = () => {
                 Se você tiver dúvidas sobre nossa utilização de cookies, entre em contato conosco:
               </p>
               <p className="text-muted-foreground mt-4">
-                <strong>E-mail:</strong> contato@modelosdecontratos.com.br<br />
+                <strong>E-mail:</strong> contato@modelodecontrato.org<br />
                 <strong>Telefone:</strong> (12) 98251-9116
               </p>
             </CardContent>

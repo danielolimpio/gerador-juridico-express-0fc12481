@@ -34,6 +34,24 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/gerador" element={<ContractGenerator />} />
+            
+            {/* Rotas SEO-friendly para contratos */}
+            <Route path="/contrato-de-compra-e-venda" element={<ContractGenerator />} />
+            <Route path="/contrato-de-locacao-comercial" element={<ContractGenerator />} />
+            <Route path="/modelos-de-contrato-de-aluguel" element={<ContractGenerator />} />
+            <Route path="/contrato-de-prestacao-de-servicos" element={<ContractGenerator />} />
+            <Route path="/contrato-de-parceria-empresarial" element={<ContractGenerator />} />
+            <Route path="/contrato-de-doacao" element={<ContractGenerator />} />
+            <Route path="/contrato-de-emprestimo" element={<ContractGenerator />} />
+            <Route path="/contrato-de-comodato" element={<ContractGenerator />} />
+            <Route path="/contrato-de-mandato" element={<ContractGenerator />} />
+            <Route path="/contrato-de-alienacao-fiduciaria" element={<ContractGenerator />} />
+            <Route path="/contrato-de-estagio" element={<ContractGenerator />} />
+            <Route path="/contrato-de-trabalho-autonomo" element={<ContractGenerator />} />
+            <Route path="/contrato-de-rescisao-de-contrato" element={<ContractGenerator />} />
+            <Route path="/contrato-de-locacao-de-veiculo" element={<ContractGenerator />} />
+            <Route path="/contrato-de-franquia" element={<ContractGenerator />} />
+            
             <Route path="/como-funciona" element={<ComoFunciona />} />
             <Route path="/tipos-de-contratos" element={<TiposDeContratos />} />
             <Route path="/exemplos-de-contratos" element={<ExemplosDeContratos />} />
@@ -44,7 +62,7 @@ const App = () => (
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/glossario-juridico" element={<GlossarioJuridico />} />
-          <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <CookieConsent />

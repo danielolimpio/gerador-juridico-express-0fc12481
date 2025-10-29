@@ -515,7 +515,7 @@ const ExemplosDeContratos = () => {
         title="Exemplos de Contratos Jurídicos - Modelos Práticos para Download"
         description="Veja exemplos reais de contratos jurídicos: compra e venda, locação, prestação de serviços e mais. Modelos práticos prontos para download gratuito."
         keywords="exemplos contratos, modelos contratos download, contratos prontos, exemplos jurídicos, contratos práticos"
-        canonical="https://modelosdecontratos.com.br/exemplos-de-contratos"
+        canonical="https://modelodecontrato.org/exemplos-de-contratos"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

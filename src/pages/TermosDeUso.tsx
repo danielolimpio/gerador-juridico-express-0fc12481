@@ -33,7 +33,7 @@ const TermosDeUso = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Ao acessar e usar o site Modelos de Contratos (modelosdecontratos.com.br), você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nosso serviço.
+                Ao acessar e usar o site Modelo de Contrato (modelodecontrato.org), você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nosso serviço.
               </p>
             </CardContent>
           </Card>
@@ -174,7 +174,7 @@ const TermosDeUso = () => {
                 Para dúvidas sobre estes Termos de Uso, entre em contato:
               </p>
               <p className="text-muted-foreground mt-4">
-                <strong>E-mail:</strong> contato@modelosdecontratos.com.br<br />
+                <strong>E-mail:</strong> contato@modelodecontrato.org<br />
                 <strong>Telefone:</strong> (12) 98251-9116
               </p>
             </CardContent>

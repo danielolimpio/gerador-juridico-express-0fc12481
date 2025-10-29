@@ -91,7 +91,7 @@ export const generatePDF = (contractText: string, contractTitle: string): void =
     // Signature line
     doc.setFontSize(8);
     doc.setFont("helvetica", "italic");
-    const footerText = 'Documento gerado automaticamente por https://modelosdecontratos.com.br - Confira todos os dados antes de assinar';
+    const footerText = 'Documento gerado automaticamente por https://modelodecontrato.org - Confira todos os dados antes de assinar';
     const footerLines = doc.splitTextToSize(footerText, pageWidth);
     
     let footerY = 290;

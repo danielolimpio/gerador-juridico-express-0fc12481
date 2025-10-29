@@ -14,11 +14,11 @@ const SEO: React.FC<SEOProps> = ({
   description, 
   keywords, 
   canonical, 
-  ogImage = "/og-image.jpg",
+  ogImage = "https://modelodecontrato.org/og-image.jpg",
   structuredData 
 }) => {
-  const fullTitle = title.includes('Modelos de Contratos') ? title : `${title} | Modelos de Contratos`;
-  const url = canonical || window.location.href;
+  const fullTitle = title.includes('Modelo de Contrato') ? title : `${title} | Modelo de Contrato`;
+  const url = canonical || `https://modelodecontrato.org${window.location.pathname}`;
 
   return (
     <Helmet>
@@ -34,7 +34,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={url} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Modelos de Contratos" />
+      <meta property="og:site_name" content="Modelo de Contrato" />
       <meta property="og:locale" content="pt_BR" />
       
       {/* Twitter */}

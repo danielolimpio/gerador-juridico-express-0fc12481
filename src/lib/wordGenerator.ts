@@ -104,7 +104,7 @@ export const generateWord = async (contractText: string, contractTitle: string):
     new Paragraph({
       children: [
         new TextRun({
-          text: "Documento gerado automaticamente por https://modelosdecontratos.com.br - Confira todos os dados antes de assinar",
+          text: "Documento gerado automaticamente por https://modelodecontrato.org - Confira todos os dados antes de assinar",
           italics: true,
           size: 20,
         }),
