@@ -19,6 +19,9 @@ import AvisoLegal from "./pages/AvisoLegal";
 import Cookies from "./pages/Cookies";
 import Contato from "./pages/Contato";
 import GlossarioJuridico from "./pages/GlossarioJuridico";
+import ContratoDeAdesao from "./pages/ContratoDeAdesao";
+import FiadorResponsabilidade from "./pages/FiadorResponsabilidade";
+import CaucaoGarantia from "./pages/CaucaoGarantia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -62,6 +65,9 @@ const App = () => (
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/glossario-juridico" element={<GlossarioJuridico />} />
+            <Route path="/contrato-de-adesao" element={<ContratoDeAdesao />} />
+            <Route path="/fiador-responsabilidade-legal" element={<FiadorResponsabilidade />} />
+            <Route path="/caucao-garantia-contratual" element={<CaucaoGarantia />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

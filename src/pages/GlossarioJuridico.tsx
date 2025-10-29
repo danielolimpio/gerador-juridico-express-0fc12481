@@ -11,15 +11,18 @@ const GlossarioJuridico = () => {
   const termosJuridicos = [
     {
       termo: "Contrato de Adesão",
-      definicao: "Contrato com cláusulas preestabelecidas por uma das partes, cabendo à outra apenas aceitar ou rejeitar."
+      definicao: "Contrato com cláusulas preestabelecidas por uma das partes, cabendo à outra apenas aceitar ou rejeitar.",
+      link: "/contrato-de-adesao"
     },
     {
       termo: "Fiador",
-      definicao: "Pessoa que se responsabiliza pelo cumprimento das obrigações do devedor principal em caso de inadimplemento."
+      definicao: "Pessoa que se responsabiliza pelo cumprimento das obrigações do devedor principal em caso de inadimplemento.",
+      link: "/fiador-responsabilidade-legal"
     },
     {
       termo: "Caução",
-      definicao: "Garantia real ou pessoal oferecida para assegurar o cumprimento de uma obrigação."
+      definicao: "Garantia real ou pessoal oferecida para assegurar o cumprimento de uma obrigação.",
+      link: "/caucao-garantia-contratual"
     },
     {
       termo: "Comodato",
@@ -135,16 +138,25 @@ const GlossarioJuridico = () => {
 
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {termosJuridicos.map((item, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card 
+                key={index} 
+                className="hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => item.link ? navigate(item.link) : null}
+              >
                 <CardHeader>
                   <CardTitle className="text-lg text-primary">
                     {item.termo}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-2">
                     {item.definicao}
                   </p>
+                  {item.link && (
+                    <Button variant="link" className="p-0 h-auto text-primary">
+                      Ler mais →
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
