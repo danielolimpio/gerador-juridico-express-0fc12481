@@ -58,14 +58,8 @@ const HeroSection = () => {
             <div className="relative">
               <div 
                 className="bg-accent/50 rounded-2xl p-8 max-w-md w-full relative overflow-hidden"
-                style={{
-                  backgroundImage: 'url(/lovable-uploads/a0132ded-74c6-4e2d-a778-817e8d75b215.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
               >
-                <div className="absolute inset-0 bg-accent/70 backdrop-blur-sm rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/50 rounded-2xl"></div>
                 <div className="relative z-10">
                   <div className="bg-card rounded-lg p-6 shadow-lg">
                     <div className="flex items-center gap-3 mb-4">
