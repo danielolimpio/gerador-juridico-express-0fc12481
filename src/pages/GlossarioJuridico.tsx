@@ -26,19 +26,23 @@ const GlossarioJuridico = () => {
     },
     {
       termo: "Comodato",
-      definicao: "Empréstimo gratuito de coisa não fungível, que deve ser restituída após o uso."
+      definicao: "Empréstimo gratuito de coisa não fungível, que deve ser restituída após o uso.",
+      link: "/comodato-emprestimo-gratuito"
     },
     {
       termo: "Vício Redibitório",
-      definicao: "Defeito oculto que torna a coisa inadequada ao uso ou diminui seu valor."
+      definicao: "Defeito oculto que torna a coisa inadequada ao uso ou diminui seu valor.",
+      link: "/vicio-redibitorio-defeito-oculto"
     },
     {
       termo: "Resilição",
-      definicao: "Desfazimento do contrato por acordo mútuo entre as partes."
+      definicao: "Desfazimento do contrato por acordo mútuo entre as partes.",
+      link: "/resilicao-contratual-mutuo-acordo"
     },
     {
       termo: "Rescisão",
-      definicao: "Extinção do contrato por inadimplemento ou descumprimento de uma das partes."
+      definicao: "Extinção do contrato por inadimplemento ou descumprimento de uma das partes.",
+      link: "/rescisao-de-contrato-descumprimento"
     },
     {
       termo: "Onerosidade Excessiva",

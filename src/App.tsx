@@ -22,6 +22,10 @@ import GlossarioJuridico from "./pages/GlossarioJuridico";
 import ContratoDeAdesao from "./pages/ContratoDeAdesao";
 import FiadorResponsabilidade from "./pages/FiadorResponsabilidade";
 import CaucaoGarantia from "./pages/CaucaoGarantia";
+import ComodatoEmprestimo from "./pages/ComodatoEmprestimo";
+import VicioRedibitorio from "./pages/VicioRedibitorio";
+import ResilicaoContratual from "./pages/ResilicaoContratual";
+import RescisaoContrato from "./pages/RescisaoContrato";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -68,6 +72,10 @@ const App = () => (
             <Route path="/contrato-de-adesao" element={<ContratoDeAdesao />} />
             <Route path="/fiador-responsabilidade-legal" element={<FiadorResponsabilidade />} />
             <Route path="/caucao-garantia-contratual" element={<CaucaoGarantia />} />
+            <Route path="/comodato-emprestimo-gratuito" element={<ComodatoEmprestimo />} />
+            <Route path="/vicio-redibitorio-defeito-oculto" element={<VicioRedibitorio />} />
+            <Route path="/resilicao-contratual-mutuo-acordo" element={<ResilicaoContratual />} />
+            <Route path="/rescisao-de-contrato-descumprimento" element={<RescisaoContrato />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
