@@ -12,6 +12,25 @@ import {
 } from "lucide-react";
 import { contractTypes } from "@/lib/contractTypes";
 
+// Mapeamento de IDs para URLs SEO-friendly
+const contractIdToUrlMap: { [key: string]: string } = {
+  'compra-venda': '/contrato-de-compra-e-venda',
+  'locacao-comercial': '/contrato-de-locacao-comercial',
+  'locacao-residencial': '/modelos-de-contrato-de-aluguel',
+  'prestacao-servicos': '/contrato-de-prestacao-de-servicos',
+  'parceria-comercial': '/contrato-de-parceria-empresarial',
+  'doacao': '/contrato-de-doacao',
+  'emprestimo': '/contrato-de-emprestimo',
+  'comodato': '/contrato-de-comodato',
+  'mandato': '/contrato-de-mandato',
+  'alienacao-fiduciaria': '/contrato-de-alienacao-fiduciaria',
+  'estagio': '/contrato-de-estagio',
+  'trabalho-autonomo': '/contrato-de-trabalho-autonomo',
+  'rescisao': '/contrato-de-rescisao-de-contrato',
+  'locacao-veiculo': '/contrato-de-locacao-de-veiculo',
+  'franquia': '/contrato-de-franquia',
+};
+
 const contractTypesDisplay = [
   {
     id: 'compra-venda',
@@ -100,7 +119,7 @@ const ContractTypesSection = () => {
                       variant="outline" 
                       size="sm" 
                       className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all"
-                      onClick={() => window.location.href = `/gerador?type=${contract.id}`}
+                      onClick={() => window.location.href = contractIdToUrlMap[contract.id] || `/gerador?type=${contract.id}`}
                     >
                       Gerar Contrato
                     </Button>

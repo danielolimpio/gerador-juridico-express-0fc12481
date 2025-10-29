@@ -118,7 +118,7 @@ const ContractGenerator: React.FC = () => {
         </div>
         <ContractForm 
           contractType={contractType} 
-          onBack={() => navigate('/')} 
+          onBack={() => navigate(-1)} 
         />
       </div>
     </>
