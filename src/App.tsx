@@ -35,6 +35,10 @@ import Arras from "./pages/Arras";
 import ForcaMaior from "./pages/ForcaMaior";
 import CasoFortuito from "./pages/CasoFortuito";
 import DireitoArrependimento from "./pages/DireitoArrependimento";
+import Benfeitorias from "./pages/Benfeitorias";
+import Eviccao from "./pages/Eviccao";
+import SubRogacao from "./pages/SubRogacao";
+import Mora from "./pages/Mora";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -94,6 +98,10 @@ const App = () => (
           <Route path="/forca-maior-evento-imprevisivel" element={<ForcaMaior />} />
           <Route path="/caso-fortuito-evento-inevitavel" element={<CasoFortuito />} />
           <Route path="/direito-arrependimento-prazo-legal" element={<DireitoArrependimento />} />
+          <Route path="/benfeitorias-melhoramentos" element={<Benfeitorias />} />
+          <Route path="/eviccao-perda-bem" element={<Eviccao />} />
+          <Route path="/sub-rogacao-substituicao" element={<SubRogacao />} />
+          <Route path="/mora-atraso-obrigacao" element={<Mora />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

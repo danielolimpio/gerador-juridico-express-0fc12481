@@ -1,12 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowLeft, BookOpen, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState, useMemo } from "react";
 import SEO from "@/components/SEO";
 
 
 const GlossarioJuridico = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const termosJuridicos = [
     {
@@ -91,21 +94,35 @@ const GlossarioJuridico = () => {
     },
     {
       termo: "Benfeitorias",
-      definicao: "Melhoramentos realizados no bem, podendo ser necessárias, úteis ou voluptuárias."
+      definicao: "Melhoramentos realizados no bem, podendo ser necessárias, úteis ou voluptuárias.",
+      link: "/benfeitorias-melhoramentos"
     },
     {
       termo: "Evicção",
-      definicao: "Perda da coisa adquirida por decisão judicial que reconhece direito anterior de terceiro."
+      definicao: "Perda da coisa adquirida por decisão judicial que reconhece direito anterior de terceiro.",
+      link: "/eviccao-perda-bem"
     },
     {
       termo: "Sub-rogação",
-      definicao: "Substituição de uma pessoa por outra na titularidade de um direito."
+      definicao: "Substituição de uma pessoa por outra na titularidade de um direito.",
+      link: "/sub-rogacao-substituicao"
     },
     {
       termo: "Mora",
-      definicao: "Atraso no cumprimento da obrigação quando ainda é possível e útil a prestação."
+      definicao: "Atraso no cumprimento da obrigação quando ainda é possível e útil a prestação.",
+      link: "/mora-atraso-obrigacao"
     }
   ];
+
+  const filteredTermos = useMemo(() => {
+    if (!searchTerm.trim()) return termosJuridicos;
+    
+    const search = searchTerm.toLowerCase();
+    return termosJuridicos.filter(item => 
+      item.termo.toLowerCase().includes(search) || 
+      item.definicao.toLowerCase().includes(search)
+    );
+  }, [searchTerm]);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -149,8 +166,26 @@ const GlossarioJuridico = () => {
             </p>
           </header>
 
+          <section className="mb-8">
+            <div className="relative max-w-2xl mx-auto">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <Input
+                type="text"
+                placeholder="Buscar termos jurídicos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 py-6 text-lg"
+              />
+            </div>
+            {searchTerm && (
+              <p className="text-center text-muted-foreground mt-4">
+                {filteredTermos.length} {filteredTermos.length === 1 ? 'termo encontrado' : 'termos encontrados'}
+              </p>
+            )}
+          </section>
+
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {termosJuridicos.map((item, index) => (
+            {filteredTermos.map((item, index) => (
               <Card 
                 key={index} 
                 className="hover:shadow-lg transition-shadow cursor-pointer"
