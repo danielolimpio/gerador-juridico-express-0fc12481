@@ -61,15 +61,18 @@ const GlossarioJuridico = () => {
     },
     {
       termo: "Alienação Fiduciária",
-      definicao: "Transferência de propriedade de bem móvel ou imóvel como garantia de dívida."
+      definicao: "Transferência de propriedade de bem móvel ou imóvel como garantia de dívida.",
+      link: "/alienacao-fiduciaria-garantia"
     },
     {
       termo: "Usufruto",
-      definicao: "Direito de usar e gozar de bem alheio, conservando sua substância."
+      definicao: "Direito de usar e gozar de bem alheio, conservando sua substância.",
+      link: "/usufruto-direito-real"
     },
     {
       termo: "Arras",
-      definicao: "Sinal dado no ato da celebração do contrato como garantia de sua execução."
+      definicao: "Sinal dado no ato da celebração do contrato como garantia de sua execução.",
+      link: "/arras-sinal-contratual"
     },
     {
       termo: "Força Maior",

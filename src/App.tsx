@@ -29,6 +29,9 @@ import RescisaoContrato from "./pages/RescisaoContrato";
 import OnerosiadeExcessiva from "./pages/OnerosiadeExcessiva";
 import ClausulaPenal from "./pages/ClausulaPenal";
 import Novacao from "./pages/Novacao";
+import AlienacaoFiduciaria from "./pages/AlienacaoFiduciaria";
+import Usufruto from "./pages/Usufruto";
+import Arras from "./pages/Arras";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -82,6 +85,9 @@ const App = () => (
           <Route path="/onerosidade-excessiva-teoria-imprevacao" element={<OnerosiadeExcessiva />} />
           <Route path="/clausula-penal-multa-contratual" element={<ClausulaPenal />} />
           <Route path="/novacao-substituicao-obrigacao" element={<Novacao />} />
+          <Route path="/alienacao-fiduciaria-garantia" element={<AlienacaoFiduciaria />} />
+          <Route path="/usufruto-direito-real" element={<Usufruto />} />
+          <Route path="/arras-sinal-contratual" element={<Arras />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
