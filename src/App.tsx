@@ -26,6 +26,9 @@ import ComodatoEmprestimo from "./pages/ComodatoEmprestimo";
 import VicioRedibitorio from "./pages/VicioRedibitorio";
 import ResilicaoContratual from "./pages/ResilicaoContratual";
 import RescisaoContrato from "./pages/RescisaoContrato";
+import OnerosiadeExcessiva from "./pages/OnerosiadeExcessiva";
+import ClausulaPenal from "./pages/ClausulaPenal";
+import Novacao from "./pages/Novacao";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -75,7 +78,10 @@ const App = () => (
             <Route path="/comodato-emprestimo-gratuito" element={<ComodatoEmprestimo />} />
             <Route path="/vicio-redibitorio-defeito-oculto" element={<VicioRedibitorio />} />
             <Route path="/resilicao-contratual-mutuo-acordo" element={<ResilicaoContratual />} />
-            <Route path="/rescisao-de-contrato-descumprimento" element={<RescisaoContrato />} />
+          <Route path="/rescisao-de-contrato-descumprimento" element={<RescisaoContrato />} />
+          <Route path="/onerosidade-excessiva-teoria-imprevacao" element={<OnerosiadeExcessiva />} />
+          <Route path="/clausula-penal-multa-contratual" element={<ClausulaPenal />} />
+          <Route path="/novacao-substituicao-obrigacao" element={<Novacao />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

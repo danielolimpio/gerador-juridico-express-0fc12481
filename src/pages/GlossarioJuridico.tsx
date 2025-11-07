@@ -46,15 +46,18 @@ const GlossarioJuridico = () => {
     },
     {
       termo: "Onerosidade Excessiva",
-      definicao: "Situação em que a prestação de uma das partes torna-se extremamente onerosa."
+      definicao: "Situação em que a prestação de uma das partes torna-se extremamente onerosa.",
+      link: "/onerosidade-excessiva-teoria-imprevacao"
     },
     {
       termo: "Cláusula Penal",
-      definicao: "Previsão de multa compensatória pelo descumprimento do contrato."
+      definicao: "Previsão de multa compensatória pelo descumprimento do contrato.",
+      link: "/clausula-penal-multa-contratual"
     },
     {
       termo: "Novação",
-      definicao: "Substituição de uma obrigação por outra, extinguindo a anterior."
+      definicao: "Substituição de uma obrigação por outra, extinguindo a anterior.",
+      link: "/novacao-substituicao-obrigacao"
     },
     {
       termo: "Alienação Fiduciária",
