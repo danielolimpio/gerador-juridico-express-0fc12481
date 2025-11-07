@@ -76,15 +76,18 @@ const GlossarioJuridico = () => {
     },
     {
       termo: "Força Maior",
-      definicao: "Evento imprevisível e inevitável que impede o cumprimento da obrigação."
+      definicao: "Evento imprevisível e inevitável que impede o cumprimento da obrigação.",
+      link: "/forca-maior-evento-imprevisivel"
     },
     {
       termo: "Caso Fortuito",
-      definicao: "Evento previsível, mas inevitável, que impossibilita o cumprimento do contrato."
+      definicao: "Evento previsível, mas inevitável, que impossibilita o cumprimento do contrato.",
+      link: "/caso-fortuito-evento-inevitavel"
     },
     {
       termo: "Direito de Arrependimento",
-      definicao: "Faculdade de desfazer o negócio jurídico dentro de prazo legal."
+      definicao: "Faculdade de desfazer o negócio jurídico dentro de prazo legal.",
+      link: "/direito-arrependimento-prazo-legal"
     },
     {
       termo: "Benfeitorias",

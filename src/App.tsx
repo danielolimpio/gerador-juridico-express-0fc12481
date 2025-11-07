@@ -32,6 +32,9 @@ import Novacao from "./pages/Novacao";
 import AlienacaoFiduciaria from "./pages/AlienacaoFiduciaria";
 import Usufruto from "./pages/Usufruto";
 import Arras from "./pages/Arras";
+import ForcaMaior from "./pages/ForcaMaior";
+import CasoFortuito from "./pages/CasoFortuito";
+import DireitoArrependimento from "./pages/DireitoArrependimento";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -88,6 +91,9 @@ const App = () => (
           <Route path="/alienacao-fiduciaria-garantia" element={<AlienacaoFiduciaria />} />
           <Route path="/usufruto-direito-real" element={<Usufruto />} />
           <Route path="/arras-sinal-contratual" element={<Arras />} />
+          <Route path="/forca-maior-evento-imprevisivel" element={<ForcaMaior />} />
+          <Route path="/caso-fortuito-evento-inevitavel" element={<CasoFortuito />} />
+          <Route path="/direito-arrependimento-prazo-legal" element={<DireitoArrependimento />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
