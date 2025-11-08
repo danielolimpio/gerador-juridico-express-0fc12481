@@ -146,7 +146,7 @@ const ResilicaoContratual = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90"
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/tipos-de-contratos')}
               >
                 Gerar Contrato Agora
               </Button>

@@ -355,7 +355,7 @@ const CessaoCredito = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90"
-              onClick={() => navigate('/gerador')}
+              onClick={() => navigate('/tipos-de-contratos')}
             >
               Criar Contrato Agora
             </Button>
