@@ -115,22 +115,22 @@ const GlossarioJuridico = () => {
     {
       termo: "Arbitragem",
       definicao: "Método alternativo de resolução de conflitos em que as partes elegem um árbitro ou tribunal arbitral para decidir a disputa, com força de sentença judicial.",
-      link: ""
+      link: "/arbitragem-resolucao-conflitos"
     },
     {
       termo: "Cláusula de Não Concorrência",
       definicao: "Acordo que impede uma das partes de atuar em atividade concorrente com a outra por um período determinado e em determinada região.",
-      link: ""
+      link: "/clausula-nao-concorrencia"
     },
     {
       termo: "Cláusula de Confidencialidade",
       definicao: "Obrigação contratual de manter sigilo sobre informações trocadas entre as partes durante ou após a vigência do contrato.",
-      link: ""
+      link: "/clausula-confidencialidade"
     },
     {
       termo: "Cessão de Crédito",
       definicao: "Transferência do direito de crédito de um credor (cedente) para um terceiro (cessionário), com ou sem consentimento do devedor.",
-      link: ""
+      link: "/cessao-credito"
     }
   ];
 

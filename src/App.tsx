@@ -39,6 +39,10 @@ import Benfeitorias from "./pages/Benfeitorias";
 import Eviccao from "./pages/Eviccao";
 import SubRogacao from "./pages/SubRogacao";
 import Mora from "./pages/Mora";
+import Arbitragem from "./pages/Arbitragem";
+import ClausulaNaoConcorrencia from "./pages/ClausulaNaoConcorrencia";
+import ClausulaConfidencialidade from "./pages/ClausulaConfidencialidade";
+import CessaoCredito from "./pages/CessaoCredito";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -102,6 +106,10 @@ const App = () => (
           <Route path="/eviccao-perda-bem" element={<Eviccao />} />
           <Route path="/sub-rogacao-substituicao" element={<SubRogacao />} />
           <Route path="/mora-atraso-obrigacao" element={<Mora />} />
+          <Route path="/arbitragem-resolucao-conflitos" element={<Arbitragem />} />
+          <Route path="/clausula-nao-concorrencia" element={<ClausulaNaoConcorrencia />} />
+          <Route path="/clausula-confidencialidade" element={<ClausulaConfidencialidade />} />
+          <Route path="/cessao-credito" element={<CessaoCredito />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
