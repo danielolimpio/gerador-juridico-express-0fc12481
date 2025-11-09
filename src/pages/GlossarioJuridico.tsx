@@ -131,6 +131,26 @@ const GlossarioJuridico = () => {
       termo: "Cessão de Crédito",
       definicao: "Transferência do direito de crédito de um credor (cedente) para um terceiro (cessionário), com ou sem consentimento do devedor.",
       link: "/cessao-credito"
+    },
+    {
+      termo: "Cessão de Direitos",
+      definicao: "Ato pelo qual uma parte transfere a outrem os direitos decorrentes de um contrato, mantendo-se a obrigação original.",
+      link: "/cessao-direitos"
+    },
+    {
+      termo: "Condição Resolutiva",
+      definicao: "Cláusula que determina a extinção do contrato caso determinado fato venha a ocorrer no futuro.",
+      link: "/condicao-resolutiva"
+    },
+    {
+      termo: "Condição Suspensiva",
+      definicao: "Cláusula que suspende os efeitos do contrato até que determinado fato ocorra, tornando-o eficaz somente após sua realização.",
+      link: "/condicao-suspensiva"
+    },
+    {
+      termo: "Contrato Aleatório",
+      definicao: "Contrato em que o risco da prestação é assumido por uma das partes, como no caso de apostas ou seguros.",
+      link: "/contrato-aleatorio"
     }
   ];
 

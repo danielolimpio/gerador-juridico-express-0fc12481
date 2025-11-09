@@ -43,6 +43,10 @@ import Arbitragem from "./pages/Arbitragem";
 import ClausulaNaoConcorrencia from "./pages/ClausulaNaoConcorrencia";
 import ClausulaConfidencialidade from "./pages/ClausulaConfidencialidade";
 import CessaoCredito from "./pages/CessaoCredito";
+import CessaoDireitos from "./pages/CessaoDireitos";
+import CondicaoResolutiva from "./pages/CondicaoResolutiva";
+import CondicaoSuspensiva from "./pages/CondicaoSuspensiva";
+import ContratoAleatorio from "./pages/ContratoAleatorio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -110,6 +114,10 @@ const App = () => (
           <Route path="/clausula-nao-concorrencia" element={<ClausulaNaoConcorrencia />} />
           <Route path="/clausula-confidencialidade" element={<ClausulaConfidencialidade />} />
           <Route path="/cessao-credito" element={<CessaoCredito />} />
+          <Route path="/cessao-direitos" element={<CessaoDireitos />} />
+          <Route path="/condicao-resolutiva" element={<CondicaoResolutiva />} />
+          <Route path="/condicao-suspensiva" element={<CondicaoSuspensiva />} />
+          <Route path="/contrato-aleatorio" element={<ContratoAleatorio />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
