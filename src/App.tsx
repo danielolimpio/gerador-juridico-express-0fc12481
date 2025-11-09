@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import CookieConsent from "./components/CookieConsent";
 import Index from "./pages/Index";
 import ContractGenerator from "./pages/ContractGenerator";
 import ComoFunciona from "./pages/ComoFunciona";
@@ -121,7 +120,6 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </HelmetProvider>
