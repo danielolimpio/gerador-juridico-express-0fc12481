@@ -46,6 +46,10 @@ import CessaoDireitos from "./pages/CessaoDireitos";
 import CondicaoResolutiva from "./pages/CondicaoResolutiva";
 import CondicaoSuspensiva from "./pages/CondicaoSuspensiva";
 import ContratoAleatorio from "./pages/ContratoAleatorio";
+import ContratoBilateral from "./pages/ContratoBilateral";
+import ContratoUnilateral from "./pages/ContratoUnilateral";
+import DanoMoral from "./pages/DanoMoral";
+import DanoMaterial from "./pages/DanoMaterial";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -117,6 +121,10 @@ const App = () => (
           <Route path="/condicao-resolutiva" element={<CondicaoResolutiva />} />
           <Route path="/condicao-suspensiva" element={<CondicaoSuspensiva />} />
           <Route path="/contrato-aleatorio" element={<ContratoAleatorio />} />
+          <Route path="/contrato-bilateral" element={<ContratoBilateral />} />
+          <Route path="/contrato-unilateral" element={<ContratoUnilateral />} />
+          <Route path="/dano-moral" element={<DanoMoral />} />
+          <Route path="/dano-material" element={<DanoMaterial />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

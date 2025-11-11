@@ -151,6 +151,26 @@ const GlossarioJuridico = () => {
       termo: "Contrato Aleatório",
       definicao: "Contrato em que o risco da prestação é assumido por uma das partes, como no caso de apostas ou seguros.",
       link: "/contrato-aleatorio"
+    },
+    {
+      termo: "Contrato Bilateral",
+      definicao: "Contrato em que ambas as partes assumem obrigações recíprocas, como no caso de compra e venda.",
+      link: "/contrato-bilateral"
+    },
+    {
+      termo: "Contrato Unilateral",
+      definicao: "Contrato em que apenas uma das partes assume obrigações, como na doação ou no comodato.",
+      link: "/contrato-unilateral"
+    },
+    {
+      termo: "Dano Moral",
+      definicao: "Lesão à honra, imagem, dignidade ou privacidade de uma pessoa, passível de indenização mesmo sem prejuízo material.",
+      link: "/dano-moral"
+    },
+    {
+      termo: "Dano Material",
+      definicao: "Prejuízo patrimonial sofrido por uma das partes em decorrência do descumprimento contratual ou ato ilícito.",
+      link: "/dano-material"
     }
   ];
 
