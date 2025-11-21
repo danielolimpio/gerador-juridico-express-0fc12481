@@ -689,10 +689,10 @@ const ContratoFranquia = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>2. Portal Franquias Brasil (SEBRAE)</CardTitle>
+                  <CardTitle>2. SEBRAE Franquias</CardTitle>
                   <CardDescription>
-                    <a href="https://www.franquiasbrasil.com.br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      www.franquiasbrasil.com.br
+                    <a href="https://sebrae.com.br/sites/PortalSebrae/sebraefranquias" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      sebrae.com.br
                     </a>
                   </CardDescription>
                 </CardHeader>
@@ -703,10 +703,10 @@ const ContratoFranquia = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>3. Revista Franquia & Negócios</CardTitle>
+                  <CardTitle>3. Revista Franquia</CardTitle>
                   <CardDescription>
-                    <a href="https://www.franquiasnegocios.com.br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      www.franquiasnegocios.com.br
+                    <a href="https://revistafranquia.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      revistafranquia.com.br
                     </a>
                   </CardDescription>
                 </CardHeader>
