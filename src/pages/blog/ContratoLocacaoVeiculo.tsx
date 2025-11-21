@@ -2,6 +2,7 @@ import SEO from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AuthorProfile from "@/components/AuthorProfile";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -31,6 +32,29 @@ import {
 } from "@/components/ui/accordion";
 
 const ContratoLocacaoVeiculo = () => {
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito",
+      description: "Entenda como funciona o empréstimo gratuito de bens móveis e imóveis com segurança jurídica completa.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Aluguel Residencial: Tudo que Você Precisa Saber",
+      description: "Direitos e deveres do locador e locatário em contratos de aluguel residencial.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Entenda a Diferença entre Contrato de Doação e Venda de Bens",
+      description: "Descubra as diferenças jurídicas entre doar e vender bens móveis e imóveis.",
+      slug: "contrato-doacao-venda-bens-moveis",
+      coverImage: "/images/blog/contrato-doacao-venda-cover.jpg",
+      category: "Direitos & Deveres"
+    }
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -1274,6 +1298,9 @@ const ContratoLocacaoVeiculo = () => {
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </main>
     </>
   );

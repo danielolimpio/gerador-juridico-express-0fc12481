@@ -3,9 +3,34 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, UserCheck, AlertTriangle, Shield, Scale } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const FiadorResponsabilidade = () => {
   const navigate = useNavigate();
+
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Aluguel Residencial: Tudo que Você Precisa Saber",
+      description: "Direitos e deveres do locador e locatário em contratos de aluguel residencial.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito",
+      description: "Entenda como funciona o empréstimo gratuito de bens móveis e imóveis com segurança jurídica completa.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+      description: "Saiba quando e como usar um contrato de mandato para representação legal.",
+      slug: "contrato-mandato",
+      coverImage: "/images/blog/contrato-mandato-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -142,6 +167,9 @@ const FiadorResponsabilidade = () => {
             </div>
           </article>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );

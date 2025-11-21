@@ -8,6 +8,7 @@ import { ArrowLeft, FileText } from 'lucide-react';
 
 import SEO from '@/components/SEO';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedArticles, { RelatedArticle } from '@/components/RelatedArticles';
 
 // Mapeamento de URLs SEO-friendly para IDs de contratos
 const urlToContractMap: { [key: string]: string } = {
@@ -38,6 +39,30 @@ const ContractGenerator: React.FC = () => {
   const contractTypeFromUrl = urlToContractMap[location.pathname];
   const contractTypeId = contractTypeFromUrl || contractId || searchParams.get('type');
   const contractType = contractTypes.find(ct => ct.id === contractTypeId);
+
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Franquia: Guia Completo para Empreendedores",
+      description: "Aprenda tudo sobre contratos de franquia e como expandir seu negócio com segurança.",
+      slug: "contrato-franquia",
+      coverImage: "/images/blog/contrato-franquia-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+      description: "Saiba quando e como usar um contrato de mandato para representação legal.",
+      slug: "contrato-mandato",
+      coverImage: "/images/blog/contrato-mandato-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
   
   if (!contractType) {
     return (
@@ -120,6 +145,9 @@ const ContractGenerator: React.FC = () => {
           contractType={contractType} 
           onBack={() => navigate(-1)} 
         />
+        
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );
