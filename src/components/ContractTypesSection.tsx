@@ -69,13 +69,13 @@ const contractTypesDisplay = [
     id: 'parceria-comercial',
     icon: Users,
     title: "Contrato de Parceria Comercial",
-    description: "Sociedades e joint ventures"
+    description: "Sociedades e joint ventures estratégicas"
   },
   {
     id: 'comodato',
     icon: Car,
     title: "Contrato de Comodato",
-    description: "Empréstimo gratuito de bens empresariais"
+    description: "Contrato de Comodato empresarial"
   },
   {
     id: 'emprestimo',
