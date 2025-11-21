@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import ContractTypesSection from "@/components/ContractTypesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import FloatingButton from "@/components/FloatingButton";
 import SEO from "@/components/SEO";
 
@@ -95,6 +96,7 @@ const Index = () => {
         <ContractTypesSection />
         <HowItWorksSection />
         <FeaturesSection />
+        <BlogPreviewSection />
         <FloatingButton />
       </main>
     </>
