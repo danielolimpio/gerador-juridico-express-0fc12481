@@ -20,7 +20,7 @@ const Header = () => {
     { label: "Como Funciona", path: "/como-funciona" },
     { label: "Modelos", path: "/tipos-de-contratos" },
     { label: "Exemplos", path: "/exemplos-de-contratos" },
-    { label: "FAQ", path: "/faq" },
+    { label: "Blog", path: "/blog" },
     { label: "Contato", path: "/contato" },
   ];
 

@@ -50,6 +50,7 @@ import ContratoBilateral from "./pages/ContratoBilateral";
 import ContratoUnilateral from "./pages/ContratoUnilateral";
 import DanoMoral from "./pages/DanoMoral";
 import DanoMaterial from "./pages/DanoMaterial";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -86,6 +87,7 @@ const App = () => (
             <Route path="/como-funciona" element={<ComoFunciona />} />
             <Route path="/tipos-de-contratos" element={<TiposDeContratos />} />
             <Route path="/exemplos-de-contratos" element={<ExemplosDeContratos />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
             <Route path="/termos-de-uso" element={<TermosDeUso />} />
