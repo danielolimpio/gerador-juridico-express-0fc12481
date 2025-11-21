@@ -893,7 +893,7 @@ const ContratoFranquia = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.franquiasbrasil.com.br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  <a href="https://sebrae.com.br/Sebrae/Portal%20Sebrae/Anexos/franquias_portal_sebrae.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                     Portal Franquias Brasil — Sebrae — Guia oficial de escolha de franquias
                   </a>
                 </li>
