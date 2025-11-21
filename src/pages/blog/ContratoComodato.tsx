@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import AuthorProfile from "@/components/AuthorProfile";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +22,30 @@ import {
 const coverImage = "/images/blog/contrato-comodato-cover.jpg";
 
 const ContratoComodato = () => {
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Entenda a Diferença entre Contrato de Doação e Venda de Bens Móveis",
+      description: "Confira as diferenças legais entre doação e venda de bens móveis.",
+      slug: "contrato-doacao-venda-bens-moveis",
+      coverImage: "/images/blog/contrato-doacao-venda-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Franquia: Guia Completo para Empreendedores",
+      description: "Aprenda tudo sobre contratos de franquia e como expandir seu negócio com segurança.",
+      slug: "contrato-franquia",
+      coverImage: "/images/blog/contrato-franquia-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
+
   return (
     <>
       <SEO
@@ -936,6 +961,9 @@ const ContratoComodato = () => {
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </main>
     </>
   );

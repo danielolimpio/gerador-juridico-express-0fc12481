@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -20,6 +21,30 @@ import {
 } from "lucide-react";
 
 const ContratoFranquia = () => {
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens",
+      description: "Aprenda a formalizar empréstimos de bens como carros e ferramentas sem cobrar.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+      description: "Saiba quando e como usar um contrato de mandato para representação legal.",
+      slug: "contrato-mandato",
+      coverImage: "/images/blog/contrato-mandato-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -907,6 +932,9 @@ const ContratoFranquia = () => {
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </main>
     </>
   );

@@ -3,9 +3,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, DollarSign, Scale, AlertCircle, CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const DanoMaterial = () => {
   const navigate = useNavigate();
+
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Aluguel Residencial: tudo o que você precisa saber antes de assinar",
+      description: "Entenda cláusulas essenciais, seus direitos como inquilino e obrigações do locador.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Entenda a Diferença entre Contrato de Doação e Venda de Bens Móveis",
+      description: "Confira as diferenças legais entre doação e venda de bens móveis.",
+      slug: "contrato-doacao-venda-bens-moveis",
+      coverImage: "/images/blog/contrato-doacao-venda-cover.jpg",
+      category: "Direitos & Deveres"
+    }
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -351,6 +376,9 @@ const DanoMaterial = () => {
             </section>
           </article>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );
