@@ -65,7 +65,8 @@ export const blogPosts: BlogPost[] = [
     category: "direitos-deveres",
     date: "21 de novembro de 2025",
     readTime: "12 min",
-    slug: "contrato-aluguel-residencial"
+    slug: "contrato-aluguel-residencial",
+    coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg"
   }
 ];
 
@@ -152,7 +153,16 @@ const Blog = () => {
                     const CategoryIcon = category?.icon || FileText;
 
                     return (
-                      <Card key={post.id} className="hover:shadow-lg transition-shadow">
+                      <Card key={post.id} className="hover:shadow-lg transition-shadow overflow-hidden">
+                        {post.coverImage && (
+                          <div className="relative w-full h-48 overflow-hidden">
+                            <img 
+                              src={post.coverImage} 
+                              alt={post.title}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        )}
                         <CardHeader>
                           <div className="flex items-center gap-2 mb-3">
                             <Badge variant="secondary" className={category?.color}>

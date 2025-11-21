@@ -17,8 +17,7 @@ import {
   ArrowRight,
   ExternalLink
 } from "lucide-react";
-// Imagem de capa (usar a imagem fornecida pelo usuário)
-const coverImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=600&fit=crop";
+const coverImage = "/images/blog/contrato-aluguel-residencial-cover.jpg";
 
 const ContratoAluguelResidencial = () => {
   return (
