@@ -87,6 +87,16 @@ export const blogPosts: BlogPost[] = [
     readTime: "18 min",
     slug: "contrato-doacao-venda-bens-moveis",
     coverImage: "/images/blog/contrato-doacao-venda-cover.jpg"
+  },
+  {
+    id: "4",
+    title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+    excerpt: "Aprenda como funciona o contrato de mandato e quando usá-lo para representar alguém. Modelo gratuito, rápido e válido em todo o Brasil.",
+    category: "passo-a-passo",
+    date: "21 de novembro de 2025",
+    readTime: "20 min",
+    slug: "contrato-mandato",
+    coverImage: "/images/blog/contrato-mandato-cover.jpg"
   }
 ];
 
