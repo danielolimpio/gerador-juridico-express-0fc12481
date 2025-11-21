@@ -903,7 +903,8 @@ const ContratoFranquia = () => {
 
           {/* Author Profile */}
           <div className="mt-16 pt-8 border-t border-border">
-            <AuthorProfile variant="full" />
+            <h3 className="text-xl font-semibold mb-4">Sobre o Autor</h3>
+            <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
       </main>
