@@ -107,6 +107,16 @@ export const blogPosts: BlogPost[] = [
     readTime: "25 min",
     slug: "contrato-franquia",
     coverImage: "/images/blog/contrato-franquia-cover.jpg"
+  },
+  {
+    id: "6",
+    title: "Contrato de Locação de Veículo: Regras para Alugar Carros, Motos e Equipamentos",
+    excerpt: "Proteja-se ao alugar veículos. Evite cobranças abusivas com modelo gratuito de contrato válido e atualizado para 2025.",
+    category: "empreendedores",
+    date: "21 de novembro de 2025",
+    readTime: "25 min",
+    slug: "contrato-locacao-veiculo",
+    coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg"
   }
 ];
 
