@@ -67,6 +67,16 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min",
     slug: "contrato-aluguel-residencial",
     coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg"
+  },
+  {
+    id: "2",
+    title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens",
+    excerpt: "Saiba quando usar o contrato de comodato para emprestar bens como carros ou ferramentas sem cobrar. Proteja-se legalmente com modelo gratuito.",
+    category: "empreendedores",
+    date: "21 de novembro de 2025",
+    readTime: "15 min",
+    slug: "contrato-comodato",
+    coverImage: "/images/blog/contrato-comodato-cover.jpg"
   }
 ];
 
