@@ -13,163 +13,163 @@ const GlossarioJuridico = () => {
 
   const termosJuridicos = [
     {
-      termo: "Contrato de Adesão",
-      definicao: "Contrato com cláusulas preestabelecidas por uma das partes, cabendo à outra apenas aceitar ou rejeitar.",
+      termo: "O que é Contrato de Adesão?",
+      definicao: "Contrato com cláusulas preestabelecidas por uma das partes, cabendo à outra apenas aceitar ou rejeitar. Comum em serviços essenciais e contratos de consumo.",
       link: "/contrato-de-adesao"
     },
     {
-      termo: "Fiador",
-      definicao: "Pessoa que se responsabiliza pelo cumprimento das obrigações do devedor principal em caso de inadimplemento.",
+      termo: "O que é Fiador?",
+      definicao: "Pessoa que se responsabiliza pelo cumprimento das obrigações do devedor principal em caso de inadimplemento. Garante o pagamento de dívidas contratuais.",
       link: "/fiador-responsabilidade-legal"
     },
     {
-      termo: "Caução",
-      definicao: "Garantia real ou pessoal oferecida para assegurar o cumprimento de uma obrigação.",
+      termo: "O que é Caução?",
+      definicao: "Garantia real ou pessoal oferecida para assegurar o cumprimento de uma obrigação. Pode ser em dinheiro, bens móveis ou imóveis.",
       link: "/caucao-garantia-contratual"
     },
     {
-      termo: "Comodato",
-      definicao: "Empréstimo gratuito de coisa não fungível, que deve ser restituída após o uso.",
+      termo: "O que é Comodato?",
+      definicao: "Empréstimo gratuito de coisa não fungível, que deve ser restituída após o uso. Muito utilizado para imóveis, equipamentos e veículos.",
       link: "/comodato-emprestimo-gratuito"
     },
     {
-      termo: "Vício Redibitório",
-      definicao: "Defeito oculto que torna a coisa inadequada ao uso ou diminui seu valor.",
+      termo: "O que é Vício Redibitório?",
+      definicao: "Defeito oculto que torna a coisa inadequada ao uso ou diminui seu valor. Permite a devolução do produto ou redução do preço pago.",
       link: "/vicio-redibitorio-defeito-oculto"
     },
     {
-      termo: "Resilição",
-      definicao: "Desfazimento do contrato por acordo mútuo entre as partes.",
+      termo: "O que é Resilição?",
+      definicao: "Desfazimento do contrato por acordo mútuo entre as partes. Também chamada de distrato, ocorre de forma consensual.",
       link: "/resilicao-contratual-mutuo-acordo"
     },
     {
-      termo: "Rescisão",
-      definicao: "Extinção do contrato por inadimplemento ou descumprimento de uma das partes.",
+      termo: "O que é Rescisão?",
+      definicao: "Extinção do contrato por inadimplemento ou descumprimento de uma das partes. Gera direito a indenização para a parte prejudicada.",
       link: "/rescisao-de-contrato-descumprimento"
     },
     {
-      termo: "Onerosidade Excessiva",
-      definicao: "Situação em que a prestação de uma das partes torna-se extremamente onerosa.",
+      termo: "O que é Onerosidade Excessiva?",
+      definicao: "Situação em que a prestação de uma das partes torna-se extremamente onerosa por eventos imprevisíveis. Permite revisão ou extinção do contrato.",
       link: "/onerosidade-excessiva-teoria-imprevacao"
     },
     {
-      termo: "Cláusula Penal",
-      definicao: "Previsão de multa compensatória pelo descumprimento do contrato.",
+      termo: "O que é Cláusula Penal?",
+      definicao: "Previsão de multa compensatória pelo descumprimento do contrato. Estabelece antecipadamente o valor da indenização por inadimplemento.",
       link: "/clausula-penal-multa-contratual"
     },
     {
-      termo: "Novação",
-      definicao: "Substituição de uma obrigação por outra, extinguindo a anterior.",
+      termo: "O que é Novação?",
+      definicao: "Substituição de uma obrigação por outra, extinguindo a anterior. Pode modificar objeto, devedor ou natureza da dívida original.",
       link: "/novacao-substituicao-obrigacao"
     },
     {
-      termo: "Alienação Fiduciária",
-      definicao: "Transferência de propriedade de bem móvel ou imóvel como garantia de dívida.",
+      termo: "O que é Alienação Fiduciária?",
+      definicao: "Transferência de propriedade de bem móvel ou imóvel como garantia de dívida. O devedor recupera a propriedade após quitação total.",
       link: "/alienacao-fiduciaria-garantia"
     },
     {
-      termo: "Usufruto",
-      definicao: "Direito de usar e gozar de bem alheio, conservando sua substância.",
+      termo: "O que é Usufruto?",
+      definicao: "Direito de usar e gozar de bem alheio, conservando sua substância. Permite utilização e colheita de frutos sem ser proprietário.",
       link: "/usufruto-direito-real"
     },
     {
-      termo: "Arras",
-      definicao: "Sinal dado no ato da celebração do contrato como garantia de sua execução.",
+      termo: "O que são Arras?",
+      definicao: "Sinal dado no ato da celebração do contrato como garantia de sua execução. Confirma a intenção de cumprimento e pode ser confirmatório ou penitencial.",
       link: "/arras-sinal-contratual"
     },
     {
-      termo: "Força Maior",
-      definicao: "Evento imprevisível e inevitável que impede o cumprimento da obrigação.",
+      termo: "O que é Força Maior?",
+      definicao: "Evento imprevisível e inevitável que impede o cumprimento da obrigação. Exemplos: guerras, fenômenos naturais extremos e atos governamentais.",
       link: "/forca-maior-evento-imprevisivel"
     },
     {
-      termo: "Caso Fortuito",
-      definicao: "Evento previsível, mas inevitável, que impossibilita o cumprimento do contrato.",
+      termo: "O que é Caso Fortuito?",
+      definicao: "Evento previsível, mas inevitável, que impossibilita o cumprimento do contrato. Difere da força maior por sua possível previsibilidade.",
       link: "/caso-fortuito-evento-inevitavel"
     },
     {
-      termo: "Direito de Arrependimento",
-      definicao: "Faculdade de desfazer o negócio jurídico dentro de prazo legal.",
+      termo: "O que é Direito de Arrependimento?",
+      definicao: "Faculdade de desfazer o negócio jurídico dentro de prazo legal. No CDC, consumidor tem 7 dias para desistir de compras fora do estabelecimento.",
       link: "/direito-arrependimento-prazo-legal"
     },
     {
-      termo: "Benfeitorias",
-      definicao: "Melhoramentos realizados no bem, podendo ser necessárias, úteis ou voluptuárias.",
+      termo: "O que são Benfeitorias?",
+      definicao: "Melhoramentos realizados no bem, podendo ser necessárias (conservação), úteis (valorização) ou voluptuárias (embelezamento e recreio).",
       link: "/benfeitorias-melhoramentos"
     },
     {
-      termo: "Evicção",
-      definicao: "Perda da coisa adquirida por decisão judicial que reconhece direito anterior de terceiro.",
+      termo: "O que é Evicção?",
+      definicao: "Perda da coisa adquirida por decisão judicial que reconhece direito anterior de terceiro. O vendedor deve garantir a propriedade ao comprador.",
       link: "/eviccao-perda-bem"
     },
     {
-      termo: "Sub-rogação",
-      definicao: "Substituição de uma pessoa por outra na titularidade de um direito.",
+      termo: "O que é Sub-rogação?",
+      definicao: "Substituição de uma pessoa por outra na titularidade de um direito. Permite que terceiro que paga dívida alheia assuma os direitos do credor.",
       link: "/sub-rogacao-substituicao"
     },
     {
-      termo: "Mora",
-      definicao: "Atraso no cumprimento da obrigação quando ainda é possível e útil a prestação.",
+      termo: "O que é Mora?",
+      definicao: "Atraso no cumprimento da obrigação quando ainda é possível e útil a prestação. Gera obrigação de pagar juros e correção monetária.",
       link: "/mora-atraso-obrigacao"
     },
     {
-      termo: "Arbitragem",
-      definicao: "Método alternativo de resolução de conflitos em que as partes elegem um árbitro ou tribunal arbitral para decidir a disputa, com força de sentença judicial.",
+      termo: "O que é Arbitragem?",
+      definicao: "Método alternativo de resolução de conflitos em que as partes elegem árbitro ou tribunal arbitral. Decisão tem força de sentença judicial.",
       link: "/arbitragem-resolucao-conflitos"
     },
     {
-      termo: "Cláusula de Não Concorrência",
-      definicao: "Acordo que impede uma das partes de atuar em atividade concorrente com a outra por um período determinado e em determinada região.",
+      termo: "O que é Cláusula de Não Concorrência?",
+      definicao: "Acordo que impede uma das partes de atuar em atividade concorrente por período e região determinados. Comum em contratos de trabalho e societários.",
       link: "/clausula-nao-concorrencia"
     },
     {
-      termo: "Cláusula de Confidencialidade",
-      definicao: "Obrigação contratual de manter sigilo sobre informações trocadas entre as partes durante ou após a vigência do contrato.",
+      termo: "O que é Cláusula de Confidencialidade?",
+      definicao: "Obrigação contratual de manter sigilo sobre informações trocadas entre as partes. Protege segredos comerciais e dados sensíveis.",
       link: "/clausula-confidencialidade"
     },
     {
-      termo: "Cessão de Crédito",
-      definicao: "Transferência do direito de crédito de um credor (cedente) para um terceiro (cessionário), com ou sem consentimento do devedor.",
+      termo: "O que é Cessão de Crédito?",
+      definicao: "Transferência do direito de crédito de um credor (cedente) para terceiro (cessionário). Pode ocorrer com ou sem consentimento do devedor.",
       link: "/cessao-credito"
     },
     {
-      termo: "Cessão de Direitos",
-      definicao: "Ato pelo qual uma parte transfere a outrem os direitos decorrentes de um contrato, mantendo-se a obrigação original.",
+      termo: "O que é Cessão de Direitos?",
+      definicao: "Ato pelo qual uma parte transfere a outrem os direitos decorrentes de um contrato. A obrigação original permanece inalterada.",
       link: "/cessao-direitos"
     },
     {
-      termo: "Condição Resolutiva",
-      definicao: "Cláusula que determina a extinção do contrato caso determinado fato venha a ocorrer no futuro.",
+      termo: "O que é Condição Resolutiva?",
+      definicao: "Cláusula que determina a extinção do contrato caso determinado fato venha a ocorrer no futuro. Desfaz os efeitos já produzidos.",
       link: "/condicao-resolutiva"
     },
     {
-      termo: "Condição Suspensiva",
-      definicao: "Cláusula que suspende os efeitos do contrato até que determinado fato ocorra, tornando-o eficaz somente após sua realização.",
+      termo: "O que é Condição Suspensiva?",
+      definicao: "Cláusula que suspende os efeitos do contrato até que determinado fato ocorra. O contrato só se torna eficaz após realização da condição.",
       link: "/condicao-suspensiva"
     },
     {
-      termo: "Contrato Aleatório",
-      definicao: "Contrato em que o risco da prestação é assumido por uma das partes, como no caso de apostas ou seguros.",
+      termo: "O que é Contrato Aleatório?",
+      definicao: "Contrato em que o risco da prestação é assumido por uma das partes. Exemplos incluem apostas, seguros e contratos de safra futura.",
       link: "/contrato-aleatorio"
     },
     {
-      termo: "Contrato Bilateral",
-      definicao: "Contrato em que ambas as partes assumem obrigações recíprocas, como no caso de compra e venda.",
+      termo: "O que é Contrato Bilateral?",
+      definicao: "Contrato em que ambas as partes assumem obrigações recíprocas. Exemplo clássico é a compra e venda, onde há troca de bem por dinheiro.",
       link: "/contrato-bilateral"
     },
     {
-      termo: "Contrato Unilateral",
-      definicao: "Contrato em que apenas uma das partes assume obrigações, como na doação ou no comodato.",
+      termo: "O que é Contrato Unilateral?",
+      definicao: "Contrato em que apenas uma das partes assume obrigações. Exemplos incluem doação pura, comodato e mútuo gratuito.",
       link: "/contrato-unilateral"
     },
     {
-      termo: "Dano Moral",
-      definicao: "Lesão à honra, imagem, dignidade ou privacidade de uma pessoa, passível de indenização mesmo sem prejuízo material.",
+      termo: "O que é Dano Moral?",
+      definicao: "Lesão à honra, imagem, dignidade ou privacidade de uma pessoa. Gera direito à indenização mesmo sem prejuízo patrimonial comprovado.",
       link: "/dano-moral"
     },
     {
-      termo: "Dano Material",
-      definicao: "Prejuízo patrimonial sofrido por uma das partes em decorrência do descumprimento contratual ou ato ilícito.",
+      termo: "O que é Dano Material?",
+      definicao: "Prejuízo patrimonial sofrido por uma das partes em decorrência do descumprimento contratual ou ato ilícito. Inclui danos emergentes e lucros cessantes.",
       link: "/dano-material"
     }
   ];
