@@ -864,7 +864,7 @@ const ContratoAluguelResidencial = () => {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/rescisao-contrato" className="text-primary hover:underline flex items-center gap-2">
+                    <a href="/glossario-juridico" className="text-primary hover:underline flex items-center gap-2">
                       <ArrowRight className="w-4 h-4" />
                       Como rescindir um contrato de aluguel sem prejuízos
                     </a>
