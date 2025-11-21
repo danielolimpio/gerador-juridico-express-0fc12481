@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,6 +24,30 @@ import {
 import AuthorProfile from "@/components/AuthorProfile";
 
 const ContratoMandato = () => {
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Franquia: Guia Completo para Empreendedores",
+      description: "Aprenda tudo sobre contratos de franquia e como expandir seu negócio com segurança.",
+      slug: "contrato-franquia",
+      coverImage: "/images/blog/contrato-franquia-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Contrato de Aluguel Residencial: tudo o que você precisa saber antes de assinar",
+      description: "Entenda cláusulas essenciais, seus direitos como inquilino e obrigações do locador.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    }
+  ];
+
   const coverImage = "/images/blog/contrato-mandato-cover.jpg";
   const publishDate = "21 de novembro de 2025";
   const readTime = "20 min";
@@ -701,6 +726,9 @@ const ContratoMandato = () => {
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </main>
     </>
   );

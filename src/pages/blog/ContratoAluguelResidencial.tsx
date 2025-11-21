@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import AuthorProfile from "@/components/AuthorProfile";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -21,6 +22,30 @@ import {
 const coverImage = "/images/blog/contrato-aluguel-residencial-cover.jpg";
 
 const ContratoAluguelResidencial = () => {
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens",
+      description: "Aprenda a formalizar empréstimos de bens como carros e ferramentas sem cobrar.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+      description: "Saiba quando e como usar um contrato de mandato para representação legal.",
+      slug: "contrato-mandato",
+      coverImage: "/images/blog/contrato-mandato-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
+
   return (
     <>
       <SEO
@@ -898,6 +923,9 @@ const ContratoAluguelResidencial = () => {
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </article>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </main>
     </>
   );

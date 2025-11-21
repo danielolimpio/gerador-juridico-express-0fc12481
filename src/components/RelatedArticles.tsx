@@ -24,7 +24,7 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
         <h3 className="text-2xl font-bold text-foreground mb-8">
           Leia Também
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {articles.slice(0, 3).map((article, index) => (
             <Link
               key={index}
@@ -37,23 +37,23 @@ const RelatedArticles = ({ articles }: RelatedArticlesProps) => {
                     src={article.coverImage}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    width={400}
-                    height={225}
+                    width={300}
+                    height={169}
                   />
                 </div>
-                <CardContent className="p-5">
-                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-3">
+                <CardContent className="p-4">
+                  <div className="inline-block px-2 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full mb-2">
                     {article.category}
                   </div>
-                  <h4 className="font-bold text-base text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                  <h4 className="font-bold text-sm text-foreground mb-1.5 line-clamp-2 group-hover:text-primary transition-colors">
                     {article.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                  <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
                     {article.description}
                   </p>
-                  <div className="flex items-center text-primary text-sm font-medium">
+                  <div className="flex items-center text-primary text-xs font-medium">
                     Ler artigo
-                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </CardContent>
               </Card>

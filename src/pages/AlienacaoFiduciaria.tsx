@@ -3,9 +3,34 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ShieldCheck, AlertTriangle, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const AlienacaoFiduciaria = () => {
   const navigate = useNavigate();
+
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Locação de Veículo: Regras para Alugar Carros",
+      description: "Proteja seu patrimônio com um contrato de locação de veículo seguro e válido.",
+      slug: "contrato-locacao-veiculo",
+      coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg",
+      category: "Passo a Passo"
+    },
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens",
+      description: "Aprenda a formalizar empréstimos de bens como carros e ferramentas sem cobrar.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros",
+      description: "Saiba quando e como usar um contrato de mandato para representação legal.",
+      slug: "contrato-mandato",
+      coverImage: "/images/blog/contrato-mandato-cover.jpg",
+      category: "Passo a Passo"
+    }
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -236,6 +261,9 @@ const AlienacaoFiduciaria = () => {
             </div>
           </article>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );
