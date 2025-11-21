@@ -64,6 +64,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://modelodecontrato.org/blog/contrato-mandato</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://modelodecontrato.org/blog/contrato-locacao-veiculo</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://modelodecontrato.org/blog/contrato-franquia</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://modelodecontrato.org/sobre</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
