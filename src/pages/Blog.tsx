@@ -77,6 +77,16 @@ export const blogPosts: BlogPost[] = [
     readTime: "15 min",
     slug: "contrato-comodato",
     coverImage: "/images/blog/contrato-comodato-cover.jpg"
+  },
+  {
+    id: "3",
+    title: "Entenda a Diferença entre Contrato de Doação e Venda de Bens Móveis",
+    excerpt: "Confira as diferenças legais entre doação e venda de bens móveis. Evite problemas futuros com modelos juridicamente válidos e gratuitos.",
+    category: "direitos-deveres",
+    date: "21 de novembro de 2025",
+    readTime: "18 min",
+    slug: "contrato-doacao-venda-bens-moveis",
+    coverImage: "/images/blog/contrato-doacao-venda-cover.jpg"
   }
 ];
 
@@ -118,7 +128,7 @@ const Blog = () => {
         {/* Main Content */}
         <section className="container mx-auto max-w-7xl px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Main Content Area */}
+            {/* Main Content Area - 2 Column Grid */}
             <div className="lg:col-span-8">
               {/* Categoria ativa */}
               {activeCategoryData && (
@@ -143,63 +153,65 @@ const Blog = () => {
                 </div>
               )}
 
-              {/* Lista de artigos */}
-              <div className="space-y-6">
+              {/* Lista de artigos em 2 colunas */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filteredPosts.length === 0 ? (
-                  <Card>
-                    <CardContent className="py-16 text-center">
-                      <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground/50" />
-                      <h3 className="text-xl font-semibold mb-2">
-                        Em breve, novos artigos
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Estamos preparando conteúdo exclusivo para você. Volte em breve!
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <div className="col-span-2">
+                    <Card>
+                      <CardContent className="py-16 text-center">
+                        <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground/50" />
+                        <h3 className="text-xl font-semibold mb-2">
+                          Em breve, novos artigos
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Estamos preparando conteúdo exclusivo para você. Volte em breve!
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 ) : (
                   filteredPosts.map((post) => {
                     const category = blogCategories.find(cat => cat.id === post.category);
                     const CategoryIcon = category?.icon || FileText;
 
                     return (
-                      <Card key={post.id} className="hover:shadow-lg transition-shadow overflow-hidden">
-                        {post.coverImage && (
-                          <div className="relative w-full h-48 overflow-hidden">
-                            <img 
-                              src={post.coverImage} 
-                              alt={post.title}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                        )}
-                        <CardHeader>
-                          <div className="flex items-center gap-2 mb-3">
-                            <Badge variant="secondary" className={category?.color}>
-                              <CategoryIcon className="w-3 h-3 mr-1" />
-                              {category?.name}
-                            </Badge>
-                            <span className="text-sm text-muted-foreground">
-                              {post.date} · {post.readTime}
-                            </span>
-                          </div>
-                          <CardTitle className="text-2xl hover:text-primary transition-colors cursor-pointer">
-                            {post.title}
-                          </CardTitle>
-                          <CardDescription className="text-base mt-2">
-                            {post.excerpt}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <a
-                            href={`/blog/${post.slug}`}
-                            className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-2 transition-colors"
-                          >
-                            Ler artigo completo
-                            <span aria-hidden="true">→</span>
-                          </a>
-                        </CardContent>
-                      </Card>
+                      <a 
+                        key={post.id}
+                        href={`/blog/${post.slug}`}
+                        className="group block"
+                      >
+                        <Card className="h-full hover:shadow-lg transition-all duration-300 overflow-hidden hover:border-primary/50">
+                          {post.coverImage && (
+                            <div className="relative w-full h-48 overflow-hidden">
+                              <img 
+                                src={post.coverImage} 
+                                alt={post.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          )}
+                          <CardHeader>
+                            <div className="flex items-center gap-2 mb-3">
+                              <Badge variant="secondary" className={category?.color}>
+                                <CategoryIcon className="w-3 h-3 mr-1" />
+                                {category?.name}
+                              </Badge>
+                            </div>
+                            <CardTitle className="text-xl group-hover:text-primary transition-colors line-clamp-2">
+                              {post.title}
+                            </CardTitle>
+                            <CardDescription className="text-sm mt-2 line-clamp-3">
+                              {post.excerpt}
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="flex items-center justify-between text-sm text-muted-foreground">
+                              <span>{post.readTime}</span>
+                              <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </a>
                     );
                   })
                 )}

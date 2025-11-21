@@ -53,6 +53,8 @@ import DanoMaterial from "./pages/DanoMaterial";
 import Blog from "./pages/Blog";
 import ContratoAluguelResidencial from "./pages/blog/ContratoAluguelResidencial";
 import ContratoComodato from "./pages/blog/ContratoComodato";
+import ContratoDoacao from "./pages/blog/ContratoDoacao";
+import Sobre from "./pages/Sobre";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -92,6 +94,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/contrato-aluguel-residencial" element={<ContratoAluguelResidencial />} />
           <Route path="/blog/contrato-comodato" element={<ContratoComodato />} />
+          <Route path="/blog/contrato-doacao-venda-bens-moveis" element={<ContratoDoacao />} />
+          <Route path="/sobre" element={<Sobre />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
             <Route path="/termos-de-uso" element={<TermosDeUso />} />
@@ -131,7 +135,8 @@ const App = () => (
           <Route path="/contrato-unilateral" element={<ContratoUnilateral />} />
           <Route path="/dano-moral" element={<DanoMoral />} />
           <Route path="/dano-material" element={<DanoMaterial />} />
-            <Route path="*" element={<NotFound />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
