@@ -30,42 +30,37 @@ const ContratoComodato = () => {
         canonical="https://modelodecontrato.org/blog/contrato-comodato"
       />
 
-      <article className="min-h-screen bg-background">
-        {/* Cover Image */}
-        <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden bg-gradient-to-b from-primary/5 to-background">
-          <img 
-            src={coverImage} 
-            alt="Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        </div>
+      <main className="min-h-screen bg-background">
+        <article className="container mx-auto max-w-4xl px-4 py-8 md:py-12">
 
-        {/* Article Header */}
-        <div className="container mx-auto max-w-4xl px-4 -mt-32 relative z-10">
-          <Card className="border-2 shadow-xl">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-center gap-2 mb-6">
-                <Badge variant="secondary" className="bg-purple-500/10 text-purple-600 dark:text-purple-400">
-                  <Briefcase className="w-3 h-3 mr-1" />
-                  Para Empreendedores
-                </Badge>
-                <span className="text-sm text-muted-foreground">21 de novembro de 2025 · 15 min</span>
-              </div>
+          {/* Cover Image */}
+          <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8 mt-6">
+            <img 
+              src={coverImage} 
+              alt="Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens
-              </h1>
+          {/* Article Header */}
+          <header className="mb-8">
+            <Badge variant="secondary" className="mb-4 bg-purple-500/10 text-purple-600 dark:text-purple-400">
+              <Briefcase className="w-3 h-3 mr-1" />
+              Para Empreendedores
+            </Badge>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens
+            </h1>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <time dateTime="2025-11-21">21 de novembro de 2025</time>
+              <span>•</span>
+              <span>15 min de leitura</span>
+            </div>
+          </header>
 
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Saiba quando usar o contrato de comodato para emprestar bens como carros ou ferramentas sem cobrar. Proteja-se legalmente com modelo gratuito.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+          <Separator className="my-8" />
 
-        {/* Article Content */}
-        <div className="container mx-auto max-w-4xl px-4 py-12">
+          {/* Article Content */}
           <div className="prose prose-lg max-w-none">
             
             {/* Introdução */}
@@ -931,17 +926,17 @@ const ContratoComodato = () => {
                 </CardContent>
               </Card>
             </section>
-
-            <Separator className="my-12" />
-
-            {/* Author Profile */}
-            <div className="mt-12">
-              <h3 className="text-xl font-semibold mb-4">Sobre o Autor</h3>
-              <AuthorProfile variant="compact" showSocialLinks={true} />
-            </div>
           </div>
-        </div>
-      </article>
+
+          <Separator className="my-12" />
+
+          {/* Author Profile */}
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-4">Sobre o Autor</h3>
+            <AuthorProfile variant="compact" showSocialLinks={true} />
+          </div>
+        </article>
+      </main>
     </>
   );
 };

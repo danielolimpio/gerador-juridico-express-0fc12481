@@ -30,33 +30,37 @@ const ContratoAluguelResidencial = () => {
         canonical="https://modelodecontrato.org/blog/contrato-aluguel-residencial"
       />
 
-      <article className="min-h-screen bg-background">
-        {/* Hero com imagem de capa */}
-        <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
-          <img 
-            src={coverImage} 
-            alt="Pessoas assinando contrato de aluguel residencial com casa de madeira e chaves sobre a mesa"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 container mx-auto max-w-4xl px-4 pb-8">
+      <main className="min-h-screen bg-background">
+        <article className="container mx-auto max-w-4xl px-4 py-8 md:py-12">
+
+          {/* Cover Image */}
+          <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8 mt-6">
+            <img 
+              src={coverImage} 
+              alt="Pessoas assinando contrato de aluguel residencial com casa de madeira e chaves sobre a mesa"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Article Header */}
+          <header className="mb-8">
             <Badge variant="secondary" className="mb-4 bg-green-500/10 text-green-600 dark:text-green-400">
               <Scale className="w-3 h-3 mr-1" />
               Direitos & Deveres
             </Badge>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               Contrato de Aluguel Residencial: tudo o que você precisa saber antes de assinar
             </h1>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>21 de novembro de 2025</span>
+              <time dateTime="2025-11-21">21 de novembro de 2025</time>
               <span>•</span>
               <span>12 min de leitura</span>
             </div>
-          </div>
-        </div>
+          </header>
 
-        {/* Conteúdo principal */}
-        <div className="container mx-auto max-w-4xl px-4 py-12">
+          <Separator className="my-8" />
+
+          {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             
             <p className="text-xl leading-relaxed text-muted-foreground mb-8">
@@ -893,8 +897,8 @@ const ContratoAluguelResidencial = () => {
             <h3 className="text-xl font-semibold mb-4">Sobre o Autor</h3>
             <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
-        </div>
-      </article>
+        </article>
+      </main>
     </>
   );
 };
