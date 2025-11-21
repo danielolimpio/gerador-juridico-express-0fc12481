@@ -74,7 +74,7 @@ const contractTypesDisplay = [
   {
     id: 'comodato',
     icon: Car,
-    title: "Contrato de Comodato",
+    title: "Contrato de Comodato Gratuito",
     description: "Contrato de Comodato empresarial"
   },
   {
