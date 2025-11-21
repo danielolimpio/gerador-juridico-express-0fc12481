@@ -56,8 +56,18 @@ export interface BlogPost {
   coverImage?: string;
 }
 
-// Array de artigos (vazio por enquanto)
-export const blogPosts: BlogPost[] = [];
+// Array de artigos
+export const blogPosts: BlogPost[] = [
+  {
+    id: "1",
+    title: "Contrato de Aluguel Residencial: tudo o que você precisa saber antes de assinar",
+    excerpt: "Antes de assinar um contrato de aluguel residencial, entenda cláusulas essenciais, seus direitos como inquilino, obrigações do locador e como evitar armadilhas jurídicas.",
+    category: "direitos-deveres",
+    date: "21 de novembro de 2025",
+    readTime: "12 min",
+    slug: "contrato-aluguel-residencial"
+  }
+];
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
