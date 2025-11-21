@@ -97,6 +97,16 @@ export const blogPosts: BlogPost[] = [
     readTime: "20 min",
     slug: "contrato-mandato",
     coverImage: "/images/blog/contrato-mandato-cover.jpg"
+  },
+  {
+    id: "5",
+    title: "Contrato de Franquia: Guia Completo para Empreendedores que Querem Expandir",
+    excerpt: "Descubra os pontos essenciais de um contrato de franquia. Proteja seu negócio com modelo juridicamente válido e pronto para download.",
+    category: "empreendedores",
+    date: "21 de novembro de 2025",
+    readTime: "25 min",
+    slug: "contrato-franquia",
+    coverImage: "/images/blog/contrato-franquia-cover.jpg"
   }
 ];
 
