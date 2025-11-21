@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import AuthorProfile from "@/components/AuthorProfile";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -883,6 +884,14 @@ const ContratoAluguelResidencial = () => {
                 </ul>
               </CardContent>
             </Card>
+          </div>
+
+          <Separator className="my-12" />
+
+          {/* Author Profile */}
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-4">Sobre o Autor</h3>
+            <AuthorProfile variant="compact" showSocialLinks={true} />
           </div>
         </div>
       </article>
