@@ -52,6 +52,7 @@ import DanoMoral from "./pages/DanoMoral";
 import DanoMaterial from "./pages/DanoMaterial";
 import Blog from "./pages/Blog";
 import ContratoAluguelResidencial from "./pages/blog/ContratoAluguelResidencial";
+import ContratoComodato from "./pages/blog/ContratoComodato";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -90,6 +91,7 @@ const App = () => (
             <Route path="/exemplos-de-contratos" element={<ExemplosDeContratos />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/contrato-aluguel-residencial" element={<ContratoAluguelResidencial />} />
+          <Route path="/blog/contrato-comodato" element={<ContratoComodato />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
             <Route path="/termos-de-uso" element={<TermosDeUso />} />
