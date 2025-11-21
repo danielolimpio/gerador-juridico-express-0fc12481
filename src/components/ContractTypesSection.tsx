@@ -50,14 +50,14 @@ const contractTypesDisplay = [
     id: 'prestacao-servicos',
     icon: Briefcase,
     title: "Contrato de Prestação de Serviços",
-    description: "MEI, autônomos e empresas",
+    description: "MEI, profissionais autônomos e empresas",
     popular: true
   },
   {
     id: 'locacao-comercial',
     icon: Users,
     title: "Contrato de Locação Comercial",
-    description: "Pontos comerciais e escritórios"
+    description: "Ambientes de pontos comerciais e escritórios"
   },
   {
     id: 'trabalho-autonomo',
@@ -75,13 +75,13 @@ const contractTypesDisplay = [
     id: 'comodato',
     icon: Car,
     title: "Contrato de Comodato",
-    description: "Empréstimo gratuito de bens"
+    description: "Empréstimo gratuito de bens empresariais"
   },
   {
     id: 'emprestimo',
     icon: FileText,
-    title: "Contrato de Empréstimo",
-    description: "Entre pessoas físicas e jurídicas"
+    title: "Contrato de Empréstimo Estratégico",
+    description: "Entre pessoas físicas e jurídicas com fins comerciais"
   }
 ];
 
