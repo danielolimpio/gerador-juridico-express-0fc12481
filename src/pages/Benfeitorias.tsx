@@ -3,14 +3,48 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Hammer, CheckCircle2, Star, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const Benfeitorias = () => {
   const navigate = useNavigate();
 
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Aluguel Residencial: Tudo que Você Precisa Saber",
+      description: "Direitos e deveres do locador e locatário em contratos de aluguel residencial.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito",
+      description: "Entenda como funciona o empréstimo gratuito de bens móveis e imóveis.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    },
+    {
+      title: "Usufruto: Direito Real de Usar e Gozar de Bem Alheio",
+      description: "Entenda como funciona o usufruto e seus direitos sobre bens de terceiros.",
+      slug: "usufruto-direito-real",
+      coverImage: "/images/blog/contrato-doacao-venda-cover.jpg",
+      category: "Direitos & Deveres"
+    }
+  ];
+
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Benfeitorias",
+    "description": "Entenda o que são benfeitorias necessárias, úteis e voluptuárias e seus direitos de indenização e retenção sobre melhoramentos realizados em bens.",
+    "inDefinedTermSet": "https://modelodecontrato.org/glossario-juridico"
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Benfeitorias - Melhoramentos em Bens",
+    "headline": "Benfeitorias - Melhoramentos em Bens | Tipos e Direitos",
     "description": "Entenda o que são benfeitorias necessárias, úteis e voluptuárias e seus direitos de indenização e retenção",
     "keywords": "benfeitorias, melhoramentos, benfeitorias necessárias, benfeitorias úteis, benfeitorias voluptuárias"
   };
@@ -22,14 +56,18 @@ const Benfeitorias = () => {
         description="Entenda o que são benfeitorias necessárias, úteis e voluptuárias. Conheça seus direitos de indenização e retenção sobre melhoramentos realizados em bens."
         keywords="benfeitorias, melhoramentos, benfeitorias necessárias, benfeitorias úteis, benfeitorias voluptuárias, direito de retenção, indenização benfeitorias"
         canonical="https://modelodecontrato.org/benfeitorias-melhoramentos"
-        structuredData={structuredData}
       />
+      <script type="application/ld+json">
+        {JSON.stringify([definedTermSchema, structuredData])}
+      </script>
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <nav className="mb-6">
-            <Button variant="outline" onClick={() => navigate(-1)}>
+          <Breadcrumbs />
+          
+          <nav className="mb-6 mt-4">
+            <Button variant="outline" onClick={() => navigate('/glossario-juridico')}>
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar
+              Voltar ao Glossário
             </Button>
           </nav>
 
@@ -183,6 +221,9 @@ const Benfeitorias = () => {
             </Button>
           </section>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );

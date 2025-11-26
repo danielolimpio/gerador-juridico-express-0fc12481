@@ -59,6 +59,7 @@ import ContratoMandato from "./pages/blog/ContratoMandato";
 import ContratoFranquia from "./pages/blog/ContratoFranquia";
 import ContratoLocacaoVeiculo from "./pages/blog/ContratoLocacaoVeiculo";
 import Sobre from "./pages/Sobre";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -144,6 +145,7 @@ const App = () => (
           <Route path="/dano-moral" element={<DanoMoral />} />
           <Route path="/dano-material" element={<DanoMaterial />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
