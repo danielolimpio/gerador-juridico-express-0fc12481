@@ -2,7 +2,13 @@
 RewriteEngine On
 RewriteBase /
 
-# Se não for arquivo nem diretório, redireciona para index.html
+# Excluir arquivos estáticos críticos do redirecionamento
+RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|favicon\.ico)$ - [L]
+
+# Excluir todos os arquivos com extensões comuns
+RewriteRule ^.*\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot)$ - [L]
+
+# Se não for arquivo nem diretório, redireciona para index.html (SPA)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
