@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, UserCheck, AlertTriangle, Shield, Scale } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const FiadorResponsabilidade = () => {
@@ -32,6 +33,14 @@ const FiadorResponsabilidade = () => {
     }
   ];
 
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Fiador",
+    "description": "Entenda o papel do fiador em contratos: responsabilidades, direitos garantidos pelo Código Civil, riscos patrimoniais e alternativas como seguro fiança.",
+    "inDefinedTermSet": "https://modelodecontrato.org/glossario-juridico"
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -60,11 +69,15 @@ const FiadorResponsabilidade = () => {
         description="Entenda o papel do fiador em contratos: responsabilidades, direitos garantidos pelo Código Civil, riscos patrimoniais e alternativas como seguro fiança."
         keywords="fiador, fiança, responsabilidade fiador, fiança solidária, código civil, locação, seguro fiança"
         canonical="https://modelodecontrato.org/fiador-responsabilidade-legal"
-        structuredData={structuredData}
       />
+      <script type="application/ld+json">
+        {JSON.stringify([definedTermSchema, structuredData])}
+      </script>
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <nav className="mb-6">
+          <Breadcrumbs />
+          
+          <nav className="mb-6 mt-4">
             <Button variant="outline" onClick={() => navigate('/glossario-juridico')}>
               <ArrowLeft className="mr-2 h-4 w-4" />
               Voltar ao Glossário

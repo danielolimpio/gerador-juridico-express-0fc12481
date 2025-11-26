@@ -3,11 +3,45 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ShieldCheck, FileText, Scale, AlertCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const CaucaoGarantia = () => {
   const navigate = useNavigate();
 
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Contrato de Aluguel Residencial: Tudo que Você Precisa Saber",
+      description: "Direitos e deveres do locador e locatário em contratos de aluguel residencial.",
+      slug: "contrato-aluguel-residencial",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Quem é o Fiador? Responsabilidades, Direitos e Riscos Jurídicos",
+      description: "Entenda o papel do fiador em contratos e seus riscos patrimoniais.",
+      slug: "fiador-responsabilidade-legal",
+      coverImage: "/images/blog/contrato-aluguel-residencial-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito",
+      description: "Entenda como funciona o empréstimo gratuito de bens móveis e imóveis.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    }
+  ];
+
   const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Caução",
+    "description": "Guia completo sobre caução: tipos de garantia, diferença entre caução e fiança, depósito caução em contratos de aluguel e proteção jurídica.",
+    "inDefinedTermSet": "https://modelodecontrato.org/glossario-juridico"
+  };
+
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "O que é Caução? Tipos, Função e Como Funciona como Garantia Contratual",
@@ -35,11 +69,15 @@ const CaucaoGarantia = () => {
         description="Guia completo sobre caução: tipos de garantia, diferença entre caução e fiança, depósito caução em contratos de aluguel e proteção jurídica."
         keywords="caução, garantia contratual, depósito caução, penhor, hipoteca, seguro garantia, código civil"
         canonical="https://modelodecontrato.org/caucao-garantia-contratual"
-        structuredData={structuredData}
       />
+      <script type="application/ld+json">
+        {JSON.stringify([structuredData, articleSchema])}
+      </script>
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <nav className="mb-6">
+          <Breadcrumbs />
+          
+          <nav className="mb-6 mt-4">
             <Button variant="outline" onClick={() => navigate('/glossario-juridico')}>
               <ArrowLeft className="mr-2 h-4 w-4" />
               Voltar ao Glossário
@@ -153,6 +191,9 @@ const CaucaoGarantia = () => {
             </div>
           </article>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );

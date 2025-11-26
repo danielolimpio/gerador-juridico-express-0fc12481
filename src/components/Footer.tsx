@@ -54,6 +54,16 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Sobre
+                </a>
+              </li>
+              <li>
                 <a href="/contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contato
                 </a>
@@ -88,6 +98,11 @@ const Footer = () => {
               <li>
                 <a href="/glossario-juridico" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Glossário Jurídico
+                </a>
+              </li>
+              <li>
+                <a href="/sitemap" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Mapa do Site
                 </a>
               </li>
             </ul>

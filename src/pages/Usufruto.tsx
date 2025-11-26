@@ -3,9 +3,43 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home, AlertTriangle, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedArticles, { RelatedArticle } from "@/components/RelatedArticles";
 
 const Usufruto = () => {
   const navigate = useNavigate();
+
+  const relatedArticles: RelatedArticle[] = [
+    {
+      title: "Benfeitorias: Melhoramentos Realizados em Bens",
+      description: "Entenda os tipos de benfeitorias e direitos de indenização sobre melhoramentos.",
+      slug: "benfeitorias-melhoramentos",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Doação: Diferenças entre Doar e Vender Bens",
+      description: "Descubra as diferenças jurídicas entre doar e vender bens móveis e imóveis.",
+      slug: "contrato-doacao-venda-bens-moveis",
+      coverImage: "/images/blog/contrato-doacao-venda-cover.jpg",
+      category: "Direitos & Deveres"
+    },
+    {
+      title: "Contrato de Comodato: Empréstimo Gratuito de Bens",
+      description: "Entenda como funciona o empréstimo gratuito de bens móveis e imóveis.",
+      slug: "contrato-comodato",
+      coverImage: "/images/blog/contrato-comodato-cover.jpg",
+      category: "Para Empreendedores"
+    }
+  ];
+
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Usufruto",
+    "description": "Usufruto é o direito de usar e gozar de bem alheio, conservando sua substância. Conheça tipos, direitos do usufrutuário e nu-proprietário.",
+    "inDefinedTermSet": "https://modelodecontrato.org/glossario-juridico"
+  };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -35,14 +69,18 @@ const Usufruto = () => {
         description="Usufruto é o direito de usar e gozar de bem alheio, conservando sua substância. Conheça tipos, direitos do usufrutuário e nu-proprietário."
         keywords="usufruto, direito real, usufrutuário, nu-proprietário, usufruto vitalício, usufruto temporário, extinção usufruto"
         canonical="https://modelodecontrato.org/usufruto-direito-real"
-        structuredData={structuredData}
       />
+      <script type="application/ld+json">
+        {JSON.stringify([definedTermSchema, structuredData])}
+      </script>
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <nav className="mb-6">
-            <Button variant="outline" onClick={() => navigate(-1)}>
+          <Breadcrumbs />
+          
+          <nav className="mb-6 mt-4">
+            <Button variant="outline" onClick={() => navigate('/glossario-juridico')}>
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar
+              Voltar ao Glossário
             </Button>
           </nav>
 
@@ -231,6 +269,9 @@ const Usufruto = () => {
             </div>
           </article>
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
       </div>
     </>
   );
