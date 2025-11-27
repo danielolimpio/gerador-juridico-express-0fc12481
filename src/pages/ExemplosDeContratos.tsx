@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, FileText, Download, Eye, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { generateContractText } from "@/lib/contractTemplates";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -520,6 +520,8 @@ const ExemplosDeContratos = () => {
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-6xl px-4 py-8">
+          <Breadcrumbs />
+          
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
               <ArrowLeft className="mr-2 h-4 w-4" />
