@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 const Contato = () => {
@@ -13,6 +14,8 @@ const Contato = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto max-w-4xl px-4 py-8">
+        <Breadcrumbs />
+        
         <div className="mb-6">
           <Button variant="outline" onClick={() => navigate(-1)}>
             <ArrowLeft className="mr-2 h-4 w-4" />

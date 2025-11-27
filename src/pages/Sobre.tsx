@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import AuthorProfile from "@/components/AuthorProfile";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Palette, Globe2, Sparkles } from "lucide-react";
@@ -17,6 +18,8 @@ const Sobre = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/5 to-background border-b">
           <div className="container mx-auto max-w-7xl px-4 py-16 md:py-24">
+            <Breadcrumbs />
+            
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Sobre o Projeto

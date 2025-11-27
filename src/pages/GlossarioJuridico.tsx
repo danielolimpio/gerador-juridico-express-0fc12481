@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 const GlossarioJuridico = () => {
@@ -208,6 +209,8 @@ const GlossarioJuridico = () => {
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-6xl px-4 py-8">
+          <Breadcrumbs />
+          
           <nav className="mb-6">
             <Button variant="outline" onClick={() => navigate(-1)}>
               <ArrowLeft className="mr-2 h-4 w-4" />
