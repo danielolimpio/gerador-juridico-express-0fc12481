@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://modelodecontrato.org/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Bloquear bots maliciosos conhecidos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
