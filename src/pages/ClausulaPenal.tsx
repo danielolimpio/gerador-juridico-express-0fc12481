@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Gavel, AlertTriangle, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const ClausulaPenal = () => {
   const navigate = useNavigate();
@@ -39,10 +40,12 @@ const ClausulaPenal = () => {
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto max-w-4xl px-4 py-8">
+          <Breadcrumbs />
+          
           <nav className="mb-6">
-            <Button variant="outline" onClick={() => navigate(-1)}>
+            <Button variant="outline" onClick={() => navigate('/glossario-juridico')}>
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar
+              Voltar ao Glossário
             </Button>
           </nav>
 
