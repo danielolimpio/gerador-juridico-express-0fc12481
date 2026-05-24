@@ -38,7 +38,10 @@ const Index = () => {
       "url": "https://modelodecontrato.org",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://modelodecontrato.org/buscar?q={search_term_string}",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://modelodecontrato.org/glossario-juridico/?q={search_term_string}"
+        },
         "query-input": "required name=search_term_string"
       }
     },
