@@ -17,7 +17,10 @@ const SEO: React.FC<SEOProps> = ({
   ogImage = "https://modelodecontrato.org/og-image.png",
   structuredData 
 }) => {
-  const fullTitle = title.includes('Modelo de Contrato') ? title : `${title} | Modelo de Contrato`;
+  const suffix = " | Modelo de Contrato";
+  const fullTitle = title.includes('Modelo de Contrato') 
+    ? title 
+    : (title.length + suffix.length > 60 ? title : `${title}${suffix}`);
   const url = canonical || `https://modelodecontrato.org${window.location.pathname}`;
 
   return (
