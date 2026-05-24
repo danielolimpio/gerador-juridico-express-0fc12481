@@ -32,7 +32,7 @@ const ClausulaPenal = () => {
   return (
     <>
       <SEO 
-        title="Cláusula Penal: Multa Contratual por Descumprimento - Tipos e Limites"
+        title="Cláusula Penal: Multa Contratual por Descumprimento - Tipo"
         description="Cláusula penal é a previsão de multa compensatória pelo descumprimento do contrato. Conheça os tipos, limites legais e quando pode ser reduzida."
         keywords="cláusula penal, multa contratual, multa compensatória, multa moratória, descumprimento contratual, inadimplemento"
         canonical="https://modelodecontrato.org/clausula-penal-multa-contratual"

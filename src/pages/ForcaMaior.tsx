@@ -32,7 +32,7 @@ const ForcaMaior = () => {
   return (
     <>
       <SEO 
-        title="O que é Força Maior? Evento Imprevisível e Inevitável no Direito Contratual"
+        title="O que é Força Maior? Evento Imprevisível e Inevitável no D"
         description="Entenda o conceito de força maior no direito civil brasileiro: características, diferenças entre caso fortuito, exemplos práticos e efeitos sobre contratos. Guia completo atualizado."
         keywords="força maior, evento imprevisível, força maior contrato, força maior código civil, diferença força maior caso fortuito, excludente responsabilidade civil"
         canonical="https://modelodecontrato.org/forca-maior-evento-imprevisivel"

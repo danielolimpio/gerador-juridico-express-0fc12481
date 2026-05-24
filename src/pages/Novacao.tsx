@@ -32,7 +32,7 @@ const Novacao = () => {
   return (
     <>
       <SEO 
-        title="Novação: Substituição de Obrigação e Extinção de Dívida Anterior"
+        title="Novação: Substituição de Obrigação e Extinção de Dívida An"
         description="Novação é a substituição de uma obrigação por outra, extinguindo a anterior. Conheça os tipos, requisitos e efeitos jurídicos da novação."
         keywords="novação, substituição obrigação, extinção dívida, novação objetiva, novação subjetiva, renegociação dívida"
         canonical="https://modelodecontrato.org/novacao-substituicao-obrigacao"

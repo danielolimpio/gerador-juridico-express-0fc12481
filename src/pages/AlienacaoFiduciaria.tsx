@@ -57,7 +57,7 @@ const AlienacaoFiduciaria = () => {
   return (
     <>
       <SEO 
-        title="Alienação Fiduciária: Garantia Real em Financiamentos de Bens"
+        title="Alienação Fiduciária: Garantia Real em Financiamentos de B"
         description="Alienação fiduciária é a transferência de propriedade de bem móvel ou imóvel como garantia de dívida. Entenda como funciona, direitos do credor e devedor."
         keywords="alienação fiduciária, garantia real, financiamento veículo, financiamento imóvel, propriedade fiduciária, busca e apreensão"
         canonical="https://modelodecontrato.org/alienacao-fiduciaria-garantia"

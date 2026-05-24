@@ -32,7 +32,7 @@ const ContratoDeAdesao = () => {
   return (
     <>
       <SEO 
-        title="O que é Contrato de Adesão? Definição, Características e Direitos do Consumidor"
+        title="O que é Contrato de Adesão? Definição, Características e D"
         description="Guia completo sobre contrato de adesão: conceito, características, cláusulas abusivas, direitos do consumidor e proteção legal segundo o CDC."
         keywords="contrato de adesão, cláusulas abusivas, CDC, direitos do consumidor, código de defesa do consumidor, contrato preestabelecido"
         canonical="https://modelodecontrato.org/contrato-de-adesao"

@@ -71,7 +71,7 @@ const ContratoFranquia = () => {
   return (
     <>
       <SEO
-        title="Contrato de Franquia: Guia Completo para Empreendedores que Querem Expandir"
+        title="Contrato de Franquia: Guia Completo para Empreendedores qu"
         description="Descubra os pontos essenciais de um contrato de franquia. Proteja seu negócio com modelo juridicamente válido e pronto para download."
         keywords="contrato de franquia, franquia, empreendedorismo, modelo de contrato, ABF, DFP, royalties"
         canonical="https://modelodecontrato.org/blog/contrato-franquia"

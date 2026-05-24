@@ -32,7 +32,7 @@ const ComodatoEmprestimo = () => {
   return (
     <>
       <SEO 
-        title="O que é Comodato? Empréstimo Gratuito de Bens: Direitos e Deveres"
+        title="O que é Comodato? Empréstimo Gratuito de Bens"
         description="Comodato é o empréstimo gratuito de bem não fungível previsto no Código Civil. Entenda direitos e deveres do comodante e comodatário, prazos e obrigações legais."
         keywords="comodato, empréstimo gratuito, comodante, comodatário, código civil, contrato de comodato, bem não fungível"
         canonical="https://modelodecontrato.org/comodato-emprestimo-gratuito"

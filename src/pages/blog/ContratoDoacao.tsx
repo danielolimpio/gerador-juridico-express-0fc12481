@@ -42,7 +42,7 @@ const ContratoDoacao = () => {
   return (
     <>
       <SEO
-        title="Entenda a Diferença entre Contrato de Doação e Venda de Bens Móveis"
+        title="Entenda a Diferença entre Contrato de Doação e Venda de Be"
         description="Confira as diferenças legais entre doação e venda de bens móveis. Evite problemas futuros com modelos juridicamente válidos e gratuitos."
         keywords="contrato de doação, venda de bens móveis, diferença doação e venda, ITCMD, ICMS, transferência de veículo"
         canonical="https://modelodecontrato.org/blog/contrato-doacao-venda-bens-moveis"

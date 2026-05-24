@@ -49,7 +49,7 @@ const ContratoComodato = () => {
   return (
     <>
       <SEO
-        title="Contrato de Comodato: Quando e Como Usar para Empréstimo Gratuito de Bens"
+        title="Contrato de Comodato: Quando e Como Usar para Empréstimo G"
         description="Saiba quando usar o contrato de comodato para emprestar bens como carros ou ferramentas sem cobrar. Proteja-se legalmente com modelo gratuito."
         keywords="contrato de comodato, empréstimo gratuito, comodato de bens, emprestar carro, emprestar ferramentas, comodato veículos"
         canonical="https://modelodecontrato.org/blog/contrato-comodato"

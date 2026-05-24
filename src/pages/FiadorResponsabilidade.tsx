@@ -65,7 +65,7 @@ const FiadorResponsabilidade = () => {
   return (
     <>
       <SEO 
-        title="Quem é o Fiador? Responsabilidades, Direitos e Riscos Jurídicos"
+        title="Quem é o Fiador? Responsabilidades, Direitos e Riscos Jurí"
         description="Entenda o papel do fiador em contratos: responsabilidades, direitos garantidos pelo Código Civil, riscos patrimoniais e alternativas como seguro fiança."
         keywords="fiador, fiança, responsabilidade fiador, fiança solidária, código civil, locação, seguro fiança"
         canonical="https://modelodecontrato.org/fiador-responsabilidade-legal"

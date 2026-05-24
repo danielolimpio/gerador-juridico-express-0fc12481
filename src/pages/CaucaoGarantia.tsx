@@ -65,7 +65,7 @@ const CaucaoGarantia = () => {
   return (
     <>
       <SEO 
-        title="O que é Caução? Tipos, Função e Como Funciona como Garantia Contratual"
+        title="O que é Caução? Tipos, Função e Como Funciona como Garanti"
         description="Guia completo sobre caução: tipos de garantia, diferença entre caução e fiança, depósito caução em contratos de aluguel e proteção jurídica."
         keywords="caução, garantia contratual, depósito caução, penhor, hipoteca, seguro garantia, código civil"
         canonical="https://modelodecontrato.org/caucao-garantia-contratual"

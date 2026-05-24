@@ -19,7 +19,7 @@ const Mora = () => {
   return (
     <>
       <SEO 
-        title="Mora - Atraso no Cumprimento da Obrigação | Conceito e Efeitos"
+        title="Mora - Atraso no Cumprimento da Obrigação | Conceito e Efe"
         description="Entenda o que é mora do devedor e do credor, requisitos da mora, efeitos jurídicos e diferença entre mora e inadimplemento absoluto. Conheça seus direitos em caso de atraso."
         keywords="mora, mora do devedor, mora do credor, atraso obrigação, inadimplemento, juros de mora, purga da mora, interpelação"
         canonical="https://modelodecontrato.org/mora-atraso-obrigacao"

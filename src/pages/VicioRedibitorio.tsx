@@ -32,7 +32,7 @@ const VicioRedibitorio = () => {
   return (
     <>
       <SEO 
-        title="O que é Vício Redibitório? Defeito Oculto em Compra e Venda: Como Reclamar"
+        title="O que é Vício Redibitório? Defeito Oculto em Compra e Vend"
         description="Vício redibitório é defeito oculto em bem adquirido que torna o produto impróprio ao uso. Entenda seus direitos, prazos para reclamar e como buscar reparação."
         keywords="vício redibitório, defeito oculto, compra e venda, código civil, CDC, direitos do consumidor, reclamação"
         canonical="https://modelodecontrato.org/vicio-redibitorio-defeito-oculto"
