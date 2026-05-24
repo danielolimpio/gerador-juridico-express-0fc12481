@@ -32,7 +32,7 @@ const DireitoArrependimento = () => {
   return (
     <>
       <SEO 
-        title="Direito de Arrependimento: Como Desfazer Compra em 7 Dias - CDC"
+        title="Direito de Arrependimento: Como Desfazer Compra em 7 Dias"
         description="Entenda o direito de arrependimento previsto no CDC: prazo de 7 dias, como exercer, devolução integral de valores, compras online e em domicílio. Guia completo atualizado."
         keywords="direito de arrependimento, 7 dias compra online, CDC arrependimento, cancelar compra internet, devolução produto online, artigo 49 CDC"
         canonical="https://modelodecontrato.org/direito-arrependimento-prazo-legal"

@@ -81,7 +81,7 @@ const ContratoLocacaoVeiculo = () => {
   return (
     <>
       <SEO
-        title="Contrato de Locação de Veículo: Regras para Alugar Carros, Motos e Equipamentos"
+        title="Contrato de Locação de Veículo: Regras para Alugar Carros,"
         description="Saiba como criar um contrato de locação de veículo seguro e válido. Proteja seu patrimônio com modelo gratuito e atualizado para 2025."
         keywords="contrato de locação de veículo, alugar carro, contrato aluguel moto, locação equipamentos, modelo contrato veículo, direitos locatário, como alugar carro seguro"
         canonical="https://modelodecontrato.org/blog/contrato-locacao-veiculo"

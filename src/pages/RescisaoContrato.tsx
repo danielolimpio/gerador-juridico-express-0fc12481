@@ -32,7 +32,7 @@ const RescisaoContrato = () => {
   return (
     <>
       <SEO 
-        title="Rescisão de Contrato: O que é, Causas e Procedimentos para Encerrar por Descumprimento"
+        title="Rescisão de Contrato: O que é, Causas e Procedimentos para"
         description="Rescisão é a extinção antecipada de contrato por descumprimento de obrigações. Entenda causas, procedimentos legais, direitos e como buscar reparação."
         keywords="rescisão de contrato, descumprimento contratual, inadimplência, extinção de contrato, código civil, cláusula penal"
         canonical="https://modelodecontrato.org/rescisao-de-contrato-descumprimento"

@@ -78,7 +78,7 @@ const ContratoMandato = () => {
   return (
     <>
       <SEO
-        title="Contrato de Mandato: Autorização Legal para Agir em Nome de Terceiros"
+        title="Contrato de Mandato: Autorização Legal para Agir em Nome d"
         description="Aprenda como funciona o contrato de mandato e quando usá-lo para representar alguém. Modelo gratuito, rápido e válido em todo o Brasil."
         keywords="contrato de mandato, mandato particular, procuração, representação legal, autorização para agir, mandatário"
         canonical="https://modelodecontrato.org/blog/contrato-mandato"

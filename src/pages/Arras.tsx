@@ -32,7 +32,7 @@ const Arras = () => {
   return (
     <>
       <SEO 
-        title="Arras: Sinal e Garantia de Execução Contratual - Tipos e Função"
+        title="Arras: Sinal e Garantia de Execução Contratual - Tipos e F"
         description="Arras são sinal dado no ato da celebração do contrato como garantia de sua execução. Conheça os tipos, função e consequências do arrependimento."
         keywords="arras, sinal contratual, arras confirmatórias, arras penitenciais, arrependimento contratual, garantia contratual, princípio arrependimento"
         canonical="https://modelodecontrato.org/arras-sinal-contratual"

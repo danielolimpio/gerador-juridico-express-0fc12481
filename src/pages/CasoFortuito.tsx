@@ -32,7 +32,7 @@ const CasoFortuito = () => {
   return (
     <>
       <SEO 
-        title="O que é Caso Fortuito? Evento Inevitável no Direito Contratual Brasileiro"
+        title="O que é Caso Fortuito? Evento Inevitável no Direito Contra"
         description="Guia completo sobre caso fortuito: conceito, características, diferenças com força maior, exemplos práticos e efeitos na responsabilidade civil. Código Civil atualizado."
         keywords="caso fortuito, evento inevitável, caso fortuito código civil, diferença caso fortuito força maior, excludente responsabilidade, caso fortuito contrato"
         canonical="https://modelodecontrato.org/caso-fortuito-evento-inevitavel"

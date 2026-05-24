@@ -32,7 +32,7 @@ const ResilicaoContratual = () => {
   return (
     <>
       <SEO 
-        title="Resilição Contratual: O que é e Como Funciona o Término por Mútuo Acordo"
+        title="Resilição Contratual: O que é e Como Funciona o Término po"
         description="Resilição é o término antecipado de contrato por acordo mútuo entre as partes. Entenda como funciona, requisitos legais e diferenças com rescisão."
         keywords="resilição contratual, término de contrato, mútuo acordo, distrato, código civil, fim de contrato"
         canonical="https://modelodecontrato.org/resilicao-contratual-mutuo-acordo"

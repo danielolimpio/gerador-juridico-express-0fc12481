@@ -32,7 +32,7 @@ const OnerosiadeExcessiva = () => {
   return (
     <>
       <SEO 
-        title="Onerosidade Excessiva: Teoria da Imprevisão e Revisão Contratual"
+        title="Onerosidade Excessiva: Teoria da Imprevisão e Revisão Cont"
         description="Onerosidade excessiva é a situação em que a prestação de uma das partes torna-se extremamente onerosa. Entenda a teoria da imprevisão, revisão contratual e seus direitos."
         keywords="onerosidade excessiva, teoria da imprevisão, revisão contratual, resolução de contrato, alteração circunstâncias, rebus sic stantibus"
         canonical="https://modelodecontrato.org/onerosidade-excessiva-teoria-imprevacao"
