@@ -1,0 +1,58 @@
+# Modelo de Contrato
+
+> Plataforma gratuita para gerar contratos profissionais online com modelos prontos para download em PDF e Word.
+
+Modelo de Contrato é uma ferramenta online que democratiza o acesso a documentos jurídicos de qualidade. O site oferece dezenas de modelos de contrato personalizáveis — como aluguel, prestação de serviços, compra e venda, parceria, comodato e doação — que o usuário preenche em formulários simples e baixa em PDF ou Word. Além dos geradores, a plataforma mantém um blog com artigos educativos, um glossário jurídico com definições de termos usados em contratos, e páginas explicativas sobre como funciona o serviço.
+
+## Pages
+
+- [Home](/): Gere contratos profissionais online grátis. Download em PDF e Word.
+- [Como Funciona](/como-funciona/): Passo a passo de como usar o gerador de contratos.
+- [Tipos de Contratos](/tipos-de-contratos/): Lista completa de modelos disponíveis.
+- [Gerador](/gerador/): Aplicação interativa para criar e baixar contratos personalizados.
+- [Sobre](/sobre/): Missão e informações sobre a plataforma.
+- [Contato](/contato/): Formulário e canais de comunicação.
+- [FAQ](/faq/): Perguntas frequentes sobre o serviço.
+- [Blog](/blog/): Artigos educativos sobre contratos e direito.
+- [Glossário Jurídico](/glossario-juridico/): Definições de termos jurídicos usados em contratos.
+
+## Contract Models
+
+- [Contrato de Compra e Venda](/contrato-de-compra-e-venda/): Transações de bens móveis e imóveis.
+- [Contrato de Aluguel](/modelos-de-contrato-de-aluguel/): Locação residencial conforme Lei do Inquilinato.
+- [Contrato de Prestação de Serviços](/contrato-de-prestacao-de-servicos/): Para profissionais autônomos e empresas.
+- [Contrato de Locação Comercial](/contrato-de-locacao-comercial/): Pontos comerciais e escritórios.
+- [Contrato de Parceria Empresarial](/contrato-de-parceria-empresarial/): Formalização de parcerias.
+- [Contrato de Doação](/contrato-de-doacao/): Doações de bens móveis ou imóveis.
+- [Contrato de Comodato](/contrato-de-comodato/): Empréstimo gratuito de bens.
+- [Contrato de Franquia](/contrato-de-franquia/): Franquias e a Lei de Franquias.
+- [Contrato de Estágio](/contrato-de-estagio/): Relação estagiário-empresa.
+- [Contrato de Trabalho Autônomo](/contrato-de-trabalho-autonomo/): Contratação sem vínculo empregatício.
+
+## Blog
+
+- [Contrato de Aluguel Residencial](/blog/contrato-aluguel-residencial/): Guia completo sobre locação residencial.
+- [Contrato de Comodato](/blog/contrato-comodato/): Como funciona o empréstimo gratuito de bens.
+- [Contrato de Franquia](/blog/contrato-franquia/): Tudo sobre contratos de franquia.
+- [Contrato de Doação e Venda de Bens Móveis](/blog/contrato-doacao-venda-bens-moveis/): Diferenças e quando usar.
+- [Contrato de Mandato](/blog/contrato-mandato/): Representação por procuração.
+- [Contrato de Locação de Veículo](/blog/contrato-locacao-veiculo/): Aluguel de carros e veículos.
+
+## Glossário Jurídico
+
+- [Cláusula Penal](/clausula-penal-multa-contratual/): Multa por descumprimento contratual.
+- [Arras](/arras-sinal-contratual/): Sinal de contrato e suas modalidades.
+- [Força Maior](/forca-maior-evento-imprevisivel/): Eventos imprevisíveis que impedem cumprimento.
+- [Caso Fortuito](/caso-fortuito-evento-inevitavel/): Eventos inevitáveis e sua distinção da força maior.
+- [Rescisão](/rescisao-de-contrato-descumprimento/): Quebra de contrato por inadimplemento.
+- [Resilição](/resilicao-contratual-mutuo-acordo/): Desfazimento de contrato por mútuo acordo.
+- [Mora](/mora-atraso-obrigacao/): Atraso no cumprimento de obrigações.
+- [Novação](/novacao-substituicao-obrigacao/): Substituição de obrigação por outra.
+
+## Optional
+
+- [Sitemap](/sitemap/): Mapa do site com todas as páginas.
+- [Termos de Uso](/termos-de-uso/): Condições de uso da plataforma.
+- [Política de Privacidade](/politica-privacidade/): Como tratamos dados pessoais.
+- [Política de Cookies](/cookies/): Uso de cookies no site.
+- [Aviso Legal](/aviso-legal/): Isenção de responsabilidade e orientações.
