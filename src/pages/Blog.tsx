@@ -192,7 +192,7 @@ const Blog = () => {
                   <div className="col-span-2">
                     <Card>
                       <CardContent className="py-16 text-center">
-                        <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground/50" />
+                        <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
                         <h3 className="text-xl font-semibold mb-2">
                           Em breve, novos artigos
                         </h3>
