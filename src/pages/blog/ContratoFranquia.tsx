@@ -50,7 +50,7 @@ const ContratoFranquia = () => {
     "@type": "Article",
     headline: "Contrato de Franquia: Guia Completo para Empreendedores que Querem Expandir",
     description: "Descubra os pontos essenciais de um contrato de franquia. Proteja seu negócio com modelo juridicamente válido e pronto para download.",
-    image: "https://modelodecontrato.org/images/blog/contrato-franquia-cover.jpg",
+    image: "https://modelodecontrato.org/images/blogcontrato-franquia-cover.jpg",
     author: {
       "@type": "Person",
       name: "Daniel Olimpio",
@@ -74,8 +74,8 @@ const ContratoFranquia = () => {
         title="Contrato de Franquia: Guia Completo para Empreendedores qu"
         description="Descubra os pontos essenciais de um contrato de franquia. Proteja seu negócio com modelo juridicamente válido e pronto para download."
         keywords="contrato de franquia, franquia, empreendedorismo, modelo de contrato, ABF, DFP, royalties"
-        canonical="https://modelodecontrato.org/blog/contrato-franquia"
-        ogImage="https://modelodecontrato.org/images/blog/contrato-franquia-cover.jpg"
+        canonical="https://modelodecontrato.org/blogcontrato-franquia"
+        ogImage="https://modelodecontrato.org/images/blogcontrato-franquia-cover.jpg"
       />
       <JsonLd data={structuredData} />
 

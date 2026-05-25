@@ -61,7 +61,7 @@ const ContratoLocacaoVeiculo = () => {
     "@type": "BlogPosting",
     "headline": "Contrato de Locação de Veículo: Regras para Alugar Carros, Motos e Equipamentos",
     "description": "Saiba como criar um contrato de locação de veículo seguro e válido. Proteja seu patrimônio com modelo gratuito e atualizado para 2025.",
-    "image": "https://modelodecontrato.org/images/blog/contrato-locacao-veiculo-cover.jpg",
+    "image": "https://modelodecontrato.org/images/blogcontrato-locacao-veiculo-cover.jpg",
     "author": {
       "@type": "Person",
       "name": "Daniel Olimpio"
@@ -84,8 +84,8 @@ const ContratoLocacaoVeiculo = () => {
         title="Contrato de Locação de Veículo: Guia Completo"
         description="Saiba como criar um contrato de locação de veículo seguro e válido. Proteja seu patrimônio com modelo gratuito e atualizado para 2025."
         keywords="contrato de locação de veículo, alugar carro, contrato aluguel moto, locação equipamentos, modelo contrato veículo, direitos locatário, como alugar carro seguro"
-        canonical="https://modelodecontrato.org/blog/contrato-locacao-veiculo"
-        ogImage="https://modelodecontrato.org/images/blog/contrato-locacao-veiculo-cover.jpg"
+        canonical="https://modelodecontrato.org/blogcontrato-locacao-veiculo"
+        ogImage="https://modelodecontrato.org/images/blogcontrato-locacao-veiculo-cover.jpg"
       />
       <JsonLd data={structuredData} />
 

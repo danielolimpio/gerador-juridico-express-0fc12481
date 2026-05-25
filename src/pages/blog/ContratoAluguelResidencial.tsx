@@ -52,7 +52,7 @@ const ContratoAluguelResidencial = () => {
         title="Contrato de Aluguel Residencial: tudo o que você precisa s"
         description="Antes de assinar um contrato de aluguel residencial, entenda cláusulas essenciais, seus direitos como inquilino, obrigações do locador e como evitar armadilhas jurídicas. Guia completo e atualizado para 2025."
         keywords="contrato de aluguel residencial, direitos do inquilino, cláusulas abusivas, Lei do Inquilinato, garantia locatícia, locação residencial"
-        canonical="https://modelodecontrato.org/blog/contrato-aluguel-residencial"
+        canonical="https://modelodecontrato.org/blogcontrato-aluguel-residencial"
       />
 
       <main className="min-h-screen bg-background">
