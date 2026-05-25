@@ -2,27 +2,27 @@
 RewriteEngine On
 RewriteBase /
 
+# Disable Apache automatic directory slash (DirectorySlash)
+DirectorySlash Off
+
 # Força HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Padroniza URLs com barra final (trailing slash)
+# Remove barra final de URLs (exceto root) — 301 redirect
+RewriteCond %{REQUEST_URI} ^(.+)/$
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
 
-# Excluir arquivos estáticos do redirecionamento
-RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|favicon\.ico|favicon\.png)$ - [L]
+# Excluir arquivos estáticos
+RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|favicon\.ico|favicon\.png|llms\.txt)$ - [L]
+RewriteRule ^.*\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot|mp4|mp3|map)$ - [L]
 
-# Excluir todos os arquivos com extensões comuns
-RewriteRule ^.*\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot|mp4|mp3)$ - [L]
+# Servir index.html de diretório correspondente internamente (sem redirect)
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^([^/]+(?:/[^/]+)*)$ /$1/index.html [L]
 
-# Servir index.html de diretórios existentes
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_FILENAME}/index.html -f
-RewriteRule ^(.*)$ $1/index.html [L]
-
-# Se não for arquivo nem diretório, redireciona para index.html (SPA fallback)
+# SPA fallback
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
@@ -43,7 +43,6 @@ ExpiresByType image/webp "access plus 1 year"
 ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
-# Compression
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
 </IfModule>
