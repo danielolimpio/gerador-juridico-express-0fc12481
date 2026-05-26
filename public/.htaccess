@@ -14,15 +14,15 @@ RewriteCond %{REQUEST_URI} ^(.+)/$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
 
-# Excluir arquivos estáticos
-RewriteRule ^(ads\.txt|robots\.txt|sitemap\.xml|favicon\.ico|favicon\.png|llms\.txt)$ - [L]
-RewriteRule ^.*\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot|mp4|mp3|map)$ - [L]
+# Excluir arquivos estáticos existentes
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
 
 # Servir index.html de diretório correspondente internamente (sem redirect)
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^([^/]+(?:/[^/]+)*)$ /$1/index.html [L]
 
-# SPA fallback
+# URLs sem página física vão para a home, sem tentar servir /src/*.tsx como HTML
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
