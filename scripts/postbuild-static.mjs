@@ -10,14 +10,16 @@ if (!fs.existsSync(rootIndexPath)) {
 }
 
 const rootIndex = fs.readFileSync(rootIndexPath, 'utf8');
-const productionAssetTags = [
+const productionScriptTags = [
   ...rootIndex.matchAll(/<script\s+type="module"[^>]+src="\/assets\/[^">]+\.js"[^>]*><\/script>/g),
+].map((match) => match[0]);
+const productionStyleTags = [
   ...rootIndex.matchAll(/<link\s+rel="stylesheet"[^>]+href="\/assets\/[^">]+\.css"[^>]*>/g),
 ].map((match) => match[0]);
 
-const staticStyleTag = '<link rel="stylesheet" href="/static-styles.css">';
 const sourceScriptPattern = /\s*<script\s+type="module"\s+src="\/src\/main\.tsx"><\/script>/g;
 const sourcePreloadPattern = /\s*<link\s+rel="preload"\s+href="\/src\/(?:main\.tsx|index\.css)"[^>]*>/g;
+const staticStylesPattern = /\s*<link\s+rel="stylesheet"\s+href="\/static-styles\.css"[^>]*>/g;
 
 function listHtmlFiles(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -31,21 +33,23 @@ for (const filePath of listHtmlFiles(distDir)) {
   if (filePath === rootIndexPath) continue;
 
   let html = fs.readFileSync(filePath, 'utf8');
-  const hasStaticMarkup = /class="[^"]*static-|<header\b|<main\b|<article\b/.test(html.replace(/<div id="root"><\/div>/g, ''));
 
   html = html.replace(sourcePreloadPattern, '');
+  html = html.replace(staticStylesPattern, '');
 
-  if (hasStaticMarkup) {
-    if (!html.includes('/static-styles.css')) {
-      html = html.replace('</head>', `    ${staticStyleTag}\n  </head>`);
+  for (const styleTag of productionStyleTags) {
+    if (!html.includes(styleTag)) {
+      html = html.replace('</head>', `    ${styleTag}\n  </head>`);
     }
-    html = html.replace(/\s*<div id="root"><\/div>/g, '');
-    html = html.replace(sourceScriptPattern, '');
-  } else if (productionAssetTags.length > 0) {
-    html = html.replace(sourceScriptPattern, `\n    ${productionAssetTags.join('\n    ')}`);
   }
+
+  html = html.replace(
+    /<body[\s\S]*?<\/body>/,
+    `<body>\n    <div id="root"></div>\n    ${productionScriptTags.join('\n    ')}\n  </body>`
+  );
+  html = html.replace(sourceScriptPattern, '');
 
   fs.writeFileSync(filePath, html);
 }
 
-console.log('[postbuild-static] Páginas estáticas ajustadas para produção.');
+console.log('[postbuild-static] Páginas estáticas ajustadas para renderizar o app React em produção.');
