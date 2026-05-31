@@ -5,14 +5,14 @@ RewriteBase /
 # Disable Apache automatic directory slash (DirectorySlash)
 DirectorySlash Off
 
-# Força HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Força HTTPS sem criar loop quando a Hostinger/CDN repassa a requisição por proxy
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
-# Remove barra final de URLs (exceto root) — 301 redirect
-RewriteCond %{REQUEST_URI} ^(.+)/$
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
+# Remove barra final de URLs reais digitadas/acessadas (exceto root) — evita loop com DirectorySlash
+RewriteCond %{THE_REQUEST} \s/+(.+?)/[\s?] [NC]
+RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301,NE]
 
 # Excluir arquivos estáticos existentes
 RewriteCond %{REQUEST_FILENAME} -f
