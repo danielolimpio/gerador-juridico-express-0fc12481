@@ -88,9 +88,9 @@ const Index = () => {
   return (
     <>
       <SEO 
-        title="Gerador de Contratos Online Grátis - Crie em 30 Segundos"
-        description="Gerador de contratos grátis: aluguel, compra e venda, prestação de serviços MEI. Modelos juridicamente válidos em PDF/Word. Sem cadastro, crie em 30 segundos."
-        keywords="gerador de contratos grátis, criar contrato online, modelo contrato aluguel, contrato prestação serviços mei, gerar contrato digital, baixar modelo contrato pdf word, contrato online gratuito"
+        title="Modelos de Contratos Grátis em PDF e Word - Gerador Online 2026"
+        description="Modelos de contratos prontos e gratuitos: contrato de aluguel, locação residencial, prestação de serviços, compra e venda. Baixe em PDF ou Word, sem cadastro e juridicamente válidos."
+        keywords="modelos de contratos, modelo de contrato de aluguel, contrato de aluguel simples, contrato de aluguel pdf, contrato de aluguel residencial, contrato de locação, modelo de contrato de prestação de serviço, gerador de contratos, contrato gratuito, contrato online, como fazer um contrato de aluguel, contrato simples de aluguel, modelo de contrato de aluguel residencial, contrato para editar grátis, baixar modelo de contrato pdf word"
         canonical="https://modelodecontrato.org/"
         structuredData={structuredData}
       />
