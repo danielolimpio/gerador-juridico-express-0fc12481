@@ -128,12 +128,71 @@ const ContractGenerator: React.FC = () => {
     ]
   };
 
+  // SEO long-tail por tipo de contrato (palavras-chave de alto volume no Brasil)
+  const seoByContract: Record<string, { title: string; description: string; keywords: string }> = {
+    'locacao-residencial': {
+      title: 'Modelo de Contrato de Aluguel Residencial Grátis em PDF e Word',
+      description: 'Crie um contrato de aluguel residencial simples, grátis e juridicamente válido. Modelo de contrato de locação residencial em PDF e Word, pronto para imprimir e assinar.',
+      keywords: 'modelo de contrato de aluguel, contrato de aluguel simples, contrato de aluguel residencial, contrato de aluguel pdf, contrato de locação residencial, modelo de contrato de aluguel residencial, contrato simples de aluguel, contrato de aluguel de casa, como fazer contrato de aluguel, contrato de aluguel para imprimir, Lei do Inquilinato'
+    },
+    'locacao-comercial': {
+      title: 'Modelo de Contrato de Locação Comercial Grátis em PDF e Word',
+      description: 'Modelo de contrato de locação comercial pronto para preencher. Baixe em PDF e Word, juridicamente válido conforme a Lei do Inquilinato 8.245/91.',
+      keywords: 'contrato de locação comercial, modelo de contrato comercial, contrato de aluguel comercial, locação ponto comercial, contrato de locação não residencial, modelo de contrato de aluguel comercial pdf'
+    },
+    'prestacao-servicos': {
+      title: 'Modelo de Contrato de Prestação de Serviços Grátis em PDF/Word',
+      description: 'Modelo de contrato de prestação de serviços grátis em PDF e Word. Ideal para MEI, autônomos e empresas. Crie em 30 segundos, sem cadastro.',
+      keywords: 'contrato de prestação de serviços, modelo de contrato de prestação de serviço, contrato de prestador de serviço, contrato prestação de serviços mei, modelo prestação de serviços pdf, contrato de serviço autônomo, contrato de prestação de serviços simples'
+    },
+    'compra-venda': {
+      title: 'Modelo de Contrato de Compra e Venda Grátis em PDF e Word',
+      description: 'Modelo de contrato de compra e venda de imóvel, veículo e bens móveis. Baixe grátis em PDF e Word, juridicamente válido conforme o Código Civil.',
+      keywords: 'contrato de compra e venda, modelo de contrato de compra e venda, contrato compra e venda de imóvel, contrato compra e venda de veículo, contrato de compra e venda pdf, contrato compra e venda simples'
+    },
+    'comodato': {
+      title: 'Modelo de Contrato de Comodato Grátis em PDF e Word',
+      description: 'Modelo de contrato de comodato para empréstimo gratuito de bens. Baixe grátis em PDF e Word, válido conforme o Código Civil.',
+      keywords: 'contrato de comodato, modelo de contrato de comodato, comodato de imóvel, comodato de veículo, contrato de empréstimo gratuito, contrato de comodato pdf'
+    },
+    'doacao': {
+      title: 'Modelo de Contrato de Doação Grátis em PDF e Word',
+      description: 'Contrato de doação de bens móveis e imóveis grátis em PDF e Word. Modelo juridicamente válido conforme o Código Civil brasileiro.',
+      keywords: 'contrato de doação, modelo de contrato de doação, doação de bens, contrato de doação pdf, contrato de doação simples'
+    },
+    'locacao-veiculo': {
+      title: 'Modelo de Contrato de Locação de Veículo Grátis em PDF e Word',
+      description: 'Contrato de locação de veículo grátis em PDF e Word. Modelo para aluguel de carros, motos e caminhões, juridicamente válido.',
+      keywords: 'contrato de locação de veículo, contrato aluguel de carro, modelo contrato locação veículo, contrato de aluguel de carro pdf, locação de automóvel'
+    },
+    'franquia': {
+      title: 'Modelo de Contrato de Franquia Grátis em PDF e Word',
+      description: 'Modelo de contrato de franquia conforme a Lei nº 13.966/2019. Baixe grátis em PDF e Word, com cláusulas profissionais para franqueador e franqueado.',
+      keywords: 'contrato de franquia, modelo de contrato de franquia, COF circular de oferta de franquia, contrato franqueador franqueado, Lei de Franquia'
+    },
+    'estagio': {
+      title: 'Modelo de Contrato de Estágio Grátis em PDF e Word',
+      description: 'Modelo de contrato de estágio (TCE) conforme a Lei 11.788/2008. Baixe grátis em PDF e Word, pronto para preencher.',
+      keywords: 'contrato de estágio, modelo de contrato de estágio, termo de compromisso de estágio, TCE estagiário, contrato estágio pdf'
+    },
+    'trabalho-autonomo': {
+      title: 'Modelo de Contrato de Trabalho Autônomo Grátis em PDF e Word',
+      description: 'Modelo de contrato de trabalho autônomo sem vínculo empregatício. Baixe grátis em PDF e Word, ideal para profissionais liberais e MEI.',
+      keywords: 'contrato de trabalho autônomo, contrato autônomo pdf, modelo contrato profissional autônomo, contrato sem vínculo empregatício, contrato pj autônomo'
+    },
+  };
+
+  const customSeo = seoByContract[contractType.id];
+  const seoTitle = customSeo?.title ?? `${contractType.title} Online Grátis - Modelo para Download PDF/Word`;
+  const seoDescription = customSeo?.description ?? `Crie seu ${contractType.title.toLowerCase()} online grátis em 30 segundos. Modelo juridicamente válido para download em PDF e Word. ${contractType.description}`;
+  const seoKeywords = customSeo?.keywords ?? `${contractType.title.toLowerCase()}, modelo ${contractType.title.toLowerCase()}, gerar ${contractType.title.toLowerCase()}, criar ${contractType.title.toLowerCase()} online`;
+
   return (
     <>
       <SEO 
-        title={`${contractType.title} Online Grátis - Modelo para Download PDF/Word`}
-        description={`Crie seu ${contractType.title.toLowerCase()} online grátis em 30 segundos. Modelo juridicamente válido para download em PDF e Word. ${contractType.description}`}
-        keywords={`${contractType.title.toLowerCase()}, modelo ${contractType.title.toLowerCase()}, gerar ${contractType.title.toLowerCase()}, criar ${contractType.title.toLowerCase()} online`}
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
         canonical={`https://modelodecontrato.org${Object.keys(urlToContractMap).find(key => urlToContractMap[key] === contractType.id) || '/gerador?type=' + contractType.id}`}
         structuredData={contractSchema}
       />
