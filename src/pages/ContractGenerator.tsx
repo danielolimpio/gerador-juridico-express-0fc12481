@@ -128,57 +128,82 @@ const ContractGenerator: React.FC = () => {
     ]
   };
 
-  // SEO long-tail por tipo de contrato (palavras-chave de alto volume no Brasil)
+  // SEO long-tail expandido por tipo de contrato (centenas de palavras-chave)
   const seoByContract: Record<string, { title: string; description: string; keywords: string }> = {
     'locacao-residencial': {
-      title: 'Modelo de Contrato de Aluguel Residencial Grátis em PDF e Word',
-      description: 'Crie um contrato de aluguel residencial simples, grátis e juridicamente válido. Modelo de contrato de locação residencial em PDF e Word, pronto para imprimir e assinar.',
-      keywords: 'modelo de contrato de aluguel, contrato de aluguel simples, contrato de aluguel residencial, contrato de aluguel pdf, contrato de locação residencial, modelo de contrato de aluguel residencial, contrato simples de aluguel, contrato de aluguel de casa, como fazer contrato de aluguel, contrato de aluguel para imprimir, Lei do Inquilinato'
+      title: 'Modelo de Contrato de Aluguel Residencial Grátis PDF e Word 2026',
+      description: 'Modelo de contrato de aluguel residencial simples, grátis em PDF e Word. Contrato de locação de casa, apartamento, kitnet e imóvel residencial conforme Lei do Inquilinato. Pronto para imprimir e assinar.',
+      keywords: 'modelo de contrato de aluguel, contrato de aluguel, contrato de aluguel simples, contrato de aluguel pdf, contrato de aluguel word, contrato de aluguel residencial, contrato de aluguel para imprimir, contrato de aluguel grátis, contrato de aluguel de casa, contrato de aluguel de apartamento, contrato de aluguel de kitnet, contrato de aluguel de quarto, contrato de aluguel com fiador, contrato de aluguel sem fiador, contrato de aluguel com caução, contrato de aluguel por temporada, contrato de aluguel anual, contrato de aluguel 30 meses, contrato de aluguel 12 meses, contrato de locação residencial, modelo simples contrato aluguel, como fazer contrato de aluguel, criar contrato de aluguel, gerador de contrato de aluguel, gerador de contrato de aluguel grátis, fazer contrato de aluguel online, contrato aluguel pessoa física, contrato locação residencial pdf, lei do inquilinato 8245, contrato de aluguel 2026, contrato aluguel airbnb, contrato aluguel quarto compartilhado'
     },
     'locacao-comercial': {
-      title: 'Modelo de Contrato de Locação Comercial Grátis em PDF e Word',
-      description: 'Modelo de contrato de locação comercial pronto para preencher. Baixe em PDF e Word, juridicamente válido conforme a Lei do Inquilinato 8.245/91.',
-      keywords: 'contrato de locação comercial, modelo de contrato comercial, contrato de aluguel comercial, locação ponto comercial, contrato de locação não residencial, modelo de contrato de aluguel comercial pdf'
+      title: 'Modelo de Contrato de Locação Comercial Grátis PDF e Word 2026',
+      description: 'Contrato de locação comercial grátis em PDF e Word conforme Lei do Inquilinato 8.245/91. Modelo para ponto comercial, sala, loja, galpão e escritório.',
+      keywords: 'contrato de locação comercial, contrato locação comercial pdf, contrato locação comercial word, modelo contrato locação comercial, contrato aluguel comercial, contrato aluguel ponto comercial, contrato aluguel sala comercial, contrato aluguel loja, contrato aluguel galpão, contrato aluguel escritório, contrato aluguel quiosque, contrato aluguel salão, contrato locação não residencial, contrato locação imóvel comercial, contrato locação built to suit, contrato locação shopping, contrato locação coworking, modelo aluguel comercial simples, contrato aluguel comercial com fiador, contrato aluguel comercial sem fiador, contrato aluguel comercial caução, modelo aluguel ponto comercial, gerador contrato aluguel comercial, criar contrato locação comercial online, contrato locação 8245, lei do inquilinato locação comercial, renovatória contrato comercial, contrato aluguel comercial 2026'
     },
     'prestacao-servicos': {
-      title: 'Modelo de Contrato de Prestação de Serviços Grátis em PDF/Word',
-      description: 'Modelo de contrato de prestação de serviços grátis em PDF e Word. Ideal para MEI, autônomos e empresas. Crie em 30 segundos, sem cadastro.',
-      keywords: 'contrato de prestação de serviços, modelo de contrato de prestação de serviço, contrato de prestador de serviço, contrato prestação de serviços mei, modelo prestação de serviços pdf, contrato de serviço autônomo, contrato de prestação de serviços simples'
+      title: 'Modelo de Contrato de Prestação de Serviços Grátis PDF/Word 2026',
+      description: 'Contrato de prestação de serviços grátis em PDF e Word para MEI, autônomos, empresas e profissionais liberais. Modelo simples, completo e juridicamente válido.',
+      keywords: 'contrato de prestação de serviços, modelo de contrato de prestação de serviços, contrato prestação de serviço pdf, contrato prestação de serviço word, contrato prestação de serviço simples, contrato prestação de serviço mei, contrato prestador de serviço autônomo, contrato prestação serviço pessoa física, contrato prestação serviço pessoa jurídica, contrato prestação serviço pj, modelo prestação serviço advocacia, contrato prestação serviço contabilidade, contrato prestação serviço marketing, contrato prestação serviço design, contrato prestação serviço programador, contrato prestação serviço consultoria, contrato prestação serviço freelancer, contrato prestação serviço limpeza, contrato prestação serviço pedreiro, contrato prestação serviço médico, contrato prestação serviço fotógrafo, contrato prestação serviço evento, gerador contrato prestação de serviços, criar contrato prestação de serviço online, fazer contrato de prestação de serviço, contrato prestação serviço continuado, contrato prestação serviço mensal, contrato prestação serviço por hora, contrato prestação serviço projeto, modelo contrato prestação serviço 2026'
     },
     'compra-venda': {
-      title: 'Modelo de Contrato de Compra e Venda Grátis em PDF e Word',
-      description: 'Modelo de contrato de compra e venda de imóvel, veículo e bens móveis. Baixe grátis em PDF e Word, juridicamente válido conforme o Código Civil.',
-      keywords: 'contrato de compra e venda, modelo de contrato de compra e venda, contrato compra e venda de imóvel, contrato compra e venda de veículo, contrato de compra e venda pdf, contrato compra e venda simples'
+      title: 'Modelo de Contrato de Compra e Venda Grátis PDF e Word 2026',
+      description: 'Contrato de compra e venda grátis em PDF e Word. Modelo de compra e venda de imóvel, veículo, terreno, moto, casa e bens móveis. Juridicamente válido.',
+      keywords: 'contrato de compra e venda, modelo de contrato de compra e venda, contrato compra e venda pdf, contrato compra e venda word, contrato compra e venda de imóvel, contrato compra e venda de veículo, contrato compra e venda de carro, contrato compra e venda de moto, contrato compra e venda de terreno, contrato compra e venda de casa, contrato compra e venda de apartamento, contrato compra e venda de lote, contrato compra e venda de bens móveis, contrato compra e venda simples, contrato compra e venda particular, contrato compra e venda entre pessoas físicas, contrato compra e venda com cláusula de arrependimento, contrato compra e venda com sinal, contrato compra e venda parcelado, contrato compra e venda à vista, gerador de contrato de compra e venda, criar contrato de compra e venda online, fazer contrato compra e venda grátis, contrato compra venda código civil, escritura particular de compra e venda, instrumento particular de compra e venda, contrato de compra e venda 2026, compromisso de compra e venda, promessa de compra e venda'
     },
     'comodato': {
-      title: 'Modelo de Contrato de Comodato Grátis em PDF e Word',
-      description: 'Modelo de contrato de comodato para empréstimo gratuito de bens. Baixe grátis em PDF e Word, válido conforme o Código Civil.',
-      keywords: 'contrato de comodato, modelo de contrato de comodato, comodato de imóvel, comodato de veículo, contrato de empréstimo gratuito, contrato de comodato pdf'
+      title: 'Modelo de Contrato de Comodato Grátis em PDF e Word 2026',
+      description: 'Contrato de comodato grátis em PDF e Word. Modelo de empréstimo gratuito de imóvel, veículo e equipamento conforme Código Civil.',
+      keywords: 'contrato de comodato, modelo de contrato de comodato, contrato comodato pdf, contrato comodato word, contrato comodato simples, contrato comodato de imóvel, contrato comodato de casa, contrato comodato de apartamento, contrato comodato de veículo, contrato comodato de carro, contrato comodato de equipamento, contrato comodato modal, contrato comodato por prazo determinado, contrato comodato por prazo indeterminado, contrato empréstimo gratuito, modelo empréstimo gratuito de imóvel, gerador contrato comodato, criar contrato comodato online, fazer contrato comodato grátis, comodato pais para filhos, contrato comodato entre familiares, comodato com cláusulas 2026'
     },
     'doacao': {
-      title: 'Modelo de Contrato de Doação Grátis em PDF e Word',
-      description: 'Contrato de doação de bens móveis e imóveis grátis em PDF e Word. Modelo juridicamente válido conforme o Código Civil brasileiro.',
-      keywords: 'contrato de doação, modelo de contrato de doação, doação de bens, contrato de doação pdf, contrato de doação simples'
+      title: 'Modelo de Contrato de Doação Grátis em PDF e Word 2026',
+      description: 'Contrato de doação grátis em PDF e Word. Modelo de doação de bens móveis, imóveis, veículo, dinheiro e doação com encargo conforme Código Civil.',
+      keywords: 'contrato de doação, modelo de contrato de doação, contrato de doação pdf, contrato de doação word, contrato de doação simples, contrato de doação de bens móveis, contrato de doação de imóvel, contrato de doação de veículo, contrato de doação de carro, contrato de doação de dinheiro, contrato de doação com encargo, contrato de doação pura e simples, contrato de doação entre pais e filhos, contrato de doação entre cônjuges, contrato de doação em vida, contrato de doação com reserva de usufruto, escritura de doação, instrumento particular de doação, gerador de contrato de doação, criar contrato de doação online, fazer contrato de doação grátis, modelo doação 2026, contrato doação remuneratória'
+    },
+    'emprestimo': {
+      title: 'Modelo de Contrato de Empréstimo Grátis em PDF e Word 2026',
+      description: 'Contrato de empréstimo grátis em PDF e Word. Modelo de mútuo, empréstimo entre pessoas físicas e empréstimo com juros conforme Código Civil.',
+      keywords: 'contrato de empréstimo, modelo de contrato de empréstimo, contrato empréstimo pdf, contrato empréstimo word, contrato empréstimo simples, contrato mútuo, contrato empréstimo de dinheiro, contrato empréstimo entre pessoas físicas, contrato empréstimo entre amigos, contrato empréstimo com juros, contrato empréstimo sem juros, contrato empréstimo parcelado, contrato empréstimo com garantia, contrato confissão de dívida, contrato reconhecimento de dívida, gerador contrato empréstimo, criar contrato empréstimo online, fazer contrato empréstimo grátis, contrato empréstimo 2026, modelo mútuo civil, contrato empréstimo veículo, contrato empréstimo empresa'
+    },
+    'mandato': {
+      title: 'Modelo de Contrato de Mandato e Procuração Grátis PDF/Word 2026',
+      description: 'Contrato de mandato e procuração grátis em PDF e Word. Modelo de poderes específicos e gerais, mandato remunerado e gratuito conforme Código Civil.',
+      keywords: 'contrato de mandato, modelo de contrato de mandato, contrato mandato pdf, contrato mandato word, procuração modelo, modelo procuração particular, procuração com poderes específicos, procuração com poderes gerais, procuração ad judicia, procuração ad negotia, contrato mandato remunerado, contrato mandato gratuito, mandato mercantil, mandato judicial, mandato extrajudicial, gerador contrato mandato, criar contrato mandato online, fazer procuração grátis, modelo procuração pdf, modelo procuração word, contrato mandato 2026, substabelecimento de mandato'
+    },
+    'alienacao-fiduciaria': {
+      title: 'Modelo de Contrato de Alienação Fiduciária Grátis PDF/Word 2026',
+      description: 'Contrato de alienação fiduciária grátis em PDF e Word. Modelo para garantia de imóvel, veículo e bens móveis conforme Lei 9.514/97.',
+      keywords: 'contrato de alienação fiduciária, alienação fiduciária pdf, alienação fiduciária word, modelo alienação fiduciária, alienação fiduciária de imóvel, alienação fiduciária de veículo, alienação fiduciária de carro, alienação fiduciária em garantia, alienação fiduciária bem móvel, contrato alienação fiduciária simples, lei 9514 alienação fiduciária, decreto lei 911 alienação fiduciária, gerador alienação fiduciária, criar contrato alienação fiduciária, fazer contrato alienação fiduciária grátis, alienação fiduciária 2026, garantia fiduciária'
+    },
+    'parceria-comercial': {
+      title: 'Modelo de Contrato de Parceria Empresarial Grátis PDF/Word 2026',
+      description: 'Contrato de parceria empresarial e comercial grátis em PDF e Word. Modelo entre empresas, MEI e parceiros com divisão de lucros e confidencialidade.',
+      keywords: 'contrato de parceria empresarial, contrato de parceria comercial, modelo contrato parceria empresarial, modelo contrato parceria comercial, contrato parceria empresarial pdf, contrato parceria empresarial word, contrato parceria entre empresas, contrato parceria mei, contrato parceria comercial simples, parceria empresarial sem sociedade, contrato parceria com divisão de lucros, contrato parceria estratégica, contrato joint venture, contrato parceria de negócios, modelo contrato parceria startup, contrato parceria afiliados, contrato parceria revenda, contrato parceria representação comercial, gerador contrato parceria empresarial, criar contrato parceria online, fazer contrato parceria grátis, contrato parceria 2026'
+    },
+    'rescisao': {
+      title: 'Modelo de Rescisão Contratual e Distrato Grátis PDF/Word 2026',
+      description: 'Modelo de rescisão de contrato e distrato grátis em PDF e Word. Rescisão amigável, por descumprimento, para aluguel, prestação de serviços e mais.',
+      keywords: 'rescisão de contrato, modelo de rescisão de contrato, contrato de rescisão, contrato de rescisão pdf, contrato de rescisão word, distrato, modelo de distrato, distrato pdf, rescisão amigável, rescisão por descumprimento, rescisão contrato aluguel, rescisão contrato locação, rescisão contrato prestação serviços, rescisão contrato trabalho, termo de rescisão, termo de distrato, gerador rescisão de contrato, criar distrato online, fazer rescisão contrato grátis, rescisão antecipada de contrato, multa rescisória contrato, modelo distrato 2026, resilição contratual'
     },
     'locacao-veiculo': {
-      title: 'Modelo de Contrato de Locação de Veículo Grátis em PDF e Word',
-      description: 'Contrato de locação de veículo grátis em PDF e Word. Modelo para aluguel de carros, motos e caminhões, juridicamente válido.',
-      keywords: 'contrato de locação de veículo, contrato aluguel de carro, modelo contrato locação veículo, contrato de aluguel de carro pdf, locação de automóvel'
+      title: 'Modelo de Contrato de Locação de Veículo Grátis PDF/Word 2026',
+      description: 'Contrato de locação de veículo grátis em PDF e Word. Modelo para aluguel de carro, moto, caminhão, van e utilitários entre pessoas físicas e empresas.',
+      keywords: 'contrato de locação de veículo, contrato aluguel de veículo, contrato locação veículo pdf, contrato locação veículo word, modelo contrato locação veículo, contrato aluguel de carro, contrato aluguel de moto, contrato aluguel de caminhão, contrato aluguel de van, contrato aluguel de utilitário, contrato locação automóvel, contrato locação carro por aplicativo, contrato locação carro uber, contrato locação carro 99, contrato locação veículo entre pessoas físicas, contrato locação veículo empresa, gerador contrato locação veículo, criar contrato aluguel carro online, fazer contrato aluguel veículo grátis, modelo contrato aluguel carro 2026, contrato locação frota, contrato locação carro com motorista, contrato locação carro sem motorista'
     },
     'franquia': {
-      title: 'Modelo de Contrato de Franquia Grátis em PDF e Word',
-      description: 'Modelo de contrato de franquia conforme a Lei nº 13.966/2019. Baixe grátis em PDF e Word, com cláusulas profissionais para franqueador e franqueado.',
-      keywords: 'contrato de franquia, modelo de contrato de franquia, COF circular de oferta de franquia, contrato franqueador franqueado, Lei de Franquia'
+      title: 'Modelo de Contrato de Franquia Grátis em PDF e Word 2026',
+      description: 'Contrato de franquia grátis em PDF e Word conforme Lei 13.966/2019. Modelo profissional com cláusulas de royalties, território, COF e taxa de franquia.',
+      keywords: 'contrato de franquia, modelo de contrato de franquia, contrato franquia pdf, contrato franquia word, contrato franqueador franqueado, lei de franquia 13966, cof circular de oferta de franquia, contrato franquia royalties, contrato franquia taxa de franquia, contrato franquia território exclusivo, contrato franquia simples, contrato franquia empresarial, contrato franquia alimentação, contrato franquia varejo, contrato franquia serviços, master franquia, sub franquia, gerador contrato franquia, criar contrato franquia online, fazer contrato franquia grátis, contrato franquia 2026, modelo franchising, contrato franquia internacional'
     },
     'estagio': {
-      title: 'Modelo de Contrato de Estágio Grátis em PDF e Word',
-      description: 'Modelo de contrato de estágio (TCE) conforme a Lei 11.788/2008. Baixe grátis em PDF e Word, pronto para preencher.',
-      keywords: 'contrato de estágio, modelo de contrato de estágio, termo de compromisso de estágio, TCE estagiário, contrato estágio pdf'
+      title: 'Modelo de Contrato de Estágio (TCE) Grátis PDF e Word 2026',
+      description: 'Contrato de estágio (TCE) grátis em PDF e Word conforme Lei 11.788/2008. Modelo de termo de compromisso de estágio obrigatório e não obrigatório.',
+      keywords: 'contrato de estágio, modelo de contrato de estágio, contrato estágio pdf, contrato estágio word, termo de compromisso de estágio, tce estágio, modelo tce, contrato estágio obrigatório, contrato estágio não obrigatório, contrato estagiário, contrato estágio remunerado, contrato estágio não remunerado, contrato estágio ensino superior, contrato estágio ensino médio, contrato estágio técnico, lei 11788 estágio, gerador contrato estágio, criar tce online, fazer contrato estágio grátis, plano de atividades estágio, modelo tce 2026, contrato estágio escola, contrato estágio universidade, contrato estágio empresa'
     },
     'trabalho-autonomo': {
-      title: 'Modelo de Contrato de Trabalho Autônomo Grátis em PDF e Word',
-      description: 'Modelo de contrato de trabalho autônomo sem vínculo empregatício. Baixe grátis em PDF e Word, ideal para profissionais liberais e MEI.',
-      keywords: 'contrato de trabalho autônomo, contrato autônomo pdf, modelo contrato profissional autônomo, contrato sem vínculo empregatício, contrato pj autônomo'
+      title: 'Modelo de Contrato de Trabalho Autônomo Grátis PDF/Word 2026',
+      description: 'Contrato de trabalho autônomo grátis em PDF e Word, sem vínculo empregatício. Modelo para profissionais liberais, MEI, PJ e prestadores autônomos.',
+      keywords: 'contrato de trabalho autônomo, modelo contrato trabalho autônomo, contrato autônomo pdf, contrato autônomo word, contrato profissional autônomo, contrato sem vínculo empregatício, contrato pj autônomo, contrato trabalho mei, contrato prestador autônomo, contrato profissional liberal, contrato pessoa física autônomo, contrato autônomo simples, contrato autônomo recibo, contrato autônomo rpa, gerador contrato autônomo, criar contrato autônomo online, fazer contrato autônomo grátis, modelo autônomo 2026, contrato autônomo eventual, contrato autônomo continuado'
     },
   };
 
