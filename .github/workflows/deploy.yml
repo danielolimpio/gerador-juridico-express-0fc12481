@@ -38,3 +38,10 @@ jobs:
           dangerous-clean-slate: true
           dry-run: false
           log-level: verbose
+
+      - name: Aguardar propagação do deploy
+        run: sleep 30
+
+      - name: Submeter URLs ao IndexNow (Bing, Yandex, Seznam, Naver)
+        run: node scripts/submit-indexnow.mjs
+        continue-on-error: true
