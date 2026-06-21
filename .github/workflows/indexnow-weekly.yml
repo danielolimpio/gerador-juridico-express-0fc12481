@@ -1,0 +1,17 @@
+name: Ping IndexNow semanal
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # toda segunda-feira 09:00 UTC
+  workflow_dispatch:      # permite rodar manualmente pelo painel do GitHub
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Submeter sitemap ao IndexNow
+        run: node scripts/submit-indexnow.mjs
