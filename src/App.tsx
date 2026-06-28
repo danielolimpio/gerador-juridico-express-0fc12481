@@ -58,6 +58,7 @@ import ContratoDoacao from "./pages/blog/ContratoDoacao";
 import ContratoMandato from "./pages/blog/ContratoMandato";
 import ContratoFranquia from "./pages/blog/ContratoFranquia";
 import ContratoLocacaoVeiculo from "./pages/blog/ContratoLocacaoVeiculo";
+import ContratoPrestacaoServicos from "./pages/blog/ContratoPrestacaoServicos";
 import Sobre from "./pages/Sobre";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
@@ -104,6 +105,7 @@ const App = () => (
             <Route path="/blog/contrato-mandato" element={<ContratoMandato />} />
             <Route path="/blog/contrato-franquia" element={<ContratoFranquia />} />
             <Route path="/blog/contrato-locacao-veiculo" element={<ContratoLocacaoVeiculo />} />
+            <Route path="/blog/contrato-prestacao-servicos-autonomos" element={<ContratoPrestacaoServicos />} />
           <Route path="/sobre" element={<Sobre />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
