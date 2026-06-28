@@ -71,6 +71,17 @@ const blogPosts = [
     readTime: "25 min",
     slug: "contrato-locacao-veiculo",
     coverImage: "/images/blog/contrato-locacao-veiculo-cover.jpg"
+  },
+  {
+    id: "7",
+    title: "Contrato de Prestação de Serviços para Autônomos e MEIs: Guia Completo 2026",
+    excerpt: "Como fazer um contrato de prestação de serviços válido para autônomos, freelancers e MEIs em 2026. Cláusulas essenciais, modelo grátis, rescisão e proteção jurídica.",
+    category: "empreendedores",
+    categoryLabel: "Para Empreendedores",
+    date: "15 de janeiro de 2026",
+    readTime: "18 min",
+    slug: "contrato-prestacao-servicos-autonomos",
+    coverImage: "/images/blog/contrato-prestacao-servicos-cover.jpg"
   }
 ];
 
