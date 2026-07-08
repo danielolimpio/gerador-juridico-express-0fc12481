@@ -59,6 +59,8 @@ import ContratoMandato from "./pages/blog/ContratoMandato";
 import ContratoFranquia from "./pages/blog/ContratoFranquia";
 import ContratoLocacaoVeiculo from "./pages/blog/ContratoLocacaoVeiculo";
 import ContratoPrestacaoServicos from "./pages/blog/ContratoPrestacaoServicos";
+import NovoMei2027 from "./pages/blog/NovoMei2027";
+import Escala5x2 from "./pages/blog/Escala5x2";
 import Sobre from "./pages/Sobre";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
@@ -106,6 +108,8 @@ const App = () => (
             <Route path="/blog/contrato-franquia" element={<ContratoFranquia />} />
             <Route path="/blog/contrato-locacao-veiculo" element={<ContratoLocacaoVeiculo />} />
             <Route path="/blog/contrato-prestacao-servicos-autonomos" element={<ContratoPrestacaoServicos />} />
+            <Route path="/blog/novo-mei-2027-guia-completo" element={<NovoMei2027 />} />
+            <Route path="/blog/escala-5x2-como-vai-funcionar" element={<Escala5x2 />} />
           <Route path="/sobre" element={<Sobre />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
