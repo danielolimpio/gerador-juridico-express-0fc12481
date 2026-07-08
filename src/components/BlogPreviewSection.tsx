@@ -82,6 +82,28 @@ const blogPosts = [
     readTime: "18 min",
     slug: "contrato-prestacao-servicos-autonomos",
     coverImage: "/images/blog/contrato-prestacao-servicos-cover.jpg"
+  },
+  {
+    id: "8",
+    title: "Novo MEI: Guia Completo da Aprovação no Congresso e Vigência em 2027",
+    excerpt: "Novo teto de R$ 130 mil, permissão para contratar 2 funcionários e tramitação no Senado. Entenda o que muda no Novo MEI a partir de 2027.",
+    category: "empreendedores",
+    categoryLabel: "Para Empreendedores",
+    date: "07 de julho de 2026",
+    readTime: "22 min",
+    slug: "novo-mei-2027-guia-completo",
+    coverImage: "/images/blog/novo-mei-2027-cover.jpg"
+  },
+  {
+    id: "9",
+    title: "Escala 5x2: Guia Completo de Como Vai Funcionar Após a Aprovação",
+    excerpt: "Fim da escala 6x1, jornada de 40 horas semanais e impactos no comércio, indústria, hospitais e no salário do trabalhador após a nova regra.",
+    category: "direitos-deveres",
+    categoryLabel: "Direitos & Deveres",
+    date: "07 de julho de 2026",
+    readTime: "20 min",
+    slug: "escala-5x2-como-vai-funcionar",
+    coverImage: "/images/blog/escala-5x2-cover.jpg"
   }
 ];
 
