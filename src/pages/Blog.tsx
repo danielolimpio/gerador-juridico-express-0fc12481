@@ -148,6 +148,26 @@ export const blogPosts: BlogPost[] = [
     readTime: "20 min",
     slug: "escala-5x2-como-vai-funcionar",
     coverImage: "/images/blog/escala-5x2-cover.jpg"
+  },
+  {
+    id: "10",
+    title: "Contrato de Compra e Venda de Veículo: Como Não Cair em Golpes em 2026",
+    excerpt: "Cláusulas obrigatórias, ATPV-e digital, vistoria cautelar, dívidas ocultas e os golpes mais comuns na compra e venda de carros, motos e caminhões.",
+    category: "erros-riscos",
+    date: "13 de julho de 2026",
+    readTime: "22 min",
+    slug: "contrato-compra-venda-veiculo-golpes",
+    coverImage: "/images/blog/compra-venda-veiculo-cover.jpg"
+  },
+  {
+    id: "11",
+    title: "Seguradora ou Associação de Proteção Veicular: Qual Escolher e o que a Lei Diz",
+    excerpt: "Diferenças reais entre seguradora e associação de proteção veicular, o que muda com a LC 213/2025 e como avaliar o custo-benefício antes de contratar.",
+    category: "direitos-deveres",
+    date: "13 de julho de 2026",
+    readTime: "21 min",
+    slug: "seguradora-vs-associacao-protecao-veicular",
+    coverImage: "/images/blog/seguradora-associacao-cover.jpg"
   }
 ];
 
