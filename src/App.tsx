@@ -63,6 +63,8 @@ import NovoMei2027 from "./pages/blog/NovoMei2027";
 import Escala5x2 from "./pages/blog/Escala5x2";
 import CompraVendaVeiculo from "./pages/blog/CompraVendaVeiculo";
 import SeguradoraVsAssociacao from "./pages/blog/SeguradoraVsAssociacao";
+import LocacaoComercialRenovatoria from "./pages/blog/LocacaoComercialRenovatoria";
+import ContratoEstagio from "./pages/blog/ContratoEstagio";
 import Sobre from "./pages/Sobre";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
@@ -114,6 +116,8 @@ const App = () => (
             <Route path="/blog/escala-5x2-como-vai-funcionar" element={<Escala5x2 />} />
             <Route path="/blog/contrato-compra-venda-veiculo-golpes" element={<CompraVendaVeiculo />} />
             <Route path="/blog/seguradora-vs-associacao-protecao-veicular" element={<SeguradoraVsAssociacao />} />
+            <Route path="/blog/contrato-locacao-comercial-renovatoria" element={<LocacaoComercialRenovatoria />} />
+            <Route path="/blog/contrato-estagio-lei-11788-guia-completo" element={<ContratoEstagio />} />
           <Route path="/sobre" element={<Sobre />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />

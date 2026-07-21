@@ -168,6 +168,26 @@ export const blogPosts: BlogPost[] = [
     readTime: "21 min",
     slug: "seguradora-vs-associacao-protecao-veicular",
     coverImage: "/images/blog/seguradora-associacao-cover.jpg"
+  },
+  {
+    id: "12",
+    title: "Contrato de Locação Comercial: Renovatória, Reajustes e Direitos do Lojista em 2026",
+    excerpt: "Ação renovatória, ponto comercial, IPTU, luvas, reajuste do aluguel, garantias e direitos do lojista sob a Lei do Inquilinato.",
+    category: "empreendedores",
+    date: "13 de julho de 2026",
+    readTime: "24 min",
+    slug: "contrato-locacao-comercial-renovatoria",
+    coverImage: "/images/blog/locacao-comercial-cover.jpg"
+  },
+  {
+    id: "13",
+    title: "Contrato de Estágio 2026: Lei 11.788, Jornada, Bolsa e Diferenças para Menor Aprendiz",
+    excerpt: "Guia completo do contrato de estágio: TCE, jornada, bolsa-auxílio, seguro obrigatório e diferença para o menor aprendiz.",
+    category: "direitos-deveres",
+    date: "13 de julho de 2026",
+    readTime: "23 min",
+    slug: "contrato-estagio-lei-11788-guia-completo",
+    coverImage: "/images/blog/contrato-estagio-cover.jpg"
   }
 ];
 
